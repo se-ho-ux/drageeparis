@@ -169,18 +169,15 @@ p {
 }
 
 .nav__logo {
-  display: flex;
-  align-items: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
   color: var(--encre);
+  letter-spacing: .03em;
   transition: color var(--transition);
   z-index: 110;
   position: relative;
-}
-.nav__logo svg {
-  height: 34px;
-  width: auto;
-  display: block;
-  /* currentColor hérité du parent — transition gérée par .nav__logo */
 }
 .nav__logo:hover { color: var(--or-chaud); }
 
@@ -433,7 +430,7 @@ section { padding-block: var(--space-20); }
   overflow: hidden;
 }
 
-/* Hero badge / medallion — symbole SVG sur fond or */
+/* Hero badge / medallion (inspiré de Haven & Hound) */
 .hero__badge {
   position: absolute;
   bottom: var(--space-16);
@@ -447,26 +444,33 @@ section { padding-block: var(--space-20); }
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 6px;
+  gap: 5px;
   padding: var(--space-4);
   box-shadow: 0 8px 32px rgba(184,151,90,.55);
   z-index: 2;
 }
-.hero__badge-symbol {
-  width: 52px;
-  height: 52px;
+.hero__badge-line {
   display: block;
-  opacity: 0.92;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--blanc);
+  line-height: 1.1;
 }
 .hero__badge-line--sm {
-  display: block;
   font-family: var(--font-sans);
-  font-size: .44rem;
+  font-style: normal;
+  font-size: .48rem;
   font-weight: 700;
-  letter-spacing: .22em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: rgba(255,255,255,.72);
-  line-height: 1;
+}
+.hero__badge-sep {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: rgba(255,255,255,.4);
 }
 @media (max-width: 480px) { .hero__badge { display: none; } }
 
@@ -1069,28 +1073,13 @@ section { padding-block: var(--space-20); }
 @media (min-width: 640px)  { .footer__inner { grid-template-columns: repeat(2,1fr); } }
 @media (min-width: 1024px) { .footer__inner { grid-template-columns: 2fr 1.5fr 1.5fr 2fr; } }
 
-.footer__logo-img {
-  height: 40px;
-  width: auto;
+.footer__logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--blanc);
   display: block;
   margin-bottom: var(--space-3);
-}
-
-/* Panel mobile — symbole au-dessus des liens (masqué sur desktop) */
-.nav__panel-brand { display: none; }
-@media (max-width: 767px) {
-  .nav__panel-brand {
-    display: block;
-    margin-bottom: var(--space-8);
-    list-style: none;
-    padding: 0;
-  }
-  .nav__panel-brand img {
-    width: 44px;
-    height: 44px;
-    opacity: 0.55;
-    display: block;
-  }
 }
 .footer__tagline { font-size: .82rem; color: var(--or-pale); }
 
