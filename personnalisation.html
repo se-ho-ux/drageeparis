@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personnalisation · Dragée Paris</title>
+  <meta name="description" content="Personnalisez vos dragées et bougies : couleurs, parfums, emballages, inscriptions. Demandez votre devis pour un événement sur mesure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="index.html" class="nav__logo">Dragée Paris</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__list" id="nav-list" role="list">
+        <li><a href="index.html"            class="nav__link">Accueil</a></li>
+        <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
+        <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
+        <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+        <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
+        <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- PAGE HERO -->
+    <div class="page-hero page-hero--lavande">
+      <div class="container">
+        <span class="section-label page-hero__label">Sur mesure</span>
+        <h1 class="section__title">Personnalisation</h1>
+        <div class="divider divider--center" style="margin-top:1rem"></div>
+        <p class="page-hero__subtitle">
+          Chaque création Dragée Paris est unique. Nous adaptons couleurs, parfums, emballages et inscriptions à votre événement et vos désirs.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 STEPS -->
+    <section class="bg-blanc">
+      <div class="container">
+        <div class="section__header section__header--center fade-in">
+          <span class="section-label">Comment ça marche</span>
+          <h2 class="section__title">Votre commande en 3 étapes</h2>
+          <div class="divider divider--center"></div>
+        </div>
+        <div class="steps__grid">
+          <div class="step-card fade-in">
+            <span class="step-card__number">01</span>
+            <h3>Choisissez</h3>
+            <p>Sélectionnez vos produits : dragées, bougies ou coffrets. Indiquez-nous l'occasion et les quantités estimées.</p>
+          </div>
+          <div class="step-card fade-in fade-in--delay-1">
+            <span class="step-card__number">02</span>
+            <h3>Personnalisez</h3>
+            <p>Choisissez vos couleurs, vos parfums, vos emballages et vos inscriptions. Partagez-nous vos inspirations.</p>
+          </div>
+          <div class="step-card fade-in fade-in--delay-2">
+            <span class="step-card__number">03</span>
+            <h3>Recevez</h3>
+            <p>Nous fabriquons votre commande à la main et vous la livrons dans les délais convenus, emballée avec soin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section class="bg-papier">
+      <div class="container">
+        <div class="section__header section__header--center fade-in">
+          <span class="section-label">Options disponibles</span>
+          <h2 class="section__title">Tout peut être personnalisé</h2>
+          <div class="divider divider--center"></div>
+          <p class="section__subtitle">
+            Nous adaptons chaque détail pour que vos créations vous ressemblent parfaitement.
+          </p>
+        </div>
+        <div class="options__grid">
+
+          <div class="option-card fade-in" style="background-color:var(--rose)">
+            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <h4>Couleurs</h4>
+            <p>Choisissez parmi notre palette ou apportez votre nuancier pour un accord parfait avec votre décoration.</p>
+          </div>
+
+          <div class="option-card fade-in fade-in--delay-1" style="background-color:var(--beurre)">
+            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+              </svg>
+            </div>
+            <h4>Parfums</h4>
+            <p>Pour les bougies, choisissez parmi nos 10 parfums artisanaux ou demandez une création exclusive.</p>
+          </div>
+
+          <div class="option-card fade-in fade-in--delay-2" style="background-color:var(--sauge)">
+            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h4>Emballages</h4>
+            <p>Boîtes, sachets en organza, rubans, étiquettes — chaque contenant est sélectionné avec la même attention que le contenu.</p>
+          </div>
+
+          <div class="option-card fade-in fade-in--delay-3" style="background-color:var(--lavande)">
+            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+              </svg>
+            </div>
+            <h4>Inscriptions</h4>
+            <p>Prénoms, dates, citations, monogrammes — gravés ou imprimés sur chaque pièce avec soin et précision.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI DEVIS FORM -->
+    <section class="mini-form-section">
+      <div class="container" style="max-width:760px">
+        <div class="section__header section__header--center fade-in">
+          <span class="section-label">Première étape</span>
+          <h2 class="section__title">Décrivez votre projet</h2>
+          <div class="divider divider--center"></div>
+          <p class="section__subtitle">
+            Dites-nous l'essentiel et nous vous recontactons sous 48h avec une proposition personnalisée.
+          </p>
+        </div>
+
+        <form class="form fade-in" id="devis-form" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="prenom">Prénom <span class="required" aria-label="obligatoire">*</span></label>
+              <input class="form__input" type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required>
+              <span class="form__error" role="alert">Ce champ est obligatoire.</span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">E-mail <span class="required" aria-label="obligatoire">*</span></label>
+              <input class="form__input" type="email" id="email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
+              <span class="form__error" role="alert">Veuillez saisir une adresse e-mail valide.</span>
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="evenement">Type d'événement <span class="required" aria-label="obligatoire">*</span></label>
+            <select class="form__select" id="evenement" name="evenement" required>
+              <option value="" disabled selected>Choisissez votre occasion</option>
+              <option value="mariage">Mariage</option>
+              <option value="naissance">Naissance</option>
+              <option value="bapteme">Baptême</option>
+              <option value="communion">Communion</option>
+              <option value="anniversaire">Anniversaire</option>
+              <option value="evc">Enterrement de vie de célibataire</option>
+              <option value="autre">Autre</option>
+            </select>
+            <span class="form__error" role="alert">Veuillez choisir un type d'événement.</span>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">Votre projet <span class="required" aria-label="obligatoire">*</span></label>
+            <textarea class="form__textarea" id="message" name="message" placeholder="Décrivez votre événement, vos couleurs souhaitées, vos quantités estimées..." required></textarea>
+            <span class="form__error" role="alert">Merci de décrire votre projet.</span>
+          </div>
+          <div class="form__submit">
+            <button type="submit" class="btn btn--primary">Envoyer ma demande</button>
+          </div>
+        </form>
+
+        <div class="form__success" id="form-success" role="status" aria-live="polite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3>Merci pour votre message !</h3>
+          <p>Nous avons bien reçu votre demande et vous recontacterons dans les 48 heures ouvrées.</p>
+          <a href="contact.html" class="btn btn--secondary" style="margin-top:1.5rem">Formulaire complet</a>
+        </div>
+
+        <p style="text-align:center;margin-top:1.5rem;font-size:.8rem">
+          Pour une demande plus détaillée, utilisez notre <a href="contact.html" style="color:var(--or-chaud);text-decoration:underline">formulaire de devis complet</a> avec pièce jointe.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="section-label" style="color:var(--or-pale)">Des questions ?</span>
+        <h2 class="fade-in">Parlons de votre projet</h2>
+        <p class="cta-banner__sub fade-in fade-in--delay-1">
+          Notre équipe est disponible pour vous accompagner dans chaque étape de votre commande personnalisée.
+        </p>
+        <div class="fade-in fade-in--delay-2">
+          <a href="tel:+33601234567" class="btn btn--primary" style="margin-right:.75rem">Nous appeler</a>
+          <a href="contact.html"    class="btn btn--light">Écrire un message</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Dragée Paris</span>
+        <p class="footer__tagline">Créations artisanales en Île-de-France</p>
+      </div>
+      <nav aria-label="Navigation footer">
+        <span class="footer__col-title">Pages</span>
+        <ul class="footer__nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="dragees.html">Dragées</a></li>
+          <li><a href="bougies.html">Bougies</a></li>
+          <li><a href="personnalisation.html">Personnalisation</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div>
+        <span class="footer__col-title">Nous contacter</span>
+        <ul class="footer__contact-list">
+          <li><a href="tel:+33601234567">06 01 23 45 67</a></li>
+          <li><a href="mailto:contact@drageeparis.fr">contact@drageeparis.fr</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram · @drageeparis</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer__col-title">Inspirations</span>
+        <p class="footer__newsletter-text">Recevez nos nouvelles créations dans votre boîte mail.</p>
+        <form class="newsletter-form" aria-label="Inscription newsletter">
+          <input type="email" placeholder="Votre adresse e-mail" aria-label="Adresse e-mail" required>
+          <button type="submit">S'abonner</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 Dragée Paris · Artisan confiseur en Île-de-France · Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
