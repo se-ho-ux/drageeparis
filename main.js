@@ -15,19 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- 2. Hamburger menu ---- */
   const hamburger = document.getElementById('hamburger');
   const navList   = document.getElementById('nav-list');
+  const backdrop  = document.getElementById('nav-backdrop');
   if (hamburger && navList) {
     const closeMenu = () => {
       navList.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
+      backdrop?.classList.remove('open');
       document.body.style.overflow = '';
     };
     hamburger.addEventListener('click', () => {
       const isOpen = navList.classList.toggle('open');
       hamburger.classList.toggle('active', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
+      backdrop?.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+    backdrop?.addEventListener('click', closeMenu);
     navList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   }
@@ -118,7 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---- 8. Newsletter forms ---- */
+  /* ---- 8. FAQ accordion ---- */
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq__item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ---- 9. Newsletter forms ---- */
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();

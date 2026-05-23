@@ -14,6 +14,7 @@
 <body>
 
   <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <!-- NAV -->
   <header class="header" id="header">
@@ -41,6 +42,11 @@
         <img src="./images/mariage/image17.jpeg" alt="" aria-hidden="true" fetchpriority="high">
       </div>
       <div class="hero__overlay"></div>
+      <div class="hero__badge fade-in fade-in--delay-4" aria-hidden="true">
+        <span class="hero__badge-line">Artisan</span>
+        <span class="hero__badge-sep"></span>
+        <span class="hero__badge-line hero__badge-line--sm">Île-de-France</span>
+      </div>
       <div class="hero__content container">
         <span class="section-label hero__label fade-in">Artisan confiseur · Île-de-France</span>
         <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
@@ -176,8 +182,13 @@
     <section class="artisan">
       <div class="container">
         <div class="artisan__inner">
-          <div class="artisan__image fade-in">
-            <img src="./images/artisanat_1.png" alt="Atelier artisanal Dragée Paris en Île-de-France" loading="lazy" width="600" height="750">
+          <div class="artisan__images fade-in">
+            <div class="artisan__img-main">
+              <img src="./images/artisanat_1.png" alt="Atelier artisanal Dragée Paris en Île-de-France" loading="lazy" width="600" height="750">
+            </div>
+            <div class="artisan__img-accent">
+              <img src="./images/mariage/image18.jpeg" alt="Dragées artisanales en cours de préparation" loading="lazy" width="300" height="300">
+            </div>
           </div>
           <div class="artisan__content fade-in fade-in--delay-1">
             <span class="section-label">Notre savoir-faire</span>
@@ -236,6 +247,63 @@
           </div>
           <div class="instagram__item fade-in fade-in--delay-3">
             <img src="./images/naiss/image-d8.jpg" alt="Dragées naissance" loading="lazy" width="300" height="300">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section__header section__header--center fade-in">
+          <span class="section-label">Questions fréquentes</span>
+          <h2 class="section__title">Tout ce que vous devez savoir</h2>
+          <div class="divider divider--center"></div>
+        </div>
+        <div class="faq__list">
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Quel est le délai de fabrication ?</span>
+              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                <p>Pour les dragées, comptez généralement 2 à 3 semaines entre la confirmation de votre commande et la livraison. Pour les bougies personnalisées, le délai est de 1 à 2 semaines. Nous vous recommandons de nous contacter au moins 4 semaines avant votre événement pour les grandes quantités.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item fade-in fade-in--delay-1">
+            <button class="faq__question" aria-expanded="false">
+              <span>Quelle quantité minimum peut-on commander ?</span>
+              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                <p>Nous acceptons les commandes à partir de 50 dragées pour les particuliers. Pour les mariages et événements professionnels, nous recommandons un minimum de 100 pièces afin de profiter pleinement de la personnalisation. Les bougies sont disponibles à l'unité ou par lots.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item fade-in fade-in--delay-2">
+            <button class="faq__question" aria-expanded="false">
+              <span>Comment se déroule la personnalisation ?</span>
+              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                <p>Après réception de votre demande de devis, nous organisons un échange (par téléphone ou mail) pour affiner vos choix : couleurs, parfums, type d'emballage et inscription. Un échantillon de couleur ou une maquette d'emballage vous sera soumis avant lancement de la fabrication.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item fade-in fade-in--delay-3">
+            <button class="faq__question" aria-expanded="false">
+              <span>Livrez-vous en dehors de l'Île-de-France ?</span>
+              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq__answer" role="region">
+              <div class="faq__answer-inner">
+                <p>Oui, nous livrons dans toute la France métropolitaine via transporteur soigné, avec emballage de protection renforcé pour garantir l'intégrité de vos créations. Les frais de port sont calculés selon le poids et la destination. La remise en main propre est possible pour les clients en Île-de-France.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
