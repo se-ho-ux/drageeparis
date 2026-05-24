@@ -399,7 +399,7 @@ p {
   .nav__link {
     font-size: .85rem;
     font-family: var(--font-sans);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: .01em;
     text-transform: none;
     color: var(--encre);
