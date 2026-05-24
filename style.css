@@ -16,6 +16,7 @@
 /* ---- Variables ---- */
 :root {
   --rose:      #F2D5CE;
+  --rose-btn:  #B86B65;
   --sauge:     #C9D7BC;
   --lavande:   #D9CFE8;
   --beurre:    #F5E9B8;
@@ -197,8 +198,8 @@ p {
 .nav__logo:hover { opacity: 0.65; }
 
 .nav__logo-img {
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   display: block;
 }
 
@@ -328,14 +329,19 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  padding: var(--space-2) var(--space-6);
-  background-color: var(--or-chaud);
+  padding: 0.45rem 1.1rem;
+  background-color: var(--rose-btn);
   color: var(--blanc) !important;
-  border-radius: var(--radius-full);
-  transition: background-color var(--transition), transform var(--transition);
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .nav__link--cta::after { display: none; }
-.nav__link--cta:hover { background-color: var(--brun); }
+.nav__link--cta:hover {
+  background-color: #9d5750;
+  box-shadow: 0 4px 14px rgba(184,107,101,.35);
+}
 @media (hover: hover) and (pointer: fine) {
   .nav__link--cta:hover { transform: translateY(-1px); }
 }
@@ -357,8 +363,8 @@ p {
   .nav__link {
     font-size: .7rem;
     font-family: var(--font-sans);
-    font-weight: 600;
-    letter-spacing: .1em;
+    font-weight: 700;
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--encre);
     transition: color 260ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -421,6 +427,18 @@ p {
   color: var(--blanc);
 }
 
+.btn--rose {
+  background-color: var(--rose-btn);
+  color: var(--blanc);
+  border-color: var(--rose-btn);
+  border-radius: 10px;
+}
+.btn--rose:hover {
+  background-color: #9d5750;
+  border-color: #9d5750;
+  box-shadow: 0 6px 20px rgba(184,107,101,.35);
+}
+
 .btn--light {
   background-color: rgba(250,246,239,.15);
   color: var(--blanc);
@@ -457,58 +475,48 @@ section { padding-block: var(--space-20); }
 }
 .divider--center { margin-inline: auto; }
 
-/* ---- Hero split (Accueil) ---- */
+/* ---- Hero éditorial (Accueil) ---- */
 .hero {
-  min-height: 100dvh;
+  background-color: var(--papier);
   overflow: hidden;
 }
 
 .hero__split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 44% 56%;
   min-height: 100dvh;
 }
 
-/* Panneau gauche : fond crème + contenu */
+/* Panneau gauche : contenu */
 .hero__pane--content {
-  background-color: var(--papier);
   display: flex;
   align-items: center;
   padding-block: calc(var(--nav-height) + var(--space-16)) var(--space-16);
-  padding-inline: var(--space-16) var(--space-12);
+  padding-inline: var(--space-16) var(--space-8);
 }
 
 .hero__inner {
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
-}
-
-/* Panneau droit : photo full height */
-.hero__pane--image {
-  position: relative;
-  overflow: hidden;
-}
-.hero__pane--image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
-  display: block;
-  transform: scale(1.03);
-  transition: transform 9s cubic-bezier(0.23, 1, 0.32, 1);
-}
-@media (hover: hover) and (pointer: fine) {
-  .hero__pane--image:hover img { transform: scale(1); }
 }
 
 .hero__label { margin-bottom: var(--space-5); }
 
+/* Titre éditorial en Cormorant — gros impact visuel */
 .hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6.5vw, 6.2rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -.015em;
+  color: var(--encre);
   margin-bottom: 0;
-  line-height: 1.08;
+}
+.hero__title em {
+  font-style: italic;
+  font-weight: 300;
 }
 
-/* Ligne dorée entre titre et sous-titre */
 .hero__divider {
   width: 40px;
   height: 1px;
@@ -517,35 +525,121 @@ section { padding-block: var(--space-20); }
 }
 
 .hero__subtitle {
-  font-size: clamp(.95rem, 1.6vw, 1.05rem);
+  font-size: clamp(.92rem, 1.5vw, 1rem);
   font-weight: 400;
   color: var(--brun);
   margin-bottom: var(--space-8);
-  max-width: 440px;
-  line-height: 1.8;
+  max-width: 400px;
+  line-height: 1.85;
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
-/* Mobile : image au-dessus, contenu dessous */
+/* Panneau droit : photos en composition superposée */
+.hero__pane--photos {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Photo 1 : forme arche (portrait, coins supérieurs très arrondis) */
+.hero__photo {
+  position: absolute;
+  overflow: hidden;
+}
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__photo--arch {
+  left: 6%;
+  top: 8%;
+  bottom: 5%;
+  width: 43%;
+  border-radius: 9999px 9999px 16px 16px;
+  z-index: 2;
+  box-shadow: var(--shadow-lg);
+}
+.hero__photo--arch img { object-position: center 25%; }
+
+/* Photo 2 : rectangle arrondi haut, calé à droite */
+.hero__photo--secondary {
+  right: 0;
+  top: 16%;
+  bottom: 0;
+  width: 52%;
+  border-radius: 32px 32px 0 0;
+  z-index: 1;
+  box-shadow: var(--shadow-md);
+}
+.hero__photo--secondary img { object-position: center center; }
+
+/* Badge circulaire tournant */
+.hero__badge {
+  position: absolute;
+  bottom: 30%;
+  left: 44%;
+  transform: translateX(-50%);
+  width: 108px;
+  height: 108px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(250,246,239,.85);
+  border-radius: 50%;
+  border: 1px solid rgba(43,42,40,.14);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero__badge-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: badge-spin 22s linear infinite;
+  overflow: visible;
+}
+.hero__badge-ring text {
+  font-size: 9px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  fill: var(--encre);
+}
+
+.hero__badge-logo {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  z-index: 1;
+  opacity: .75;
+}
+
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Mobile */
 @media (max-width: 767px) {
   .hero__split {
     grid-template-columns: 1fr;
-    grid-template-rows: 55vw 1fr;
     min-height: auto;
   }
-  .hero__pane--image {
+  .hero__pane--photos {
+    height: 72vw;
     order: -1;
-    min-height: 55vw;
   }
   .hero__pane--content {
     padding-block: var(--space-10) var(--space-12);
-    padding-inline: var(--space-4);
-    min-height: auto;
+    padding-inline: var(--space-5);
   }
-  .hero {
-    min-height: auto;
-  }
+  .hero__badge { display: none; }
 }
 
 /* ---- Page Hero (pages internes) ---- */

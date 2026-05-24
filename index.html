@@ -24,7 +24,7 @@
       </ul>
 
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="36" height="36">
+        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="46" height="46">
       </a>
 
       <div class="nav__end">
@@ -55,23 +55,46 @@
     <section class="hero" aria-label="Bannière principale">
       <div class="hero__split">
 
+        <!-- Panneau gauche : contenu éditorial -->
         <div class="hero__pane hero__pane--content">
           <div class="hero__inner">
             <span class="section-label hero__label fade-in">Artisan confiseur · Île-de-France</span>
-            <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
+            <h1 class="hero__title fade-in fade-in--delay-1">L'art de<br>célébrer,<br><em>en douceur</em></h1>
             <div class="hero__divider fade-in fade-in--delay-2" aria-hidden="true"></div>
             <p class="hero__subtitle fade-in fade-in--delay-2">
-              Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux — mariages, naissances, baptêmes &amp; bien plus.
+              Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux.
             </p>
             <div class="hero__actions fade-in fade-in--delay-3">
               <a href="dragees.html"  class="btn btn--primary">Découvrir nos créations</a>
-              <a href="contact.html" class="btn btn--secondary">Demander un devis</a>
+              <a href="contact.html" class="btn btn--rose">Demander un devis</a>
             </div>
           </div>
         </div>
 
-        <div class="hero__pane hero__pane--image fade-in fade-in--delay-1">
-          <img src="./images/hero-image.png" alt="Boîtes en céramique et dragées rose poudré" fetchpriority="high">
+        <!-- Panneau droit : deux photos en composition -->
+        <div class="hero__pane hero__pane--photos">
+
+          <div class="hero__photo hero__photo--arch fade-in fade-in--delay-1">
+            <img src="./images/hero-image.png" alt="Boîtes en céramique et dragées rose poudré" fetchpriority="high">
+          </div>
+
+          <div class="hero__photo hero__photo--secondary fade-in fade-in--delay-2">
+            <img src="./images/hero-image2.png" alt="Coffret cadeau avec dragées et nœud satin lavande" loading="lazy">
+          </div>
+
+          <!-- Badge circulaire tournant -->
+          <div class="hero__badge fade-in fade-in--delay-4" aria-hidden="true">
+            <svg class="hero__badge-ring" viewBox="0 0 120 120">
+              <defs>
+                <path id="badgePath" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"/>
+              </defs>
+              <text>
+                <textPath href="#badgePath" startOffset="0%">ARTISAN · ÎLE-DE-FRANCE · DRAGÉE PARIS · </textPath>
+              </text>
+            </svg>
+            <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" class="hero__badge-logo">
+          </div>
+
         </div>
 
       </div>
