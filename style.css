@@ -365,7 +365,7 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  padding: 0.75rem 2rem;
+  padding: 1rem 2rem;
   background-color: var(--rose-btn);
   color: var(--blanc) !important;
   border-radius: 10px;
@@ -468,7 +468,7 @@ p {
   color: var(--blanc);
   border-color: var(--rose-btn);
   border-radius: 10px;
-  padding: 1.1rem 3rem;
+  padding: 1.4rem 3rem;
 }
 .btn--rose:hover {
   background-color: #9d5750;
