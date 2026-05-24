@@ -365,10 +365,10 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  padding: 0.6rem 1.5rem;
+  padding: 0.75rem 2rem;
   background-color: var(--rose-btn);
   color: var(--blanc) !important;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 700;
   letter-spacing: .08em;
   transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
@@ -468,7 +468,7 @@ p {
   color: var(--blanc);
   border-color: var(--rose-btn);
   border-radius: 10px;
-  padding: 0.9rem 2.4rem;
+  padding: 1.1rem 3rem;
 }
 .btn--rose:hover {
   background-color: #9d5750;
