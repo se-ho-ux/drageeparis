@@ -365,7 +365,7 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  padding: 1.6rem 2.6rem;
+  padding: 2rem 2.6rem;
   background-color: #B86B65;
   color: var(--blanc) !important;
   border-radius: 5px;
