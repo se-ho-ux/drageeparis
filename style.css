@@ -7,6 +7,13 @@
 /* ---- Domaine Display Narrow (locale) ---- */
 @font-face {
   font-family: 'Domaine Display Narrow';
+  src: url('./domaine-display-narrow/DomaineDispNar-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Domaine Display Narrow';
   src: url('./domaine-display-narrow/DomaineDispNar-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
@@ -540,7 +547,8 @@ section { padding-block: var(--space-20); }
 .hero__title {
   font-family: var(--font-serif);
   font-size: clamp(3.2rem, 7vw, 6.8rem);
-  font-weight: 600;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.0;
   letter-spacing: -.02em;
   color: var(--encre);
@@ -551,8 +559,8 @@ section { padding-block: var(--space-20); }
   z-index: 2;
 }
 .hero__title em {
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .hero__divider {
