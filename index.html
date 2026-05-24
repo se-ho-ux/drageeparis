@@ -14,49 +14,66 @@
   <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <!-- NAV -->
-  <header class="header header--transparent" id="header">
+  <header class="header" id="header">
     <nav class="nav container" aria-label="Navigation principale">
-      <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-blanc.svg" alt="" aria-hidden="true" class="nav__logo-img" width="32" height="32">
-        <span class="nav__logo-text">Dragée Paris</span>
-      </a>
-      <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-list">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__list" id="nav-list" role="list">
-        <li><a href="index.html"           class="nav__link">Accueil</a></li>
-        <li><a href="dragees.html"         class="nav__link">Dragées</a></li>
-        <li><a href="bougies.html"         class="nav__link">Bougies</a></li>
+
+      <ul class="nav__list--left" role="list">
+        <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
+        <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-        <li><a href="a-propos.html"        class="nav__link">À propos</a></li>
-        <li><a href="contact.html"         class="nav__link nav__link--cta">Demander un devis</a></li>
       </ul>
+
+      <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
+        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="36" height="36">
+      </a>
+
+      <div class="nav__end">
+        <ul class="nav__list--right" role="list">
+          <li><a href="a-propos.html"  class="nav__link">À propos</a></li>
+          <li><a href="contact.html"   class="nav__link nav__link--cta">Demander un devis</a></li>
+        </ul>
+        <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
     </nav>
+
+    <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
+      <li><a href="index.html"            class="nav__link">Accueil</a></li>
+      <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
+      <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
+      <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+      <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
+      <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
+    </ul>
   </header>
 
   <main id="main">
 
     <!-- HERO -->
     <section class="hero" aria-label="Bannière principale">
-      <div class="hero__bg">
-        <img src="./images/hero-image.png" alt="" aria-hidden="true" fetchpriority="high">
-      </div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content container">
-        <span class="section-label hero__label fade-in">Artisan confiseur · Île-de-France</span>
-        <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
-        <div class="hero__divider fade-in fade-in--delay-2" aria-hidden="true"></div>
-        <p class="hero__subtitle fade-in fade-in--delay-2">
-          Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux — mariages, naissances, baptêmes &amp; bien plus.
-        </p>
-        <div class="hero__actions fade-in fade-in--delay-3">
-          <a href="dragees.html"  class="btn btn--primary">Découvrir nos créations</a>
-          <a href="contact.html" class="btn btn--secondary">Demander un devis</a>
+      <div class="hero__split">
+
+        <div class="hero__pane hero__pane--content">
+          <div class="hero__inner">
+            <span class="section-label hero__label fade-in">Artisan confiseur · Île-de-France</span>
+            <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
+            <div class="hero__divider fade-in fade-in--delay-2" aria-hidden="true"></div>
+            <p class="hero__subtitle fade-in fade-in--delay-2">
+              Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux — mariages, naissances, baptêmes &amp; bien plus.
+            </p>
+            <div class="hero__actions fade-in fade-in--delay-3">
+              <a href="dragees.html"  class="btn btn--primary">Découvrir nos créations</a>
+              <a href="contact.html" class="btn btn--secondary">Demander un devis</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="hero__scroll fade-in fade-in--delay-4" aria-hidden="true">
-        <span class="hero__scroll-label">Défiler</span>
-        <div class="hero__scroll-line"></div>
+
+        <div class="hero__pane hero__pane--image fade-in fade-in--delay-1">
+          <img src="./images/hero-image.png" alt="Boîtes en céramique et dragées rose poudré" fetchpriority="high">
+        </div>
+
       </div>
     </section>
 

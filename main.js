@@ -14,25 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- 2. Hamburger menu ---- */
   const hamburger = document.getElementById('hamburger');
-  const navList   = document.getElementById('nav-list');
+  const navPanel  = document.getElementById('nav-panel');
   const backdrop  = document.getElementById('nav-backdrop');
-  if (hamburger && navList) {
+  if (hamburger && navPanel) {
     const closeMenu = () => {
-      navList.classList.remove('open');
+      navPanel.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
       backdrop?.classList.remove('open');
       document.body.style.overflow = '';
     };
     hamburger.addEventListener('click', () => {
-      const isOpen = navList.classList.toggle('open');
+      const isOpen = navPanel.classList.toggle('open');
       hamburger.classList.toggle('active', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
       backdrop?.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     backdrop?.addEventListener('click', closeMenu);
-    navList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    navPanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   }
 
