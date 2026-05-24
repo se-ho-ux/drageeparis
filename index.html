@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dragée Paris · Dragées & Bougies Personnalisables en Île-de-France</title>
   <meta name="description" content="Créations artisanales de dragées et bougies personnalisables pour mariages, baptêmes, naissances et événements. Fabrication à la main en Île-de-France.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="./images/mariage/image17.jpeg">
+  <link rel="preload" as="image" href="./images/hero-image.png">
 </head>
 <body>
 
@@ -17,9 +14,12 @@
   <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <!-- NAV -->
-  <header class="header" id="header">
+  <header class="header header--transparent" id="header">
     <nav class="nav container" aria-label="Navigation principale">
-      <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">Dragée Paris</a>
+      <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
+        <img src="./Logos SVG/Symbole/symbole-blanc.svg" alt="" aria-hidden="true" class="nav__logo-img" width="32" height="32">
+        <span class="nav__logo-text">Dragée Paris</span>
+      </a>
       <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-list">
         <span></span><span></span><span></span>
       </button>
@@ -39,17 +39,13 @@
     <!-- HERO -->
     <section class="hero" aria-label="Bannière principale">
       <div class="hero__bg">
-        <img src="./images/mariage/image17.jpeg" alt="" aria-hidden="true" fetchpriority="high">
+        <img src="./images/hero-image.png" alt="" aria-hidden="true" fetchpriority="high">
       </div>
       <div class="hero__overlay"></div>
-      <div class="hero__badge fade-in fade-in--delay-4" aria-hidden="true">
-        <span class="hero__badge-line">Artisan</span>
-        <span class="hero__badge-sep"></span>
-        <span class="hero__badge-line hero__badge-line--sm">Île-de-France</span>
-      </div>
       <div class="hero__content container">
         <span class="section-label hero__label fade-in">Artisan confiseur · Île-de-France</span>
         <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
+        <div class="hero__divider fade-in fade-in--delay-2" aria-hidden="true"></div>
         <p class="hero__subtitle fade-in fade-in--delay-2">
           Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux — mariages, naissances, baptêmes &amp; bien plus.
         </p>
@@ -57,6 +53,10 @@
           <a href="dragees.html"  class="btn btn--primary">Découvrir nos créations</a>
           <a href="contact.html" class="btn btn--secondary">Demander un devis</a>
         </div>
+      </div>
+      <div class="hero__scroll fade-in fade-in--delay-4" aria-hidden="true">
+        <span class="hero__scroll-label">Défiler</span>
+        <div class="hero__scroll-line"></div>
       </div>
     </section>
 
