@@ -365,7 +365,7 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  padding: 1rem 2rem;
+  padding: 1.1rem 2.6rem;
   background-color: var(--rose-btn);
   color: var(--blanc) !important;
   border-radius: 10px;
