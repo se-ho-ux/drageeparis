@@ -365,7 +365,7 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  height: 90px;
+  height: 75px;
   padding-inline: 2.4rem;
   align-self: center;
   display: flex;
