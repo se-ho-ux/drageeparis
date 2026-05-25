@@ -366,15 +366,13 @@ p {
 
 .nav__link--cta {
   height: 50px;
-  padding-block: 0;
-  padding-inline: 2.4rem;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 50px;
+  padding: 0 2.4rem;
+  display: block;
   text-align: center;
   white-space: nowrap;
   min-height: unset;
+  align-self: center;
   font-size: 0.9rem;
   background-color: #B86B65;
   color: var(--blanc) !important;
