@@ -365,11 +365,12 @@ p {
 .nav__link:hover, .nav__link.active { color: var(--or-chaud); }
 
 .nav__link--cta {
-  height: 110px;
+  height: 90px;
   padding-inline: 2.4rem;
   align-self: center;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 0.9rem;
   background-color: #B86B65;
   color: var(--blanc) !important;
