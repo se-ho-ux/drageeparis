@@ -368,9 +368,11 @@ p {
   height: 50px;
   padding-inline: 2.4rem;
   align-self: center;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  white-space: nowrap;
   font-size: 0.9rem;
   background-color: #B86B65;
   color: var(--blanc) !important;
