@@ -399,7 +399,7 @@ p {
   .nav__list--right {
     display: flex;
     flex-direction: row;
-    gap: var(--space-5);
+    gap: 2.2rem;
     align-items: center;
   }
 
