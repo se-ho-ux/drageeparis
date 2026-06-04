@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dragée Paris · Dragées & Bougies Personnalisables en Île-de-France</title>
+  <title>Dragée Paris · Dragées &amp; Bougies Personnalisables en Île-de-France</title>
   <meta name="description" content="Créations artisanales de dragées et bougies personnalisables pour mariages, baptêmes, naissances et événements. Fabrication à la main en Île-de-France.">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="./images/hero-image.png">
 </head>
 <body>
 
@@ -15,25 +14,25 @@
 
   <!-- NAV -->
   <header class="header" id="header">
-    <nav class="nav container" aria-label="Navigation principale">
+    <nav class="nav" aria-label="Navigation principale">
 
       <ul class="nav__list--left" role="list">
         <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
         <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-        <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       </ul>
 
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="60" height="60">
+        <span class="nav__logo-wordmark">Dragée Paris</span>
       </a>
 
       <div class="nav__end">
         <ul class="nav__list--right" role="list">
+          <li><a href="a-propos.html"  class="nav__link">À propos</a></li>
           <li><a href="contact.html"   class="nav__link nav__link--cta">Demander un devis</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
       </div>
 
@@ -44,6 +43,7 @@
       <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
       <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
       <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+      <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
     </ul>
   </header>
@@ -52,297 +52,310 @@
 
     <!-- HERO -->
     <section class="hero" aria-label="Bannière principale">
-      <div class="hero__split">
 
-        <!-- Panneau gauche : contenu éditorial -->
-        <div class="hero__pane hero__pane--content">
-          <div class="hero__inner">
-            <h1 class="hero__title fade-in fade-in--delay-1">L'art de célébrer,<br><em>en douceur</em></h1>
-            <div class="hero__divider fade-in fade-in--delay-2" aria-hidden="true"></div>
-            <p class="hero__subtitle fade-in fade-in--delay-2">
-              Dragées &amp; bougies personnalisables, fabriquées à la main pour sublimer vos moments les plus précieux.
-            </p>
-            <div class="hero__actions fade-in fade-in--delay-3">
-              <a href="dragees.html"  class="btn btn--primary">Découvrir nos créations</a>
-              <a href="contact.html" class="btn btn--rose">Demander un devis</a>
-            </div>
-          </div>
+      <div class="hero__bg">
+        <img
+          src="./images/images-librairy/im7.jpg"
+          alt="Dragées artisanales Dragée Paris"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">L'art de célébrer, en douceur</h1>
+      </div>
+
+      <div class="hero__arrow" aria-hidden="true">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3,6 10,14 17,6"/>
+        </svg>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3,6 10,14 17,6"/>
+        </svg>
+      </div>
+
+    </section>
+
+    <!-- MARQUEE BAND -->
+    <div class="band" aria-hidden="true">
+      <div class="band__track">
+        <span class="band__item">Fabrication artisanale <span class="band__sep"></span></span>
+        <span class="band__item">Mariage <span class="band__sep"></span></span>
+        <span class="band__item">Naissance <span class="band__sep"></span></span>
+        <span class="band__item">Baptême <span class="band__sep"></span></span>
+        <span class="band__item">Anniversaire <span class="band__sep"></span></span>
+        <span class="band__item">Bougies personnalisées <span class="band__sep"></span></span>
+        <span class="band__item">Sur mesure <span class="band__sep"></span></span>
+        <span class="band__item">Île-de-France <span class="band__sep"></span></span>
+        <span class="band__item">Fabrication artisanale <span class="band__sep"></span></span>
+        <span class="band__item">Mariage <span class="band__sep"></span></span>
+        <span class="band__item">Naissance <span class="band__sep"></span></span>
+        <span class="band__item">Baptême <span class="band__sep"></span></span>
+        <span class="band__item">Anniversaire <span class="band__sep"></span></span>
+        <span class="band__item">Bougies personnalisées <span class="band__sep"></span></span>
+        <span class="band__item">Sur mesure <span class="band__sep"></span></span>
+        <span class="band__item">Île-de-France <span class="band__sep"></span></span>
+      </div>
+    </div>
+
+    <!-- COLLECTIONS -->
+    <section class="collections" aria-label="Nos collections">
+      <div class="collections__header fade-in">
+        <div class="collections__headline">
+          <span class="eyebrow">Nos collections</span>
+          <h2 class="section-title">Une création pour<br>chaque célébration</h2>
         </div>
+        <a href="dragees.html" class="collections__view-all">
+          Voir tout <span>→</span>
+        </a>
+      </div>
 
-        <!-- Panneau droit : deux photos en composition -->
-        <div class="hero__pane hero__pane--photos">
+      <div class="collections__grid">
 
-          <div class="hero__photo hero__photo--arch fade-in fade-in--delay-1">
-            <img src="./images/hero-image.png" alt="Boîtes en céramique et dragées rose poudré" fetchpriority="high">
+        <a href="dragees.html" class="col-card fade-in" aria-label="Collection Mariage">
+          <div class="col-card__img">
+            <img src="./images/images-librairy/im1.jpg" alt="Dragées de mariage blanches" loading="lazy">
           </div>
-
-          <div class="hero__photo hero__photo--secondary fade-in fade-in--delay-2">
-            <img src="./images/hero-image2.png" alt="Coffret cadeau avec dragées et nœud satin lavande" loading="lazy">
+          <div class="col-card__body">
+            <p class="col-card__cat">Dragées</p>
+            <h3 class="col-card__name">Mariage</h3>
+            <span class="col-card__arrow">Découvrir <span>→</span></span>
           </div>
+        </a>
 
-          <!-- Badge circulaire tournant -->
-          <div class="hero__badge fade-in fade-in--delay-4" aria-hidden="true">
-            <svg class="hero__badge-ring" viewBox="0 0 120 120">
-              <defs>
-                <path id="badgePath" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"/>
-              </defs>
-              <text>
-                <textPath href="#badgePath" startOffset="0%">PARIS · DRAGÉE · ARTISAN · ÎLE-DE-FRANCE · </textPath>
-              </text>
-            </svg>
-            <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" class="hero__badge-logo">
+        <a href="dragees.html" class="col-card fade-in fade-in--delay-1" aria-label="Collection Naissance">
+          <div class="col-card__img">
+            <img src="./images/images-librairy/im9.jpg" alt="Dragées naissance roses" loading="lazy">
           </div>
+          <div class="col-card__body">
+            <p class="col-card__cat">Dragées</p>
+            <h3 class="col-card__name">Naissance</h3>
+            <span class="col-card__arrow">Découvrir <span>→</span></span>
+          </div>
+        </a>
 
-        </div>
+        <a href="dragees.html" class="col-card fade-in fade-in--delay-2" aria-label="Collection Baptême">
+          <div class="col-card__img">
+            <img src="./images/images-librairy/im5.jpg" alt="Dragées baptême pastel" loading="lazy">
+          </div>
+          <div class="col-card__body">
+            <p class="col-card__cat">Dragées</p>
+            <h3 class="col-card__name">Baptême</h3>
+            <span class="col-card__arrow">Découvrir <span>→</span></span>
+          </div>
+        </a>
+
+        <a href="bougies.html" class="col-card fade-in fade-in--delay-3" aria-label="Collection Bougies">
+          <div class="col-card__img">
+            <img src="./images/bougies/bougie_1.png" alt="Bougie artisanale personnalisée" loading="lazy">
+          </div>
+          <div class="col-card__body">
+            <p class="col-card__cat">Bougies</p>
+            <h3 class="col-card__name">Bougies</h3>
+            <span class="col-card__arrow">Découvrir <span>→</span></span>
+          </div>
+        </a>
 
       </div>
     </section>
 
-    <!-- OCCASIONS -->
-    <section class="occasions">
-      <div class="container">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Nos occasions</span>
-          <h2 class="section__title">Une création pour chaque célébration</h2>
-          <div class="divider divider--center"></div>
-          <p class="section__subtitle">
-            Chaque événement mérite des dragées et des bougies à son image. Choisissez votre occasion et découvrez nos collections.
-          </p>
-        </div>
-        <div class="occasions__grid">
-          <a href="dragees.html" class="occasion-card card--rose fade-in" aria-label="Collection Mariage">
-            <div class="occasion-card__image">
-              <img src="./images/mariage/image-d2.jpeg" alt="Dragées de mariage" loading="lazy" width="400" height="533">
-            </div>
-            <div class="occasion-card__body">
-              <span class="occasion-card__tag">Rose poudré</span>
-              <h3 class="occasion-card__title">Mariage</h3>
-              <p class="occasion-card__desc">Des dragées qui illuminent le grand jour, en harmonie parfaite avec vos couleurs.</p>
-            </div>
-          </a>
-          <a href="dragees.html" class="occasion-card card--beurre fade-in fade-in--delay-1" aria-label="Collection Naissance">
-            <div class="occasion-card__image">
-              <img src="./images/naiss/image-d1.jpeg" alt="Dragées naissance" loading="lazy" width="400" height="533">
-            </div>
-            <div class="occasion-card__body">
-              <span class="occasion-card__tag">Beurre doux</span>
-              <h3 class="occasion-card__title">Naissance</h3>
-              <p class="occasion-card__desc">De tendres souvenirs pour accueillir bébé avec douceur et élégance.</p>
-            </div>
-          </a>
-          <a href="dragees.html" class="occasion-card card--lavande fade-in fade-in--delay-2" aria-label="Collection Baptême">
-            <div class="occasion-card__image">
-              <img src="./images/bapteme/image-d11.jpeg" alt="Dragées baptême" loading="lazy" width="400" height="533">
-            </div>
-            <div class="occasion-card__body">
-              <span class="occasion-card__tag">Lavande</span>
-              <h3 class="occasion-card__title">Baptême</h3>
-              <p class="occasion-card__desc">Une touche de douceur pastel pour célébrer les premières grandes joies.</p>
-            </div>
-          </a>
-          <a href="dragees.html" class="occasion-card card--sauge fade-in fade-in--delay-3" aria-label="Collection Anniversaire">
-            <div class="occasion-card__image">
-              <img src="./images/anniv/image-d4.jpeg" alt="Dragées anniversaire" loading="lazy" width="400" height="533">
-            </div>
-            <div class="occasion-card__body">
-              <span class="occasion-card__tag">Sauge champêtre</span>
-              <h3 class="occasion-card__title">Anniversaire</h3>
-              <p class="occasion-card__desc">Faites de chaque fête un souvenir gourmand et personnalisé.</p>
-            </div>
+    <!-- ARTISAN SPLIT -->
+    <section class="artisan" aria-label="Notre savoir-faire">
+
+      <div class="artisan__visual fade-in">
+        <img
+          src="./images/images-librairy/im2.jpg"
+          alt="Dragées artisanales disposées à la main en Île-de-France"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="artisan__content fade-in fade-in--delay-1">
+        <div class="artisan__ghost-num" aria-hidden="true">01</div>
+        <span class="eyebrow">Notre savoir-faire</span>
+        <h2 class="section-title">Fait avec amour,<br>à la main</h2>
+        <div class="hairline"></div>
+        <p class="section-sub">
+          Née de la passion d'une artisane confiseuse installée en Île-de-France, Dragée Paris perpétue une tradition séculaire de l'art sucré français. Chaque dragée est enrobée à la main, chaque bougie coulée avec soin dans notre atelier.
+        </p>
+        <p class="section-sub">
+          Nous sélectionnons les meilleures amandes, les parfums les plus fins et les emballages les plus élégants — pour des cadeaux qui marquent les mémoires.
+        </p>
+        <div class="artisan__cta">
+          <a href="a-propos.html" class="btn btn--outline">
+            Notre histoire
+            <span class="btn-arrow">→</span>
           </a>
         </div>
       </div>
+
     </section>
 
-    <!-- FEATURED PRODUCTS -->
-    <section class="products">
-      <div class="container">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Nos créations</span>
-          <h2 class="section__title">Dragées &amp; Bougies d'exception</h2>
-          <div class="divider divider--center"></div>
-          <p class="section__subtitle">
-            Un savoir-faire artisanal au service de votre événement : des amandes choisies, des parfums rares, un soin du détail inégalé.
-          </p>
+    <!-- EDITORIAL DARK -->
+    <section class="editorial" aria-label="Nos créations phares">
+      <div class="editorial__header fade-in">
+        <div class="editorial__headline">
+          <span class="eyebrow">Nos créations</span>
+          <h2 class="section-title">Dragées &amp; Bougies<br>d'exception</h2>
         </div>
-        <div class="products__grid">
-          <div class="product-card fade-in">
-            <img src="./images/mariage/image18.jpeg" alt="Dragées mariage dorées" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Dragées Mariage</h4>
-              <span>Collection Or &amp; Blanc</span>
-            </div>
+        <a href="personnalisation.html" class="editorial__link">
+          Sur mesure <span>→</span>
+        </a>
+      </div>
+
+      <div class="editorial__grid">
+
+        <div class="ed-card fade-in">
+          <div class="ed-card__img">
+            <img src="./images/images-librairy/im8.jpg" alt="Dragées premium flottantes" loading="lazy">
           </div>
-          <div class="product-card fade-in fade-in--delay-1">
-            <img src="./images/bougies/bougie_1.png" alt="Bougie personnalisée vanille" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Bougie Vanille &amp; Santal</h4>
-              <span>Parfum artisanal</span>
-            </div>
-          </div>
-          <div class="product-card fade-in fade-in--delay-2">
-            <img src="./images/naiss/image-d7.jpeg" alt="Dragées naissance rose" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Dragées Naissance</h4>
-              <span>Collection Rose Poudré</span>
-            </div>
-          </div>
-          <div class="product-card fade-in fade-in--delay-3">
-            <img src="./images/bougies/bougie_4.png" alt="Bougie fleur d'oranger" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Bougie Fleur d'Oranger</h4>
-              <span>Parfum artisanal</span>
-            </div>
-          </div>
-          <div class="product-card fade-in fade-in--delay-1">
-            <img src="./images/bapteme/image-d12.jpeg" alt="Dragées baptême lavande" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Dragées Baptême</h4>
-              <span>Collection Lavande</span>
-            </div>
-          </div>
-          <div class="product-card fade-in fade-in--delay-2">
-            <img src="./images/bougies/bougie_7.png" alt="Bougie rose et pivoine" loading="lazy" width="400" height="400">
-            <div class="product-card__overlay">
-              <h4>Bougie Rose &amp; Pivoine</h4>
-              <span>Parfum artisanal</span>
-            </div>
+          <div class="ed-card__body">
+            <p class="ed-card__cat">Dragées</p>
+            <h3 class="ed-card__name">Collection Or &amp; Blanc</h3>
+            <p class="ed-card__desc">Dragées enrobées à la main, sélection d'amandes nobles et finitions nacrées.</p>
           </div>
         </div>
-        <div class="text-center mt-8 fade-in">
-          <a href="dragees.html" class="btn btn--outline-gold" style="margin-right:1rem">Voir les dragées</a>
-          <a href="bougies.html" class="btn btn--secondary">Voir les bougies</a>
+
+        <div class="ed-card fade-in fade-in--delay-1">
+          <div class="ed-card__img">
+            <img src="./images/bougies/bougie_4.png" alt="Bougie artisanale Fleur d'Oranger" loading="lazy">
+          </div>
+          <div class="ed-card__body">
+            <p class="ed-card__cat">Bougies</p>
+            <h3 class="ed-card__name">Fleur d'Oranger</h3>
+            <p class="ed-card__desc">Cire naturelle, mèche en coton, fragrance exclusive. Coulée à la main.</p>
+          </div>
         </div>
+
+        <div class="ed-card fade-in fade-in--delay-2">
+          <div class="ed-card__img">
+            <img src="./images/images-librairy/im12.jpg" alt="Dragées colorées empilées en colonnes" loading="lazy">
+          </div>
+          <div class="ed-card__body">
+            <p class="ed-card__cat">Dragées</p>
+            <h3 class="ed-card__name">Palette sur mesure</h3>
+            <p class="ed-card__desc">Chaque couleur, chaque saveur sélectionnée pour s'accorder à votre événement.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="editorial__footer fade-in">
+        <a href="dragees.html" class="btn btn--primary">Voir les dragées <span class="btn-arrow">→</span></a>
+        <a href="bougies.html" class="btn btn--outline" style="border-color:rgba(248,244,238,0.2);color:rgba(248,244,238,0.8)">Voir les bougies</a>
       </div>
     </section>
 
-    <!-- ARTISAN SECTION -->
-    <section class="artisan">
-      <div class="container">
-        <div class="artisan__inner">
-          <div class="artisan__images fade-in">
-            <div class="artisan__img-main">
-              <img src="./images/artisanat_1.png" alt="Atelier artisanal Dragée Paris en Île-de-France" loading="lazy" width="600" height="750">
-            </div>
-            <div class="artisan__img-accent">
-              <img src="./images/mariage/image18.jpeg" alt="Dragées artisanales en cours de préparation" loading="lazy" width="300" height="300">
-            </div>
-          </div>
-          <div class="artisan__content fade-in fade-in--delay-1">
-            <span class="section-label">Notre savoir-faire</span>
-            <h2 class="section__title">Fait avec amour,<br><em>à la main</em></h2>
-            <div class="divider"></div>
-            <p class="section__subtitle">
-              Née de la passion d'une artisane confiseuse installée en Île-de-France, Dragée Paris perpétue une tradition séculaire de l'art sucré français. Chaque dragée est enrobée à la main, chaque bougie coulée avec soin dans notre atelier.
-            </p>
-            <p class="section__subtitle" style="margin-top:1rem">
-              Nous sélectionnons les meilleures amandes, les parfums les plus fins et les emballages les plus élégants pour vous offrir des cadeaux qui marquent les mémoires.
-            </p>
-            <a href="a-propos.html" class="btn btn--primary">Découvrir notre histoire</a>
-          </div>
-        </div>
+    <!-- CTA CENTRÉ -->
+    <section class="cta-center" aria-label="Commande sur mesure">
+      <div class="cta-center__bg" aria-hidden="true">
+        <img src="./images/images-librairy/im14.jpg" alt="" loading="lazy">
       </div>
-    </section>
-
-    <!-- CTA BANNER -->
-    <section class="cta-banner">
-      <div class="container">
-        <span class="section-label" style="color:var(--or-pale)">Sur mesure</span>
-        <h2 class="fade-in">Chaque création est unique,<br><em>comme votre événement</em></h2>
-        <p class="cta-banner__sub fade-in fade-in--delay-1">
+      <div class="cta-center__body">
+        <span class="eyebrow fade-in">Sur mesure</span>
+        <h2 class="cta-center__title fade-in fade-in--delay-1">
+          Chaque création est unique,<br>comme votre événement
+        </h2>
+        <p class="cta-center__sub fade-in fade-in--delay-2">
           Couleurs, parfums, emballages, inscriptions — nous façonnons vos dragées et vos bougies selon vos désirs et l'esprit de votre célébration.
         </p>
-        <div class="fade-in fade-in--delay-2">
-          <a href="contact.html" class="btn btn--primary" style="margin-right:.75rem">Demander un devis</a>
-          <a href="personnalisation.html" class="btn btn--light">Explorer les options</a>
+        <div class="cta-center__btns fade-in fade-in--delay-3">
+          <a href="contact.html"          class="btn btn--dark">Demander un devis <span class="btn-arrow">→</span></a>
+          <a href="personnalisation.html" class="btn btn--outline">Explorer les options</a>
         </div>
       </div>
     </section>
 
-    <!-- INSTAGRAM STRIP -->
-    <section class="instagram">
-      <div class="container">
-        <div class="instagram__header fade-in">
-          <span class="section-label">Galerie</span>
-          <h2 class="section__title" style="font-size:clamp(1.4rem,3vw,2rem)">Nos créations en images</h2>
-          <span class="instagram__handle">@drageeparis</span>
-        </div>
-        <div class="instagram__grid">
-          <div class="instagram__item fade-in">
-            <img src="./images/mariage/image65.jpeg" alt="Dragées mariage" loading="lazy" width="300" height="300">
-          </div>
-          <div class="instagram__item fade-in fade-in--delay-1">
-            <img src="./images/bougies/bougie_2.png" alt="Bougie artisanale" loading="lazy" width="300" height="300">
-          </div>
-          <div class="instagram__item fade-in fade-in--delay-2">
-            <img src="./images/anniv/image14.jpeg" alt="Dragées anniversaire" loading="lazy" width="300" height="300">
-          </div>
-          <div class="instagram__item fade-in fade-in--delay-3">
-            <img src="./images/bougies/bougie_5.png" alt="Bougie figue sauvage" loading="lazy" width="300" height="300">
-          </div>
-          <div class="instagram__item fade-in fade-in--delay-2">
-            <img src="./images/mariage/image20.jpeg" alt="Dragées mariage blanc" loading="lazy" width="300" height="300">
-          </div>
-          <div class="instagram__item fade-in fade-in--delay-3">
-            <img src="./images/naiss/image-d8.jpg" alt="Dragées naissance" loading="lazy" width="300" height="300">
-          </div>
-        </div>
+    <!-- GALERIE STRIP -->
+    <div class="gallery" role="img" aria-label="Galerie de créations Dragée Paris">
+      <div class="gallery__item fade-in">
+        <img src="./images/images-librairy/im3.jpg"  alt="Dragées blanches macro" loading="lazy">
       </div>
-    </section>
+      <div class="gallery__item fade-in fade-in--delay-1">
+        <img src="./images/images-librairy/im7.jpg"  alt="Dragées pastel flottantes" loading="lazy">
+      </div>
+      <div class="gallery__item fade-in fade-in--delay-2">
+        <img src="./images/images-librairy/im10.jpg" alt="Arc de dragées colorées" loading="lazy">
+      </div>
+      <div class="gallery__item fade-in fade-in--delay-1">
+        <img src="./images/images-librairy/im20.jpg" alt="Dragées sur fond rose" loading="lazy">
+      </div>
+      <div class="gallery__item fade-in fade-in--delay-2">
+        <img src="./images/bougies/bougie_2.png"     alt="Bougie artisanale" loading="lazy">
+      </div>
+      <div class="gallery__item fade-in fade-in--delay-3">
+        <img src="./images/images-librairy/im25.jpg" alt="Pluie de dragées et sucre glace" loading="lazy">
+      </div>
+    </div>
 
     <!-- FAQ -->
-    <section class="faq">
-      <div class="container">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Questions fréquentes</span>
-          <h2 class="section__title">Tout ce que vous devez savoir</h2>
-          <div class="divider divider--center"></div>
+    <section class="faq" aria-label="Questions fréquentes">
+      <div class="faq__layout">
+        <div class="faq__heading fade-in">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 class="section-title">Tout ce que<br>vous devez<br>savoir</h2>
         </div>
-        <div class="faq__list">
-          <div class="faq__item fade-in">
+        <div class="faq__list fade-in fade-in--delay-1">
+
+          <div class="faq__item">
             <button class="faq__question" aria-expanded="false">
               <span>Quel est le délai de fabrication ?</span>
-              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
             </button>
             <div class="faq__answer" role="region">
               <div class="faq__answer-inner">
-                <p>Pour les dragées, comptez généralement 2 à 3 semaines entre la confirmation de votre commande et la livraison. Pour les bougies personnalisées, le délai est de 1 à 2 semaines. Nous vous recommandons de nous contacter au moins 4 semaines avant votre événement pour les grandes quantités.</p>
+                Pour les dragées, comptez 2 à 3 semaines entre la confirmation de votre commande et la livraison. Pour les bougies personnalisées, le délai est de 1 à 2 semaines. Nous vous recommandons de nous contacter au moins 4 semaines avant votre événement pour les grandes quantités.
               </div>
             </div>
           </div>
-          <div class="faq__item fade-in fade-in--delay-1">
+
+          <div class="faq__item">
             <button class="faq__question" aria-expanded="false">
               <span>Quelle quantité minimum peut-on commander ?</span>
-              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
             </button>
             <div class="faq__answer" role="region">
               <div class="faq__answer-inner">
-                <p>Nous acceptons les commandes à partir de 50 dragées pour les particuliers. Pour les mariages et événements professionnels, nous recommandons un minimum de 100 pièces afin de profiter pleinement de la personnalisation. Les bougies sont disponibles à l'unité ou par lots.</p>
+                Nous acceptons les commandes à partir de 50 dragées pour les particuliers. Pour les mariages et événements professionnels, nous recommandons un minimum de 100 pièces afin de profiter pleinement de la personnalisation. Les bougies sont disponibles à l'unité ou par lots.
               </div>
             </div>
           </div>
-          <div class="faq__item fade-in fade-in--delay-2">
+
+          <div class="faq__item">
             <button class="faq__question" aria-expanded="false">
               <span>Comment se déroule la personnalisation ?</span>
-              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
             </button>
             <div class="faq__answer" role="region">
               <div class="faq__answer-inner">
-                <p>Après réception de votre demande de devis, nous organisons un échange (par téléphone ou mail) pour affiner vos choix : couleurs, parfums, type d'emballage et inscription. Un échantillon de couleur ou une maquette d'emballage vous sera soumis avant lancement de la fabrication.</p>
+                Après réception de votre demande de devis, nous organisons un échange pour affiner vos choix : couleurs, parfums, type d'emballage et inscription. Un échantillon de couleur ou une maquette d'emballage vous sera soumis avant lancement de la fabrication.
               </div>
             </div>
           </div>
-          <div class="faq__item fade-in fade-in--delay-3">
+
+          <div class="faq__item">
             <button class="faq__question" aria-expanded="false">
               <span>Livrez-vous en dehors de l'Île-de-France ?</span>
-              <svg class="faq__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
             </button>
             <div class="faq__answer" role="region">
               <div class="faq__answer-inner">
-                <p>Oui, nous livrons dans toute la France métropolitaine via transporteur soigné, avec emballage de protection renforcé pour garantir l'intégrité de vos créations. Les frais de port sont calculés selon le poids et la destination. La remise en main propre est possible pour les clients en Île-de-France.</p>
+                Oui, nous livrons dans toute la France métropolitaine via transporteur soigné, avec emballage de protection renforcé. Les frais de port sont calculés selon le poids et la destination. La remise en main propre est possible pour les clients en Île-de-France.
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -351,12 +364,18 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="footer__inner">
+
       <div class="footer__brand">
         <span class="footer__logo">Dragée Paris</span>
-        <p class="footer__tagline">Créations artisanales en Île-de-France</p>
+        <p class="footer__tagline">Créations artisanales, Île-de-France</p>
+        <div class="footer__social">
+          <a href="#" rel="noopener noreferrer">Instagram</a>
+          <a href="#" rel="noopener noreferrer">Pinterest</a>
+        </div>
       </div>
-      <nav aria-label="Navigation footer">
+
+      <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
           <li><a href="dragees.html">Dragées</a></li>
@@ -367,15 +386,17 @@
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </nav>
+
       <div>
         <span class="footer__col-title">Nous contacter</span>
         <ul class="footer__contact-list">
           <li><a href="tel:+33601234567">06 01 23 45 67</a></li>
           <li><a href="mailto:contact@drageeparis.fr">contact@drageeparis.fr</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram · @drageeparis</a></li>
-          <li><a href="#">Île-de-France</a></li>
+          <li><a href="#">@drageeparis</a></li>
+          <li><span style="font-size:13px;font-weight:300;color:rgba(248,244,238,0.35)">Île-de-France</span></li>
         </ul>
       </div>
+
       <div>
         <span class="footer__col-title">Inspirations &amp; actualités</span>
         <p class="footer__newsletter-text">Recevez nos nouvelles créations directement dans votre boîte mail.</p>
@@ -384,6 +405,7 @@
           <button type="submit">S'abonner</button>
         </form>
       </div>
+
     </div>
     <div class="footer__bottom">
       <p>© 2024 Dragée Paris · Artisan confiseur en Île-de-France · Tous droits réservés</p>
