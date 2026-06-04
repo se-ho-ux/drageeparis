@@ -106,68 +106,35 @@
 
       <div class="collections__intro fade-in">
         <p class="collections__intro-title">Nos collections</p>
-        <p class="collections__intro-sub">Mariage · Naissance · Baptême · Bougies</p>
+        <p class="collections__intro-sub">Mariage · Naissance · Baptême</p>
       </div>
 
-      <div class="collections__stage">
+      <div class="collections__grid fade-in fade-in--delay-1">
 
-        <button class="collections__arrow collections__arrow--prev" id="col-prev" aria-label="Collection précédente" disabled>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15,18 9,12 15,6"/>
-          </svg>
-        </button>
-
-        <div class="collections__viewport">
-          <div class="collections__track" id="col-track">
-
-            <div class="col-slide">
-              <div class="col-slide__duo">
-                <img src="./images/images-librairy/im1.jpg"  alt="Dragées Mariage" loading="lazy">
-                <img src="./images/images-librairy/im3.jpg"  alt="Dragées Mariage" loading="lazy">
-              </div>
-              <p class="col-slide__label">Mariage</p>
-            </div>
-
-            <div class="col-slide">
-              <div class="col-slide__duo">
-                <img src="./images/images-librairy/im9.jpg"  alt="Dragées Naissance" loading="lazy">
-                <img src="./images/images-librairy/im8.jpg"  alt="Dragées Naissance" loading="lazy">
-              </div>
-              <p class="col-slide__label">Naissance</p>
-            </div>
-
-            <div class="col-slide">
-              <div class="col-slide__duo">
-                <img src="./images/images-librairy/im5.jpg"  alt="Dragées Baptême" loading="lazy">
-                <img src="./images/images-librairy/im14.jpg" alt="Dragées Baptême" loading="lazy">
-              </div>
-              <p class="col-slide__label">Baptême</p>
-            </div>
-
-            <div class="col-slide">
-              <div class="col-slide__duo">
-                <img src="./images/bougies/bougie_1.png" alt="Bougies" loading="lazy">
-                <img src="./images/bougies/bougie_4.png" alt="Bougies" loading="lazy">
-              </div>
-              <p class="col-slide__label">Bougies</p>
-            </div>
-
+        <div class="col-item">
+          <div class="col-item__duo">
+            <img src="./images/images-librairy/im1.jpg" alt="Dragées Mariage" loading="lazy">
+            <img src="./images/images-librairy/im3.jpg" alt="Dragées Mariage" loading="lazy">
           </div>
+          <p class="col-item__label">Mariage</p>
         </div>
 
-        <button class="collections__arrow collections__arrow--next" id="col-next" aria-label="Collection suivante">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9,18 15,12 9,6"/>
-          </svg>
-        </button>
+        <div class="col-item">
+          <div class="col-item__duo">
+            <img src="./images/images-librairy/im9.jpg" alt="Dragées Naissance" loading="lazy">
+            <img src="./images/images-librairy/im8.jpg" alt="Dragées Naissance" loading="lazy">
+          </div>
+          <p class="col-item__label">Naissance</p>
+        </div>
 
-      </div>
+        <div class="col-item">
+          <div class="col-item__duo">
+            <img src="./images/images-librairy/im5.jpg"  alt="Dragées Baptême" loading="lazy">
+            <img src="./images/images-librairy/im14.jpg" alt="Dragées Baptême" loading="lazy">
+          </div>
+          <p class="col-item__label">Baptême</p>
+        </div>
 
-      <div class="collections__dots" id="col-dots">
-        <button class="col-dot active" aria-label="Collection 1"></button>
-        <button class="col-dot"        aria-label="Collection 2"></button>
-        <button class="col-dot"        aria-label="Collection 3"></button>
-        <button class="col-dot"        aria-label="Collection 4"></button>
       </div>
 
     </section>
