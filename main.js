@@ -122,7 +122,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---- 8. FAQ accordion ---- */
+  /* ---- 8. Collections carousel ---- */
+  const colTrack = document.getElementById('col-track');
+  if (colTrack) {
+    const viewport  = colTrack.parentElement;
+    const slides    = Array.from(colTrack.querySelectorAll('.col-slide'));
+    const dotsWrap  = document.getElementById('col-dots');
+    const dots      = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.col-dot')) : [];
+    const btnPrev   = document.getElementById('col-prev');
+    const btnNext   = document.getElementById('col-next');
+    const total     = slides.length;
+    let   current   = 0;
+    let   isAnimating = false;
+
+    const getMetrics = () => {
+      const cW       = viewport.offsetWidth;
+      const slideW   = slides[0].offsetWidth; // 60% of cW from CSS
+      const gap      = 20;
+      const initOff  = (cW - slideW) / 2;    // first slide centered
+      return { cW, slideW, gap, initOff };
+    };
+
+    const slideTo = (index, instant) => {
+      if (isAnimating && !instant) return;
+      const { slideW, gap, initOff } = getMetrics();
+      current = Math.max(0, Math.min(index, total - 1));
+      const offset = initOff - current * (slideW + gap);
+
+      if (instant) colTrack.style.transition = 'none';
+      colTrack.style.transform = `translateX(${offset}px)`;
+      if (instant) requestAnimationFrame(() => { colTrack.style.transition = ''; });
+
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      if (btnPrev) btnPrev.disabled = current === 0;
+      if (btnNext) btnNext.disabled = current === total - 1;
+
+      if (!instant) {
+        isAnimating = true;
+        setTimeout(() => { isAnimating = false; }, 800);
+      }
+    };
+
+    btnPrev?.addEventListener('click', () => slideTo(current - 1));
+    btnNext?.addEventListener('click', () => slideTo(current + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => slideTo(i)));
+
+    window.addEventListener('resize', () => slideTo(current, true), { passive: true });
+
+    slideTo(0, true);
+  }
+
+  /* ---- 9. FAQ accordion ---- */
   document.querySelectorAll('.faq__question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item   = btn.closest('.faq__item');
@@ -138,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---- 9. Newsletter forms ---- */
+  /\* ---- 10. Newsletter forms ---- */
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
