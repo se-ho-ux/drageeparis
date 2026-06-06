@@ -646,26 +646,24 @@ body::before {
 .artisan {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 76vh;
-  border-top: 1px solid var(--ink-20);
+  background: var(--paper);
 }
 .artisan__visual {
-  overflow: hidden;
-  position: relative;
-}
-.artisan__visual::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, transparent 70%, var(--paper-2) 100%);
-  pointer-events: none;
-  z-index: 1;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 48px;
 }
 .artisan__visual video {
   width: 100%;
-  height: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 520px;
   object-fit: cover;
-  object-position: center;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(43, 42, 40, 0.10);
+  display: block;
 }
 
 .artisan__content {
@@ -673,8 +671,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--paper-2);
-  border-left: 1px solid var(--ink-20);
+  background: var(--paper);
 }
 .artisan__ghost-num {
   font-size: 100px;
@@ -734,8 +731,9 @@ body::before {
 
 @media (max-width: 1024px) {
   .artisan { grid-template-columns: 1fr; }
-  .artisan__visual { min-height: 65vw; }
-  .artisan__content { padding: 56px 20px; border-left: none; border-top: 1px solid var(--ink-20); }
+  .artisan__visual { padding: 48px 24px 24px; }
+  .artisan__visual video { max-width: 260px; max-height: 400px; }
+  .artisan__content { padding: 32px 20px 56px; }
   .artisan__ghost-num { font-size: 64px; }
 }
 
