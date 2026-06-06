@@ -5,82 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personnalisation · Dragée Paris</title>
   <meta name="description" content="Personnalisez vos dragées et bougies : couleurs, parfums, emballages, inscriptions. Demandez votre devis pour un événement sur mesure.">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
-  <header class="header" id="header">
-    <nav class="nav container" aria-label="Navigation principale">
-
+  <header class="header header--inner" id="header">
+    <nav class="nav" aria-label="Navigation principale">
       <ul class="nav__list--left" role="list">
         <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
         <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
-        <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-        <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
+        <li><a href="personnalisation.html" class="nav__link active">Personnalisation</a></li>
       </ul>
-
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="60" height="60">
+        <span class="nav__logo-wordmark">Dragée Paris</span>
       </a>
-
       <div class="nav__end">
         <ul class="nav__list--right" role="list">
-          <li><a href="contact.html"   class="nav__link nav__link--cta">Demander un devis</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="contact.html"  class="nav__link nav__link--cta">Demander un devis</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
       </div>
-
     </nav>
-
     <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
       <li><a href="index.html"            class="nav__link">Accueil</a></li>
       <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
       <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
       <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+      <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
     </ul>
   </header>
 
   <main id="main">
 
-    <!-- PAGE HERO -->
-    <div class="page-hero page-hero--lavande">
-      <div class="container">
-        <span class="section-label page-hero__label">Sur mesure</span>
-        <h1 class="section__title">Personnalisation</h1>
-        <div class="divider divider--center" style="margin-top:1rem"></div>
-        <p class="page-hero__subtitle">
-          Chaque création Dragée Paris est unique. Nous adaptons couleurs, parfums, emballages et inscriptions à votre événement et vos désirs.
-        </p>
-      </div>
+    <div class="page-intro fade-in">
+      <span class="page-intro__eyebrow">Sur mesure</span>
+      <h1 class="page-intro__title">Personnalisation</h1>
+      <p class="page-intro__sub">Chaque création Dragée Paris est unique. Nous adaptons couleurs, parfums, emballages et inscriptions à votre événement et vos désirs.</p>
     </div>
 
-    <!-- 3 STEPS -->
-    <section class="bg-blanc">
-      <div class="container">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Comment ça marche</span>
-          <h2 class="section__title">Votre commande en 3 étapes</h2>
-          <div class="divider divider--center"></div>
-        </div>
-        <div class="steps__grid">
-          <div class="step-card fade-in">
+    <section class="section-page" aria-label="Comment ça marche">
+      <div style="max-width:1200px;margin:0 auto;">
+        <span class="eyebrow fade-in">Comment ça marche</span>
+        <h2 class="section-title fade-in fade-in--delay-1">Votre commande en 3 étapes</h2>
+        <div class="steps__grid fade-in fade-in--delay-2">
+          <div class="step-card">
             <span class="step-card__number">01</span>
             <h3>Choisissez</h3>
             <p>Sélectionnez vos produits : dragées, bougies ou coffrets. Indiquez-nous l'occasion et les quantités estimées.</p>
           </div>
-          <div class="step-card fade-in fade-in--delay-1">
+          <div class="step-card">
             <span class="step-card__number">02</span>
             <h3>Personnalisez</h3>
             <p>Choisissez vos couleurs, vos parfums, vos emballages et vos inscriptions. Partagez-nous vos inspirations.</p>
           </div>
-          <div class="step-card fade-in fade-in--delay-2">
+          <div class="step-card">
             <span class="step-card__number">03</span>
             <h3>Recevez</h3>
             <p>Nous fabriquons votre commande à la main et vous la livrons dans les délais convenus, emballée avec soin.</p>
@@ -89,21 +74,15 @@
       </div>
     </section>
 
-    <!-- OPTIONS -->
-    <section class="bg-papier">
-      <div class="container">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Options disponibles</span>
-          <h2 class="section__title">Tout peut être personnalisé</h2>
-          <div class="divider divider--center"></div>
-          <p class="section__subtitle">
-            Nous adaptons chaque détail pour que vos créations vous ressemblent parfaitement.
-          </p>
-        </div>
-        <div class="options__grid">
+    <section class="section-page section-page--paper2" aria-label="Options disponibles">
+      <div style="max-width:1200px;margin:0 auto;">
+        <span class="eyebrow fade-in">Options disponibles</span>
+        <h2 class="section-title fade-in fade-in--delay-1">Tout peut être personnalisé</h2>
+        <p class="section-sub fade-in fade-in--delay-2" style="margin-top:12px;">Nous adaptons chaque détail pour que vos créations vous ressemblent parfaitement.</p>
+        <div class="options__grid fade-in fade-in--delay-3">
 
-          <div class="option-card fade-in" style="background-color:var(--rose)">
-            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+          <div class="option-card">
+            <div class="option-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
               </svg>
@@ -112,8 +91,8 @@
             <p>Choisissez parmi notre palette ou apportez votre nuancier pour un accord parfait avec votre décoration.</p>
           </div>
 
-          <div class="option-card fade-in fade-in--delay-1" style="background-color:var(--beurre)">
-            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+          <div class="option-card">
+            <div class="option-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
               </svg>
@@ -122,8 +101,8 @@
             <p>Pour les bougies, choisissez parmi nos 10 parfums artisanaux ou demandez une création exclusive.</p>
           </div>
 
-          <div class="option-card fade-in fade-in--delay-2" style="background-color:var(--sauge)">
-            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+          <div class="option-card">
+            <div class="option-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
               </svg>
@@ -132,8 +111,8 @@
             <p>Boîtes, sachets en organza, rubans, étiquettes — chaque contenant est sélectionné avec la même attention que le contenu.</p>
           </div>
 
-          <div class="option-card fade-in fade-in--delay-3" style="background-color:var(--lavande)">
-            <div class="option-card__icon" style="background-color:rgba(255,255,255,.5)">
+          <div class="option-card">
+            <div class="option-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
               </svg>
@@ -146,33 +125,27 @@
       </div>
     </section>
 
-    <!-- MINI DEVIS FORM -->
-    <section class="mini-form-section">
-      <div class="container" style="max-width:760px">
-        <div class="section__header section__header--center fade-in">
-          <span class="section-label">Première étape</span>
-          <h2 class="section__title">Décrivez votre projet</h2>
-          <div class="divider divider--center"></div>
-          <p class="section__subtitle">
-            Dites-nous l'essentiel et nous vous recontactons sous 48h avec une proposition personnalisée.
-          </p>
-        </div>
+    <section class="form-section" aria-label="Décrivez votre projet">
+      <div style="max-width:760px;margin:0 auto;">
+        <span class="eyebrow fade-in">Première étape</span>
+        <h2 class="section-title fade-in fade-in--delay-1" style="margin-bottom:12px;">Décrivez votre projet</h2>
+        <p class="section-sub fade-in fade-in--delay-2">Dites-nous l'essentiel et nous vous recontactons sous 48h avec une proposition personnalisée.</p>
 
-        <form class="form fade-in" id="devis-form" novalidate>
+        <form class="form fade-in fade-in--delay-3" id="devis-form" novalidate style="margin-top:48px;">
           <div class="form__row">
             <div class="form__group">
-              <label class="form__label" for="prenom">Prénom <span class="required" aria-label="obligatoire">*</span></label>
+              <label class="form__label" for="prenom">Prénom <span class="required">*</span></label>
               <input class="form__input" type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required>
               <span class="form__error" role="alert">Ce champ est obligatoire.</span>
             </div>
             <div class="form__group">
-              <label class="form__label" for="email">E-mail <span class="required" aria-label="obligatoire">*</span></label>
+              <label class="form__label" for="email">E-mail <span class="required">*</span></label>
               <input class="form__input" type="email" id="email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
               <span class="form__error" role="alert">Veuillez saisir une adresse e-mail valide.</span>
             </div>
           </div>
           <div class="form__group">
-            <label class="form__label" for="evenement">Type d'événement <span class="required" aria-label="obligatoire">*</span></label>
+            <label class="form__label" for="evenement">Type d'événement <span class="required">*</span></label>
             <select class="form__select" id="evenement" name="evenement" required>
               <option value="" disabled selected>Choisissez votre occasion</option>
               <option value="mariage">Mariage</option>
@@ -186,13 +159,14 @@
             <span class="form__error" role="alert">Veuillez choisir un type d'événement.</span>
           </div>
           <div class="form__group">
-            <label class="form__label" for="message">Votre projet <span class="required" aria-label="obligatoire">*</span></label>
+            <label class="form__label" for="message">Votre projet <span class="required">*</span></label>
             <textarea class="form__textarea" id="message" name="message" placeholder="Décrivez votre événement, vos couleurs souhaitées, vos quantités estimées..." required></textarea>
             <span class="form__error" role="alert">Merci de décrire votre projet.</span>
           </div>
           <div class="form__submit">
-            <button type="submit" class="btn btn--primary">Envoyer ma demande</button>
+            <button type="submit" class="btn btn--dark">Envoyer ma demande <span class="btn-arrow">→</span></button>
           </div>
+          <p class="form__meta">Pour une demande plus détaillée, utilisez notre <a href="contact.html" style="text-decoration:underline;color:var(--ink);">formulaire de devis complet</a>.</p>
         </form>
 
         <div class="form__success" id="form-success" role="status" aria-live="polite">
@@ -201,26 +175,19 @@
           </svg>
           <h3>Merci pour votre message !</h3>
           <p>Nous avons bien reçu votre demande et vous recontacterons dans les 48 heures ouvrées.</p>
-          <a href="contact.html" class="btn btn--secondary" style="margin-top:1.5rem">Formulaire complet</a>
+          <a href="contact.html" class="btn btn--outline" style="margin-top:24px;display:inline-flex;">Formulaire complet</a>
         </div>
-
-        <p style="text-align:center;margin-top:1.5rem;font-size:.8rem">
-          Pour une demande plus détaillée, utilisez notre <a href="contact.html" style="color:var(--or-chaud);text-decoration:underline">formulaire de devis complet</a> avec pièce jointe.
-        </p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-banner">
-      <div class="container">
-        <span class="section-label" style="color:var(--or-pale)">Des questions ?</span>
-        <h2 class="fade-in">Parlons de votre projet</h2>
-        <p class="cta-banner__sub fade-in fade-in--delay-1">
-          Notre équipe est disponible pour vous accompagner dans chaque étape de votre commande personnalisée.
-        </p>
-        <div class="fade-in fade-in--delay-2">
-          <a href="tel:+33601234567" class="btn btn--primary" style="margin-right:.75rem">Nous appeler</a>
-          <a href="contact.html"    class="btn btn--light">Écrire un message</a>
+    <section class="cta-center" aria-label="Contact">
+      <div class="cta-center__body">
+        <span class="eyebrow fade-in">Des questions ?</span>
+        <h2 class="cta-center__title fade-in fade-in--delay-1">Parlons de votre projet</h2>
+        <p class="cta-center__sub fade-in fade-in--delay-2">Notre équipe est disponible pour vous accompagner dans chaque étape de votre commande personnalisée.</p>
+        <div class="cta-center__btns fade-in fade-in--delay-3">
+          <a href="tel:+33601234567" class="btn btn--dark">Nous appeler <span class="btn-arrow">→</span></a>
+          <a href="contact.html"     class="btn btn--outline">Écrire un message</a>
         </div>
       </div>
     </section>
@@ -228,19 +195,23 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">Dragée Paris</span>
-        <p class="footer__tagline">Créations artisanales en Île-de-France</p>
+        <p class="footer__tagline">Créations artisanales, Île-de-France</p>
+        <div class="footer__social">
+          <a href="#" rel="noopener noreferrer">Instagram</a>
+          <a href="#" rel="noopener noreferrer">Pinterest</a>
+        </div>
       </div>
-      <nav aria-label="Navigation footer">
+      <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
-          <li><a href="index.html">Accueil</a></li>
           <li><a href="dragees.html">Dragées</a></li>
           <li><a href="bougies.html">Bougies</a></li>
           <li><a href="personnalisation.html">Personnalisation</a></li>
           <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </nav>
@@ -249,12 +220,12 @@
         <ul class="footer__contact-list">
           <li><a href="tel:+33601234567">06 01 23 45 67</a></li>
           <li><a href="mailto:contact@drageeparis.fr">contact@drageeparis.fr</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram · @drageeparis</a></li>
+          <li><a href="#">@drageeparis</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer__col-title">Inspirations</span>
-        <p class="footer__newsletter-text">Recevez nos nouvelles créations dans votre boîte mail.</p>
+        <span class="footer__col-title">Inspirations &amp; actualités</span>
+        <p class="footer__newsletter-text">Recevez nos nouvelles créations directement dans votre boîte mail.</p>
         <form class="newsletter-form" aria-label="Inscription newsletter">
           <input type="email" placeholder="Votre adresse e-mail" aria-label="Adresse e-mail" required>
           <button type="submit">S'abonner</button>

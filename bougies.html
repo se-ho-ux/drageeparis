@@ -4,236 +4,202 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bougies · Dragée Paris</title>
-  <meta name="description" content="Bougies artisanales personnalisables aux parfums naturels : vanille, fleur d'oranger, amande, rose... Fabriquées à la main en Île-de-France.">
-
+  <meta name="description" content="Bougies artisanales personnalisables aux parfums naturels : vanille, fleur d'oranger, amande, rose. Fabriquées à la main en Île-de-France.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
-  <header class="header" id="header">
-    <nav class="nav container" aria-label="Navigation principale">
-
+  <header class="header header--inner" id="header">
+    <nav class="nav" aria-label="Navigation principale">
       <ul class="nav__list--left" role="list">
         <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
-        <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
+        <li><a href="bougies.html"          class="nav__link active">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-        <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       </ul>
-
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="60" height="60">
+        <span class="nav__logo-wordmark">Dragée Paris</span>
       </a>
-
       <div class="nav__end">
         <ul class="nav__list--right" role="list">
-          <li><a href="contact.html"   class="nav__link nav__link--cta">Demander un devis</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="contact.html"  class="nav__link nav__link--cta">Demander un devis</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
       </div>
-
     </nav>
-
     <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
       <li><a href="index.html"            class="nav__link">Accueil</a></li>
       <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
       <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
       <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+      <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
     </ul>
   </header>
 
   <main id="main">
 
-    <!-- PAGE HERO -->
-    <div class="page-hero page-hero--beurre">
-      <div class="container">
-        <span class="section-label page-hero__label">Notre collection</span>
-        <h1 class="section__title">Nos Bougies</h1>
-        <div class="divider divider--center" style="margin-top:1rem"></div>
-        <p class="page-hero__subtitle">
-          Coulées à la main en cire naturelle, nos bougies diffusent des parfums d'exception et peuvent être personnalisées avec vos initiales, dates ou messages.
-        </p>
+    <div class="page-intro page-intro--split fade-in">
+      <div style="padding-bottom: 72px;">
+        <span class="page-intro__eyebrow">Collection</span>
+        <h1 class="page-intro__title">Nos Bougies</h1>
+        <p class="page-intro__sub">Coulées à la main en cire naturelle, nos bougies diffusent des parfums d'exception et s'offrent seules ou en coffret, personnalisées selon vos désirs.</p>
+      </div>
+      <div class="page-intro__visual">
+        <img src="./images/bougies/bougie_3.png" alt="Bougie artisanale Dragée Paris" fetchpriority="high">
       </div>
     </div>
 
-    <!-- BOUGIES GRID -->
-    <section class="bg-papier">
-      <div class="container">
-        <div class="bougies__grid">
+    <section class="section-page" aria-label="Nos parfums">
+      <div class="bougies__grid">
 
-          <article class="bougie-card fade-in">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_1.png" alt="Bougie Vanille et Bois de Santal" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°01</span>
-              <h3 class="bougie-card__name">Vanille &amp; Santal</h3>
-              <p class="bougie-card__desc">Douce chaleur enveloppante, idéale pour les soirées d'hiver.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_1.png" alt="Bougie Vanille et Bois de Santal" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°01</span>
+            <h3 class="bougie-card__name">Vanille &amp; Santal</h3>
+            <p class="bougie-card__desc">Douce chaleur enveloppante, idéale pour les soirées d'hiver.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-1">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_2.png" alt="Bougie Fleur d'Oranger" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°02</span>
-              <h3 class="bougie-card__name">Fleur d'Oranger</h3>
-              <p class="bougie-card__desc">Essence de printemps, légère et lumineuse comme un matin de mai.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-1">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_2.png" alt="Bougie Fleur d'Oranger" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°02</span>
+            <h3 class="bougie-card__name">Fleur d'Oranger</h3>
+            <p class="bougie-card__desc">Essence de printemps, légère et lumineuse comme un matin de mai.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-2">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_3.png" alt="Bougie Amande Douce" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°03</span>
-              <h3 class="bougie-card__name">Amande Douce</h3>
-              <p class="bougie-card__desc">Gourmandise subtile qui rappelle les confiseries de l'enfance.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-2">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_3.png" alt="Bougie Amande Douce" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°03</span>
+            <h3 class="bougie-card__name">Amande Douce</h3>
+            <p class="bougie-card__desc">Gourmandise subtile qui rappelle les confiseries de l'enfance.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-3">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_4.png" alt="Bougie Rose de Grasse" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°04</span>
-              <h3 class="bougie-card__name">Rose de Grasse</h3>
-              <p class="bougie-card__desc">Élégance florale absolue, symbole de raffinement à la française.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-3">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_4.png" alt="Bougie Rose de Grasse" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°04</span>
+            <h3 class="bougie-card__name">Rose de Grasse</h3>
+            <p class="bougie-card__desc">Élégance florale absolue, symbole de raffinement à la française.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-4">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_5.png" alt="Bougie Figue Sauvage" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°05</span>
-              <h3 class="bougie-card__name">Figue Sauvage</h3>
-              <p class="bougie-card__desc">Nature méditerranéenne, chaude et généreuse sous le soleil de juillet.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_5.png" alt="Bougie Figue Sauvage" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°05</span>
+            <h3 class="bougie-card__name">Figue Sauvage</h3>
+            <p class="bougie-card__desc">Nature méditerranéenne, chaude et généreuse sous le soleil de juillet.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_6.png" alt="Bougie Cèdre et Vétiver" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°06</span>
-              <h3 class="bougie-card__name">Cèdre &amp; Vétiver</h3>
-              <p class="bougie-card__desc">Forêt profonde et mystérieuse pour un intérieur chaleureux et apaisé.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-1">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_6.png" alt="Bougie Cèdre et Vétiver" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°06</span>
+            <h3 class="bougie-card__name">Cèdre &amp; Vétiver</h3>
+            <p class="bougie-card__desc">Forêt profonde et mystérieuse pour un intérieur chaleureux et apaisé.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-1">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_7.png" alt="Bougie Jasmin Étoilé" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°07</span>
-              <h3 class="bougie-card__name">Jasmin Étoilé</h3>
-              <p class="bougie-card__desc">Nuit d'été envoûtante, sensuelle et poétique comme un voyage en Orient.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-2">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_7.png" alt="Bougie Jasmin Étoilé" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°07</span>
+            <h3 class="bougie-card__name">Jasmin Étoilé</h3>
+            <p class="bougie-card__desc">Nuit d'été envoûtante, sensuelle et poétique comme un voyage en Orient.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-2">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_8.png" alt="Bougie Musc Blanc" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°08</span>
-              <h3 class="bougie-card__name">Musc Blanc</h3>
-              <p class="bougie-card__desc">Pureté absolue, discrète et intemporelle pour chaque espace de vie.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-3">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_8.png" alt="Bougie Musc Blanc" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°08</span>
+            <h3 class="bougie-card__name">Musc Blanc</h3>
+            <p class="bougie-card__desc">Pureté absolue, discrète et intemporelle pour chaque espace de vie.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-3">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_9.png" alt="Bougie Bergamote et Thé Vert" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°09</span>
-              <h3 class="bougie-card__name">Bergamote &amp; Thé</h3>
-              <p class="bougie-card__desc">Fraîcheur matinale, vive et lumineuse pour commencer la journée avec légèreté.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_9.png" alt="Bougie Bergamote et Thé Vert" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°09</span>
+            <h3 class="bougie-card__name">Bergamote &amp; Thé</h3>
+            <p class="bougie-card__desc">Fraîcheur matinale, vive et lumineuse pour commencer la journée avec légèreté.</p>
+          </div>
+        </article>
 
-          <article class="bougie-card fade-in fade-in--delay-4">
-            <div class="bougie-card__image">
-              <img src="./images/bougies/bougie_10.png" alt="Bougie Néroli et Miel" loading="lazy" width="400" height="400">
-            </div>
-            <div class="bougie-card__info">
-              <span class="bougie-card__fragrance">Parfum N°10</span>
-              <h3 class="bougie-card__name">Néroli &amp; Miel</h3>
-              <p class="bougie-card__desc">Soleil de Provence et douceur apicole pour un moment de pur bonheur.</p>
-            </div>
-          </article>
+        <article class="bougie-card fade-in fade-in--delay-1">
+          <div class="bougie-card__image"><img src="./images/bougies/bougie_10.png" alt="Bougie Néroli et Miel" loading="lazy"></div>
+          <div class="bougie-card__info">
+            <span class="bougie-card__fragrance">Parfum N°10</span>
+            <h3 class="bougie-card__name">Néroli &amp; Miel</h3>
+            <p class="bougie-card__desc">Soleil de Provence et douceur apicole pour un moment de pur bonheur.</p>
+          </div>
+        </article>
 
+      </div>
+    </section>
+
+    <section class="artisan" aria-label="Personnalisation bougies">
+      <div class="artisan__visual fade-in">
+        <img src="./images/bougies/bougie_1.png" alt="Bougie artisanale personnalisée Dragée Paris" loading="lazy">
+      </div>
+      <div class="artisan__content fade-in fade-in--delay-1">
+        <div class="artisan__ghost-num" aria-hidden="true">02</div>
+        <span class="eyebrow">Sur mesure</span>
+        <h2 class="section-title">Votre bougie,<br>votre histoire</h2>
+        <div class="hairline"></div>
+        <p class="section-sub">Chaque bougie peut être personnalisée avec vos initiales, la date de votre événement, un prénom ou un message qui vous touche. Nous adaptons également les parfums selon vos souvenirs et vos envies.</p>
+        <p class="section-sub">Les bougies s'offrent seules ou en coffret aux côtés de dragées assorties — pour un cadeau invité aussi beau qu'unique.</p>
+        <div class="artisan__cta" style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="personnalisation.html" class="btn btn--outline">Options de personnalisation <span class="btn-arrow">→</span></a>
+          <a href="contact.html"          class="btn btn--dark">Demander un devis</a>
         </div>
       </div>
     </section>
 
-    <!-- PERSONNALISATION CTA -->
-    <section class="artisan">
-      <div class="container">
-        <div class="artisan__inner">
-          <div class="artisan__content fade-in">
-            <span class="section-label">Sur mesure</span>
-            <h2 class="section__title">Votre bougie,<br><em>votre histoire</em></h2>
-            <div class="divider"></div>
-            <p class="section__subtitle" style="margin-top:1rem">
-              Chaque bougie peut être personnalisée avec vos initiales, la date de votre événement, un prénom ou un message qui vous touche. Nous adaptons également les parfums selon vos souvenirs et vos envies.
-            </p>
-            <p class="section__subtitle" style="margin-top:1rem">
-              Les bougies s'offrent seules ou en coffret aux côtés de dragées assorties — pour un cadeau invité aussi beau qu'unique.
-            </p>
-            <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem">
-              <a href="personnalisation.html" class="btn btn--primary">Options de personnalisation</a>
-              <a href="contact.html"          class="btn btn--secondary">Demander un devis</a>
-            </div>
-          </div>
-          <div class="artisan__image fade-in fade-in--delay-1">
-            <img src="./images/bougies/bougie_3.png" alt="Bougie artisanale personnalisée" loading="lazy" width="600" height="750">
-          </div>
+    <section class="cta-center" aria-label="Coffret mixte">
+      <div class="cta-center__body">
+        <span class="eyebrow fade-in">Commande groupée</span>
+        <h2 class="cta-center__title fade-in fade-in--delay-1">Coffrets bougies &amp; dragées pour vos invités</h2>
+        <p class="cta-center__sub fade-in fade-in--delay-2">Associez dragées et bougies dans un coffret élégant pour offrir à vos invités un souvenir doublement précieux.</p>
+        <div class="cta-center__btns fade-in fade-in--delay-3">
+          <a href="contact.html" class="btn btn--dark">Créer mon coffret <span class="btn-arrow">→</span></a>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA BANNER -->
-    <section class="cta-banner">
-      <div class="container">
-        <span class="section-label" style="color:var(--or-pale)">Commande groupée</span>
-        <h2 class="fade-in">Coffrets bougies &amp; dragées pour vos invités</h2>
-        <p class="cta-banner__sub fade-in fade-in--delay-1">
-          Associez dragées et bougies dans un coffret élégant pour offrir à vos invités un souvenir doublement précieux.
-        </p>
-        <a href="contact.html" class="btn btn--primary fade-in fade-in--delay-2">Créer mon coffret</a>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">Dragée Paris</span>
-        <p class="footer__tagline">Créations artisanales en Île-de-France</p>
+        <p class="footer__tagline">Créations artisanales, Île-de-France</p>
+        <div class="footer__social">
+          <a href="#" rel="noopener noreferrer">Instagram</a>
+          <a href="#" rel="noopener noreferrer">Pinterest</a>
+        </div>
       </div>
-      <nav aria-label="Navigation footer">
+      <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
-          <li><a href="index.html">Accueil</a></li>
           <li><a href="dragees.html">Dragées</a></li>
           <li><a href="bougies.html">Bougies</a></li>
           <li><a href="personnalisation.html">Personnalisation</a></li>
           <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </nav>
@@ -242,12 +208,12 @@
         <ul class="footer__contact-list">
           <li><a href="tel:+33601234567">06 01 23 45 67</a></li>
           <li><a href="mailto:contact@drageeparis.fr">contact@drageeparis.fr</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram · @drageeparis</a></li>
+          <li><a href="#">@drageeparis</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer__col-title">Inspirations</span>
-        <p class="footer__newsletter-text">Recevez nos nouvelles créations dans votre boîte mail.</p>
+        <span class="footer__col-title">Inspirations &amp; actualités</span>
+        <p class="footer__newsletter-text">Recevez nos nouvelles créations directement dans votre boîte mail.</p>
         <form class="newsletter-form" aria-label="Inscription newsletter">
           <input type="email" placeholder="Votre adresse e-mail" aria-label="Adresse e-mail" required>
           <button type="submit">S'abonner</button>

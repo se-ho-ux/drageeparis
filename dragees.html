@@ -4,211 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dragées · Dragée Paris</title>
-  <meta name="description" content="Découvrez notre collection de dragées artisanales pour mariage, naissance, baptême, communion et anniversaire. Fabriquées à la main en Île-de-France.">
-
+  <meta name="description" content="Découvrez notre collection de dragées artisanales pour mariage, naissance, baptême et anniversaire. Fabriquées à la main en Île-de-France.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
-  <header class="header" id="header">
-    <nav class="nav container" aria-label="Navigation principale">
-
+  <header class="header header--inner" id="header">
+    <nav class="nav" aria-label="Navigation principale">
       <ul class="nav__list--left" role="list">
-        <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
+        <li><a href="dragees.html"          class="nav__link active">Dragées</a></li>
         <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-        <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       </ul>
-
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
-        <img src="./Logos SVG/Symbole/symbole-noir.svg" alt="" aria-hidden="true" class="nav__logo-img" width="60" height="60">
+        <span class="nav__logo-wordmark">Dragée Paris</span>
       </a>
-
       <div class="nav__end">
         <ul class="nav__list--right" role="list">
-          <li><a href="contact.html"   class="nav__link nav__link--cta">Demander un devis</a></li>
+          <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+          <li><a href="contact.html"  class="nav__link nav__link--cta">Demander un devis</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
       </div>
-
     </nav>
-
     <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
       <li><a href="index.html"            class="nav__link">Accueil</a></li>
       <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
       <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
       <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
+      <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       <li><a href="contact.html"          class="nav__link nav__link--cta">Demander un devis</a></li>
     </ul>
   </header>
 
   <main id="main">
 
-    <!-- PAGE HERO -->
-    <div class="page-hero page-hero--rose">
-      <div class="container">
-        <span class="section-label page-hero__label">Notre collection</span>
-        <h1 class="section__title">Nos Dragées</h1>
-        <div class="divider divider--center" style="margin-top:1rem"></div>
-        <p class="page-hero__subtitle">
-          Amandes de qualité supérieure, enrobées à la main dans notre atelier. Une dragée pour chaque occasion, chaque couleur, chaque envie.
-        </p>
-      </div>
+    <div class="page-intro fade-in">
+      <span class="page-intro__eyebrow">Collection</span>
+      <h1 class="page-intro__title">Nos Dragées</h1>
+      <p class="page-intro__sub">Amandes de qualité supérieure, enrobées à la main dans notre atelier. Une dragée pour chaque occasion, chaque couleur, chaque envie.</p>
     </div>
 
-    <!-- GALLERY -->
-    <section class="bg-papier">
-      <div class="container">
+    <section aria-label="Galerie de dragées">
 
-        <!-- Filters -->
-        <div class="gallery-filters fade-in" role="group" aria-label="Filtrer par occasion">
-          <button class="filter-btn active" data-filter="all">Toutes</button>
-          <button class="filter-btn" data-filter="mariage">Mariage</button>
-          <button class="filter-btn" data-filter="naissance">Naissance</button>
-          <button class="filter-btn" data-filter="bapteme">Baptême</button>
-          <button class="filter-btn" data-filter="anniv">Anniversaire</button>
-        </div>
+      <div class="gallery-filters fade-in" role="group" aria-label="Filtrer par occasion">
+        <button class="filter-btn active" data-filter="all">Toutes</button>
+        <button class="filter-btn" data-filter="mariage">Mariage</button>
+        <button class="filter-btn" data-filter="naissance">Naissance</button>
+        <button class="filter-btn" data-filter="bapteme">Baptême</button>
+        <button class="filter-btn" data-filter="anniv">Anniversaire</button>
+      </div>
 
-        <!-- Grid -->
-        <div class="gallery__grid" role="list" aria-label="Galerie de dragées">
+      <div class="gallery__grid" role="list" aria-label="Galerie de dragées">
 
-          <!-- Mariage -->
-          <article class="gallery-item fade-in" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image-d2.jpeg" alt="Dragées mariage dorées" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image-d3.jpeg" alt="Dragées mariage blanc nacré" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image17.jpeg" alt="Dragées mariage arrangement floral" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image18.jpeg" alt="Dragées mariage présentoir élégant" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image20.jpeg" alt="Dragées mariage coupe en verre" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image21.jpeg" alt="Dragées mariage en sachet organza" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image22.jpeg" alt="Dragées mariage assortiment blanc" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage" role="listitem">
-            <img src="./images/mariage/image65.jpeg" alt="Dragées mariage décoration de table" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--rose">Mariage</span>
-          </article>
+        <article class="gallery-item fade-in"              data-category="mariage"  role="listitem"><img src="./images/mariage/image-d2.jpeg"  alt="Dragées mariage dorées"              loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage"  role="listitem"><img src="./images/mariage/image-d3.jpeg"  alt="Dragées mariage blanc nacré"          loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage"  role="listitem"><img src="./images/mariage/image17.jpeg"   alt="Dragées mariage arrangement floral"   loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage"  role="listitem"><img src="./images/mariage/image18.jpeg"   alt="Dragées mariage présentoir élégant"   loading="lazy"></article>
+        <article class="gallery-item fade-in"              data-category="mariage"  role="listitem"><img src="./images/mariage/image20.jpeg"   alt="Dragées mariage coupe en verre"       loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage"  role="listitem"><img src="./images/mariage/image21.jpeg"   alt="Dragées mariage en sachet organza"    loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage"  role="listitem"><img src="./images/mariage/image22.jpeg"   alt="Dragées mariage assortiment blanc"    loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage"  role="listitem"><img src="./images/mariage/image65.jpeg"   alt="Dragées mariage décoration de table"  loading="lazy"></article>
 
-          <!-- Naissance -->
-          <article class="gallery-item fade-in" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-16.jpeg" alt="Dragées naissance rose tendre" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-d1.jpeg" alt="Dragées naissance en boîte" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-2" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-d10.jpg" alt="Dragées naissance garçon bleu" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-3" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-d7.jpeg" alt="Dragées naissance fille" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
-          <article class="gallery-item fade-in" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-d8.jpg" alt="Dragées naissance coffret" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem">
-            <img src="./images/naiss/image-d9.jpg" alt="Dragées naissance arrangement" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--beurre">Naissance</span>
-          </article>
+        <article class="gallery-item fade-in"              data-category="naissance" role="listitem"><img src="./images/naiss/image-16.jpeg"   alt="Dragées naissance rose tendre"        loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem"><img src="./images/naiss/image-d1.jpeg"   alt="Dragées naissance en boîte"           loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-2" data-category="naissance" role="listitem"><img src="./images/naiss/image-d10.jpg"   alt="Dragées naissance garçon bleu"        loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-3" data-category="naissance" role="listitem"><img src="./images/naiss/image-d7.jpeg"   alt="Dragées naissance fille"              loading="lazy"></article>
+        <article class="gallery-item fade-in"              data-category="naissance" role="listitem"><img src="./images/naiss/image-d8.jpg"    alt="Dragées naissance coffret"            loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem"><img src="./images/naiss/image-d9.jpg"    alt="Dragées naissance arrangement"        loading="lazy"></article>
 
-          <!-- Baptême -->
-          <article class="gallery-item fade-in" data-category="bapteme" role="listitem">
-            <img src="./images/bapteme/image-d11.jpeg" alt="Dragées baptême lavande" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--lavande">Baptême</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="bapteme" role="listitem">
-            <img src="./images/bapteme/image-d12.jpeg" alt="Dragées baptême bleu pastel" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--lavande">Baptême</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-2" data-category="bapteme" role="listitem">
-            <img src="./images/bapteme/image-d13.jpeg" alt="Dragées baptême présentation" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--lavande">Baptême</span>
-          </article>
+        <article class="gallery-item fade-in"              data-category="bapteme"  role="listitem"><img src="./images/bapteme/image-d11.jpeg" alt="Dragées baptême lavande"              loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="bapteme"  role="listitem"><img src="./images/bapteme/image-d12.jpeg" alt="Dragées baptême bleu pastel"          loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-2" data-category="bapteme"  role="listitem"><img src="./images/bapteme/image-d13.jpeg" alt="Dragées baptême présentation"         loading="lazy"></article>
 
-          <!-- Anniversaire -->
-          <article class="gallery-item fade-in" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image-d4.jpeg" alt="Dragées anniversaire multicolores" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image-d5.jpeg" alt="Dragées anniversaire en sachet" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-2" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image-d6.jpeg" alt="Dragées anniversaire décoration" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-3" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image14.jpeg" alt="Dragées anniversaire colorées" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
-          <article class="gallery-item fade-in" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image22.jpeg" alt="Dragées anniversaire présentation" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
-          <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv" role="listitem">
-            <img src="./images/anniv/image332.jpeg" alt="Dragées anniversaire coffret" loading="lazy" width="400" height="533">
-            <span class="gallery-item__tag tag--sauge">Anniversaire</span>
-          </article>
+        <article class="gallery-item fade-in"              data-category="anniv"    role="listitem"><img src="./images/anniv/image-d4.jpeg"   alt="Dragées anniversaire multicolores"    loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv"    role="listitem"><img src="./images/anniv/image-d5.jpeg"   alt="Dragées anniversaire en sachet"       loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-2" data-category="anniv"    role="listitem"><img src="./images/anniv/image-d6.jpeg"   alt="Dragées anniversaire décoration"      loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-3" data-category="anniv"    role="listitem"><img src="./images/anniv/image14.jpeg"    alt="Dragées anniversaire colorées"        loading="lazy"></article>
+        <article class="gallery-item fade-in"              data-category="anniv"    role="listitem"><img src="./images/anniv/image22.jpeg"    alt="Dragées anniversaire présentation"    loading="lazy"></article>
+        <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv"    role="listitem"><img src="./images/anniv/image332.jpeg"   alt="Dragées anniversaire coffret"         loading="lazy"></article>
 
-        </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-banner">
-      <div class="container">
-        <span class="section-label" style="color:var(--or-pale)">Votre projet</span>
-        <h2 class="fade-in">Une commande sur mesure ?</h2>
-        <p class="cta-banner__sub fade-in fade-in--delay-1">
-          Couleurs, quantités, emballages personnalisés — parlez-nous de votre événement et nous créons vos dragées à votre image.
-        </p>
-        <a href="contact.html" class="btn btn--primary fade-in fade-in--delay-2">Demander un devis gratuit</a>
+    <section class="cta-center" aria-label="Commande sur mesure">
+      <div class="cta-center__body">
+        <span class="eyebrow fade-in">Votre projet</span>
+        <h2 class="cta-center__title fade-in fade-in--delay-1">Une commande sur mesure ?</h2>
+        <p class="cta-center__sub fade-in fade-in--delay-2">Couleurs, quantités, emballages personnalisés — parlez-nous de votre événement et nous créons vos dragées à votre image.</p>
+        <div class="cta-center__btns fade-in fade-in--delay-3">
+          <a href="contact.html" class="btn btn--dark">Demander un devis <span class="btn-arrow">→</span></a>
+          <a href="personnalisation.html" class="btn btn--outline">Explorer les options</a>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">Dragée Paris</span>
-        <p class="footer__tagline">Créations artisanales en Île-de-France</p>
+        <p class="footer__tagline">Créations artisanales, Île-de-France</p>
+        <div class="footer__social">
+          <a href="#" rel="noopener noreferrer">Instagram</a>
+          <a href="#" rel="noopener noreferrer">Pinterest</a>
+        </div>
       </div>
-      <nav aria-label="Navigation footer">
+      <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
-          <li><a href="index.html">Accueil</a></li>
           <li><a href="dragees.html">Dragées</a></li>
           <li><a href="bougies.html">Bougies</a></li>
           <li><a href="personnalisation.html">Personnalisation</a></li>
           <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </nav>
@@ -217,12 +132,12 @@
         <ul class="footer__contact-list">
           <li><a href="tel:+33601234567">06 01 23 45 67</a></li>
           <li><a href="mailto:contact@drageeparis.fr">contact@drageeparis.fr</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram · @drageeparis</a></li>
+          <li><a href="#">@drageeparis</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer__col-title">Inspirations</span>
-        <p class="footer__newsletter-text">Recevez nos nouvelles créations dans votre boîte mail.</p>
+        <span class="footer__col-title">Inspirations &amp; actualités</span>
+        <p class="footer__newsletter-text">Recevez nos nouvelles créations directement dans votre boîte mail.</p>
         <form class="newsletter-form" aria-label="Inscription newsletter">
           <input type="email" placeholder="Votre adresse e-mail" aria-label="Adresse e-mail" required>
           <button type="submit">S'abonner</button>
