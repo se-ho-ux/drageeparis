@@ -1510,7 +1510,6 @@ body::before {
 .dragees-controls {
   padding: 40px 52px 0;
   text-align: center;
-  border-top: 1px solid var(--ink-20);
 }
 
 /* Bouton toggle "+ Filter / — Filter" */
