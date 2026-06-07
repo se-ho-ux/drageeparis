@@ -1496,6 +1496,40 @@ body::before {
   transform: scale(1.02);
 }
 
+/* Overlay label (bougies) */
+.accord-gallery__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 14px 16px;
+  background: linear-gradient(to top, rgba(15,14,12,0.72) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-soft);
+  pointer-events: none;
+}
+.accord-gallery__item:hover .accord-gallery__label { opacity: 1; }
+.accord-gallery__num {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.accord-gallery__name {
+  font-family: 'Wayfinder', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--blanc);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (max-width: 768px) {
   .accord-gallery {
     display: flex;

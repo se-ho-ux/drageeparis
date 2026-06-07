@@ -55,122 +55,70 @@
       </div>
     </div>
 
-    <!-- ACCORDION GALLERY -->
-    <div class="accord-gallery" aria-label="Aperçu de la collection de bougies">
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_4.png" alt="Bougie artisanale Dragée Paris"    loading="lazy">
+    <!-- GALERIE FILTRÉE + ACCORDÉON -->
+    <section class="dragees-section bougies-section" aria-label="Collection de bougies">
+
+      <div class="dragees-controls">
+        <div class="dragees-filters" role="group" aria-label="Filtrer par famille olfactive">
+          <button class="filter-btn active" data-filter="all">Toutes</button>
+          <button class="filter-btn" data-filter="florale">Florales</button>
+          <button class="filter-btn" data-filter="boisee">Boisées</button>
+          <button class="filter-btn" data-filter="gourmande">Gourmandes</button>
+        </div>
+        <div class="dragees-nav" aria-label="Navigation">
+          <button class="dragees-nav__btn" id="bougies-prev" aria-label="Images précédentes" disabled>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13,4 7,10 13,16"/></svg>
+          </button>
+          <span class="dragees-nav__count" id="bougies-count" aria-live="polite"></span>
+          <button class="dragees-nav__btn" id="bougies-next" aria-label="Images suivantes">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,4 13,10 7,16"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_6.png" alt="Bougie parfumée naturelle"         loading="lazy">
+
+      <div class="accord-gallery" id="bougies-accord" aria-label="Galerie de bougies">
+        <div class="accord-gallery__item" data-category="boisee">
+          <img src="./images/bougies/bougie_1.png" alt="Vanille & Santal" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°01</span><span class="accord-gallery__name">Vanille &amp; Santal</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="florale">
+          <img src="./images/bougies/bougie_2.png" alt="Fleur d'Oranger" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°02</span><span class="accord-gallery__name">Fleur d'Oranger</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="gourmande">
+          <img src="./images/bougies/bougie_3.png" alt="Amande Douce" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°03</span><span class="accord-gallery__name">Amande Douce</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="florale">
+          <img src="./images/bougies/bougie_4.png" alt="Rose de Grasse" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°04</span><span class="accord-gallery__name">Rose de Grasse</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="gourmande">
+          <img src="./images/bougies/bougie_5.png" alt="Figue Sauvage" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°05</span><span class="accord-gallery__name">Figue Sauvage</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="boisee">
+          <img src="./images/bougies/bougie_6.png" alt="Cèdre & Vétiver" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°06</span><span class="accord-gallery__name">Cèdre &amp; Vétiver</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="florale">
+          <img src="./images/bougies/bougie_7.png" alt="Jasmin Étoilé" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°07</span><span class="accord-gallery__name">Jasmin Étoilé</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="boisee">
+          <img src="./images/bougies/bougie_8.png" alt="Musc Blanc" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°08</span><span class="accord-gallery__name">Musc Blanc</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="florale">
+          <img src="./images/bougies/bougie_9.png" alt="Bergamote & Thé" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°09</span><span class="accord-gallery__name">Bergamote &amp; Thé</span></div>
+        </div>
+        <div class="accord-gallery__item" data-category="florale">
+          <img src="./images/bougies/bougie_10.png" alt="Néroli & Miel" loading="lazy">
+          <div class="accord-gallery__label"><span class="accord-gallery__num">N°10</span><span class="accord-gallery__name">Néroli &amp; Miel</span></div>
+        </div>
       </div>
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_7.png" alt="Bougie en cire végétale"           loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_2.png" alt="Bougie personnalisée coffret"      loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_8.png" alt="Bougie décoration événement"       loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/bougies/bougie_5.png" alt="Bougie fleur d'oranger"            loading="lazy">
-      </div>
-    </div>
 
-    <section class="section-page" aria-label="Nos parfums">
-      <div class="bougies__grid">
-
-        <article class="bougie-card fade-in">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_1.png" alt="Bougie Vanille et Bois de Santal" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°01</span>
-            <h3 class="bougie-card__name">Vanille &amp; Santal</h3>
-            <p class="bougie-card__desc">Douce chaleur enveloppante, idéale pour les soirées d'hiver.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-1">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_2.png" alt="Bougie Fleur d'Oranger" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°02</span>
-            <h3 class="bougie-card__name">Fleur d'Oranger</h3>
-            <p class="bougie-card__desc">Essence de printemps, légère et lumineuse comme un matin de mai.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-2">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_3.png" alt="Bougie Amande Douce" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°03</span>
-            <h3 class="bougie-card__name">Amande Douce</h3>
-            <p class="bougie-card__desc">Gourmandise subtile qui rappelle les confiseries de l'enfance.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-3">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_4.png" alt="Bougie Rose de Grasse" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°04</span>
-            <h3 class="bougie-card__name">Rose de Grasse</h3>
-            <p class="bougie-card__desc">Élégance florale absolue, symbole de raffinement à la française.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_5.png" alt="Bougie Figue Sauvage" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°05</span>
-            <h3 class="bougie-card__name">Figue Sauvage</h3>
-            <p class="bougie-card__desc">Nature méditerranéenne, chaude et généreuse sous le soleil de juillet.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-1">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_6.png" alt="Bougie Cèdre et Vétiver" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°06</span>
-            <h3 class="bougie-card__name">Cèdre &amp; Vétiver</h3>
-            <p class="bougie-card__desc">Forêt profonde et mystérieuse pour un intérieur chaleureux et apaisé.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-2">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_7.png" alt="Bougie Jasmin Étoilé" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°07</span>
-            <h3 class="bougie-card__name">Jasmin Étoilé</h3>
-            <p class="bougie-card__desc">Nuit d'été envoûtante, sensuelle et poétique comme un voyage en Orient.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-3">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_8.png" alt="Bougie Musc Blanc" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°08</span>
-            <h3 class="bougie-card__name">Musc Blanc</h3>
-            <p class="bougie-card__desc">Pureté absolue, discrète et intemporelle pour chaque espace de vie.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_9.png" alt="Bougie Bergamote et Thé Vert" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°09</span>
-            <h3 class="bougie-card__name">Bergamote &amp; Thé</h3>
-            <p class="bougie-card__desc">Fraîcheur matinale, vive et lumineuse pour commencer la journée avec légèreté.</p>
-          </div>
-        </article>
-
-        <article class="bougie-card fade-in fade-in--delay-1">
-          <div class="bougie-card__image"><img src="./images/bougies/bougie_10.png" alt="Bougie Néroli et Miel" loading="lazy"></div>
-          <div class="bougie-card__info">
-            <span class="bougie-card__fragrance">Parfum N°10</span>
-            <h3 class="bougie-card__name">Néroli &amp; Miel</h3>
-            <p class="bougie-card__desc">Soleil de Provence et douceur apicole pour un moment de pur bonheur.</p>
-          </div>
-        </article>
-
-      </div>
     </section>
 
     <section class="artisan" aria-label="Personnalisation bougies">

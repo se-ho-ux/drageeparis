@@ -116,6 +116,60 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   }
 
+  /* ---- 5b. Bougies — Accordéon filtrable + paginé ---- */
+  const bougiesAccord  = document.getElementById('bougies-accord');
+  const bougiesPrevBtn = document.getElementById('bougies-prev');
+  const bougiesNextBtn = document.getElementById('bougies-next');
+  const bougiesCount   = document.getElementById('bougies-count');
+  const bougiesNav     = bougiesCount ? bougiesCount.closest('.dragees-nav') : null;
+  const bougiesFilters = document.querySelectorAll('.bougies-section .filter-btn');
+
+  if (bougiesAccord && bougiesFilters.length) {
+    const PAGE = 6;
+    let activeFilter = 'all';
+    let currentPage  = 0;
+    const items = Array.from(bougiesAccord.querySelectorAll('.accord-gallery__item'));
+
+    const getVisible = () =>
+      activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
+
+    const render = () => {
+      const filtered   = getVisible();
+      const totalPages = Math.ceil(filtered.length / PAGE);
+      const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
+
+      items.forEach(el => { el.style.display = 'none'; });
+      pageItems.forEach(el => { el.style.display = ''; });
+
+      if (bougiesPrevBtn) bougiesPrevBtn.disabled = currentPage === 0;
+      if (bougiesNextBtn) bougiesNextBtn.disabled = currentPage >= totalPages - 1;
+      if (bougiesNav)     bougiesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
+      if (bougiesCount)   bougiesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
+
+      if (bougiesAccord) bougiesAccord.scrollLeft = 0;
+    };
+
+    bougiesFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bougiesFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        currentPage  = 0;
+        render();
+      });
+    });
+
+    bougiesPrevBtn?.addEventListener('click', () => {
+      if (currentPage > 0) { currentPage--; render(); }
+    });
+    bougiesNextBtn?.addEventListener('click', () => {
+      const total = Math.ceil(getVisible().length / PAGE);
+      if (currentPage < total - 1) { currentPage++; render(); }
+    });
+
+    render();
+  }
+
   /* ---- 6. Form validation & submit ---- */
   const devisForm = document.getElementById('devis-form');
   if (devisForm) {
