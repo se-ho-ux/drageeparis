@@ -61,26 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ---- 5. Dragées — Accordéon filtrable + paginé ---- */
-  const drageesAccord  = document.getElementById('dragees-accord');
+  /* ---- 5. Dragées — Galerie duo filtrée + paginée ---- */
+  const drageesGallery = document.getElementById('dragees-gallery');
   const drageesPrevBtn = document.getElementById('dragees-prev');
   const drageesNextBtn = document.getElementById('dragees-next');
   const drageesCount   = document.getElementById('dragees-count');
   const drageesNav     = drageesCount ? drageesCount.closest('.dragees-nav') : null;
   const drageesFilters = document.querySelectorAll('.dragees-filters .filter-btn');
 
-  if (drageesAccord && drageesFilters.length) {
-    const PAGE = 6;
+  if (drageesGallery && drageesFilters.length) {
+    const PAGE = 3;
     let activeFilter = 'all';
     let currentPage  = 0;
-    const items = Array.from(drageesAccord.querySelectorAll('.accord-gallery__item'));
+    const items = Array.from(drageesGallery.querySelectorAll('.col-item[data-category]'));
 
     const getVisible = () =>
       activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
 
     const render = () => {
       const filtered   = getVisible();
-      const totalPages = Math.ceil(filtered.length / PAGE);
+      const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE));
       const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
 
       items.forEach(el => { el.style.display = 'none'; });
@@ -90,9 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (drageesNextBtn) drageesNextBtn.disabled = currentPage >= totalPages - 1;
       if (drageesNav)     drageesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
       if (drageesCount)   drageesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
-
-      /* Reset scroll position on mobile carousel */
-      if (drageesAccord) drageesAccord.scrollLeft = 0;
     };
 
     drageesFilters.forEach(btn => {
@@ -109,33 +106,33 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentPage > 0) { currentPage--; render(); }
     });
     drageesNextBtn?.addEventListener('click', () => {
-      const total = Math.ceil(getVisible().length / PAGE);
+      const total = Math.max(1, Math.ceil(getVisible().length / PAGE));
       if (currentPage < total - 1) { currentPage++; render(); }
     });
 
     render();
   }
 
-  /* ---- 5b. Bougies — Accordéon filtrable + paginé ---- */
-  const bougiesAccord  = document.getElementById('bougies-accord');
+  /* ---- 5b. Bougies — Galerie duo filtrée + paginée ---- */
+  const bougiesGallery = document.getElementById('bougies-gallery');
   const bougiesPrevBtn = document.getElementById('bougies-prev');
   const bougiesNextBtn = document.getElementById('bougies-next');
   const bougiesCount   = document.getElementById('bougies-count');
   const bougiesNav     = bougiesCount ? bougiesCount.closest('.dragees-nav') : null;
   const bougiesFilters = document.querySelectorAll('.bougies-section .filter-btn');
 
-  if (bougiesAccord && bougiesFilters.length) {
-    const PAGE = 6;
+  if (bougiesGallery && bougiesFilters.length) {
+    const PAGE = 3;
     let activeFilter = 'all';
     let currentPage  = 0;
-    const items = Array.from(bougiesAccord.querySelectorAll('.accord-gallery__item'));
+    const items = Array.from(bougiesGallery.querySelectorAll('.col-item[data-category]'));
 
     const getVisible = () =>
       activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
 
     const render = () => {
       const filtered   = getVisible();
-      const totalPages = Math.ceil(filtered.length / PAGE);
+      const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE));
       const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
 
       items.forEach(el => { el.style.display = 'none'; });
@@ -145,8 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (bougiesNextBtn) bougiesNextBtn.disabled = currentPage >= totalPages - 1;
       if (bougiesNav)     bougiesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
       if (bougiesCount)   bougiesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
-
-      if (bougiesAccord) bougiesAccord.scrollLeft = 0;
     };
 
     bougiesFilters.forEach(btn => {
@@ -163,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentPage > 0) { currentPage--; render(); }
     });
     bougiesNextBtn?.addEventListener('click', () => {
-      const total = Math.ceil(getVisible().length / PAGE);
+      const total = Math.max(1, Math.ceil(getVisible().length / PAGE));
       if (currentPage < total - 1) { currentPage++; render(); }
     });
 

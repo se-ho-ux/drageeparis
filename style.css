@@ -648,6 +648,76 @@ body::before {
   aspect-ratio: 9 / 16;
 }
 
+/* ==============================================
+   DUO GALLERY (dragées & bougies pages)
+============================================== */
+.duo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 52px 40px;
+  padding: 60px 52px 80px;
+}
+.col-item__duo-empty {
+  aspect-ratio: 1 / 2;
+  background: var(--paper-2);
+}
+
+/* Wrapper individuel pour chaque image d'une paire (bougies avec label) */
+.col-item__duo-frame {
+  position: relative;
+  overflow: hidden;
+}
+.col-item__duo-frame img {
+  width: 100%;
+  aspect-ratio: 1 / 2;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.7s var(--ease-soft), transform 0.9s var(--ease);
+  filter: brightness(0.97) saturate(0.9);
+}
+.col-item:hover .col-item__duo-frame img {
+  filter: brightness(1.04) saturate(1.05);
+}
+.col-item__bougie-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 28px 12px 14px;
+  background: linear-gradient(to top, rgba(15, 14, 12, 0.72), transparent);
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-soft);
+  pointer-events: none;
+}
+.col-item__duo-frame:hover .col-item__bougie-label {
+  opacity: 1;
+}
+.col-item__bougie-num {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font);
+}
+.col-item__bougie-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--blanc);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .duo-gallery { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; padding: 48px 24px 64px; }
+}
+@media (max-width: 640px) {
+  .duo-gallery { grid-template-columns: 1fr; gap: 36px; padding: 36px 20px 52px; max-width: 360px; margin: 0 auto; }
+}
+
 
 /* ==============================================
    GARANTIES
