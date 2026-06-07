@@ -1390,6 +1390,61 @@ body::before {
 
 
 /* ==============================================
+   ACCORDION GALLERY (dragées & bougies)
+============================================== */
+.accord-gallery {
+  display: flex;
+  gap: 3px;
+  height: 500px;
+  overflow: hidden;
+  border-top: 1px solid var(--ink-20);
+  border-bottom: 1px solid var(--ink-20);
+}
+.accord-gallery__item {
+  flex: 1;
+  min-width: 48px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: flex 0.75s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.accord-gallery__item:hover { flex: 5; }
+.accord-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(0.65) brightness(0.88);
+  transition: filter 0.65s var(--ease-soft), transform 0.9s var(--ease);
+}
+.accord-gallery__item:hover img {
+  filter: saturate(1) brightness(1.03);
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .accord-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    gap: 3px;
+  }
+  .accord-gallery__item { min-width: 0; transition: none; }
+  .accord-gallery__item:hover { flex: unset; }
+  .accord-gallery__item img {
+    aspect-ratio: 2 / 3;
+    filter: saturate(0.85) brightness(0.92);
+    transform: none !important;
+  }
+}
+@media (max-width: 480px) {
+  .accord-gallery { grid-template-columns: repeat(2, 1fr); }
+  .accord-gallery__item:last-child { display: none; }
+}
+
+
+/* ==============================================
    GALLERY FILTERS (dragées)
 ============================================== */
 .gallery-filters {
