@@ -1425,22 +1425,41 @@ body::before {
 
 @media (max-width: 768px) {
   .accord-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
     height: auto;
-    gap: 3px;
+    gap: 8px;
+    padding: 0 20px 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-top: 1px solid var(--ink-20);
+    border-bottom: none;
   }
-  .accord-gallery__item { min-width: 0; transition: none; }
-  .accord-gallery__item:hover { flex: unset; }
+  .accord-gallery::-webkit-scrollbar { display: none; }
+
+  .accord-gallery__item {
+    flex: 0 0 72vw;
+    min-width: 72vw;
+    scroll-snap-align: start;
+    transition: none;
+    border-bottom: 1px solid var(--ink-20);
+  }
+  .accord-gallery__item:hover { flex: 0 0 72vw; }
   .accord-gallery__item img {
-    aspect-ratio: 2 / 3;
-    filter: saturate(0.85) brightness(0.92);
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) brightness(0.94);
     transform: none !important;
   }
 }
+
 @media (max-width: 480px) {
-  .accord-gallery { grid-template-columns: repeat(2, 1fr); }
-  .accord-gallery__item:last-child { display: none; }
+  .accord-gallery__item { flex: 0 0 82vw; min-width: 82vw; }
 }
 
 
