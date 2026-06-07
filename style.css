@@ -569,6 +569,7 @@ body::before {
   background: var(--ink-20);
   margin: 28px 0;
 }
+@media (max-width: 768px) { .hairline { display: none; } }
 
 
 /* ==============================================
@@ -1848,4 +1849,228 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 @media (max-width: 768px) {
   .form-section { padding: 64px 20px; }
   .form__row { grid-template-columns: 1fr; }
+}
+
+
+/* ================================================
+   MOBILE — Direction Artistique Dragée Paris
+   Pensé pour l'expérience tactile, pas seulement
+   la mise à l'échelle du desktop.
+================================================ */
+
+/* ---- Navigation ---- */
+@media (max-width: 1100px) {
+  .nav__logo-wordmark { font-size: 28px; }
+}
+@media (max-width: 480px) {
+  .nav__logo-wordmark { font-size: 24px; }
+  .nav { padding: 18px 20px; }
+}
+
+/* CTA dans le panel mobile : différencié visuellement */
+.nav__panel .nav__link--cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 28px;
+  border: 1px solid rgba(26, 24, 22, 0.2);
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  background: transparent;
+  color: var(--ink);
+  border-radius: 0;
+  transition: background 0.35s, color 0.35s;
+}
+.nav__panel .nav__link--cta::after { display: none; }
+.nav__panel.open li:last-child .nav__link { transition-delay: 0.42s; }
+
+/* ---- Band (marquee) ---- */
+@media (max-width: 768px) {
+  .band { padding: 12px 0; }
+  .band__item { font-size: 9px; gap: 16px; padding: 0 16px; letter-spacing: 0.14em; }
+  .band__track { animation-duration: 20s; }
+}
+
+/* ---- Hero ---- */
+@media (max-width: 768px) {
+  .hero__bg img { object-position: center 25%; }
+  .hero__content { padding: 0 24px 96px; }
+  .hero__arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .hero__content { padding: 0 20px 80px; }
+}
+
+/* ---- Collections ---- */
+@media (max-width: 768px) {
+  .collections__intro { margin-bottom: 48px; }
+  .collections__grid { gap: 20px; }
+  .collections__grid--single { max-width: 100%; }
+  .col-item__label { font-size: 12px; margin-top: 10px; }
+}
+@media (max-width: 480px) {
+  .collections__grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Artisan split : texte avant visuel sur mobile ---- */
+@media (max-width: 1024px) {
+  .artisan__content { order: 1; }
+  .artisan__visual  { order: 2; }
+  .artisan__visual video {
+    width: 100%;
+    max-height: 56vw;
+    object-fit: cover;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .artisan__content .section-title { font-size: 26px; }
+  .artisan__content .section-sub   { max-width: 100%; font-size: 13px; }
+  .artisan__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .artisan__cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ---- Boutons : touch targets ---- */
+@media (max-width: 768px) {
+  .btn { padding: 15px 24px; min-height: 48px; }
+  .btn-arrow { width: 24px; height: 24px; font-size: 12px; }
+}
+
+/* ---- Gallery strip (homepage) ---- */
+@media (max-width: 768px) {
+  .gallery { height: auto; }
+  .gallery__item img { aspect-ratio: 1 / 1; height: auto; }
+}
+
+/* ---- FAQ ---- */
+@media (max-width: 768px) {
+  .faq__question { padding: 20px 0; font-size: 13.5px; }
+  .faq__answer-inner { font-size: 13px; line-height: 1.75; }
+}
+
+/* ---- Footer ---- */
+@media (max-width: 600px) {
+  .footer__inner { gap: 36px; }
+  .footer__tagline { max-width: 100%; }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .footer__inner { padding: 48px 20px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input { padding: 14px 16px; }
+  .newsletter-form button {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 16px;
+    text-align: left;
+  }
+}
+
+/* ---- Filter buttons (dragées) : scroll horizontal ---- */
+@media (max-width: 768px) {
+  .gallery-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 24px;
+    padding-right: 0;
+    gap: 8px;
+  }
+  .gallery-filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; min-height: 44px; padding: 10px 20px; }
+}
+
+/* ---- Gallery grid (dragées) : 2 colonnes sur mobile ---- */
+@media (max-width: 480px) {
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 48px; }
+}
+
+/* ---- Bougies grid ---- */
+@media (max-width: 480px) {
+  .bougies__grid { grid-template-columns: 1fr; }
+  .bougie-card__info { padding: 16px; }
+}
+
+/* ---- Page intro inner pages ---- */
+@media (max-width: 768px) {
+  .page-intro__visual img { min-height: 52vw; }
+  .page-intro__sub { font-size: 13px; line-height: 1.7; }
+}
+@media (max-width: 480px) {
+  .page-intro { padding: 100px 20px 40px; }
+  .page-intro__title { font-size: 36px; }
+  .page-intro__visual img { min-height: 56vw; }
+}
+
+/* ---- Steps (personnalisation) ---- */
+@media (max-width: 480px) {
+  .step-card { padding: 28px 20px; }
+  .step-card__number { font-size: 40px; margin-bottom: 14px; }
+  .step-card h3 { font-size: 16px; }
+}
+
+/* ---- Options (personnalisation) ---- */
+@media (max-width: 480px) {
+  .option-card { padding: 32px 24px; }
+}
+
+/* ---- Quote block ---- */
+@media (max-width: 768px) {
+  .quote-block { padding: 64px 24px; }
+  .quote-block__text { font-size: clamp(20px, 5.5vw, 32px); }
+}
+
+/* ---- Values grid (a-propos) ---- */
+@media (max-width: 768px) {
+  .values__grid { gap: 0; }
+}
+
+/* ---- Location block (a-propos) ---- */
+@media (max-width: 768px) {
+  .location-block { gap: 32px; }
+}
+
+/* ---- Formulaire : touch inputs ---- */
+@media (max-width: 768px) {
+  .form__input,
+  .form__textarea,
+  .form__select { font-size: 16px; padding: 12px 0 14px; }
+  .form__label { font-size: 9.5px; margin-bottom: 8px; }
+  .form__group { margin-bottom: 28px; }
+  .form__file label { padding: 18px 16px; }
+}
+
+/* ---- Contact layout ---- */
+@media (max-width: 768px) {
+  .contact__layout { gap: 36px; }
+  .contact__sidebar-box { padding: 20px; }
+}
+
+/* ---- Section title global ---- */
+@media (max-width: 480px) {
+  .section-title { font-size: clamp(28px, 8vw, 36px); }
+  .eyebrow { font-size: 9px; }
+}
+
+/* ---- Garanties ---- */
+@media (max-width: 480px) {
+  .garanties { padding: 48px 20px; }
+  .garantie-item__icon { width: 34px; height: 34px; margin-bottom: 16px; }
+  .garantie-item__title { font-size: 14px; }
+  .garantie-item__desc { font-size: 12px; }
+}
+
+/* ---- Scrolled header fond : blanc cassé cohérent ---- */
+@media (max-width: 1100px) {
+  .header.scrolled { background: rgba(251, 251, 249, 0.96); }
 }
