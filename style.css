@@ -1416,8 +1416,11 @@ body::before {
   line-height: 1.7;
 }
 @media (max-width: 768px) {
-  .section-intro { padding: 120px 20px 0; }
+  .section-intro { padding: 120px 20px 0; margin-bottom: 36px; }
   .section-intro__sub { font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .section-intro { padding: 100px 20px 0; margin-bottom: 24px; }
 }
 
 /* ==============================================
@@ -2405,4 +2408,61 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* ---- Scrolled header fond : blanc cassé cohérent ---- */
 @media (max-width: 1100px) {
   .header.scrolled { background: rgba(251, 251, 249, 0.96); }
+}
+
+/* ================================================
+   RESPONSIVE COMPLÉMENTAIRE
+================================================ */
+
+/* Filter toggle : touch target minimum 44px */
+@media (max-width: 768px) {
+  .filter-toggle { min-height: 44px; }
+}
+
+/* Carousel nav : touch targets 44 × 44px */
+@media (max-width: 768px) {
+  .carousel-nav__btn { width: 44px; height: 44px; }
+  .carousel-nav { gap: 16px; }
+}
+
+/* Bougies : labels parfum persistants sur mobile (pas de hover tactile) */
+@media (max-width: 768px) {
+  .col-item__bougie-label { opacity: 1; }
+}
+
+/* CTA : boutons empilés pleine largeur sur petit mobile */
+@media (max-width: 480px) {
+  .cta-center__btns { flex-direction: column; align-items: center; }
+  .cta-center__btns .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .cta-center__sub { font-size: 13px; }
+}
+
+/* Newsletter : colonne dès 600px (avant la règle 480px existante) */
+@media (max-width: 600px) {
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input { padding: 14px 16px; }
+  .newsletter-form button {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 16px;
+    text-align: left;
+  }
+}
+
+/* Formulaire contact : ajustements tactile */
+@media (max-width: 480px) {
+  .form__success { padding: 40px 20px; }
+  .form__file-subtext { display: none; }
+  .contact__sidebar-box { padding: 16px; }
+}
+
+/* Artisan : numéro décoratif retiré sur mobile */
+@media (max-width: 768px) {
+  .artisan__ghost-num { display: none; }
+}
+
+/* Duo carousel : 1-col — padding serré et label plus petit */
+@media (max-width: 640px) {
+  .duo-carousel-wrap { padding: 28px 20px 40px; }
+  .col-item__label { font-size: 11px; margin-top: 8px; }
 }
