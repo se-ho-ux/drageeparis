@@ -49,7 +49,7 @@ input, textarea, select { font-family: inherit; }
 
 /* ---- Variables ---- */
 :root {
-  --paper:        #FFFFFF;
+  --paper:        #FBFBF9;
   --paper-2:      #F6F4F1;
   --ink:          #1A1816;
   --ink-60:       #1A1816;
@@ -637,6 +637,14 @@ body::before {
 }
 @media (max-width: 480px) {
   .collections__grid { grid-template-columns: 1fr; max-width: 320px; }
+}
+
+.collections__grid--single {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+}
+.collections__grid--single .col-item__duo img {
+  aspect-ratio: 9 / 16;
 }
 
 
