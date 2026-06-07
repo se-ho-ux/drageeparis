@@ -1508,70 +1508,102 @@ body::before {
 .dragees-section { border-top: 1px solid var(--ink-20); }
 
 .dragees-controls {
+  padding: 40px 52px 0;
+  text-align: center;
+  border-top: 1px solid var(--ink-20);
+}
+
+/* Bouton toggle "+ Filter / — Filter" */
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.filter-toggle__icon {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  min-width: 12px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Liste de filtres (texte plat, sans pills) */
+.filter-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  padding-bottom: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s var(--ease-soft), opacity 0.35s var(--ease-soft);
+}
+.filter-options.open {
+  max-height: 80px;
+  opacity: 1;
+  padding-bottom: 40px;
+}
+
+/* Navigation carrousel (sous les images) */
+.carousel-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   padding: 28px 52px;
-  border-bottom: 1px solid var(--ink-20);
-  gap: 24px;
+  border-top: 1px solid var(--ink-20);
 }
-.dragees-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  flex: 1;
-}
-.dragees-nav {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-.dragees-nav__btn {
+.carousel-nav__btn {
   width: 36px;
   height: 36px;
   border: 1px solid var(--ink-20);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;
   cursor: pointer;
   color: var(--ink);
   transition: background 0.3s, color 0.3s, border-color 0.3s, opacity 0.3s;
 }
-.dragees-nav__btn svg { width: 16px; height: 16px; }
-.dragees-nav__btn:hover:not(:disabled) {
+.carousel-nav__btn svg { width: 16px; height: 16px; }
+.carousel-nav__btn:hover:not(:disabled) {
   background: var(--ink);
   color: var(--blanc);
   border-color: var(--ink);
 }
-.dragees-nav__btn:disabled { opacity: 0.22; cursor: default; }
-.dragees-nav__count {
+.carousel-nav__btn:disabled { opacity: 0.22; cursor: default; }
+.carousel-nav__count {
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.12em;
-  color: var(--ink-60);
+  color: var(--ink);
   min-width: 36px;
   text-align: center;
 }
 
 @media (max-width: 768px) {
-  .dragees-controls {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 20px 0;
-    gap: 0;
-    border-bottom: none;
-  }
-  .dragees-filters {
-    flex-wrap: nowrap;
+  .dragees-controls { padding: 32px 20px 0; }
+  .filter-options {
+    gap: 24px;
+    justify-content: flex-start;
     overflow-x: auto;
     scrollbar-width: none;
-    width: 100%;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--ink-20);
+    padding-left: 0;
   }
-  .dragees-filters::-webkit-scrollbar { display: none; }
-  .dragees-nav { display: none; }
+  .filter-options::-webkit-scrollbar { display: none; }
+  .filter-options.open { padding-bottom: 28px; }
+  .carousel-nav { padding: 20px; }
 }
 
 
@@ -1694,18 +1726,22 @@ body::before {
 }
 .filter-btn {
   font-family: var(--font);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
-  letter-spacing: 0.08em;
-  color: var(--ink-60);
-  background: transparent;
-  border: 1px solid var(--ink-20);
-  padding: 8px 20px;
+  letter-spacing: 0;
+  color: rgba(26, 24, 22, 0.38);
+  background: none;
+  border: none;
+  padding: 4px 0;
   cursor: pointer;
-  transition: all 0.3s var(--ease-soft);
+  transition: color 0.25s var(--ease-soft);
+  flex-shrink: 0;
 }
-.filter-btn:hover { color: var(--ink); border-color: var(--ink); }
-.filter-btn.active { background: var(--ink); color: var(--blanc); border-color: var(--ink); }
+.filter-btn:hover { color: var(--ink); }
+.filter-btn.active {
+  font-weight: 500;
+  color: var(--ink);
+}
 @media (max-width: 768px) {
   .gallery-filters { padding: 32px 20px 28px; }
 }
@@ -2281,7 +2317,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
     gap: 8px;
   }
   .gallery-filters::-webkit-scrollbar { display: none; }
-  .filter-btn { flex-shrink: 0; min-height: 44px; padding: 10px 20px; }
+  .filter-btn { min-height: 44px; }
 }
 
 /* ---- Gallery grid (dragées) : 2 colonnes sur mobile ---- */

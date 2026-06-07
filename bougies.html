@@ -59,20 +59,14 @@
     <section class="dragees-section bougies-section" aria-label="Collection de bougies">
 
       <div class="dragees-controls">
-        <div class="dragees-filters" role="group" aria-label="Filtrer par famille olfactive">
+        <button class="filter-toggle" id="bougies-filter-toggle" aria-expanded="false" aria-controls="bougies-filter-options">
+          <span class="filter-toggle__icon" aria-hidden="true">+</span>Filter
+        </button>
+        <div class="filter-options" id="bougies-filter-options" role="group" aria-label="Filtrer par famille olfactive">
           <button class="filter-btn active" data-filter="all">Toutes</button>
           <button class="filter-btn" data-filter="florale">Florales</button>
           <button class="filter-btn" data-filter="boisee">Boisées</button>
           <button class="filter-btn" data-filter="gourmande">Gourmandes</button>
-        </div>
-        <div class="dragees-nav" aria-label="Navigation">
-          <button class="dragees-nav__btn" id="bougies-prev" aria-label="Images précédentes" disabled>
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13,4 7,10 13,16"/></svg>
-          </button>
-          <span class="dragees-nav__count" id="bougies-count" aria-live="polite"></span>
-          <button class="dragees-nav__btn" id="bougies-next" aria-label="Images suivantes">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,4 13,10 7,16"/></svg>
-          </button>
         </div>
       </div>
 
@@ -158,6 +152,16 @@
         </div>
 
       </div>
+      </div>
+
+      <div class="carousel-nav" aria-label="Navigation galerie bougies">
+        <button class="carousel-nav__btn" id="bougies-prev" aria-label="Paire précédente" disabled>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13,4 7,10 13,16"/></svg>
+        </button>
+        <span class="carousel-nav__count" id="bougies-count" aria-live="polite"></span>
+        <button class="carousel-nav__btn" id="bougies-next" aria-label="Paire suivante">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,4 13,10 7,16"/></svg>
+        </button>
       </div>
 
     </section>

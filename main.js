@@ -65,18 +65,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const duoPerPage = () => window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
   const duoGap    = () => window.innerWidth <= 640 ? 20 : window.innerWidth <= 1024 ? 28 : 44;
 
-  function makeDuoCarousel(trackId, filterSelector, prevId, nextId, countId) {
-    const track   = document.getElementById(trackId);
-    const prevBtn = document.getElementById(prevId);
-    const nextBtn = document.getElementById(nextId);
-    const countEl = document.getElementById(countId);
-    const navEl   = countEl ? countEl.closest('.dragees-nav') : null;
-    const filters = document.querySelectorAll(filterSelector);
-    if (!track || !filters.length) return;
+  function makeDuoCarousel(trackId, filterOptionsId, toggleId, prevId, nextId, countId) {
+    const track      = document.getElementById(trackId);
+    const filterOpts = document.getElementById(filterOptionsId);
+    const toggleBtn  = document.getElementById(toggleId);
+    const prevBtn    = document.getElementById(prevId);
+    const nextBtn    = document.getElementById(nextId);
+    const countEl    = document.getElementById(countId);
+    const navEl      = countEl ? countEl.closest('.carousel-nav') : null;
+    if (!track) return;
 
+    const filters  = filterOpts ? Array.from(filterOpts.querySelectorAll('.filter-btn')) : [];
     const allItems = Array.from(track.querySelectorAll('.col-item[data-category]'));
     let activeFilter = 'all';
     let page = 0;
+
+    /* -- filter toggle -- */
+    if (toggleBtn && filterOpts) {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = filterOpts.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        const icon = toggleBtn.querySelector('.filter-toggle__icon');
+        if (icon) icon.textContent = isOpen ? '–' : '+';
+      });
+    }
 
     const getFiltered = () =>
       activeFilter === 'all' ? allItems : allItems.filter(i => i.dataset.category === activeFilter);
@@ -125,10 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---- 5. Dragées ---- */
-  makeDuoCarousel('dragees-track', '.dragees-filters .filter-btn', 'dragees-prev', 'dragees-next', 'dragees-count');
+  makeDuoCarousel('dragees-track', 'dragees-filter-options', 'dragees-filter-toggle', 'dragees-prev', 'dragees-next', 'dragees-count');
 
   /* ---- 5b. Bougies ---- */
-  makeDuoCarousel('bougies-track', '.bougies-section .filter-btn', 'bougies-prev', 'bougies-next', 'bougies-count');
+  makeDuoCarousel('bougies-track', 'bougies-filter-options', 'bougies-filter-toggle', 'bougies-prev', 'bougies-next', 'bougies-count');
 
   /* ---- 6. Form validation & submit ---- */
   const devisForm = document.getElementById('devis-form');
