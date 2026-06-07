@@ -649,14 +649,23 @@ body::before {
 }
 
 /* ==============================================
-   DUO GALLERY (dragées & bougies pages)
+   DUO CAROUSEL (dragées & bougies pages)
 ============================================== */
-.duo-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 52px 40px;
+.duo-carousel-wrap {
+  overflow: hidden;
   padding: 60px 52px 80px;
 }
+.duo-carousel__track {
+  display: flex;
+  gap: 44px;
+  transition: transform 0.72s cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
+}
+.duo-carousel__track .col-item {
+  flex: 0 0 calc((100% - 88px) / 3);
+  min-width: 0;
+}
+
 .col-item__duo-empty {
   aspect-ratio: 1 / 2;
   background: var(--paper-2);
@@ -712,10 +721,14 @@ body::before {
 }
 
 @media (max-width: 1024px) {
-  .duo-gallery { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; padding: 48px 24px 64px; }
+  .duo-carousel-wrap { padding: 48px 24px 64px; }
+  .duo-carousel__track { gap: 28px; }
+  .duo-carousel__track .col-item { flex: 0 0 calc((100% - 28px) / 2); }
 }
 @media (max-width: 640px) {
-  .duo-gallery { grid-template-columns: 1fr; gap: 36px; padding: 36px 20px 52px; max-width: 360px; margin: 0 auto; }
+  .duo-carousel-wrap { padding: 36px 20px 52px; }
+  .duo-carousel__track { gap: 20px; }
+  .duo-carousel__track .col-item { flex: 0 0 100%; }
 }
 
 

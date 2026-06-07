@@ -61,109 +61,74 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ---- 5. Dragées — Galerie duo filtrée + paginée ---- */
-  const drageesGallery = document.getElementById('dragees-gallery');
-  const drageesPrevBtn = document.getElementById('dragees-prev');
-  const drageesNextBtn = document.getElementById('dragees-next');
-  const drageesCount   = document.getElementById('dragees-count');
-  const drageesNav     = drageesCount ? drageesCount.closest('.dragees-nav') : null;
-  const drageesFilters = document.querySelectorAll('.dragees-filters .filter-btn');
+  /* ---- helpers carrousel ---- */
+  const duoPerPage = () => window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+  const duoGap    = () => window.innerWidth <= 640 ? 20 : window.innerWidth <= 1024 ? 28 : 44;
 
-  if (drageesGallery && drageesFilters.length) {
-    const PAGE = 3;
+  function makeDuoCarousel(trackId, filterSelector, prevId, nextId, countId) {
+    const track   = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const countEl = document.getElementById(countId);
+    const navEl   = countEl ? countEl.closest('.dragees-nav') : null;
+    const filters = document.querySelectorAll(filterSelector);
+    if (!track || !filters.length) return;
+
+    const allItems = Array.from(track.querySelectorAll('.col-item[data-category]'));
     let activeFilter = 'all';
-    let currentPage  = 0;
-    const items = Array.from(drageesGallery.querySelectorAll('.col-item[data-category]'));
+    let page = 0;
 
-    const getVisible = () =>
-      activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
+    const getFiltered = () =>
+      activeFilter === 'all' ? allItems : allItems.filter(i => i.dataset.category === activeFilter);
 
-    const render = () => {
-      const filtered   = getVisible();
-      const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE));
-      const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
+    const render = (animate) => {
+      const filtered   = getFiltered();
+      const perPage    = duoPerPage();
+      const gap        = duoGap();
+      const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
 
-      items.forEach(el => { el.style.display = 'none'; });
-      pageItems.forEach(el => { el.style.display = ''; });
+      allItems.forEach(i => { i.style.display = 'none'; });
+      filtered.forEach(i => { i.style.display = ''; });
 
-      if (drageesPrevBtn) drageesPrevBtn.disabled = currentPage === 0;
-      if (drageesNextBtn) drageesNextBtn.disabled = currentPage >= totalPages - 1;
-      if (drageesNav)     drageesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
-      if (drageesCount)   drageesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
+      if (!animate) track.style.transition = 'none';
+      const offset = page * (track.offsetWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+      if (!animate) { track.offsetHeight; track.style.transition = ''; }
+
+      if (prevBtn) prevBtn.disabled = page === 0;
+      if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
+      if (navEl)   navEl.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
+      if (countEl) countEl.textContent = totalPages > 1 ? `${page + 1} / ${totalPages}` : '';
     };
 
-    drageesFilters.forEach(btn => {
+    filters.forEach(btn => {
       btn.addEventListener('click', () => {
-        drageesFilters.forEach(b => b.classList.remove('active'));
+        filters.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
-        currentPage  = 0;
-        render();
+        page = 0;
+        render(false);
       });
     });
 
-    drageesPrevBtn?.addEventListener('click', () => {
-      if (currentPage > 0) { currentPage--; render(); }
+    prevBtn?.addEventListener('click', () => {
+      if (page > 0) { page--; render(true); }
     });
-    drageesNextBtn?.addEventListener('click', () => {
-      const total = Math.max(1, Math.ceil(getVisible().length / PAGE));
-      if (currentPage < total - 1) { currentPage++; render(); }
+    nextBtn?.addEventListener('click', () => {
+      const total = Math.max(1, Math.ceil(getFiltered().length / duoPerPage()));
+      if (page < total - 1) { page++; render(true); }
     });
 
-    render();
+    window.addEventListener('resize', () => { page = 0; render(false); }, { passive: true });
+
+    render(false);
   }
 
-  /* ---- 5b. Bougies — Galerie duo filtrée + paginée ---- */
-  const bougiesGallery = document.getElementById('bougies-gallery');
-  const bougiesPrevBtn = document.getElementById('bougies-prev');
-  const bougiesNextBtn = document.getElementById('bougies-next');
-  const bougiesCount   = document.getElementById('bougies-count');
-  const bougiesNav     = bougiesCount ? bougiesCount.closest('.dragees-nav') : null;
-  const bougiesFilters = document.querySelectorAll('.bougies-section .filter-btn');
+  /* ---- 5. Dragées ---- */
+  makeDuoCarousel('dragees-track', '.dragees-filters .filter-btn', 'dragees-prev', 'dragees-next', 'dragees-count');
 
-  if (bougiesGallery && bougiesFilters.length) {
-    const PAGE = 3;
-    let activeFilter = 'all';
-    let currentPage  = 0;
-    const items = Array.from(bougiesGallery.querySelectorAll('.col-item[data-category]'));
-
-    const getVisible = () =>
-      activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
-
-    const render = () => {
-      const filtered   = getVisible();
-      const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE));
-      const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
-
-      items.forEach(el => { el.style.display = 'none'; });
-      pageItems.forEach(el => { el.style.display = ''; });
-
-      if (bougiesPrevBtn) bougiesPrevBtn.disabled = currentPage === 0;
-      if (bougiesNextBtn) bougiesNextBtn.disabled = currentPage >= totalPages - 1;
-      if (bougiesNav)     bougiesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
-      if (bougiesCount)   bougiesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
-    };
-
-    bougiesFilters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        bougiesFilters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter = btn.dataset.filter;
-        currentPage  = 0;
-        render();
-      });
-    });
-
-    bougiesPrevBtn?.addEventListener('click', () => {
-      if (currentPage > 0) { currentPage--; render(); }
-    });
-    bougiesNextBtn?.addEventListener('click', () => {
-      const total = Math.max(1, Math.ceil(getVisible().length / PAGE));
-      if (currentPage < total - 1) { currentPage++; render(); }
-    });
-
-    render();
-  }
+  /* ---- 5b. Bougies ---- */
+  makeDuoCarousel('bougies-track', '.bougies-section .filter-btn', 'bougies-prev', 'bougies-next', 'bougies-count');
 
   /* ---- 6. Form validation & submit ---- */
   const devisForm = document.getElementById('devis-form');
