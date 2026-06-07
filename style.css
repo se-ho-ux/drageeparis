@@ -121,15 +121,12 @@ body::before {
   left: 0;
   right: 0;
   z-index: 50;
-  transition: background 0.7s var(--ease-soft),
-              border-color 0.7s var(--ease-soft);
-  border-bottom: 1px solid transparent;
+  transition: background 0.7s var(--ease-soft);
 }
 .header.scrolled {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: var(--ink-20);
 }
 .header.scrolled .nav__link          { color: var(--ink); }
 .header.scrolled .nav__logo-wordmark { color: #7A6A52; }
@@ -1383,7 +1380,6 @@ body::before {
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--ink-20);
 }
 .header--inner .nav__link              { color: var(--ink-60); }
 .header--inner .nav__link:hover        { color: var(--ink); opacity: 1; }
