@@ -61,20 +61,59 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ---- 5. Gallery filter (dragées) ---- */
-  const filterBtns   = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  if (filterBtns.length) {
-    filterBtns.forEach(btn => {
+  /* ---- 5. Dragées — Accordéon filtrable + paginé ---- */
+  const drageesAccord  = document.getElementById('dragees-accord');
+  const drageesPrevBtn = document.getElementById('dragees-prev');
+  const drageesNextBtn = document.getElementById('dragees-next');
+  const drageesCount   = document.getElementById('dragees-count');
+  const drageesNav     = drageesCount ? drageesCount.closest('.dragees-nav') : null;
+  const drageesFilters = document.querySelectorAll('.dragees-filters .filter-btn');
+
+  if (drageesAccord && drageesFilters.length) {
+    const PAGE = 6;
+    let activeFilter = 'all';
+    let currentPage  = 0;
+    const items = Array.from(drageesAccord.querySelectorAll('.accord-gallery__item'));
+
+    const getVisible = () =>
+      activeFilter === 'all' ? items : items.filter(el => el.dataset.category === activeFilter);
+
+    const render = () => {
+      const filtered   = getVisible();
+      const totalPages = Math.ceil(filtered.length / PAGE);
+      const pageItems  = filtered.slice(currentPage * PAGE, (currentPage + 1) * PAGE);
+
+      items.forEach(el => { el.style.display = 'none'; });
+      pageItems.forEach(el => { el.style.display = ''; });
+
+      if (drageesPrevBtn) drageesPrevBtn.disabled = currentPage === 0;
+      if (drageesNextBtn) drageesNextBtn.disabled = currentPage >= totalPages - 1;
+      if (drageesNav)     drageesNav.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
+      if (drageesCount)   drageesCount.textContent = totalPages > 1 ? `${currentPage + 1} / ${totalPages}` : '';
+
+      /* Reset scroll position on mobile carousel */
+      if (drageesAccord) drageesAccord.scrollLeft = 0;
+    };
+
+    drageesFilters.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        drageesFilters.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        galleryItems.forEach(item => {
-          item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
-        });
+        activeFilter = btn.dataset.filter;
+        currentPage  = 0;
+        render();
       });
     });
+
+    drageesPrevBtn?.addEventListener('click', () => {
+      if (currentPage > 0) { currentPage--; render(); }
+    });
+    drageesNextBtn?.addEventListener('click', () => {
+      const total = Math.ceil(getVisible().length / PAGE);
+      if (currentPage < total - 1) { currentPage++; render(); }
+    });
+
+    render();
   }
 
   /* ---- 6. Form validation & submit ---- */

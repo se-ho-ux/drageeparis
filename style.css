@@ -1390,6 +1390,79 @@ body::before {
 
 
 /* ==============================================
+   DRAGÉES — Contrôles (filtres + navigation)
+============================================== */
+.dragees-section { border-top: 1px solid var(--ink-20); }
+
+.dragees-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 52px;
+  border-bottom: 1px solid var(--ink-20);
+  gap: 24px;
+}
+.dragees-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+.dragees-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.dragees-nav__btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, opacity 0.3s;
+}
+.dragees-nav__btn svg { width: 16px; height: 16px; }
+.dragees-nav__btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--blanc);
+  border-color: var(--ink);
+}
+.dragees-nav__btn:disabled { opacity: 0.22; cursor: default; }
+.dragees-nav__count {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--ink-60);
+  min-width: 36px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .dragees-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px 0;
+    gap: 0;
+    border-bottom: none;
+  }
+  .dragees-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--ink-20);
+  }
+  .dragees-filters::-webkit-scrollbar { display: none; }
+  .dragees-nav { display: none; }
+}
+
+
+/* ==============================================
    ACCORDION GALLERY (dragées & bougies)
 ============================================== */
 .accord-gallery {

@@ -50,68 +50,57 @@
       <p class="page-intro__sub">Amandes de qualité supérieure, enrobées à la main dans notre atelier. Une dragée pour chaque occasion, chaque couleur, chaque envie.</p>
     </div>
 
-    <!-- ACCORDION GALLERY -->
-    <div class="accord-gallery" aria-label="Aperçu de la collection de dragées">
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im1.jpg"  alt="Dragées mariage dorées"        loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im8.jpg"  alt="Dragées premium en boîte"      loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im12.jpg" alt="Dragées colorées palette"       loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im9.jpg"  alt="Dragées naissance pastel"       loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im3.jpg"  alt="Dragées atelier artisanal"      loading="lazy">
-      </div>
-      <div class="accord-gallery__item">
-        <img src="./images/images-librairy/im5.jpg"  alt="Dragées réception élégantes"    loading="lazy">
-      </div>
-    </div>
+    <!-- GALERIE FILTRÉE + ACCORDÉON -->
+    <section class="dragees-section" aria-label="Collection de dragées">
 
-    <section aria-label="Galerie de dragées">
-
-      <div class="gallery-filters fade-in" role="group" aria-label="Filtrer par occasion">
-        <button class="filter-btn active" data-filter="all">Toutes</button>
-        <button class="filter-btn" data-filter="mariage">Mariage</button>
-        <button class="filter-btn" data-filter="naissance">Naissance</button>
-        <button class="filter-btn" data-filter="reception">Réception</button>
-        <button class="filter-btn" data-filter="anniv">Anniversaire</button>
+      <div class="dragees-controls">
+        <div class="dragees-filters" role="group" aria-label="Filtrer par occasion">
+          <button class="filter-btn active" data-filter="all">Toutes</button>
+          <button class="filter-btn" data-filter="mariage">Mariage</button>
+          <button class="filter-btn" data-filter="naissance">Naissance</button>
+          <button class="filter-btn" data-filter="reception">Réception</button>
+          <button class="filter-btn" data-filter="anniv">Anniversaire</button>
+        </div>
+        <div class="dragees-nav" aria-label="Navigation">
+          <button class="dragees-nav__btn" id="dragees-prev" aria-label="Images précédentes" disabled>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13,4 7,10 13,16"/></svg>
+          </button>
+          <span class="dragees-nav__count" id="dragees-count" aria-live="polite"></span>
+          <button class="dragees-nav__btn" id="dragees-next" aria-label="Images suivantes">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,4 13,10 7,16"/></svg>
+          </button>
+        </div>
       </div>
 
-      <div class="gallery__grid" role="list" aria-label="Galerie de dragées">
+      <div class="accord-gallery" id="dragees-accord" aria-label="Galerie de dragées">
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image-d2.jpeg"  alt="Dragées mariage dorées"              loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image-d3.jpeg"  alt="Dragées mariage blanc nacré"          loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image17.jpeg"   alt="Dragées mariage arrangement floral"   loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image18.jpeg"   alt="Dragées mariage présentoir élégant"   loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image20.jpeg"   alt="Dragées mariage coupe en verre"       loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image21.jpeg"   alt="Dragées mariage en sachet organza"    loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image22.jpeg"   alt="Dragées mariage assortiment blanc"    loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="mariage"><img src="./images/mariage/image65.jpeg"   alt="Dragées mariage décoration de table"  loading="lazy"></div>
 
-        <article class="gallery-item fade-in"              data-category="mariage"  role="listitem"><img src="./images/mariage/image-d2.jpeg"  alt="Dragées mariage dorées"              loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage"  role="listitem"><img src="./images/mariage/image-d3.jpeg"  alt="Dragées mariage blanc nacré"          loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage"  role="listitem"><img src="./images/mariage/image17.jpeg"   alt="Dragées mariage arrangement floral"   loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage"  role="listitem"><img src="./images/mariage/image18.jpeg"   alt="Dragées mariage présentoir élégant"   loading="lazy"></article>
-        <article class="gallery-item fade-in"              data-category="mariage"  role="listitem"><img src="./images/mariage/image20.jpeg"   alt="Dragées mariage coupe en verre"       loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="mariage"  role="listitem"><img src="./images/mariage/image21.jpeg"   alt="Dragées mariage en sachet organza"    loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-2" data-category="mariage"  role="listitem"><img src="./images/mariage/image22.jpeg"   alt="Dragées mariage assortiment blanc"    loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-3" data-category="mariage"  role="listitem"><img src="./images/mariage/image65.jpeg"   alt="Dragées mariage décoration de table"  loading="lazy"></article>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-16.jpeg"  alt="Dragées naissance rose tendre"        loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-d1.jpeg"  alt="Dragées naissance en boîte"           loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-d10.jpg"  alt="Dragées naissance garçon bleu"        loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-d7.jpeg"  alt="Dragées naissance fille"              loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-d8.jpg"   alt="Dragées naissance coffret"            loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="naissance"><img src="./images/naiss/image-d9.jpg"   alt="Dragées naissance arrangement"        loading="lazy"></div>
 
-        <article class="gallery-item fade-in"              data-category="naissance" role="listitem"><img src="./images/naiss/image-16.jpeg"   alt="Dragées naissance rose tendre"        loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem"><img src="./images/naiss/image-d1.jpeg"   alt="Dragées naissance en boîte"           loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-2" data-category="naissance" role="listitem"><img src="./images/naiss/image-d10.jpg"   alt="Dragées naissance garçon bleu"        loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-3" data-category="naissance" role="listitem"><img src="./images/naiss/image-d7.jpeg"   alt="Dragées naissance fille"              loading="lazy"></article>
-        <article class="gallery-item fade-in"              data-category="naissance" role="listitem"><img src="./images/naiss/image-d8.jpg"    alt="Dragées naissance coffret"            loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="naissance" role="listitem"><img src="./images/naiss/image-d9.jpg"    alt="Dragées naissance arrangement"        loading="lazy"></article>
+        <div class="accord-gallery__item" data-category="reception"><img src="./images/bapteme/image-d11.jpeg" alt="Dragées réception lavande"          loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="reception"><img src="./images/bapteme/image-d12.jpeg" alt="Dragées réception bleu pastel"      loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="reception"><img src="./images/bapteme/image-d13.jpeg" alt="Dragées réception présentation"     loading="lazy"></div>
 
-        <article class="gallery-item fade-in"              data-category="reception"  role="listitem"><img src="./images/bapteme/image-d11.jpeg" alt="Dragées réception lavande"              loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="reception"  role="listitem"><img src="./images/bapteme/image-d12.jpeg" alt="Dragées réception bleu pastel"          loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-2" data-category="reception"  role="listitem"><img src="./images/bapteme/image-d13.jpeg" alt="Dragées réception présentation"         loading="lazy"></article>
-
-        <article class="gallery-item fade-in"              data-category="anniv"    role="listitem"><img src="./images/anniv/image-d4.jpeg"   alt="Dragées anniversaire multicolores"    loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv"    role="listitem"><img src="./images/anniv/image-d5.jpeg"   alt="Dragées anniversaire en sachet"       loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-2" data-category="anniv"    role="listitem"><img src="./images/anniv/image-d6.jpeg"   alt="Dragées anniversaire décoration"      loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-3" data-category="anniv"    role="listitem"><img src="./images/anniv/image14.jpeg"    alt="Dragées anniversaire colorées"        loading="lazy"></article>
-        <article class="gallery-item fade-in"              data-category="anniv"    role="listitem"><img src="./images/anniv/image22.jpeg"    alt="Dragées anniversaire présentation"    loading="lazy"></article>
-        <article class="gallery-item fade-in fade-in--delay-1" data-category="anniv"    role="listitem"><img src="./images/anniv/image332.jpeg"   alt="Dragées anniversaire coffret"         loading="lazy"></article>
-
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image-d4.jpeg"  alt="Dragées anniversaire multicolores"        loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image-d5.jpeg"  alt="Dragées anniversaire en sachet"           loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image-d6.jpeg"  alt="Dragées anniversaire décoration"          loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image14.jpeg"   alt="Dragées anniversaire colorées"            loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image22.jpeg"   alt="Dragées anniversaire présentation"        loading="lazy"></div>
+        <div class="accord-gallery__item" data-category="anniv"><img src="./images/anniv/image332.jpeg"  alt="Dragées anniversaire coffret"             loading="lazy"></div>
       </div>
+
     </section>
 
     <section class="cta-center" aria-label="Commande sur mesure">
