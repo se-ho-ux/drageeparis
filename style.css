@@ -827,7 +827,7 @@ body::before {
   flex-direction: column;
   justify-content: flex-start;
 }
-.artisan__content .section-title { font-size: 30px; font-family: var(--serif); margin-bottom: 16px; }
+.artisan__content .section-title { font-size: clamp(20px, 2vw, 26px); font-family: var(--serif); margin-bottom: 16px; white-space: nowrap; }
 .artisan__content .hairline { display: none; }
 .artisan__content .section-sub + .section-sub { margin-top: 8px; }
 .artisan__sub-heading {
@@ -1082,19 +1082,19 @@ body::before {
    FAQ
 ============================================== */
 .faq {
-  padding: 100px 0;
+  padding: 80px 0 100px;
   border-top: 1px solid var(--ink-20);
   background: var(--paper);
 }
-.faq__layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
+.faq .collections__intro { margin-bottom: 52px; }
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  margin: 0 auto;
   padding: 0 52px;
 }
-.faq__heading .section-title { max-width: 260px; }
-
-.faq__list { display: flex; flex-direction: column; }
 .faq__item { border-bottom: 1px solid var(--ink-20); }
 .faq__item:first-child { border-top: 1px solid var(--ink-20); }
 
@@ -1135,10 +1135,11 @@ body::before {
   color: var(--ink-60);
 }
 
-@media (max-width: 1024px) {
-  .faq__layout { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
+@media (max-width: 768px) {
+  .faq { padding: 56px 0 72px; }
+  .faq__list { padding: 0 20px; }
+  .faq .collections__intro { margin-bottom: 36px; }
 }
-@media (max-width: 768px) { .faq { padding: 64px 0; } }
 
 
 /* ==============================================
@@ -2272,7 +2273,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .artisan__visual video { width: 100%; max-height: 56vw; object-fit: cover; display: block; }
 }
 @media (max-width: 768px) {
-  .artisan__content .section-title { font-size: 26px; }
+  .artisan__content .section-title { font-size: 22px; white-space: normal; }
   .artisan__content .section-sub   { max-width: 100%; font-size: 13px; }
   .artisan__cta { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
   .artisan__cta .btn { width: 100%; justify-content: center; }
