@@ -216,7 +216,7 @@ body::before {
 .nav__logo-wordmark {
   font-family: 'Cormorant', serif;
   font-size: 44px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--blanc);
