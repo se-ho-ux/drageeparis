@@ -642,7 +642,6 @@ body::before {
   background: var(--paper-2);
 }
 
-/* Wrapper individuel pour chaque image d'une paire (bougies avec label) */
 .col-item__duo-frame {
   position: relative;
   overflow: hidden;
@@ -727,6 +726,10 @@ body::before {
   max-width: 900px;
   margin: 0 auto;
 }
+.garanties__grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+}
 .garantie-item {
   display: flex;
   flex-direction: column;
@@ -748,7 +751,7 @@ body::before {
   width: 40px;
   height: 40px;
   margin-bottom: 22px;
-  color: var(--or-chaud);
+  color: var(--caramel);
 }
 .garantie-item__icon svg {
   width: 100%;
@@ -770,12 +773,21 @@ body::before {
   max-width: 220px;
 }
 
+@media (max-width: 1024px) {
+  .garanties__grid--4 { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+  .garanties__grid--4 .garantie-item:nth-child(2)::after { display: none; }
+  .garanties__grid--4 .garantie-item:nth-child(1),
+  .garanties__grid--4 .garantie-item:nth-child(2) { border-bottom: 1px solid var(--ink-20); padding-bottom: 40px; margin-bottom: 8px; }
+}
 @media (max-width: 768px) {
   .garanties { padding: 56px 24px; }
   .garanties__grid { grid-template-columns: 1fr; }
+  .garanties__grid--4 { grid-template-columns: 1fr; max-width: 100%; }
   .garantie-item { padding: 32px 20px; }
   .garantie-item:not(:last-child)::after { display: none; }
   .garantie-item:not(:last-child) { border-bottom: 1px solid var(--ink-20); }
+  .garanties__grid--4 .garantie-item:nth-child(1),
+  .garanties__grid--4 .garantie-item:nth-child(2) { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 }
 
 
@@ -1485,7 +1497,6 @@ body::before {
   text-align: center;
 }
 
-/* Bouton toggle "+ Filter / — Filter" */
 .filter-toggle {
   display: inline-flex;
   align-items: center;
@@ -1509,7 +1520,6 @@ body::before {
   display: inline-block;
 }
 
-/* Liste de filtres — outer gère la hauteur, inner l'animation */
 .filter-options {
   overflow: hidden;
   max-height: 0;
@@ -1535,7 +1545,6 @@ body::before {
               transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1) 0.1s;
 }
 
-/* Navigation carrousel (sous les images) */
 .carousel-nav {
   display: flex;
   align-items: center;
@@ -1620,7 +1629,6 @@ body::before {
   transform: scale(1.02);
 }
 
-/* Overlay label (bougies) */
 .accord-gallery__label {
   position: absolute;
   bottom: 0;
@@ -1670,7 +1678,6 @@ body::before {
     border-bottom: none;
   }
   .accord-gallery::-webkit-scrollbar { display: none; }
-
   .accord-gallery__item {
     flex: 0 0 72vw;
     min-width: 72vw;
@@ -1688,7 +1695,6 @@ body::before {
     transform: none !important;
   }
 }
-
 @media (max-width: 480px) {
   .accord-gallery__item { flex: 0 0 82vw; min-width: 82vw; }
 }
@@ -2210,11 +2216,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 /* ================================================
    MOBILE — Direction Artistique Dragée Paris
-   Pensé pour l'expérience tactile, pas seulement
-   la mise à l'échelle du desktop.
 ================================================ */
 
-/* ---- Navigation ---- */
 @media (max-width: 1100px) {
   .nav__logo-wordmark { font-size: 28px; }
 }
@@ -2223,7 +2226,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .nav { padding: 18px 20px; }
 }
 
-/* CTA dans le panel mobile : différencié visuellement */
 .nav__panel .nav__link--cta {
   display: inline-block;
   margin-top: 8px;
@@ -2239,14 +2241,12 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .nav__panel .nav__link--cta::after { display: none; }
 .nav__panel.open li:last-child .nav__link { transition-delay: 0.42s; }
 
-/* ---- Band (marquee) ---- */
 @media (max-width: 768px) {
   .band { padding: 12px 0; }
   .band__item { font-size: 9px; gap: 16px; padding: 0 16px; letter-spacing: 0.14em; }
   .band__track { animation-duration: 20s; }
 }
 
-/* ---- Hero ---- */
 @media (max-width: 768px) {
   .hero__bg img { object-position: center 25%; }
   .hero__content { padding: 0 24px 96px; }
@@ -2256,7 +2256,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .hero__content { padding: 0 20px 80px; }
 }
 
-/* ---- Collections ---- */
 @media (max-width: 768px) {
   .collections__intro { margin-bottom: 48px; }
   .collections__grid { gap: 20px; }
@@ -2267,97 +2266,60 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .collections__grid { grid-template-columns: 1fr; }
 }
 
-/* ---- Artisan split : texte avant visuel sur mobile ---- */
 @media (max-width: 1024px) {
   .artisan__content { order: 1; }
   .artisan__visual  { order: 2; }
-  .artisan__visual video {
-    width: 100%;
-    max-height: 56vw;
-    object-fit: cover;
-    display: block;
-  }
+  .artisan__visual video { width: 100%; max-height: 56vw; object-fit: cover; display: block; }
 }
 @media (max-width: 768px) {
   .artisan__content .section-title { font-size: 26px; }
   .artisan__content .section-sub   { max-width: 100%; font-size: 13px; }
-  .artisan__cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 28px;
-  }
+  .artisan__cta { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
   .artisan__cta .btn { width: 100%; justify-content: center; }
 }
 
-/* ---- Boutons : touch targets ---- */
 @media (max-width: 768px) {
   .btn { padding: 15px 24px; min-height: 48px; }
   .btn-arrow { width: 24px; height: 24px; font-size: 12px; }
 }
 
-/* ---- Gallery strip (homepage) ---- */
 @media (max-width: 768px) {
   .gallery { height: auto; }
   .gallery__item img { aspect-ratio: 1 / 1; height: auto; }
 }
 
-/* ---- FAQ ---- */
 @media (max-width: 768px) {
   .faq__question { padding: 20px 0; font-size: 13.5px; }
   .faq__answer-inner { font-size: 13px; line-height: 1.75; }
 }
 
-/* ---- Footer ---- */
 @media (max-width: 600px) {
   .footer__inner { gap: 36px; }
   .footer__tagline { max-width: 100%; }
-  .footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 20px;
-  }
+  .footer__bottom { flex-direction: column; align-items: flex-start; gap: 6px; padding: 20px; }
 }
 @media (max-width: 480px) {
   .footer__inner { padding: 48px 20px; }
   .newsletter-form { flex-direction: column; }
   .newsletter-form input { padding: 14px 16px; }
-  .newsletter-form button {
-    border-left: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 14px 16px;
-    text-align: left;
-  }
+  .newsletter-form button { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding: 14px 16px; text-align: left; }
 }
 
-/* ---- Filter buttons (dragées) : scroll horizontal ---- */
 @media (max-width: 768px) {
-  .gallery-filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 24px;
-    padding-right: 0;
-    gap: 8px;
-  }
+  .gallery-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 24px; padding-right: 0; gap: 8px; }
   .gallery-filters::-webkit-scrollbar { display: none; }
   .filter-btn { min-height: 44px; }
 }
 
-/* ---- Gallery grid (dragées) : 2 colonnes sur mobile ---- */
 @media (max-width: 480px) {
   .gallery__grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 48px; }
 }
 
-/* ---- Bougies grid ---- */
 @media (max-width: 480px) {
   .bougies__grid { grid-template-columns: 1fr; }
   .bougie-card__info { padding: 16px; }
 }
 
-/* ---- Page intro inner pages ---- */
 @media (max-width: 768px) {
   .page-intro__visual img { min-height: 52vw; }
   .page-intro__sub { font-size: 13px; line-height: 1.7; }
@@ -2368,57 +2330,46 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .page-intro__visual img { min-height: 56vw; }
 }
 
-/* ---- Steps (personnalisation) ---- */
 @media (max-width: 480px) {
   .step-card { padding: 28px 20px; }
   .step-card__number { font-size: 40px; margin-bottom: 14px; }
   .step-card h3 { font-size: 16px; }
 }
 
-/* ---- Options (personnalisation) ---- */
 @media (max-width: 480px) {
   .option-card { padding: 32px 24px; }
 }
 
-/* ---- Quote block ---- */
 @media (max-width: 768px) {
   .quote-block { padding: 64px 24px; }
   .quote-block__text { font-size: clamp(20px, 5.5vw, 32px); }
 }
 
-/* ---- Values grid (a-propos) ---- */
 @media (max-width: 768px) {
   .values__grid { gap: 0; }
 }
 
-/* ---- Location block (a-propos) ---- */
 @media (max-width: 768px) {
   .location-block { gap: 32px; }
 }
 
-/* ---- Formulaire : touch inputs ---- */
 @media (max-width: 768px) {
-  .form__input,
-  .form__textarea,
-  .form__select { font-size: 16px; padding: 12px 0 14px; }
+  .form__input, .form__textarea, .form__select { font-size: 16px; padding: 12px 0 14px; }
   .form__label { font-size: 9.5px; margin-bottom: 8px; }
   .form__group { margin-bottom: 28px; }
   .form__file label { padding: 18px 16px; }
 }
 
-/* ---- Contact layout ---- */
 @media (max-width: 768px) {
   .contact__layout { gap: 36px; }
   .contact__sidebar-box { padding: 20px; }
 }
 
-/* ---- Section title global ---- */
 @media (max-width: 480px) {
   .section-title { font-size: clamp(28px, 8vw, 36px); }
   .eyebrow { font-size: 9px; }
 }
 
-/* ---- Garanties ---- */
 @media (max-width: 480px) {
   .garanties { padding: 48px 20px; }
   .garantie-item__icon { width: 34px; height: 34px; margin-bottom: 16px; }
@@ -2426,7 +2377,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .garantie-item__desc { font-size: 12px; }
 }
 
-/* ---- Scrolled header fond : blanc cassé cohérent ---- */
 @media (max-width: 1100px) {
   .header.scrolled { background: rgba(251, 251, 249, 0.96); }
 }
@@ -2435,54 +2385,41 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
    RESPONSIVE COMPLÉMENTAIRE
 ================================================ */
 
-/* Filter toggle : touch target minimum 44px */
 @media (max-width: 768px) {
   .filter-toggle { min-height: 44px; }
 }
 
-/* Carousel nav : touch targets 44 × 44px */
 @media (max-width: 768px) {
   .carousel-nav__btn { width: 44px; height: 44px; }
   .carousel-nav { gap: 16px; }
 }
 
-/* Bougies : labels parfum persistants sur mobile (pas de hover tactile) */
 @media (max-width: 768px) {
   .col-item__bougie-label { opacity: 1; }
 }
 
-/* CTA : boutons empilés pleine largeur sur petit mobile */
 @media (max-width: 480px) {
   .cta-center__btns { flex-direction: column; align-items: center; }
   .cta-center__btns .btn { width: 100%; max-width: 320px; justify-content: center; }
   .cta-center__sub { font-size: 13px; }
 }
 
-/* Newsletter : colonne dès 600px (avant la règle 480px existante) */
 @media (max-width: 600px) {
   .newsletter-form { flex-direction: column; }
   .newsletter-form input { padding: 14px 16px; }
-  .newsletter-form button {
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 14px 16px;
-    text-align: left;
-  }
+  .newsletter-form button { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 16px; text-align: left; }
 }
 
-/* Formulaire contact : ajustements tactile */
 @media (max-width: 480px) {
   .form__success { padding: 40px 20px; }
   .form__file-subtext { display: none; }
   .contact__sidebar-box { padding: 16px; }
 }
 
-/* Artisan : numéro décoratif retiré sur mobile */
 @media (max-width: 768px) {
   .artisan__ghost-num { display: none; }
 }
 
-/* Duo carousel : 1-col — padding serré et label plus petit */
 @media (max-width: 640px) {
   .duo-carousel-wrap { padding: 28px 20px 40px; }
   .col-item__label { font-size: 11px; margin-top: 8px; }
