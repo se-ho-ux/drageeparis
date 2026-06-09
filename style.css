@@ -187,13 +187,15 @@ body::before {
   color: var(--blanc);
   transition: background 0.35s var(--ease-soft),
               border-color 0.35s,
+              box-shadow 0.35s var(--ease-soft),
               color 0.35s,
               opacity 0.35s;
 }
 .nav__link--cta:hover {
-  background: transparent;
-  color: #7A6A52;
-  border-color: #7A6A52;
+  background: #6A5C44;
+  border-color: #6A5C44;
+  color: var(--blanc);
+  box-shadow: 0 4px 18px rgba(106, 92, 68, 0.42);
   opacity: 1;
 }
 .header.scrolled .nav__link--cta {
@@ -202,9 +204,10 @@ body::before {
   color: var(--blanc);
 }
 .header.scrolled .nav__link--cta:hover {
-  background: transparent;
-  color: #7A6A52;
-  border-color: #7A6A52;
+  background: #6A5C44;
+  border-color: #6A5C44;
+  color: var(--blanc);
+  box-shadow: 0 4px 18px rgba(106, 92, 68, 0.42);
   opacity: 1;
 }
 .nav__link--cta::after { display: none; }
@@ -2288,9 +2291,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   transition: background 0.35s, color 0.35s, border-color 0.35s;
 }
 .nav__panel .nav__link--cta:hover {
-  background: transparent;
-  color: #7A6A52;
-  border-color: #7A6A52;
+  background: #6A5C44;
+  border-color: #6A5C44;
+  color: var(--blanc);
+  box-shadow: 0 4px 14px rgba(106, 92, 68, 0.38);
 }
 .nav__panel .nav__link::after      { display: none; }
 .nav__panel .nav__link--cta::after { display: none; }
@@ -2506,13 +2510,20 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
     white-space: nowrap;
     text-decoration: none;
     box-shadow: 0 4px 24px rgba(122, 106, 82, 0.35);
-    transition: opacity 0.3s var(--ease-soft), transform 0.3s var(--ease-soft);
+    transition: background 0.3s var(--ease-soft),
+                box-shadow 0.3s var(--ease-soft),
+                transform 0.3s var(--ease-soft),
+                opacity 0.3s var(--ease-soft);
   }
   .mobile-cta svg {
     width: 13px;
     height: 13px;
     flex-shrink: 0;
   }
-  .mobile-cta:hover  { opacity: 0.82; }
+  .mobile-cta:hover  {
+    background: #6A5C44;
+    box-shadow: 0 6px 28px rgba(106, 92, 68, 0.5);
+    transform: translateY(-2px);
+  }
   .mobile-cta:active { transform: scale(0.97); }
 }
