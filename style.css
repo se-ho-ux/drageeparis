@@ -742,6 +742,10 @@ body::before {
   grid-template-columns: repeat(4, 1fr);
   max-width: 1100px;
 }
+.garanties__cta {
+  text-align: center;
+  margin-top: 56px;
+}
 .garantie-item {
   display: flex;
   flex-direction: column;
