@@ -217,7 +217,7 @@ body::before {
   font-family: 'Cormorant', serif;
   font-size: 44px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--blanc);
   white-space: nowrap;
