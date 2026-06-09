@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /\* ---- 10. Newsletter forms ---- */
+  /* ---- 10. Newsletter forms ---- */
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
