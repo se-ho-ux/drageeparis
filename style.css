@@ -64,7 +64,7 @@ input, textarea, select { font-family: inherit; }
   --ease:         cubic-bezier(0.32, 0.72, 0, 1);
   --ease-soft:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  --serif:    'Wayfinder', serif;
+  --serif:    'Cormorant', serif;
   --sans:     var(--font);
   --or-chaud: #B8906A;
 }
@@ -214,10 +214,10 @@ body::before {
 
 .nav__logo { display: flex; align-items: center; justify-self: center; }
 .nav__logo-wordmark {
-  font-family: 'Wayfinder', serif;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-family: 'Cormorant', serif;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--blanc);
   white-space: nowrap;
@@ -800,7 +800,7 @@ body::before {
   height: 100%;
 }
 .garantie-item__title {
-  font-family: 'Wayfinder', serif;
+  font-family: var(--serif);
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -1701,7 +1701,7 @@ body::before {
   color: rgba(255,255,255,0.55);
 }
 .accord-gallery__name {
-  font-family: 'Wayfinder', serif;
+  font-family: var(--serif);
   font-size: 13px;
   font-weight: 400;
   color: var(--blanc);
@@ -2271,10 +2271,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 ================================================ */
 
 @media (max-width: 1100px) {
-  .nav__logo-wordmark { font-size: 28px; }
+  .nav__logo-wordmark { font-size: 32px; }
 }
 @media (max-width: 480px) {
-  .nav__logo-wordmark { font-size: 24px; }
+  .nav__logo-wordmark { font-size: 28px; }
   .nav { padding: 18px 20px; }
 }
 
