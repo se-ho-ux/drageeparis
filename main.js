@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navPanel  = document.getElementById('nav-panel');
   const backdrop  = document.getElementById('nav-backdrop');
+  const closeBtn  = document.getElementById('nav-close');
   if (hamburger && navPanel) {
     const closeMenu = () => {
       navPanel.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
       backdrop?.classList.remove('open');
+      closeBtn?.classList.remove('visible');
       document.body.style.overflow = '';
     };
     hamburger.addEventListener('click', () => {
@@ -29,8 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.toggle('active', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
       backdrop?.classList.toggle('open', isOpen);
+      closeBtn?.classList.toggle('visible', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+    closeBtn?.addEventListener('click', closeMenu);
     backdrop?.addEventListener('click', closeMenu);
     navPanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
