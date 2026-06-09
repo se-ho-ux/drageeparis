@@ -442,6 +442,7 @@ body::before {
   transition: background 0.4s var(--ease-soft),
               color 0.4s var(--ease-soft),
               border-color 0.4s var(--ease-soft),
+              box-shadow 0.4s var(--ease-soft),
               opacity 0.35s,
               transform 0.2s var(--ease);
   white-space: nowrap;
@@ -481,12 +482,16 @@ body::before {
 .btn--primary .btn-arrow { background: var(--ink-8); color: var(--ink); }
 
 .btn--dark {
-  background: var(--ink);
+  background: #7A6A52;
   color: var(--blanc);
-  border: 1px solid var(--ink);
+  border: 1px solid #7A6A52;
 }
-.btn--dark:hover { background: #2d2b28; }
-.btn--dark .btn-arrow { background: rgba(255,255,255,0.1); }
+.btn--dark:hover {
+  background: #6A5C44;
+  border-color: #6A5C44;
+  box-shadow: 0 4px 18px rgba(106, 92, 68, 0.42);
+}
+.btn--dark .btn-arrow { background: rgba(255,255,255,0.15); }
 
 .btn--outline {
   background: transparent;
