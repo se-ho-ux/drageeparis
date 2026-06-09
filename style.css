@@ -63,6 +63,10 @@ input, textarea, select { font-family: inherit; }
 
   --ease:         cubic-bezier(0.32, 0.72, 0, 1);
   --ease-soft:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --serif:    'Wayfinder', serif;
+  --sans:     var(--font);
+  --or-chaud: #B8906A;
 }
 
 /* ---- Base ---- */
@@ -222,8 +226,12 @@ body::before {
 .nav__hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   padding: 6px 4px;
+  min-width: 44px;
+  min-height: 44px;
 }
 .nav__hamburger span {
   display: block;
@@ -879,9 +887,11 @@ body::before {
 .artisan__cta { margin-top: 36px; }
 
 @media (max-width: 1024px) {
-  .artisan { padding: 56px 20px; }
+  .artisan { padding: 56px 20px; flex-direction: column; align-items: center; }
   .artisan__inner { grid-template-columns: 1fr; gap: 40px; }
-  .artisan__visual video { max-width: 280px; }
+  .artisan__visual { width: 100%; }
+  .artisan__visual video { max-width: 100%; }
+  .artisan__visual img   { max-width: 420px; width: 100%; }
 }
 
 
@@ -1043,6 +1053,10 @@ body::before {
 
 @media (max-width: 768px) {
   .cta-center__body { padding: 80px 20px; }
+}
+@media (max-width: 480px) {
+  .cta-center__title { font-size: clamp(28px, 7vw, 40px); }
+  .cta-center__body  { padding: 64px 20px; }
 }
 
 
@@ -1591,7 +1605,7 @@ body::before {
     justify-content: flex-start;
     overflow-x: auto;
     scrollbar-width: none;
-    padding: 18px 0 32px;
+    padding: 18px 0 32px 20px;
   }
   .filter-options__inner::-webkit-scrollbar { display: none; }
   .carousel-nav { padding: 20px; }
@@ -2241,6 +2255,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   border-radius: 0;
   transition: background 0.35s, color 0.35s;
 }
+.nav__panel .nav__link::after      { display: none; }
 .nav__panel .nav__link--cta::after { display: none; }
 .nav__panel.open li:last-child .nav__link { transition-delay: 0.42s; }
 
