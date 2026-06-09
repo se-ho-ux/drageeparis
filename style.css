@@ -162,11 +162,13 @@ body::before {
   width: 0;
   height: 1px;
   background: currentColor;
-  transition: width 0.45s var(--ease);
+  transition: width 0.38s cubic-bezier(0.65, 0, 0.35, 1);
 }
 .nav__link:hover { color: var(--blanc); opacity: 1; }
 .nav__link:hover::after { width: 100%; }
-.nav__link.active::after { width: 100%; }
+.nav__link.active { font-weight: 500; }
+.nav__link.active::after { width: 100%; animation: nav-line-in 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both; }
+@keyframes nav-line-in { from { width: 0; } to { width: 100%; } }
 .header.scrolled .nav__link { color: var(--ink-60); }
 .header.scrolled .nav__link:hover,
 .header.scrolled .nav__link.active { color: var(--ink); }
