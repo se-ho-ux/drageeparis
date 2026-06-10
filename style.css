@@ -135,9 +135,12 @@ body::before {
   right: 0;
   z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
-  transition: background 0.7s var(--ease-soft), transform 0.4s var(--ease-soft);
+  transition: background 0.7s var(--ease-soft), transform 0.3s var(--ease);
 }
-.header--hidden { transform: translateY(-110%); }
+.header--hidden {
+  transform: translateY(-110%);
+  transition: background 0.7s var(--ease-soft), transform 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
 .header.scrolled {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);

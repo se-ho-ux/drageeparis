@@ -7,22 +7,37 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- 1. Header sticky scroll + hide-on-scroll-down ---- */
   const header = document.getElementById('header');
   if (header) {
-    let lastY = window.scrollY;
-    let ticking = false;
+    let lastY          = window.scrollY;
+    let ticking        = false;
+    let directionChangeY = window.scrollY;
+    let lastDirection  = 0;
+    const HIDE_AFTER = 64;
+    const SHOW_AFTER = 8;
+    const TOP_ZONE   = 80;
+
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
         header.classList.toggle('scrolled', y > 40);
-        // Ne pas masquer le header quand le menu mobile est ouvert
-        const menuOpen = document.getElementById('nav-panel')?.classList.contains('open');
+        const menuOpen = navPanel.classList.contains('open');
         if (!menuOpen) {
-          // Masquer au scroll bas (après 80px), montrer au scroll haut
-          if (y > 80 && y > lastY) {
-            header.classList.add('header--hidden');
-          } else {
-            header.classList.remove('header--hidden');
+          const dy = y - lastY;
+          if (dy !== 0) {
+            const direction = dy > 0 ? 1 : -1;
+            if (direction !== lastDirection) {
+              directionChangeY = lastY;
+              lastDirection = direction;
+            }
+            const displacement = y - directionChangeY;
+            if (y <= TOP_ZONE) {
+              header.classList.remove('header--hidden');
+            } else if (displacement >= HIDE_AFTER) {
+              header.classList.add('header--hidden');
+            } else if (displacement <= -SHOW_AFTER) {
+              header.classList.remove('header--hidden');
+            }
           }
         }
         lastY = y;
