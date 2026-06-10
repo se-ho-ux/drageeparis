@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Lancer ma création · Dragée Paris</title>
-  <meta name="description" content="Lancez votre création personnalisée étape par étape — événement, quantité, date, couleurs et coordonnées. Réponse sous 48h.">
+  <meta name="description" content="Lancez votre création personnalisée étape par étape, événement, quantité, date, couleurs et coordonnées. Réponse sous 48h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
         <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
       </ul>
-      <a href="index.html" class="nav__logo" aria-label="Dragée Paris — Accueil">
+      <a href="index.html" class="nav__logo" aria-label="Dragée Paris, Accueil">
         <span class="nav__logo-wordmark">Dragée Paris</span>
       </a>
       <div class="nav__end">
@@ -147,7 +147,7 @@
             <span class="wizard__step-label">Étape 02 / 05</span>
           </div>
           <h2 class="wizard__step-title">L'importance<br>des chiffres</h2>
-          <p class="wizard__step-sub">Combien de pièces estimez-vous avoir besoin&nbsp;? Un ordre de grandeur suffit — nous affinerons ensemble.</p>
+          <p class="wizard__step-sub">Combien de pièces estimez-vous avoir besoin&nbsp;? Un ordre de grandeur suffit, nous affinerons ensemble.</p>
 
           <div class="wizard__qty-cards wizard__cards" role="group" aria-label="Quantité">
 
@@ -193,7 +193,7 @@
                 <span class="wizard__qty-num">200+</span>
                 <div class="wizard__qty-info">
                   <span class="wizard__qty-label">Plus de 200</span>
-                  <span class="wizard__qty-sub">Grand événement — nous gérons</span>
+                  <span class="wizard__qty-sub">Grand événement, nous gérons</span>
                 </div>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
@@ -217,7 +217,7 @@
               Nous recommandons de nous contacter au moins 4 semaines avant votre événement.
             </p>
           </div>
-          <span class="wizard__skip-link" id="wizard-skip-date" tabindex="0" role="button" aria-label="Passer la date">Date non définie — passer cette étape →</span>
+          <span class="wizard__skip-link" id="wizard-skip-date" tabindex="0" role="button" aria-label="Passer la date">Date non définie, passer cette étape →</span>
         </div>
 
         <!-- Étape 4 : Couleurs -->
@@ -226,7 +226,7 @@
             <span class="wizard__step-label">Étape 04 / 05</span>
           </div>
           <h2 class="wizard__step-title">L'émotion<br>en couleurs</h2>
-          <p class="wizard__step-sub">Quelles teintes vous inspirent&nbsp;? Vous pouvez en choisir plusieurs — nous vous proposerons une palette harmonieuse.</p>
+          <p class="wizard__step-sub">Quelles teintes vous inspirent&nbsp;? Vous pouvez en choisir plusieurs, nous vous proposerons une palette harmonieuse.</p>
 
           <div class="wizard__colors" role="group" aria-label="Couleurs souhaitées">
 
@@ -336,17 +336,17 @@
             <span class="wizard__step-label">Étape 05 / 05</span>
           </div>
           <h2 class="wizard__step-title">Vos coordonnées</h2>
-          <p class="wizard__step-sub">Plus qu'une étape — renseignez vos informations pour que nous puissions vous recontacter sous 48 h avec une proposition sur mesure.</p>
+          <p class="wizard__step-sub">Plus qu'une étape, renseignez vos informations pour que nous puissions vous recontacter sous 48 h avec une proposition sur mesure.</p>
 
           <!-- Récapitulatif -->
           <div class="wizard__summary" id="wizard-summary" aria-label="Récapitulatif de votre projet">
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Événement</span>
-              <span class="wizard__summary-val" id="sum-event">—</span>
+              <span class="wizard__summary-val" id="sum-event">-</span>
             </div>
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Quantité</span>
-              <span class="wizard__summary-val" id="sum-qty">—</span>
+              <span class="wizard__summary-val" id="sum-qty">-</span>
             </div>
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Date</span>
@@ -520,8 +520,8 @@
     }
 
     function updateSummary() {
-      document.getElementById('sum-event').textContent = data.evenement || '—';
-      document.getElementById('sum-qty').textContent = data.quantite || '—';
+      document.getElementById('sum-event').textContent = data.evenement || '-';
+      document.getElementById('sum-qty').textContent = data.quantite || '-';
       var d = data.date;
       if (d) {
         var parts = d.split('-');
