@@ -51,10 +51,10 @@ input, textarea, select { font-family: inherit; }
 :root {
   --paper:        #FBFBF9;
   --paper-2:      #F6F4F1;
-  --ink:          #1A1816;
-  --ink-60:       #1A1816;
-  --ink-20:       rgba(26, 24, 22, 0.1);
-  --ink-8:        rgba(26, 24, 22, 0.05);
+  --ink:          #2C2C2C;
+  --ink-60:       #2C2C2C;
+  --ink-20:       rgba(44, 44, 44, 0.1);
+  --ink-8:        rgba(44, 44, 44, 0.05);
   --caramel:      #B8906A;
   --blanc:        #FFFFFF;
   --noir-hero:    #0F0E0C;
@@ -1826,7 +1826,7 @@ body::before {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0;
-  color: rgba(26, 24, 22, 0.38);
+  color: rgba(44, 44, 44, 0.38);
   background: none;
   border: none;
   padding: 4px 0;
@@ -1978,7 +1978,7 @@ body::before {
   font-weight: 300;
   letter-spacing: -0.05em;
   line-height: 1;
-  color: rgba(26, 24, 22, 0.08);
+  color: rgba(44, 44, 44, 0.08);
   user-select: none;
 }
 .perso-step__content {
@@ -2063,7 +2063,7 @@ body::before {
   font-weight: 300;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: rgba(26, 24, 22, 0.1);
+  color: rgba(44, 44, 44, 0.1);
   margin-bottom: 20px;
 }
 .step-card h3 {
@@ -2396,7 +2396,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .form__input::placeholder,
 .form__textarea::placeholder { color: var(--ink-60); font-weight: 300; }
 .form__textarea { min-height: 120px; resize: vertical; line-height: 1.7; }
-.form__select { cursor: pointer; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A1816' stroke-width='1' fill='none'/%3E%3C/svg%3E") right 4px center no-repeat; padding-right: 24px; }
+.form__select { cursor: pointer; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232C2C2C' stroke-width='1' fill='none'/%3E%3C/svg%3E") right 4px center no-repeat; padding-right: 24px; }
 .form__helper { display: block; font-size: 11px; font-weight: 300; color: var(--ink-60); margin-top: 6px; }
 .form__error { display: none; font-size: 11px; color: #C0392B; margin-top: 5px; font-weight: 300; }
 .form__group.has-error .form__error { display: block; }
