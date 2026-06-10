@@ -4,10 +4,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---- 1. Header sticky scroll ---- */
+  /* ---- 1. Header sticky scroll + hide-on-scroll-down ---- */
   const header = document.getElementById('header');
   if (header) {
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    let lastY = window.scrollY;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        header.classList.toggle('scrolled', y > 40);
+        // Ne pas masquer le header quand le menu mobile est ouvert
+        const menuOpen = document.getElementById('nav-panel')?.classList.contains('open');
+        if (!menuOpen) {
+          // Masquer au scroll bas (après 80px), montrer au scroll haut
+          if (y > 80 && y > lastY) {
+            header.classList.add('header--hidden');
+          } else {
+            header.classList.remove('header--hidden');
+          }
+        }
+        lastY = y;
+        ticking = false;
+      });
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
@@ -25,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       backdrop?.classList.remove('open');
       closeBtn?.classList.remove('visible');
       document.body.style.overflow = '';
+      header.classList.remove('header--hidden');
     };
     hamburger.addEventListener('click', () => {
       const isOpen = navPanel.classList.toggle('open');

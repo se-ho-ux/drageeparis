@@ -135,8 +135,9 @@ body::before {
   right: 0;
   z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
-  transition: background 0.7s var(--ease-soft);
+  transition: background 0.7s var(--ease-soft), transform 0.4s var(--ease-soft);
 }
+.header--hidden { transform: translateY(-110%); }
 .header.scrolled {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
@@ -248,12 +249,14 @@ body::before {
   display: block;
   width: 22px;
   height: 1px;
-  background: var(--blanc);
-  transition: transform 0.5s var(--ease), opacity 0.35s;
+  background: var(--ink);
+  transition: transform 0.5s var(--ease), opacity 0.35s, background 0.35s;
   transform-origin: center;
 }
-.nav__hamburger.active span:nth-child(1) { transform: translateY(3px) rotate(45deg); background: var(--ink); }
-.nav__hamburger.active span:nth-child(2) { transform: translateY(-3px) rotate(-45deg); background: var(--ink); }
+/* Homepage : header transparent sur hero → barres blanches */
+.header:not(.header--inner):not(.scrolled) .nav__hamburger span { background: var(--blanc); }
+.nav__hamburger.active span:nth-child(1) { transform: translateY(3px) rotate(45deg); }
+.nav__hamburger.active span:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
 
 /* Bouton fermer panel (×) */
 .nav__close {
@@ -446,11 +449,6 @@ body::before {
   }
   .hero__title { font-size: 46px; }
   .hero__arrow { bottom: 36px; }
-}
-/* iOS Safari : -webkit-fill-available couvre la zone derrière la Dynamic Island */
-@supports (-webkit-touch-callout: none) {
-  .hero,
-  .hero__content { min-height: -webkit-fill-available; }
 }
 
 /* ==============================================
