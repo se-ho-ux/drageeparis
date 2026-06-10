@@ -1471,6 +1471,33 @@ body::before {
 
 
 /* ==============================================
+   INNER VISUAL — grand visuel pleine largeur (pages internes)
+============================================== */
+.inner-visual {
+  height: 52vw;
+  max-height: 600px;
+  min-height: 280px;
+  overflow: hidden;
+  border-top: 1px solid var(--ink-20);
+}
+.inner-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  filter: brightness(0.95) saturate(0.88);
+  transition: transform 1.2s var(--ease);
+}
+.inner-visual:hover img { transform: scale(1.02); }
+@media (max-width: 768px) {
+  .inner-visual { height: 64vw; max-height: 420px; }
+}
+@media (max-width: 480px) {
+  .inner-visual { height: 72vw; }
+}
+
+/* ==============================================
    INNER PAGES — HEADER OPAQUE
 ============================================== */
 .header--inner {

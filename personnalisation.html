@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Personnalisation · Dragée Paris</title>
-  <meta name="description" content="Personnalisez vos dragées et bougies : couleurs, parfums, emballages, inscriptions. Demandez votre création sur mesure.">
+  <meta name="description" content="Personnalisez vos dragées et bougies : couleurs, parfums, emballages, inscriptions. De la première idée à la livraison, nous vous accompagnons à chaque étape.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -53,75 +53,61 @@
 
   <main id="main">
 
-    <!-- Hero split : texte + image -->
-    <div class="page-intro page-intro--split fade-in">
-      <div>
-        <span class="page-intro__eyebrow">Sur mesure</span>
-        <h1 class="page-intro__title">Personnali&shy;sation</h1>
-        <p class="page-intro__sub">Chaque création Dragée Paris est unique. Nous adaptons couleurs, parfums, emballages et inscriptions à votre événement — de la première idée à la livraison.</p>
-        <div style="margin-top:32px;">
-          <a href="contact.html" class="btn btn--dark">Lancer ma création <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
-      <div class="page-intro__visual">
-        <img src="./images/images-librairy/im5.jpg" alt="Dragées artisanales personnalisées, emballages soignés" loading="eager">
-      </div>
+    <!-- En-tête de page -->
+    <div class="page-intro fade-in">
+      <span class="page-intro__eyebrow">Sur mesure</span>
+      <h1 class="page-intro__title">Personnali&shy;sation</h1>
+      <p class="page-intro__sub">Chaque création Dragée Paris est unique. Nous adaptons couleurs, parfums, emballages et inscriptions à votre événement — de la première idée à la livraison.</p>
     </div>
 
-    <!-- Process en 3 étapes — version premium -->
-    <section class="section-page" aria-label="Comment ça marche">
-      <div style="max-width:1200px;margin:0 auto;">
-        <span class="eyebrow fade-in">Sans surprise</span>
-        <h2 class="section-title fade-in fade-in--delay-1">Commandez sereinement,<br>nous gérons tout</h2>
-        <p class="section-sub fade-in fade-in--delay-2" style="margin-top:16px;max-width:560px;">De la première idée à la livraison, vous êtes accompagné à chaque instant — avec des étapes claires, des échanges humains et zéro stress.</p>
+    <!-- Grand visuel éditorial -->
+    <div class="inner-visual fade-in" aria-hidden="true">
+      <img src="./images/images-librairy/im5.jpg" alt="" loading="eager">
+    </div>
 
-        <!-- 3 étapes en layout premium -->
-        <div class="perso-steps fade-in fade-in--delay-2">
-
-          <div class="perso-step">
-            <div class="perso-step__visual">
-              <img src="./images/images-librairy/im1.jpg" alt="Décrivez votre projet à Dragée Paris" loading="lazy">
-            </div>
-            <div class="perso-step__body">
-              <span class="perso-step__num">01</span>
-              <div class="perso-step__content">
-                <h3 class="perso-step__title">Décrivez votre projet</h3>
-                <p class="perso-step__desc">Remplissez notre formulaire en quelques minutes : occasion, produits souhaités, quantités estimées. Nous vous recontactons sous 48&nbsp;h avec une proposition adaptée.</p>
-                <a href="contact.html" class="perso-step__link">Commencer <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="perso-step perso-step--alt">
-            <div class="perso-step__visual">
-              <img src="./images/images-librairy/im3.jpg" alt="Suivi personnalisation — maquettes et échantillons Dragée Paris" loading="lazy">
-            </div>
-            <div class="perso-step__body">
-              <span class="perso-step__num">02</span>
-              <div class="perso-step__content">
-                <h3 class="perso-step__title">Suivez votre personnalisation</h3>
-                <p class="perso-step__desc">Vous validez chaque choix avec nous&nbsp;: couleurs, parfums, emballages, inscriptions. Nous vous soumettons maquettes et échantillons avant de lancer la fabrication — rien ne démarre sans votre accord.</p>
-                <span class="perso-step__badge">Votre accord, à chaque étape</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="perso-step">
-            <div class="perso-step__visual">
-              <img src="./images/images-librairy/im9.jpg" alt="Livraison soignée dragées artisanales Dragée Paris" loading="lazy">
-            </div>
-            <div class="perso-step__body">
-              <span class="perso-step__num">03</span>
-              <div class="perso-step__content">
-                <h3 class="perso-step__title">Recevez votre création</h3>
-                <p class="perso-step__desc">Fabriquée à la main dans notre atelier, votre commande est livrée dans les délais convenus, emballée avec le plus grand soin. Remise en main propre possible en Île-de-France.</p>
-              </div>
-            </div>
-          </div>
-
+    <!-- Comment ça marche -->
+    <section class="artisan" aria-label="Notre processus">
+      <div class="artisan__inner">
+        <div class="artisan__visual fade-in">
+          <img src="./images/images-librairy/im1.jpg" alt="Dragées artisanales Dragée Paris" loading="lazy">
         </div>
+        <div class="artisan__content fade-in fade-in--delay-1">
+          <span class="eyebrow">Sans surprise</span>
+          <h2 class="section-title" style="font-family:var(--serif);white-space:normal;">Commandez sereinement,<br>nous gérons tout</h2>
+          <div class="hairline"></div>
+          <p class="section-sub">De la première idée à la livraison, vous êtes accompagné à chaque instant — avec des étapes claires, des échanges humains et zéro stress.</p>
+          <p class="section-sub" style="margin-top:12px;">Nous vous recontactons sous 48 h après réception de votre demande pour affiner ensemble couleurs, formats et emballages. Rien ne démarre sans votre accord.</p>
+          <div class="artisan__cta">
+            <a href="contact.html" class="btn btn--dark">Lancer ma création <span class="btn-arrow">→</span></a>
+            <a href="a-propos.html" class="btn btn--outline">Notre histoire</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Trust strip -->
+    <!-- Les 3 étapes -->
+    <section class="section-page" aria-label="Les 3 étapes">
+      <div style="max-width:1200px;margin:0 auto;">
+        <span class="eyebrow fade-in">Le parcours</span>
+        <h2 class="section-title fade-in fade-in--delay-1">3 étapes,<br>zéro stress</h2>
+        <div class="steps__grid fade-in fade-in--delay-2">
+          <div class="step-card">
+            <span class="step-card__number">01</span>
+            <h3>Décrivez votre projet</h3>
+            <p>Remplissez notre formulaire en quelques minutes : occasion, produits souhaités, quantités estimées. Nous vous recontactons sous 48 h avec une proposition adaptée.</p>
+          </div>
+          <div class="step-card step-card--featured">
+            <span class="step-card__number">02</span>
+            <h3>Suivez votre personnalisation</h3>
+            <p>Vous validez chaque choix avec nous : couleurs, parfums, emballages, inscriptions. Maquettes et échantillons vous sont soumis avant le lancement — rien ne démarre sans votre accord.</p>
+            <span class="step-card__badge">Votre accord, à chaque étape</span>
+          </div>
+          <div class="step-card">
+            <span class="step-card__number">03</span>
+            <h3>Recevez votre création</h3>
+            <p>Fabriquée à la main dans notre atelier, votre commande est livrée dans les délais convenus, emballée avec le plus grand soin. Remise en main propre possible en Île-de-France.</p>
+          </div>
+        </div>
         <div class="trust-strip fade-in fade-in--delay-3">
           <div class="trust-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -147,63 +133,60 @@
     <section class="section-page section-page--paper2" aria-label="Options disponibles">
       <div style="max-width:1200px;margin:0 auto;">
         <span class="eyebrow fade-in">Options disponibles</span>
-        <h2 class="section-title fade-in fade-in--delay-1">Tout peut être personnalisé</h2>
+        <h2 class="section-title fade-in fade-in--delay-1">Tout peut être<br>personnalisé</h2>
         <p class="section-sub fade-in fade-in--delay-2" style="margin-top:12px;">Nous adaptons chaque détail pour que vos créations vous ressemblent parfaitement.</p>
         <div class="options__grid fade-in fade-in--delay-3">
-
           <div class="option-card">
             <div class="option-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
             </div>
             <h4>Couleurs</h4>
             <p>Choisissez parmi notre palette ou apportez votre nuancier pour un accord parfait avec votre décoration.</p>
           </div>
-
           <div class="option-card">
             <div class="option-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
             </div>
             <h4>Parfums</h4>
             <p>Pour les bougies, choisissez parmi nos 10 parfums artisanaux ou demandez une création exclusive.</p>
           </div>
-
           <div class="option-card">
             <div class="option-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
             </div>
             <h4>Emballages</h4>
-            <p>Boîtes, sachets en organza, rubans, étiquettes — chaque contenant est sélectionné avec la même attention que le contenu.</p>
+            <p>Boîtes, sachets en organza, rubans, étiquettes — chaque contenant est choisi avec la même attention que le contenu.</p>
           </div>
-
           <div class="option-card">
             <div class="option-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
             </div>
             <h4>Inscriptions</h4>
             <p>Prénoms, dates, citations, monogrammes — gravés ou imprimés sur chaque pièce avec soin et précision.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="cta-center" aria-label="Contact">
+    <!-- Galerie -->
+    <div class="gallery" role="img" aria-label="Galerie de créations Dragée Paris">
+      <div class="gallery__item fade-in"><img src="./images/images-librairy/im3.jpg"  alt="Dragées pastel" loading="lazy"></div>
+      <div class="gallery__item fade-in fade-in--delay-1"><img src="./images/images-librairy/im9.jpg"  alt="Dragées naissance" loading="lazy"></div>
+      <div class="gallery__item fade-in fade-in--delay-2"><img src="./images/images-librairy/im10.jpg" alt="Dragées colorées" loading="lazy"></div>
+      <div class="gallery__item fade-in fade-in--delay-1"><img src="./images/images-librairy/im20.jpg" alt="Dragées sur fond rose" loading="lazy"></div>
+      <div class="gallery__item fade-in fade-in--delay-2"><img src="./images/images-librairy/im14.jpg" alt="Dragées réception" loading="lazy"></div>
+      <div class="gallery__item fade-in fade-in--delay-3"><img src="./images/images-librairy/im25.jpg" alt="Dragées mariage" loading="lazy"></div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-center" aria-label="Lancer ma création">
       <div class="cta-center__body">
         <span class="eyebrow fade-in">Première étape</span>
         <h2 class="cta-center__title fade-in fade-in--delay-1">Décrivez-nous<br>votre projet</h2>
         <p class="cta-center__sub fade-in fade-in--delay-2">Réponse sous 48 h avec une proposition sur mesure. Aucun engagement.</p>
         <div class="cta-center__btns fade-in fade-in--delay-3">
           <a href="contact.html" class="btn btn--dark">Lancer ma création <span class="btn-arrow">→</span></a>
-          <a href="tel:+33608671443" class="btn btn--outline">Nous appeler</a>
+          <a href="tel:+33608671443" class="btn btn--outline">06 08 67 14 43</a>
         </div>
       </div>
     </section>
