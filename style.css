@@ -70,8 +70,14 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* ---- Base ---- */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
 body {
+  margin: 0;
+  padding: 0;
   font-family: var(--font);
   font-weight: 300;
   background: var(--paper);
@@ -423,7 +429,15 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  .hero__content { padding: 0 20px 80px; }
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+  .hero__content {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 0 20px 80px;
+  }
   .hero__title { font-size: 46px; }
   .hero__arrow { bottom: 36px; }
 }
