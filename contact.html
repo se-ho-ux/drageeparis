@@ -106,12 +106,12 @@
             </label>
 
             <label class="wizard__card">
-              <input type="radio" name="evenement" value="Communion">
+              <input type="radio" name="evenement" value="Célébration religieuse">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 8h12"/></svg>
                 </div>
-                <span class="wizard__card-name">Communion</span>
+                <span class="wizard__card-name">Célébration religieuse</span>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
             </label>
@@ -330,6 +330,14 @@
           <div class="wizard__free-text fade-in">
             <label class="wizard__label" for="wizard-message">Précisez vos souhaits <span style="font-size:9px;opacity:.55">(optionnel)</span></label>
             <textarea class="wizard__input wizard__textarea" id="wizard-message" name="message" rows="3" placeholder="Couleurs exactes, thème, inspirations, questions particulières..."></textarea>
+            <div class="wizard__file-upload">
+              <label class="wizard__label" for="wizard-visuel">Joindre un visuel <span style="font-size:9px;opacity:.55">(optionnel)</span></label>
+              <label class="wizard__file-btn" for="wizard-visuel" id="wizard-file-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span id="wizard-file-name">Choisir un fichier</span>
+              </label>
+              <input type="file" id="wizard-visuel" name="visuel" accept="image/*,.pdf" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+            </div>
           </div>
           <span class="wizard__skip-link" id="wizard-skip-colors" tabindex="0" role="button" aria-label="Passer les couleurs">Je préciserai les couleurs plus tard →</span>
         </div>
@@ -363,6 +371,10 @@
             <div class="wizard__summary-item" id="sum-message-row" style="display:none;">
               <span class="wizard__summary-key">Précisions</span>
               <span class="wizard__summary-val" id="sum-message"></span>
+            </div>
+            <div class="wizard__summary-item" id="sum-visuel-row" style="display:none;">
+              <span class="wizard__summary-key">Visuel</span>
+              <span class="wizard__summary-val" id="sum-visuel"></span>
             </div>
           </div>
 
@@ -460,7 +472,7 @@
   (function() {
     var TOTAL = 5;
     var current = 1;
-    var data = { evenement: '', quantite: '', date: '', couleurs: [], message: '' };
+    var data = { evenement: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -527,6 +539,23 @@
       msgEl.addEventListener('input', function() { data.message = this.value.trim(); });
     }
 
+    var fileEl     = document.getElementById('wizard-visuel');
+    var fileNameEl = document.getElementById('wizard-file-name');
+    var fileBtn    = document.getElementById('wizard-file-btn');
+    if (fileEl) {
+      fileEl.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+          data.visuel = this.files[0].name;
+          fileNameEl.textContent = this.files[0].name;
+          fileBtn.classList.add('has-file');
+        } else {
+          data.visuel = '';
+          fileNameEl.textContent = 'Choisir un fichier';
+          fileBtn.classList.remove('has-file');
+        }
+      });
+    }
+
     // Skip buttons
     var skipDate = document.getElementById('wizard-skip-date');
     if (skipDate) {
@@ -557,6 +586,14 @@
         msgRow.style.display = '';
       } else {
         msgRow.style.display = 'none';
+      }
+      var visRow = document.getElementById('sum-visuel-row');
+      var visVal = document.getElementById('sum-visuel');
+      if (data.visuel) {
+        visVal.textContent = data.visuel;
+        visRow.style.display = '';
+      } else {
+        visRow.style.display = 'none';
       }
     }
 

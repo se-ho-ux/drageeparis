@@ -3000,6 +3000,41 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   padding-top: 28px;
   border-top: 1px solid var(--ink-20);
 }
+.wizard__file-upload { margin-top: 24px; }
+.wizard__file-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px dashed var(--ink-20);
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease-soft), background 0.25s var(--ease-soft), color 0.25s;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-60);
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.wizard__file-btn:hover {
+  border-color: var(--caramel);
+  color: var(--ink);
+  background: rgba(184,144,106,0.04);
+}
+.wizard__file-btn.has-file {
+  border-color: rgba(44,44,44,0.3);
+  border-style: solid;
+  color: var(--ink);
+}
+.wizard__file-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: color 0.25s;
+}
+.wizard__file-btn:hover svg,
+.wizard__file-btn.has-file svg { color: var(--caramel); }
 .wizard__field-error {
   display: none;
   font-size: 11px;
