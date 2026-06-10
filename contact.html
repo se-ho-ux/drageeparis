@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Lancer ma création · Dragée Paris</title>
-  <meta name="description" content="Demandez un devis pour vos dragées et bougies personnalisées. Mariage, naissance, réception, anniversaire — décrivez votre projet, nous vous recontactons sous 48h.">
+  <meta name="description" content="Lancez votre création personnalisée étape par étape — événement, quantité, date, couleurs et coordonnées. Réponse sous 48h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="wizard-page">
 
   <a class="skip-link" href="#main">Aller au contenu principal</a>
   <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
@@ -43,171 +43,365 @@
       <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
       <li><a href="contact.html"          class="nav__link nav__link--cta">Lancer ma création</a></li>
     </ul>
-  <button class="nav__close" id="nav-close" aria-label="Fermer le menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-      <line x1="18" y1="6" x2="6" y2="18"/>
-      <line x1="6" y1="6" x2="18" y2="18"/>
-    </svg>
-  </button>
+    <button class="nav__close" id="nav-close" aria-label="Fermer le menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </header>
 
   <main id="main">
+    <div class="wizard-wrap">
 
-    <div class="page-intro fade-in">
-      <span class="page-intro__eyebrow">Votre projet</span>
-      <h1 class="page-intro__title">Lancer ma création</h1>
-      <p class="page-intro__sub">Décrivez-nous votre événement et vos besoins. Nous vous répondons sous 48 heures avec une proposition personnalisée.</p>
-    </div>
+      <!-- Barre de progression -->
+      <div class="wizard__bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" id="wizard-bar" aria-label="Progression">
+        <div class="wizard__bar-fill" id="wizard-bar-fill" style="width:20%"></div>
+      </div>
 
-    <section class="form-section" aria-label="Formulaire de contact">
-      <div class="contact__layout">
+      <!-- Contenu du wizard -->
+      <div id="wizard-body">
 
-        <aside class="contact__sidebar fade-in" aria-label="Informations de contact">
-
-          <div class="contact__sidebar-item">
-            <span class="contact__sidebar-label">Téléphone</span>
-            <a href="tel:+33601234567" class="contact__sidebar-value">06 01 23 45 67</a>
-            <p class="contact__sidebar-note">Du lundi au vendredi, 9h–18h</p>
+        <!-- Étape 1 : Type d'événement -->
+        <div class="wizard__panel active" id="wizard-step-1">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 01 / 05</span>
           </div>
+          <h1 class="wizard__step-title">Racontez-nous<br>votre célébration</h1>
+          <p class="wizard__step-sub">Quel est le type de l'événement pour lequel vous souhaitez créer vos dragées ou bougies&nbsp;?</p>
 
-          <div class="contact__sidebar-item">
-            <span class="contact__sidebar-label">E-mail</span>
-            <a href="mailto:contact@drageeparis.fr" class="contact__sidebar-value">contact@drageeparis.fr</a>
-          </div>
+          <div class="wizard__cards" role="group" aria-label="Type d'événement">
 
-          <div class="contact__sidebar-item">
-            <span class="contact__sidebar-label">Instagram</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="contact__sidebar-value">@drageeparis</a>
-          </div>
-
-          <div class="contact__sidebar-item">
-            <span class="contact__sidebar-label">Localisation</span>
-            <p class="contact__sidebar-value" style="cursor:default;">Atelier en Île-de-France</p>
-            <p class="contact__sidebar-note">Livraison partout en France</p>
-          </div>
-
-          <div class="contact__sidebar-box">
-            <p>Nous recommandons de nous contacter au moins <strong>4 à 6 semaines</strong> avant votre événement pour les commandes importantes.</p>
-          </div>
-
-        </aside>
-
-        <div class="fade-in fade-in--delay-1">
-          <form class="form" id="devis-form" novalidate aria-label="Formulaire de contact">
-
-            <div class="form__row">
-              <div class="form__group">
-                <label class="form__label" for="nom">Nom <span class="required">*</span></label>
-                <input class="form__input" type="text" id="nom" name="nom" autocomplete="family-name" placeholder="Votre nom" required>
-                <span class="form__error" role="alert">Ce champ est obligatoire.</span>
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Mariage">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 6 2 9 2 13a10 10 0 0020 0c0-4-4-7-10-11z"/><path d="M12 2v20"/></svg>
+                </div>
+                <span class="wizard__card-name">Mariage</span>
               </div>
-              <div class="form__group">
-                <label class="form__label" for="prenom">Prénom <span class="required">*</span></label>
-                <input class="form__input" type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required>
-                <span class="form__error" role="alert">Ce champ est obligatoire.</span>
-              </div>
-            </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
 
-            <div class="form__row">
-              <div class="form__group">
-                <label class="form__label" for="email">E-mail <span class="required">*</span></label>
-                <input class="form__input" type="email" id="email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
-                <span class="form__error" role="alert">Veuillez saisir une adresse e-mail valide.</span>
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Naissance">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </div>
+                <span class="wizard__card-name">Naissance</span>
               </div>
-              <div class="form__group">
-                <label class="form__label" for="telephone">Téléphone</label>
-                <input class="form__input" type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="06 00 00 00 00">
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Réception">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22H5a2 2 0 01-2-2v-2a2 2 0 012-2h1"/><path d="M16 22h3a2 2 0 002-2v-2a2 2 0 00-2-2h-1"/><path d="M12 2a5 5 0 015 5c0 3-5 9-5 9S7 10 7 7a5 5 0 015-5z"/></svg>
+                </div>
+                <span class="wizard__card-name">Réception</span>
               </div>
-            </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
 
-            <div class="form__row">
-              <div class="form__group">
-                <label class="form__label" for="evenement">Type d'événement <span class="required">*</span></label>
-                <select class="form__select" id="evenement" name="evenement" required>
-                  <option value="" disabled selected>Choisissez votre occasion</option>
-                  <option value="mariage">Mariage</option>
-                  <option value="naissance">Naissance</option>
-                  <option value="reception">Réception</option>
-                  <option value="communion">Communion</option>
-                  <option value="anniversaire">Anniversaire</option>
-                  <option value="evc">Enterrement de vie de célibataire</option>
-                  <option value="fete">Fête / Réception</option>
-                  <option value="coffret">Coffret cadeau</option>
-                  <option value="autre">Autre</option>
-                </select>
-                <span class="form__error" role="alert">Veuillez choisir un type d'événement.</span>
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Communion">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+                </div>
+                <span class="wizard__card-name">Communion</span>
               </div>
-              <div class="form__group">
-                <label class="form__label" for="date-event">Date de l'événement</label>
-                <input class="form__input" type="date" id="date-event" name="date-event">
-                <span class="form__helper">Optionnel — nous aide à évaluer les délais.</span>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Anniversaire">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21V12a8 8 0 10-16 0v9"/><path d="M4 21h16"/><path d="M9 7V4m3 3V3m3 4V4"/></svg>
+                </div>
+                <span class="wizard__card-name">Anniversaire</span>
               </div>
-            </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
 
-            <div class="form__row">
-              <div class="form__group">
-                <label class="form__label" for="produits">Produits souhaités <span class="required">*</span></label>
-                <select class="form__select" id="produits" name="produits" required>
-                  <option value="" disabled selected>Dragées, bougies ou les deux ?</option>
-                  <option value="dragees">Dragées uniquement</option>
-                  <option value="bougies">Bougies uniquement</option>
-                  <option value="les-deux">Dragées &amp; Bougies</option>
-                  <option value="coffret">Coffret mixte</option>
-                </select>
-                <span class="form__error" role="alert">Veuillez sélectionner un type de produit.</span>
+            <label class="wizard__card">
+              <input type="radio" name="evenement" value="Autre">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                <span class="wizard__card-name">Autre</span>
               </div>
-              <div class="form__group">
-                <label class="form__label" for="quantite">Quantité estimée <span class="required">*</span></label>
-                <input class="form__input" type="number" id="quantite" name="quantite" min="1" placeholder="Ex : 150 sachets" required>
-                <span class="form__helper">Nombre de sachets, boîtes ou unités.</span>
-                <span class="form__error" role="alert">Veuillez indiquer une quantité approximative.</span>
-              </div>
-            </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
 
-            <div class="form__group">
-              <label class="form__label" for="message">Votre projet <span class="required">*</span></label>
-              <textarea class="form__textarea" id="message" name="message" style="min-height:140px;" placeholder="Décrivez votre projet : couleurs souhaitées, thème, personnalisations envisagées (prénoms, date, inscription), style souhaité, budget indicatif..." required></textarea>
-              <span class="form__error" role="alert">Merci de décrire votre projet pour que nous puissions vous faire une proposition.</span>
-            </div>
-
-            <div class="form__group">
-              <span class="form__label">Image d'inspiration (optionnel)</span>
-              <div class="form__file">
-                <input type="file" id="inspiration-file" name="inspiration" accept="image/*,.pdf" aria-label="Téléverser une image d'inspiration">
-                <label for="inspiration-file">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
-                  </svg>
-                  <span class="form__file-text" id="file-label-text">Cliquez pour ajouter une image d'inspiration</span>
-                  <span class="form__file-subtext">JPG, PNG, PDF — 5 Mo max.</span>
-                </label>
-              </div>
-              <span class="form__helper">Partagez un moodboard, une photo, une palette — pour mieux comprendre votre univers.</span>
-            </div>
-
-            <div class="form__submit">
-              <button type="submit" class="btn btn--dark">
-                Lancer ma création
-                <span class="btn-arrow">→</span>
-              </button>
-            </div>
-            <p class="form__meta">Champs obligatoires · Réponse sous 48h ouvrées</p>
-
-          </form>
-
-          <div class="form__success" id="form-success" role="status" aria-live="polite">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <h3>Votre demande a bien été envoyée !</h3>
-            <p>Merci pour votre confiance. Nous avons reçu votre demande de devis et vous recontacterons dans les 48 heures ouvrées pour vous proposer une création sur mesure.</p>
-            <a href="index.html" class="btn btn--outline" style="margin-top:24px;display:inline-flex;">Retour à l'accueil</a>
           </div>
         </div>
 
-      </div>
-    </section>
+        <!-- Étape 2 : Quantité -->
+        <div class="wizard__panel" id="wizard-step-2">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 02 / 05</span>
+          </div>
+          <h2 class="wizard__step-title">L'importance<br>des chiffres</h2>
+          <p class="wizard__step-sub">Combien de pièces estimez-vous avoir besoin&nbsp;? Un ordre de grandeur suffit — nous affinerons ensemble.</p>
 
+          <div class="wizard__qty-cards wizard__cards" role="group" aria-label="Quantité">
+
+            <label class="wizard__card wizard__qty-card">
+              <input type="radio" name="quantite" value="Moins de 50">
+              <div class="wizard__card-inner">
+                <span class="wizard__qty-num">–50</span>
+                <div class="wizard__qty-info">
+                  <span class="wizard__qty-label">Moins de 50</span>
+                  <span class="wizard__qty-sub">Pour petits comités ou bougies</span>
+                </div>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="wizard__card wizard__qty-card">
+              <input type="radio" name="quantite" value="50 à 100">
+              <div class="wizard__card-inner">
+                <span class="wizard__qty-num">100</span>
+                <div class="wizard__qty-info">
+                  <span class="wizard__qty-label">50 à 100</span>
+                  <span class="wizard__qty-sub">Notre minimum recommandé pour les dragées</span>
+                </div>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="wizard__card wizard__qty-card">
+              <input type="radio" name="quantite" value="100 à 200">
+              <div class="wizard__card-inner">
+                <span class="wizard__qty-num">200</span>
+                <div class="wizard__qty-info">
+                  <span class="wizard__qty-label">100 à 200</span>
+                  <span class="wizard__qty-sub">Idéal pour les mariages et grandes réceptions</span>
+                </div>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="wizard__card wizard__qty-card">
+              <input type="radio" name="quantite" value="Plus de 200">
+              <div class="wizard__card-inner">
+                <span class="wizard__qty-num">200+</span>
+                <div class="wizard__qty-info">
+                  <span class="wizard__qty-label">Plus de 200</span>
+                  <span class="wizard__qty-sub">Grand événement — nous gérons</span>
+                </div>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Étape 3 : Date -->
+        <div class="wizard__panel" id="wizard-step-3">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 03 / 05</span>
+          </div>
+          <h2 class="wizard__step-title">Le jour J</h2>
+          <p class="wizard__step-sub">Quelle est la date de votre événement&nbsp;? Cela nous permet d'anticiper les délais de fabrication (2 à 3 semaines).</p>
+
+          <div class="wizard__date-wrap">
+            <input type="date" class="wizard__date-input" id="wizard-date" name="date" aria-label="Date de l'événement">
+            <p class="wizard__date-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
+              Nous recommandons de nous contacter au moins 4 semaines avant votre événement.
+            </p>
+          </div>
+          <span class="wizard__skip-link" id="wizard-skip-date" tabindex="0" role="button" aria-label="Passer la date">Date non définie — passer cette étape →</span>
+        </div>
+
+        <!-- Étape 4 : Couleurs -->
+        <div class="wizard__panel" id="wizard-step-4">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 04 / 05</span>
+          </div>
+          <h2 class="wizard__step-title">L'émotion<br>en couleurs</h2>
+          <p class="wizard__step-sub">Quelles teintes vous inspirent&nbsp;? Vous pouvez en choisir plusieurs — nous vous proposerons une palette harmonieuse.</p>
+
+          <div class="wizard__colors" role="group" aria-label="Couleurs souhaitées">
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Blanc">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#F9F7F5;"></span>
+                <span class="wizard__color-swatch-name">Blanc</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Ivoire">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#F3EDD8;"></span>
+                <span class="wizard__color-swatch-name">Ivoire</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Rose poudré">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#E8C2BF;"></span>
+                <span class="wizard__color-swatch-name">Rose poudré</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Bleu pastel">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#BDD3E5;"></span>
+                <span class="wizard__color-swatch-name">Bleu pastel</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Lavande">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#D3BFDB;"></span>
+                <span class="wizard__color-swatch-name">Lavande</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Vert sauge">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#B3C5B5;"></span>
+                <span class="wizard__color-swatch-name">Vert sauge</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Champagne">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#D9C99C;"></span>
+                <span class="wizard__color-swatch-name">Champagne</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Nude">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#D6B79D;"></span>
+                <span class="wizard__color-swatch-name">Nude</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Bordeaux">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#7A2E35;"></span>
+                <span class="wizard__color-swatch-name">Bordeaux</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Noir">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#1A1816;"></span>
+                <span class="wizard__color-swatch-name">Noir</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Or">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:#C4A558;"></span>
+                <span class="wizard__color-swatch-name">Or</span>
+              </div>
+            </label>
+
+            <label class="wizard__color-item">
+              <input type="checkbox" name="couleurs" value="Personnalisée">
+              <div class="wizard__color-swatch">
+                <span class="wizard__color-swatch-bg" style="background:linear-gradient(135deg,#E8C2BF,#BDD3E5,#D9C99C,#B3C5B5);"></span>
+                <span class="wizard__color-swatch-name">Autre</span>
+              </div>
+            </label>
+
+          </div>
+          <span class="wizard__skip-link" id="wizard-skip-colors" tabindex="0" role="button" aria-label="Passer les couleurs">Je préciserai les couleurs plus tard →</span>
+        </div>
+
+        <!-- Étape 5 : Coordonnées -->
+        <div class="wizard__panel" id="wizard-step-5">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 05 / 05</span>
+          </div>
+          <h2 class="wizard__step-title">Vos coordonnées</h2>
+          <p class="wizard__step-sub">Plus qu'une étape — renseignez vos informations pour que nous puissions vous recontacter sous 48 h avec une proposition sur mesure.</p>
+
+          <!-- Récapitulatif -->
+          <div class="wizard__summary" id="wizard-summary" aria-label="Récapitulatif de votre projet">
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Événement</span>
+              <span class="wizard__summary-val" id="sum-event">—</span>
+            </div>
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Quantité</span>
+              <span class="wizard__summary-val" id="sum-qty">—</span>
+            </div>
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Date</span>
+              <span class="wizard__summary-val" id="sum-date">Non précisée</span>
+            </div>
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Couleurs</span>
+              <span class="wizard__summary-val" id="sum-colors">À préciser</span>
+            </div>
+          </div>
+
+          <form class="wizard__form" id="wizard-form" novalidate>
+            <div class="wizard__field" id="field-prenom">
+              <label class="wizard__label" for="w-prenom">Prénom <span class="req">*</span></label>
+              <input class="wizard__input" type="text" id="w-prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required>
+              <span class="wizard__field-error">Ce champ est obligatoire.</span>
+            </div>
+            <div class="wizard__field" id="field-email">
+              <label class="wizard__label" for="w-email">E-mail <span class="req">*</span></label>
+              <input class="wizard__input" type="email" id="w-email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
+              <span class="wizard__field-error">Veuillez saisir une adresse e-mail valide.</span>
+            </div>
+            <div class="wizard__field" id="field-tel">
+              <label class="wizard__label" for="w-tel">Téléphone <span style="font-size:9px;opacity:.55">(optionnel)</span></label>
+              <input class="wizard__input" type="tel" id="w-tel" name="telephone" autocomplete="tel" placeholder="06 00 00 00 00">
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /wizard-body -->
+
+      <!-- Navigation -->
+      <div class="wizard__nav" id="wizard-nav">
+        <button class="wizard__btn-back" id="wizard-back" hidden aria-label="Retour">
+          ← Retour
+        </button>
+        <button class="wizard__btn-next" id="wizard-next" aria-label="Continuer">
+          Continuer <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <!-- Écran de succès -->
+      <div class="wizard__success" id="wizard-success" aria-live="polite">
+        <div class="wizard__success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h2>Votre demande<br>a bien été envoyée !</h2>
+        <p>Merci pour votre confiance. Nous avons reçu votre projet et vous recontacterons dans les 48 heures ouvrées avec une proposition sur mesure.</p>
+        <a href="index.html" class="btn btn--outline" style="display:inline-flex;">Retour à l'accueil <span class="btn-arrow">→</span></a>
+      </div>
+
+    </div><!-- /wizard-wrap -->
   </main>
 
   <footer class="footer">
@@ -254,5 +448,148 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+  (function() {
+    var TOTAL = 5;
+    var current = 1;
+    var data = { evenement: '', quantite: '', date: '', couleurs: [] };
+
+    var bar     = document.getElementById('wizard-bar-fill');
+    var barEl   = document.getElementById('wizard-bar');
+    var body    = document.getElementById('wizard-body');
+    var nav     = document.getElementById('wizard-nav');
+    var backBtn = document.getElementById('wizard-back');
+    var nextBtn = document.getElementById('wizard-next');
+    var success = document.getElementById('wizard-success');
+
+    function setProgress(step) {
+      var pct = Math.round((step / TOTAL) * 100);
+      bar.style.width = pct + '%';
+      barEl.setAttribute('aria-valuenow', pct);
+    }
+
+    function getPanel(n) { return document.getElementById('wizard-step-' + n); }
+
+    function showStep(n, direction) {
+      var prev = getPanel(current);
+      if (prev) {
+        prev.classList.remove('active');
+        prev.classList.add('leaving');
+        setTimeout(function() { prev.classList.remove('leaving'); }, 300);
+      }
+      current = n;
+      setProgress(n);
+      var next = getPanel(n);
+      if (next) {
+        next.style.animationName = direction === 'back' ? 'wizardInBack' : 'wizardIn';
+        next.classList.add('active');
+      }
+      backBtn.hidden = (n === 1);
+      nextBtn.textContent = (n === TOTAL) ? 'Envoyer ma création →' : 'Continuer →';
+    }
+
+    // Radio / checkbox micro-interactions
+    document.querySelectorAll('.wizard__card input[type="radio"]').forEach(function(r) {
+      r.addEventListener('change', function() {
+        var name = r.getAttribute('name');
+        if (name === 'evenement') data.evenement = r.value;
+        if (name === 'quantite') data.quantite = r.value;
+      });
+    });
+
+    document.getElementById('wizard-date').addEventListener('change', function() {
+      data.date = this.value;
+    });
+
+    document.querySelectorAll('.wizard__color-item input[type="checkbox"]').forEach(function(c) {
+      c.addEventListener('change', function() {
+        data.couleurs = Array.from(document.querySelectorAll('.wizard__color-item input:checked')).map(function(x) { return x.value; });
+      });
+    });
+
+    // Skip buttons
+    var skipDate = document.getElementById('wizard-skip-date');
+    if (skipDate) {
+      skipDate.addEventListener('click', function() { data.date = ''; showStep(4, 'next'); updateSummary(); });
+      skipDate.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipDate.click(); });
+    }
+    var skipColors = document.getElementById('wizard-skip-colors');
+    if (skipColors) {
+      skipColors.addEventListener('click', function() { data.couleurs = []; showStep(5, 'next'); updateSummary(); });
+      skipColors.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipColors.click(); });
+    }
+
+    function updateSummary() {
+      document.getElementById('sum-event').textContent = data.evenement || '—';
+      document.getElementById('sum-qty').textContent = data.quantite || '—';
+      var d = data.date;
+      if (d) {
+        var parts = d.split('-');
+        document.getElementById('sum-date').textContent = parts[2] + '/' + parts[1] + '/' + parts[0];
+      } else {
+        document.getElementById('sum-date').textContent = 'Non précisée';
+      }
+      document.getElementById('sum-colors').textContent = data.couleurs.length ? data.couleurs.join(', ') : 'À préciser';
+    }
+
+    function validateStep(n) {
+      if (n === 1) return !!document.querySelector('input[name="evenement"]:checked');
+      if (n === 2) return !!document.querySelector('input[name="quantite"]:checked');
+      if (n === 3) return true; // date optional
+      if (n === 4) return true; // colors optional
+      if (n === 5) return validateContact();
+      return true;
+    }
+
+    function validateContact() {
+      var ok = true;
+      var prenom = document.getElementById('w-prenom');
+      var email  = document.getElementById('w-email');
+      var fp = document.getElementById('field-prenom');
+      var fe = document.getElementById('field-email');
+      if (!prenom.value.trim()) { fp.classList.add('has-error'); ok = false; } else { fp.classList.remove('has-error'); }
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email.value.trim())) { fe.classList.add('has-error'); ok = false; } else { fe.classList.remove('has-error'); }
+      return ok;
+    }
+
+    backBtn.addEventListener('click', function() {
+      if (current > 1) showStep(current - 1, 'back');
+    });
+
+    nextBtn.addEventListener('click', function() {
+      if (current === TOTAL) {
+        if (!validateContact()) return;
+        body.style.display = 'none';
+        nav.style.display = 'none';
+        success.classList.add('visible');
+        setProgress(TOTAL);
+        return;
+      }
+      if (!validateStep(current)) {
+        // pulse le panel pour indiquer l'erreur
+        var p = getPanel(current);
+        if (p) {
+          p.style.animation = 'none';
+          void p.offsetWidth;
+          p.style.animation = '';
+        }
+        return;
+      }
+      if (current === 3) { data.date = document.getElementById('wizard-date').value; }
+      showStep(current + 1, 'next');
+      if (current === TOTAL) updateSummary();
+    });
+
+    // Keyboard: Enter sur une card radio avance
+    document.querySelectorAll('.wizard__card input[type="radio"]').forEach(function(r) {
+      r.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { r.checked = true; r.dispatchEvent(new Event('change')); }
+      });
+    });
+
+    setProgress(1);
+  })();
+  </script>
 </body>
 </html>
