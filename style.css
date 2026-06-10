@@ -2992,6 +2992,20 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .wizard__input:focus { border-bottom-color: var(--caramel); }
 .wizard__input::placeholder { color: var(--ink-60); }
 .wizard__input.error { border-bottom-color: #C0392B; }
+.wizard__textarea {
+  border: 1px solid var(--ink-20);
+  padding: 12px 14px;
+  resize: vertical;
+  min-height: 84px;
+  line-height: 1.7;
+  display: block;
+}
+.wizard__textarea:focus { border-color: var(--caramel); border-bottom-color: var(--caramel); }
+.wizard__free-text {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ink-20);
+}
 .wizard__field-error {
   display: none;
   font-size: 11px;

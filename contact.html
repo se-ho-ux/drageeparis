@@ -76,7 +76,7 @@
               <input type="radio" name="evenement" value="Mariage">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 6 2 9 2 13a10 10 0 0020 0c0-4-4-7-10-11z"/><path d="M12 2v20"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="5"/><circle cx="16" cy="14" r="5"/></svg>
                 </div>
                 <span class="wizard__card-name">Mariage</span>
               </div>
@@ -87,7 +87,7 @@
               <input type="radio" name="evenement" value="Naissance">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18"/><path d="M5 9v5a4 4 0 004 4h6a4 4 0 004-4V9"/><path d="M9 5l-2 4"/><path d="M15 5l2 4"/></svg>
                 </div>
                 <span class="wizard__card-name">Naissance</span>
               </div>
@@ -98,7 +98,7 @@
               <input type="radio" name="evenement" value="Réception">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22H5a2 2 0 01-2-2v-2a2 2 0 012-2h1"/><path d="M16 22h3a2 2 0 002-2v-2a2 2 0 00-2-2h-1"/><path d="M12 2a5 5 0 015 5c0 3-5 9-5 9S7 10 7 7a5 5 0 015-5z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-2 10H10z"/><path d="M10 12v7"/><path d="M7 19h10"/></svg>
                 </div>
                 <span class="wizard__card-name">Réception</span>
               </div>
@@ -109,7 +109,7 @@
               <input type="radio" name="evenement" value="Communion">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 8h12"/></svg>
                 </div>
                 <span class="wizard__card-name">Communion</span>
               </div>
@@ -120,7 +120,7 @@
               <input type="radio" name="evenement" value="Anniversaire">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21V12a8 8 0 10-16 0v9"/><path d="M4 21h16"/><path d="M9 7V4m3 3V3m3 4V4"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 13h18"/><path d="M12 9v12"/><path d="M12 9c0-2 2-4 5-2s2 3-1 2h-4"/><path d="M12 9c0-2-2-4-5-2s-2 3 1 2h4"/></svg>
                 </div>
                 <span class="wizard__card-name">Anniversaire</span>
               </div>
@@ -131,7 +131,7 @@
               <input type="radio" name="evenement" value="Autre">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                 </div>
                 <span class="wizard__card-name">Autre</span>
               </div>
@@ -327,6 +327,10 @@
             </label>
 
           </div>
+          <div class="wizard__free-text fade-in">
+            <label class="wizard__label" for="wizard-message">Précisez vos souhaits <span style="font-size:9px;opacity:.55">(optionnel)</span></label>
+            <textarea class="wizard__input wizard__textarea" id="wizard-message" name="message" rows="3" placeholder="Couleurs exactes, thème, inspirations, questions particulières..."></textarea>
+          </div>
           <span class="wizard__skip-link" id="wizard-skip-colors" tabindex="0" role="button" aria-label="Passer les couleurs">Je préciserai les couleurs plus tard →</span>
         </div>
 
@@ -356,6 +360,10 @@
               <span class="wizard__summary-key">Couleurs</span>
               <span class="wizard__summary-val" id="sum-colors">À préciser</span>
             </div>
+            <div class="wizard__summary-item" id="sum-message-row" style="display:none;">
+              <span class="wizard__summary-key">Précisions</span>
+              <span class="wizard__summary-val" id="sum-message"></span>
+            </div>
           </div>
 
           <form class="wizard__form" id="wizard-form" novalidate>
@@ -383,7 +391,7 @@
         <button class="wizard__btn-back" id="wizard-back" hidden aria-label="Retour">
           ← Retour
         </button>
-        <button class="wizard__btn-next" id="wizard-next" aria-label="Continuer">
+        <button class="wizard__btn-next" id="wizard-next" aria-label="Continuer" disabled>
           Continuer <span aria-hidden="true">→</span>
         </button>
       </div>
@@ -452,7 +460,7 @@
   (function() {
     var TOTAL = 5;
     var current = 1;
-    var data = { evenement: '', quantite: '', date: '', couleurs: [] };
+    var data = { evenement: '', quantite: '', date: '', couleurs: [], message: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -470,6 +478,11 @@
 
     function getPanel(n) { return document.getElementById('wizard-step-' + n); }
 
+    function updateNextState() {
+      var needsSelection = (current === 1 || current === 2);
+      nextBtn.disabled = needsSelection && !validateStep(current);
+    }
+
     function showStep(n, direction) {
       var prev = getPanel(current);
       if (prev) {
@@ -486,6 +499,7 @@
       }
       backBtn.hidden = (n === 1);
       nextBtn.textContent = (n === TOTAL) ? 'Envoyer ma création →' : 'Continuer →';
+      updateNextState();
     }
 
     // Radio / checkbox micro-interactions
@@ -494,6 +508,7 @@
         var name = r.getAttribute('name');
         if (name === 'evenement') data.evenement = r.value;
         if (name === 'quantite') data.quantite = r.value;
+        updateNextState();
       });
     });
 
@@ -506,6 +521,11 @@
         data.couleurs = Array.from(document.querySelectorAll('.wizard__color-item input:checked')).map(function(x) { return x.value; });
       });
     });
+
+    var msgEl = document.getElementById('wizard-message');
+    if (msgEl) {
+      msgEl.addEventListener('input', function() { data.message = this.value.trim(); });
+    }
 
     // Skip buttons
     var skipDate = document.getElementById('wizard-skip-date');
@@ -530,6 +550,14 @@
         document.getElementById('sum-date').textContent = 'Non précisée';
       }
       document.getElementById('sum-colors').textContent = data.couleurs.length ? data.couleurs.join(', ') : 'À préciser';
+      var msgRow = document.getElementById('sum-message-row');
+      var msgVal = document.getElementById('sum-message');
+      if (data.message) {
+        msgVal.textContent = data.message;
+        msgRow.style.display = '';
+      } else {
+        msgRow.style.display = 'none';
+      }
     }
 
     function validateStep(n) {
