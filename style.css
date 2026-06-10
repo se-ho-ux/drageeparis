@@ -3170,4 +3170,65 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
     transform: translateY(-2px);
   }
   .mobile-cta:active { transform: scale(0.97); }
+  .mobile-cta { animation: ctaPulse 1.8s ease-out 2.4s 1; }
+}
+
+
+/* ==============================================
+   MICRO-INTERACTIONS & HOVER ANIMATIONS
+============================================== */
+
+/* Garantie items — subtle lift + icon scale */
+.garantie-item { transition: transform 0.3s var(--ease-soft); }
+.garantie-item:hover { transform: translateY(-4px); }
+.garantie-item__icon { transition: transform 0.35s var(--ease-soft); }
+.garantie-item:hover .garantie-item__icon { transform: scale(1.14); }
+
+/* Step cards — heading tint (grid-border layout prevents lift) */
+.step-card { transition: background 0.3s var(--ease-soft); }
+.step-card:not(.step-card--featured):hover { background: var(--paper-2); }
+.step-card h3 { transition: color 0.3s var(--ease-soft); }
+.step-card:hover h3 { color: var(--caramel); }
+
+/* Option cards — icon tint + border brightening */
+.option-card { transition: background 0.25s var(--ease-soft), border-color 0.25s; }
+.option-card:hover { background: var(--paper); border-color: rgba(44,44,44,0.22); }
+.option-card__icon { transition: color 0.3s var(--ease-soft); }
+.option-card:hover .option-card__icon { color: var(--caramel); }
+
+/* Value cards — background tint + h4 tint */
+.value-card { transition: background 0.3s var(--ease-soft); }
+.value-card:hover { background: var(--paper-2); }
+.value-card h4 { transition: color 0.3s var(--ease-soft); }
+.value-card:hover h4 { color: var(--caramel); }
+
+/* Trust strip — subtle row highlight */
+.trust-item { transition: background 0.25s var(--ease-soft); }
+.trust-item:hover { background: rgba(44, 44, 44, 0.025); }
+
+/* Filter buttons — caramel underline on active/hover */
+.filter-btn { position: relative; }
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--caramel);
+  transition: width 0.32s var(--ease-soft);
+}
+.filter-btn.active::after,
+.filter-btn:hover::after { width: 100%; }
+
+/* Location links — icon nudge replaces opacity dim */
+.location-block__link { transition: color 0.25s var(--ease-soft), opacity 0.25s; }
+.location-block__link svg { transition: transform 0.25s var(--ease-soft); }
+.location-block__link:hover { opacity: 1; color: var(--caramel); }
+.location-block__link:hover svg { transform: translateX(4px); }
+
+/* Mobile CTA entrance pulse (fires once, 2.4 s after load) */
+@keyframes ctaPulse {
+  0%, 60%, 100% { box-shadow: 0 4px 24px rgba(122,106,82,0.35); transform: translateY(0); }
+  80% { box-shadow: 0 10px 32px rgba(122,106,82,0.52); transform: translateY(-4px); }
 }
