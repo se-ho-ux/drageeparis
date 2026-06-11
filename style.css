@@ -687,6 +687,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
+  overflow: hidden;
 }
 .col-item__duo img {
   width: 100%;
@@ -699,6 +700,7 @@ body::before {
 }
 .col-item:hover .col-item__duo img {
   filter: brightness(1.04) saturate(1.05);
+  transform: scale(1.05);
 }
 .col-item__label {
   text-align: center;
@@ -744,8 +746,22 @@ body::before {
 .duo-carousel__track {
   display: flex;
   gap: 44px;
-  transition: transform 0.62s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform 0.75s cubic-bezier(0.32, 0.72, 0, 1);
   will-change: transform;
+}
+
+@keyframes col-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.col-item--entering {
+  animation: col-item-in 0.65s cubic-bezier(0.34, 1.15, 0.64, 1) both;
 }
 .duo-carousel__track .col-item {
   flex: 0 0 calc((100% - 88px) / 3);
@@ -1781,6 +1797,10 @@ body::before {
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
+.carousel-arrow:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.92);
+  transition: transform 0.12s ease;
+}
 .carousel-arrow:disabled {
   opacity: 0.16;
   cursor: default;
@@ -1958,10 +1978,11 @@ body::before {
   border: none;
   padding: 4px 0;
   cursor: pointer;
-  transition: color 0.25s var(--ease-soft);
+  transition: color 0.25s var(--ease-soft), transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1);
   flex-shrink: 0;
 }
 .filter-btn:hover { color: var(--ink); }
+.filter-btn:active { transform: scale(0.92); }
 .filter-btn.active {
   font-weight: 500;
   color: var(--ink);

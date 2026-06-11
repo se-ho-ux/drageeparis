@@ -131,14 +131,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const getFiltered = () =>
       activeFilter === 'all' ? allItems : allItems.filter(i => i.dataset.category === activeFilter);
 
-    const render = (animate) => {
+    const animateItems = (items) => {
+      items.forEach(item => {
+        item.classList.remove('col-item--entering');
+        item.style.animationDelay = '';
+      });
+      track.offsetHeight; // force reflow
+      items.forEach((item, idx) => {
+        item.style.animationDelay = `${idx * 0.07}s`;
+        item.classList.add('col-item--entering');
+      });
+    };
+
+    const render = (animate, isFilterChange = false) => {
       const filtered   = getFiltered();
       const perPage    = duoPerPage();
       const gap        = duoGap();
       const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
 
-      allItems.forEach(i => { i.style.display = 'none'; });
+      allItems.forEach(i => {
+        i.style.display = 'none';
+        i.classList.remove('col-item--entering');
+        i.style.animationDelay = '';
+      });
       filtered.forEach(i => { i.style.display = ''; });
+
+      if (isFilterChange) animateItems(filtered);
 
       if (!animate) track.style.transition = 'none';
       const offset = page * (track.offsetWidth + gap);
@@ -171,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
         page = 0;
-        render(false);
+        render(false, true);
       });
     });
 
@@ -186,6 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => { page = 0; render(false); }, { passive: true });
 
     render(false);
+
+    // Stagger animation on initial load for first visible items
+    const perPageInit = duoPerPage();
+    const visibleOnLoad = allItems.filter(i => i.style.display !== 'none').slice(0, perPageInit);
+    animateItems(visibleOnLoad);
   }
 
   /* ---- 5. Dragées ---- */
