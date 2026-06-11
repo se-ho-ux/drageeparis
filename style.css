@@ -134,8 +134,21 @@ body::before {
   left: 0;
   right: 0;
   z-index: 50;
-  padding-top: env(safe-area-inset-top, 0px);
   transition: background 0.7s var(--ease-soft), transform 0.3s var(--ease);
+}
+/* Couvre la zone Dynamic Island via contenu réel (pas padding) pour éviter
+   le bug iOS Safari où backdrop-filter ne s'applique pas à la zone padding */
+.header::before {
+  content: '';
+  display: block;
+  height: env(safe-area-inset-top, 0px);
+  transition: background 0.7s var(--ease-soft);
+}
+.header--inner::before {
+  background: rgba(255, 255, 255, 0.97);
+}
+.header.scrolled::before {
+  background: rgba(255, 255, 255, 0.94);
 }
 .header--hidden {
   transform: translateY(-110%);
@@ -154,20 +167,18 @@ body::before {
     left: 0;
     right: 0;
     height: env(safe-area-inset-top, 0px);
-    z-index: 48;
+    z-index: 70;
     pointer-events: none;
     background: transparent;
     transition: background 0.7s var(--ease-soft);
   }
   /* Pages intérieures : toujours opaque */
   .header--inner ~ .header__safe-area {
-    background: rgba(251, 251, 249, 0.98);
+    background: rgba(255, 255, 255, 0.97);
   }
   /* Page hero après scroll */
   .header.scrolled ~ .header__safe-area {
-    background: rgba(251, 251, 249, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.94);
   }
 }
 .header.scrolled {
@@ -294,7 +305,7 @@ body::before {
 .nav__close {
   display: none;
   position: fixed;
-  top: 16px;
+  top: calc(env(safe-area-inset-top, 0px) + 16px);
   right: 18px;
   z-index: 53;
   width: 44px;
