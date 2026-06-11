@@ -134,7 +134,8 @@ body::before {
   left: 0;
   right: 0;
   z-index: 50;
-  transition: background 0.7s var(--ease-soft), transform 0.3s var(--ease);
+  /* réapparition rapide (ease-out) / disparition plus lente (ease-in dans --hidden) */
+  transition: background 0.7s var(--ease-soft), transform 0.28s cubic-bezier(0, 0.55, 0.45, 1);
 }
 /* Couvre la zone Dynamic Island via contenu réel (pas padding) pour éviter
    le bug iOS Safari où backdrop-filter ne s'applique pas à la zone padding */

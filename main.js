@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking    = false;
     let hiddenAtY  = Infinity;
     const HIDE_AFTER = 64;
-    const SHOW_AFTER = 20;
+    const SHOW_AFTER = 8;   // réapparition quasi-immédiate dès 8px de remontée
     const TOP_ZONE   = 80;
 
     const onScroll = () => {
