@@ -148,7 +148,21 @@ document.addEventListener('DOMContentLoaded', () => {
       if (prevBtn) prevBtn.disabled = page === 0;
       if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
       if (navEl)   navEl.style.visibility = totalPages > 1 ? 'visible' : 'hidden';
-      if (countEl) countEl.textContent = totalPages > 1 ? `${page + 1} / ${totalPages}` : '';
+      if (countEl) {
+        countEl.innerHTML = '';
+        if (totalPages > 1) {
+          for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === page ? ' active' : '');
+            dot.setAttribute('aria-label', `Page ${i + 1}`);
+            dot.dataset.page = i;
+            countEl.appendChild(dot);
+          }
+          countEl.querySelectorAll('.carousel-dot').forEach(dot => {
+            dot.addEventListener('click', () => { page = Number(dot.dataset.page); render(true); });
+          });
+        }
+      }
     };
 
     filters.forEach(btn => {
