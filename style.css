@@ -141,6 +141,35 @@ body::before {
   transform: translateY(-110%);
   transition: background 0.7s var(--ease-soft), transform 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
+
+/* Bande permanente derrière la Dynamic Island — indépendante du transform du header */
+.header__safe-area {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .header__safe-area {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 48;
+    pointer-events: none;
+    background: transparent;
+    transition: background 0.7s var(--ease-soft);
+  }
+  /* Pages intérieures : toujours opaque */
+  .header--inner ~ .header__safe-area {
+    background: rgba(251, 251, 249, 0.98);
+  }
+  /* Page hero après scroll */
+  .header.scrolled ~ .header__safe-area {
+    background: rgba(251, 251, 249, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
 .header.scrolled {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
@@ -442,6 +471,7 @@ body::before {
 
 @media (max-width: 768px) {
   .hero {
+    margin-top: calc(-1 * env(safe-area-inset-top, 0px));
     min-height: 100svh;
     min-height: calc(100dvh + env(safe-area-inset-top, 0px));
   }
