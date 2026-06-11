@@ -827,9 +827,27 @@ body::before {
   .duo-carousel__track .col-item { flex: 0 0 calc((100% - 28px) / 2); }
 }
 @media (max-width: 640px) {
-  .duo-carousel-wrap { padding: 36px 20px 52px; }
-  .duo-carousel__track { gap: 20px; }
-  .duo-carousel__track .col-item { flex: 0 0 100%; }
+  .duo-carousel-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    padding: 36px 0 52px;
+  }
+  .duo-carousel-wrap::-webkit-scrollbar { display: none; }
+  .duo-carousel__track {
+    transform: none !important;
+    transition: none !important;
+    gap: 16px;
+    padding: 0 20px;
+  }
+  .duo-carousel__track .col-item {
+    flex: 0 0 82vw;
+    scroll-snap-align: start;
+  }
+  .carousel-arrow { display: none; }
+  .carousel-nav { display: none; }
 }
 
 
@@ -1774,37 +1792,37 @@ body::before {
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: rgba(253, 251, 247, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--ink-20);
+  background: var(--paper);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--ink);
-  opacity: 0.72;
-  transition: background 0.3s, opacity 0.3s, transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.carousel-arrow--prev { left: 14px; }
-.carousel-arrow--next { right: 14px; }
-.carousel-arrow svg { width: 15px; height: 15px; }
-.carousel-arrow:hover:not(:disabled) {
-  background: rgba(253, 251, 247, 0.97);
   opacity: 1;
-  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.carousel-arrow--prev { left: 12px; }
+.carousel-arrow--next { right: 12px; }
+.carousel-arrow svg { width: 18px; height: 18px; }
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--paper);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) scale(1.08);
 }
 .carousel-arrow:active:not(:disabled) {
   transform: translateY(-50%) scale(0.92);
   transition: transform 0.12s ease;
 }
 .carousel-arrow:disabled {
-  opacity: 0.16;
+  opacity: 0.22;
   cursor: default;
   pointer-events: none;
+  box-shadow: none;
 }
 .carousel-nav {
   display: flex;
