@@ -190,6 +190,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- 5. Dragées ---- */
   makeDuoCarousel('dragees-track', 'dragees-filter-options', 'dragees-filter-toggle', 'dragees-prev', 'dragees-next', 'dragees-count');
+  const urlFilter = new URLSearchParams(window.location.search).get('filter');
+  if (urlFilter) {
+    const btn = document.querySelector(`#dragees-filter-options .filter-btn[data-filter="${urlFilter}"]`);
+    if (btn) btn.click();
+  }
 
   /* ---- 5b. Bougies ---- */
   makeDuoCarousel('bougies-track', 'bougies-filter-options', 'bougies-filter-toggle', 'bougies-prev', 'bougies-next', 'bougies-count');
