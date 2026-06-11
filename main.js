@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header--hidden');
             hiddenAtY = Infinity;
           } else if (y > lastY) {
+            hiddenAtY = y;
             if (!header.classList.contains('header--hidden') && y >= TOP_ZONE + HIDE_AFTER) {
               header.classList.add('header--hidden');
-              hiddenAtY = y;
             }
           } else if (y < lastY && header.classList.contains('header--hidden')) {
             if (hiddenAtY - y >= SHOW_AFTER) {
