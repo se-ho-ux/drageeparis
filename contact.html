@@ -55,8 +55,8 @@
     <div class="wizard-wrap">
 
       <!-- Barre de progression -->
-      <div class="wizard__bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" id="wizard-bar" aria-label="Progression">
-        <div class="wizard__bar-fill" id="wizard-bar-fill" style="width:20%"></div>
+      <div class="wizard__bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" id="wizard-bar" aria-label="Progression">
+        <div class="wizard__bar-fill" id="wizard-bar-fill" style="width:17%"></div>
       </div>
 
       <!-- Contenu du wizard -->
@@ -65,7 +65,7 @@
         <!-- Étape 1 : Type d'événement -->
         <div class="wizard__panel active" id="wizard-step-1">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 01 / 05</span>
+            <span class="wizard__step-label">Étape 01 / 06</span>
           </div>
           <h1 class="wizard__step-title">Racontez-nous<br>votre célébration</h1>
           <p class="wizard__step-sub">Quel est le type de l'événement pour lequel vous souhaitez créer vos dragées ou bougies&nbsp;?</p>
@@ -141,10 +141,51 @@
           </div>
         </div>
 
-        <!-- Étape 2 : Quantité -->
+        <!-- Étape 2 : Produit -->
         <div class="wizard__panel" id="wizard-step-2">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 02 / 05</span>
+            <span class="wizard__step-label">Étape 02 / 06</span>
+          </div>
+          <h2 class="wizard__step-title">Que souhaitez-vous<br>créer&nbsp;?</h2>
+          <p class="wizard__step-sub">Choisissez le type de création pour votre événement.</p>
+          <div class="wizard__cards" role="group" aria-label="Type de produit">
+            <label class="wizard__card">
+              <input type="radio" name="produit" value="Dragées">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><ellipse cx="12" cy="12" rx="4" ry="2.5"/></svg>
+                </div>
+                <span class="wizard__card-name">Dragées</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+            <label class="wizard__card">
+              <input type="radio" name="produit" value="Bougies">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-2 2.5-2 4.5s2 3.5 2 3.5 2-1.5 2-3.5-2-4.5-2-4.5z"/><rect x="9" y="10" width="6" height="11" rx="1"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+                </div>
+                <span class="wizard__card-name">Bougies</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+            <label class="wizard__card">
+              <input type="radio" name="produit" value="Les deux">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="wizard__card-name">Les deux</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3 : Quantité -->
+        <div class="wizard__panel" id="wizard-step-3">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 03 / 06</span>
           </div>
           <h2 class="wizard__step-title">L'importance<br>des chiffres</h2>
           <p class="wizard__step-sub">Combien de pièces estimez-vous avoir besoin&nbsp;? Un ordre de grandeur suffit, nous affinerons ensemble.</p>
@@ -202,10 +243,10 @@
           </div>
         </div>
 
-        <!-- Étape 3 : Date -->
-        <div class="wizard__panel" id="wizard-step-3">
+        <!-- Étape 4 : Date -->
+        <div class="wizard__panel" id="wizard-step-4">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 03 / 05</span>
+            <span class="wizard__step-label">Étape 04 / 06</span>
           </div>
           <h2 class="wizard__step-title">Le jour J</h2>
           <p class="wizard__step-sub">Quelle est la date de votre événement&nbsp;? Cela nous permet d'anticiper les délais de fabrication (2 à 3 semaines).</p>
@@ -220,10 +261,10 @@
           <span class="wizard__skip-link" id="wizard-skip-date" tabindex="0" role="button" aria-label="Passer la date">Date non définie, passer cette étape →</span>
         </div>
 
-        <!-- Étape 4 : Couleurs -->
-        <div class="wizard__panel" id="wizard-step-4">
+        <!-- Étape 5 : Couleurs -->
+        <div class="wizard__panel" id="wizard-step-5">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 04 / 05</span>
+            <span class="wizard__step-label">Étape 05 / 06</span>
           </div>
           <h2 class="wizard__step-title">L'émotion<br>en couleurs</h2>
           <p class="wizard__step-sub">Quelles teintes vous inspirent&nbsp;? Vous pouvez en choisir plusieurs, nous vous proposerons une palette harmonieuse.</p>
@@ -342,10 +383,10 @@
           <span class="wizard__skip-link" id="wizard-skip-colors" tabindex="0" role="button" aria-label="Passer les couleurs">Je préciserai les couleurs plus tard →</span>
         </div>
 
-        <!-- Étape 5 : Coordonnées -->
-        <div class="wizard__panel" id="wizard-step-5">
+        <!-- Étape 6 : Coordonnées -->
+        <div class="wizard__panel" id="wizard-step-6">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 05 / 05</span>
+            <span class="wizard__step-label">Étape 06 / 06</span>
           </div>
           <h2 class="wizard__step-title">Vos coordonnées</h2>
           <p class="wizard__step-sub">Plus qu'une étape, renseignez vos informations pour que nous puissions vous recontacter sous 48 h avec une proposition sur mesure.</p>
@@ -355,6 +396,10 @@
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Événement</span>
               <span class="wizard__summary-val" id="sum-event">-</span>
+            </div>
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Produit</span>
+              <span class="wizard__summary-val" id="sum-produit">-</span>
             </div>
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Quantité</span>
@@ -470,9 +515,9 @@
   <script src="main.js"></script>
   <script>
   (function() {
-    var TOTAL = 5;
+    var TOTAL = 6;
     var current = 1;
-    var data = { evenement: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
+    var data = { evenement: '', produit: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -491,7 +536,7 @@
     function getPanel(n) { return document.getElementById('wizard-step-' + n); }
 
     function updateNextState() {
-      var needsSelection = (current === 1 || current === 2);
+      var needsSelection = (current === 1 || current === 2 || current === 3);
       nextBtn.disabled = needsSelection && !validateStep(current);
     }
 
@@ -519,7 +564,8 @@
       r.addEventListener('change', function() {
         var name = r.getAttribute('name');
         if (name === 'evenement') data.evenement = r.value;
-        if (name === 'quantite') data.quantite = r.value;
+        if (name === 'produit')   data.produit = r.value;
+        if (name === 'quantite')  data.quantite = r.value;
         updateNextState();
       });
     });
@@ -559,17 +605,18 @@
     // Skip buttons
     var skipDate = document.getElementById('wizard-skip-date');
     if (skipDate) {
-      skipDate.addEventListener('click', function() { data.date = ''; showStep(4, 'next'); updateSummary(); });
+      skipDate.addEventListener('click', function() { data.date = ''; showStep(5, 'next'); updateSummary(); });
       skipDate.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipDate.click(); });
     }
     var skipColors = document.getElementById('wizard-skip-colors');
     if (skipColors) {
-      skipColors.addEventListener('click', function() { data.couleurs = []; showStep(5, 'next'); updateSummary(); });
+      skipColors.addEventListener('click', function() { data.couleurs = []; showStep(6, 'next'); updateSummary(); });
       skipColors.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipColors.click(); });
     }
 
     function updateSummary() {
       document.getElementById('sum-event').textContent = data.evenement || '-';
+      document.getElementById('sum-produit').textContent = data.produit || '-';
       document.getElementById('sum-qty').textContent = data.quantite || '-';
       var d = data.date;
       if (d) {
@@ -599,10 +646,11 @@
 
     function validateStep(n) {
       if (n === 1) return !!document.querySelector('input[name="evenement"]:checked');
-      if (n === 2) return !!document.querySelector('input[name="quantite"]:checked');
-      if (n === 3) return true; // date optional
-      if (n === 4) return true; // colors optional
-      if (n === 5) return validateContact();
+      if (n === 2) return !!document.querySelector('input[name="produit"]:checked');
+      if (n === 3) return !!document.querySelector('input[name="quantite"]:checked');
+      if (n === 4) return true; // date optional
+      if (n === 5) return true; // colors optional
+      if (n === 6) return validateContact();
       return true;
     }
 
@@ -632,7 +680,6 @@
         return;
       }
       if (!validateStep(current)) {
-        // pulse le panel pour indiquer l'erreur
         var p = getPanel(current);
         if (p) {
           p.style.animation = 'none';
@@ -641,7 +688,7 @@
         }
         return;
       }
-      if (current === 3) { data.date = document.getElementById('wizard-date').value; }
+      if (current === 4) { data.date = document.getElementById('wizard-date').value; }
       showStep(current + 1, 'next');
       if (current === TOTAL) updateSummary();
     });

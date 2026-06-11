@@ -443,12 +443,12 @@ body::before {
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh;
-    min-height: 100dvh;
+    min-height: calc(100dvh + env(safe-area-inset-top, 0px));
   }
   .hero__content {
     min-height: 100svh;
-    min-height: 100dvh;
-    padding: 0 20px 80px;
+    min-height: calc(100dvh + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 20px 80px;
   }
   .hero__title { font-size: 46px; }
   .hero__arrow { bottom: 36px; }
@@ -2546,11 +2546,11 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 768px) {
   .hero__bg img { object-position: center 25%; }
-  .hero__content { padding: 0 24px 96px; }
+  .hero__content { padding: env(safe-area-inset-top, 0px) 24px 96px; }
   .hero__arrow { display: none; }
 }
 @media (max-width: 480px) {
-  .hero__content { padding: 0 20px 80px; }
+  .hero__content { padding: env(safe-area-inset-top, 0px) 20px 80px; }
 }
 
 @media (max-width: 768px) {
