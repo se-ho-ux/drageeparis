@@ -28,24 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.toggle('scrolled', y > scrolledThreshold);
         const menuOpen = navPanel && navPanel.classList.contains('open');
         if (!menuOpen) {
-          if (isMobile()) {
-            // Mobile : header toujours épinglé, jamais caché
+          if (y <= topZone) {
             header.classList.remove('header--hidden');
-          } else {
-            // Desktop : masquer en scroll bas, réafficher en scroll haut
-            if (y <= topZone) {
+            hiddenAtY = Infinity;
+          } else if (y > lastY) {
+            hiddenAtY = y;
+            if (!header.classList.contains('header--hidden') && y >= topZone + HIDE_AFTER) {
+              header.classList.add('header--hidden');
+            }
+          } else if (y < lastY && header.classList.contains('header--hidden')) {
+            if (hiddenAtY - y >= SHOW_AFTER) {
               header.classList.remove('header--hidden');
               hiddenAtY = Infinity;
-            } else if (y > lastY) {
-              hiddenAtY = y;
-              if (!header.classList.contains('header--hidden') && y >= topZone + HIDE_AFTER) {
-                header.classList.add('header--hidden');
-              }
-            } else if (y < lastY && header.classList.contains('header--hidden')) {
-              if (hiddenAtY - y >= SHOW_AFTER) {
-                header.classList.remove('header--hidden');
-                hiddenAtY = Infinity;
-              }
             }
           }
         }
