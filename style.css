@@ -177,13 +177,10 @@ body::before {
   .header--inner ~ .header__safe-area {
     background: var(--paper);
   }
-  /* Page hero après scroll */
+  /* Dès que .scrolled est actif, la safe-area reste opaque en permanence
+     — le header peut se cacher, la zone Dynamic Island reste couverte */
   .header.scrolled ~ .header__safe-area {
     background: var(--paper);
-  }
-  /* Header caché (scroll vers le bas) : la safe-area redevient transparente */
-  .header.scrolled.header--hidden ~ .header__safe-area {
-    background: transparent;
   }
 }
 .header.scrolled {
