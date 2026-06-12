@@ -137,26 +137,27 @@ body::before {
   /* réapparition rapide (ease-out) / disparition plus lente (ease-in dans --hidden) */
   transition: background 0.7s var(--ease-soft), transform 0.28s cubic-bezier(0, 0.55, 0.45, 1);
 }
-/* Couvre la zone Dynamic Island via contenu réel (pas padding) pour éviter
-   le bug iOS Safari où backdrop-filter ne s'applique pas à la zone padding */
+/* Sur desktop : ::before couvre la safe-area avec le fond frosted glass */
 .header::before {
   content: '';
   display: block;
   height: env(safe-area-inset-top, 0px);
-  transition: background 0.15s linear;
+  background: transparent;
 }
-.header--inner::before {
-  background: var(--paper);
-}
+.header--inner::before,
 .header.scrolled::before {
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.94);
+}
+/* Sur mobile : ::before désactivé — header__safe-area z-index:9999 prend le relais */
+@media (max-width: 1100px) {
+  .header::before { display: none; }
 }
 .header--hidden {
   transform: translateY(-110%);
   transition: background 0.7s var(--ease-soft), transform 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
 
-/* Bande permanente derrière la Dynamic Island — indépendante du transform du header */
+/* Bande permanente derrière la Dynamic Island */
 .header__safe-area {
   display: none;
 }
@@ -168,18 +169,10 @@ body::before {
     left: 0;
     right: 0;
     height: env(safe-area-inset-top, 0px);
-    z-index: 70;
+    z-index: 9999;
     pointer-events: none;
-    background: transparent;
-    transition: background 0.15s linear;
-  }
-  /* Pages intérieures : toujours opaque */
-  .header--inner ~ .header__safe-area {
     background: var(--paper);
-  }
-  /* Dès que .scrolled est actif, la safe-area reste opaque en permanence */
-  .header.scrolled ~ .header__safe-area {
-    background: var(--paper);
+    transition: none;
   }
   /* Header mobile : fond 100% opaque (pas de frosted glass semi-transparent) */
   .header.scrolled {
