@@ -23,7 +23,7 @@
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
       </ul>
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris, Accueil">
-        <span class="nav__logo-wordmark">Dragée Paris</span>
+        <span class="nav__logo-wordmark">Dragée<br>Paris</span>
       </a>
       <div class="nav__end">
         <ul class="nav__list--right" role="list">
@@ -45,6 +45,7 @@
     <li><a href="contact.html"          class="nav__link nav__link--cta">Lancer ma création</a></li>
   </ul>
   <button class="nav__close" id="nav-close" aria-label="Fermer le menu">
+    <span>Fermer</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
       <line x1="18" y1="6" x2="6" y2="18"/>
       <line x1="6" y1="6" x2="18" y2="18"/>
@@ -253,7 +254,7 @@
           <p class="wizard__step-sub">Quelle est la date de votre événement&nbsp;? Cela nous permet d'anticiper les délais de fabrication (2 à 3 semaines).</p>
 
           <div class="wizard__date-wrap">
-            <input type="date" class="wizard__date-input" id="wizard-date" name="date" aria-label="Date de l'événement">
+            <input type="date" class="wizard__date-input" id="wizard-date" name="date" aria-label="Date de l'événement" placeholder="jj/mm/aaaa">
             <p class="wizard__date-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
               Nous recommandons de nous contacter au moins 4 semaines avant votre événement.
@@ -470,16 +471,16 @@
     </div><!-- /wizard-wrap -->
   </main>
 
+  <div class="prefooter">
+    <span class="prefooter__logo">Dragée<br>Paris</span>
+    <div class="prefooter__social">
+      <a href="https://www.instagram.com/drageeparis/?hl=fr" rel="noopener noreferrer" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/drageeparis" rel="noopener noreferrer" target="_blank">Facebook</a>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="footer__inner">
-      <div class="footer__brand">
-        <span class="footer__logo">Dragée Paris</span>
-        <p class="footer__tagline">Créations artisanales, Île-de-France</p>
-        <div class="footer__social">
-          <a href="#" rel="noopener noreferrer">Instagram</a>
-          <a href="#" rel="noopener noreferrer">Pinterest</a>
-        </div>
-      </div>
       <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
@@ -496,16 +497,11 @@
         <ul class="footer__contact-list">
           <li><a href="tel:+33608671443">06 08 67 14 43</a></li>
           <li><a href="mailto:drageeparis@gmail.com">drageeparis@gmail.com</a></li>
-          <li><a href="#">@drageeparis</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer__col-title">Inspirations &amp; actualités</span>
-        <p class="footer__newsletter-text">Recevez nos nouvelles créations directement dans votre boîte mail.</p>
-        <form class="newsletter-form" aria-label="Inscription newsletter">
-          <input type="email" placeholder="Votre adresse e-mail" aria-label="Adresse e-mail" required>
-          <button type="submit">S'abonner</button>
-        </form>
+        <span class="footer__col-title">Notre atelier</span>
+        <address class="footer__address">145 Ter, Av. Jacques Chirac<br>91200 Athis-Mons</address>
       </div>
     </div>
     <div class="footer__bottom">
@@ -571,9 +567,32 @@
       });
     });
 
-    document.getElementById('wizard-date').addEventListener('change', function() {
-      data.date = this.value;
-    });
+    var dateEl = document.getElementById('wizard-date');
+    // Sur mobile, convertir en champ texte jj/mm/aaaa
+    if (dateEl && window.innerWidth <= 768) {
+      dateEl.type = 'text';
+      dateEl.setAttribute('inputmode', 'numeric');
+      dateEl.setAttribute('maxlength', '10');
+      dateEl.setAttribute('placeholder', 'jj/mm/aaaa');
+      dateEl.addEventListener('input', function() {
+        var digits = this.value.replace(/\D/g, '');
+        if (digits.length > 8) digits = digits.substr(0, 8);
+        var formatted = digits;
+        if (digits.length > 4) formatted = digits.substr(0, 2) + '/' + digits.substr(2, 2) + '/' + digits.substr(4);
+        else if (digits.length > 2) formatted = digits.substr(0, 2) + '/' + digits.substr(2);
+        this.value = formatted;
+      });
+      dateEl.addEventListener('change', function() {
+        var parts = this.value.split('/');
+        if (parts.length === 3 && parts[2].length === 4) {
+          data.date = parts[2] + '-' + parts[1].padStart(2,'0') + '-' + parts[0].padStart(2,'0');
+        } else {
+          data.date = this.value;
+        }
+      });
+    } else if (dateEl) {
+      dateEl.addEventListener('change', function() { data.date = this.value; });
+    }
 
     document.querySelectorAll('.wizard__color-item input[type="checkbox"]').forEach(function(c) {
       c.addEventListener('change', function() {

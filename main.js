@@ -11,23 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking    = false;
     let hiddenAtY  = Infinity;
     const HIDE_AFTER = 64;
-    const SHOW_AFTER = 8;   // réapparition quasi-immédiate dès 8px de remontée
-    const TOP_ZONE   = 80;
+    const SHOW_AFTER = 8;
+    const isHomePage = !header.classList.contains('header--inner');
+    const isMobile   = () => window.innerWidth <= 1100;
+    // Sur mobile homepage, TOP_ZONE = fin du hero (100vh)
+    const TOP_ZONE   = () => (isHomePage && isMobile()) ? window.innerHeight : 80;
+
+    // Sur mobile homepage, masquer le header initialement
+    if (isHomePage && isMobile()) {
+      header.classList.add('header--hidden');
+    }
 
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
+        const topZone = TOP_ZONE();
         header.classList.toggle('scrolled', y > 40);
-        const menuOpen = navPanel.classList.contains('open');
+        const menuOpen = navPanel && navPanel.classList.contains('open');
         if (!menuOpen) {
-          if (y <= TOP_ZONE) {
-            header.classList.remove('header--hidden');
+          if (y <= topZone) {
+            // Sur mobile homepage, garder caché dans la zone hero
+            if (isHomePage && isMobile()) {
+              header.classList.add('header--hidden');
+            } else {
+              header.classList.remove('header--hidden');
+            }
             hiddenAtY = Infinity;
           } else if (y > lastY) {
             hiddenAtY = y;
-            if (!header.classList.contains('header--hidden') && y >= TOP_ZONE + HIDE_AFTER) {
+            if (!header.classList.contains('header--hidden') && y >= topZone + HIDE_AFTER) {
               header.classList.add('header--hidden');
             }
           } else if (y < lastY && header.classList.contains('header--hidden')) {
@@ -111,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn    = document.getElementById(nextId);
     const countEl    = document.getElementById(countId);
     const navEl      = countEl ? countEl.closest('.carousel-nav') : null;
+    const wrapEl     = track ? track.parentElement : null;
     if (!track) return;
 
     const filters  = filterOpts ? Array.from(filterOpts.querySelectorAll('.filter-btn')) : [];
@@ -202,6 +217,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => { page = 0; render(false); }, { passive: true });
+
+    // Suivi des puces au scroll horizontal (mobile)
+    if (wrapEl) {
+      wrapEl.addEventListener('scroll', () => {
+        if (window.innerWidth > 640) return;
+        const firstItem = track.querySelector('.col-item[style*="display: none"]') ||
+                          track.querySelector('.col-item:not([style*="display: none"])');
+        const items = Array.from(track.querySelectorAll('.col-item')).filter(i => i.style.display !== 'none');
+        if (!items.length) return;
+        const itemWidth = items[0].offsetWidth;
+        const gap = 16;
+        const newPage = Math.round(wrapEl.scrollLeft / (itemWidth + gap));
+        const clamped = Math.min(Math.max(newPage, 0), items.length - 1);
+        if (clamped !== page) {
+          page = clamped;
+          if (countEl) {
+            countEl.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+              dot.classList.toggle('active', i === page);
+            });
+          }
+        }
+      }, { passive: true });
+
+      // Scroll horizontal souris/trackpad sur desktop
+      wrapEl.addEventListener('wheel', (e) => {
+        if (window.innerWidth <= 640) return;
+        e.preventDefault();
+        const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+        if (delta > 0 && nextBtn) { nextBtn.click(); }
+        else if (delta < 0 && prevBtn) { prevBtn.click(); }
+      }, { passive: false });
+    }
 
     render(false);
 
