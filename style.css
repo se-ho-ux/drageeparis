@@ -181,6 +181,10 @@ body::before {
   .header.scrolled ~ .header__safe-area {
     background: rgba(255, 255, 255, 0.94);
   }
+  /* Header caché (scroll vers le bas) : la safe-area redevient transparente */
+  .header.scrolled.header--hidden ~ .header__safe-area {
+    background: transparent;
+  }
 }
 .header.scrolled {
   background: rgba(255, 255, 255, 0.94);
@@ -274,6 +278,7 @@ body::before {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  word-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--blanc);
   white-space: nowrap;
@@ -1373,7 +1378,6 @@ body::before {
 .prefooter {
   text-align: center;
   padding: 80px 52px;
-  border-top: 1px solid var(--ink-20);
   background: var(--paper);
 }
 .prefooter__logo {
@@ -1381,6 +1385,7 @@ body::before {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  word-spacing: 0.3em;
   text-transform: uppercase;
   color: #7A6A52;
   display: block;
