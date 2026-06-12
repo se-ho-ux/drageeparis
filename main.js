@@ -241,9 +241,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: true });
 
       // Scroll horizontal souris/trackpad sur desktop
+      let lastWheelTime = 0;
       wrapEl.addEventListener('wheel', (e) => {
         if (window.innerWidth <= 640) return;
         e.preventDefault();
+        const now = Date.now();
+        if (now - lastWheelTime < 600) return;
+        lastWheelTime = now;
         const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
         if (delta > 0 && nextBtn) { nextBtn.click(); }
         else if (delta < 0 && prevBtn) { prevBtn.click(); }
