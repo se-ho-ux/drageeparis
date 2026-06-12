@@ -177,9 +177,17 @@ body::before {
   .header--inner ~ .header__safe-area {
     background: var(--paper);
   }
-  /* Dès que .scrolled est actif, la safe-area reste opaque en permanence
-     — le header peut se cacher, la zone Dynamic Island reste couverte */
+  /* Dès que .scrolled est actif, la safe-area reste opaque en permanence */
   .header.scrolled ~ .header__safe-area {
+    background: var(--paper);
+  }
+  /* Header mobile : fond 100% opaque (pas de frosted glass semi-transparent) */
+  .header.scrolled {
+    background: var(--paper);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .header.scrolled::before {
     background: var(--paper);
   }
 }
