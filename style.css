@@ -143,13 +143,13 @@ body::before {
   content: '';
   display: block;
   height: env(safe-area-inset-top, 0px);
-  transition: background 0.7s var(--ease-soft);
+  transition: background 0.15s linear;
 }
 .header--inner::before {
-  background: rgba(255, 255, 255, 0.97);
+  background: var(--paper);
 }
 .header.scrolled::before {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--paper);
 }
 .header--hidden {
   transform: translateY(-110%);
@@ -171,15 +171,15 @@ body::before {
     z-index: 70;
     pointer-events: none;
     background: transparent;
-    transition: background 0.7s var(--ease-soft);
+    transition: background 0.15s linear;
   }
   /* Pages intérieures : toujours opaque */
   .header--inner ~ .header__safe-area {
-    background: rgba(255, 255, 255, 0.97);
+    background: var(--paper);
   }
   /* Page hero après scroll */
   .header.scrolled ~ .header__safe-area {
-    background: rgba(255, 255, 255, 0.94);
+    background: var(--paper);
   }
   /* Header caché (scroll vers le bas) : la safe-area redevient transparente */
   .header.scrolled.header--hidden ~ .header__safe-area {
