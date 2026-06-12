@@ -17,27 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sur mobile homepage, TOP_ZONE = fin du hero (100vh)
     const TOP_ZONE   = () => (isHomePage && isMobile()) ? window.innerHeight : 80;
 
-    // Sur mobile homepage, masquer le header initialement
-    if (isHomePage && isMobile()) {
-      header.classList.add('header--hidden');
-    }
-
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
         const topZone = TOP_ZONE();
-        header.classList.toggle('scrolled', y > 40);
+        // Mobile homepage : fond blanc uniquement après le hero
+        const scrolledThreshold = (isHomePage && isMobile()) ? topZone : 40;
+        header.classList.toggle('scrolled', y > scrolledThreshold);
         const menuOpen = navPanel && navPanel.classList.contains('open');
         if (!menuOpen) {
           if (y <= topZone) {
-            // Sur mobile homepage, garder caché dans la zone hero
-            if (isHomePage && isMobile()) {
-              header.classList.add('header--hidden');
-            } else {
-              header.classList.remove('header--hidden');
-            }
+            header.classList.remove('header--hidden');
             hiddenAtY = Infinity;
           } else if (y > lastY) {
             hiddenAtY = y;
