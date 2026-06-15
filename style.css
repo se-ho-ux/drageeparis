@@ -3537,6 +3537,70 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 
 /* ================================================
+   CEDRIC-CATS — Image #8 (grand titre + 3 photos label-dessus)
+================================================ */
+.cedric-cats {
+  padding: 88px 52px 0;
+  background: var(--paper);
+}
+.cedric-cats__title {
+  font-family: var(--heading);
+  font-size: clamp(52px, 8.5vw, 124px);
+  font-weight: 200;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  text-align: center;
+  line-height: 0.94;
+  margin-bottom: 72px;
+}
+.cedric-cats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.cedric-cat-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.cedric-cat-item__label {
+  display: block;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 18px;
+  transition: color 0.3s;
+}
+.cedric-cat-item:hover .cedric-cat-item__label { color: var(--caramel); }
+.cedric-cat-item__img {
+  overflow: hidden;
+}
+.cedric-cat-item__img img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.97) saturate(0.88);
+  transition: transform 0.9s var(--ease), filter 0.7s var(--ease-soft);
+}
+.cedric-cat-item:hover .cedric-cat-item__img img {
+  transform: scale(1.04);
+  filter: brightness(1.02) saturate(1.0);
+}
+
+@media (max-width: 768px) {
+  .cedric-cats { padding: 64px 20px 0; }
+  .cedric-cats__title { margin-bottom: 48px; }
+  .cedric-cats__grid { grid-template-columns: 1fr; gap: 2px; }
+  .cedric-cat-item__img img { aspect-ratio: 3 / 2; }
+}
+
+
+/* ================================================
    HERO CONTENT — eyebrow + grand titre (Image #5)
 ================================================ */
 .hero__eyebrow {
