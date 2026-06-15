@@ -449,7 +449,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 52px clamp(160px, 26vh, 300px);
+  padding: 0 52px clamp(120px, 18vh, 220px);
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
@@ -3540,19 +3540,19 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
    CEDRIC-CATS — Image #8 (grand titre + 3 photos label-dessus)
 ================================================ */
 .cedric-cats {
-  padding: 88px 52px 0;
+  padding: 80px 52px 0;
   background: var(--paper);
 }
 .cedric-cats__title {
   font-family: var(--heading);
-  font-size: clamp(52px, 8.5vw, 124px);
+  font-size: clamp(38px, 5.2vw, 80px);
   font-weight: 200;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--caramel);
   text-align: center;
-  line-height: 0.94;
-  margin-bottom: 72px;
+  line-height: 0.96;
+  margin-bottom: 56px;
 }
 .cedric-cats__grid {
   display: grid;
@@ -3572,7 +3572,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--ink);
-  padding-bottom: 18px;
+  padding-bottom: 20px;
   transition: color 0.3s;
 }
 .cedric-cat-item:hover .cedric-cat-item__label { color: var(--caramel); }
@@ -3594,7 +3594,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 768px) {
   .cedric-cats { padding: 64px 20px 0; }
-  .cedric-cats__title { margin-bottom: 48px; }
+  .cedric-cats__title { margin-bottom: 40px; }
   .cedric-cats__grid { grid-template-columns: 1fr; gap: 2px; }
   .cedric-cat-item__img img { aspect-ratio: 3 / 2; }
 }
@@ -3615,7 +3615,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .hero__title-main {
   font-family: var(--heading);
-  font-size: clamp(38px, 5.8vw, 88px);
+  font-size: clamp(34px, 4.8vw, 74px);
   font-weight: 200;
   line-height: 1.0;
   letter-spacing: 0.04em;
@@ -3625,7 +3625,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   animation: fadeUp 1.1s var(--ease) 0.5s both;
 }
 @media (max-width: 768px) {
-  .hero__title-main { font-size: clamp(36px, 11vw, 56px); }
+  .hero__title-main { font-size: clamp(32px, 9.5vw, 52px); }
 }
 
 
@@ -3634,9 +3634,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 ================================================ */
 .cedric-split {
   display: grid;
-  grid-template-columns: 55% 1fr;
+  grid-template-columns: 50% 1fr;
   background: var(--paper);
-  min-height: 700px;
+  min-height: 580px;
 }
 .cedric-split__visual {
   overflow: hidden;
@@ -3652,11 +3652,11 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 72px 80px 72px 64px;
+  padding: 60px 64px 60px 52px;
 }
 .cedric-split__title {
   font-family: var(--heading);
-  font-size: clamp(26px, 3vw, 48px);
+  font-size: clamp(22px, 2.4vw, 38px);
   font-weight: 200;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3692,7 +3692,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 1024px) {
   .cedric-split { grid-template-columns: 1fr; min-height: auto; }
-  .cedric-split__visual { height: 60vw; max-height: 520px; }
+  .cedric-split__visual { height: 55vw; max-height: 460px; }
   .cedric-split__body { padding: 52px 32px; }
 }
 @media (max-width: 768px) {
