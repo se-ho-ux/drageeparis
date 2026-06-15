@@ -59,12 +59,20 @@ input, textarea, select { font-family: inherit; }
   --blanc:        #FFFFFF;
   --noir-hero:    #0F0E0C;
 
+  /* Pastels & crème */
+  --creme:        #F5F0E8;
+  --lavande:      #EDE8F5;
+  --pistache:     #DDE9D6;
+  --ciel:         #D4E8F2;
+  --rose-poudre:  #F2E8E6;
+
   --font:         'Akkurat', 'Helvetica Neue', Arial, sans-serif;
+  --heading:      'Montserrat', 'Akkurat', sans-serif;
 
   --ease:         cubic-bezier(0.32, 0.72, 0, 1);
   --ease-soft:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  --serif:    'Cormorant', serif;
+  --serif:    'Montserrat', sans-serif;
   --sans:     var(--font);
   --or-chaud: #B8906A;
 }
@@ -272,11 +280,11 @@ body::before {
 
 .nav__logo { display: flex; align-items: center; justify-self: center; }
 .nav__logo-wordmark {
-  font-family: 'Cormorant', serif;
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  word-spacing: 0.12em;
+  font-family: var(--heading);
+  font-size: 32px;
+  font-weight: 200;
+  letter-spacing: 0.22em;
+  word-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--blanc);
   white-space: nowrap;
@@ -1379,16 +1387,16 @@ body::before {
   background: var(--paper);
 }
 .prefooter__logo {
-  font-family: 'Cormorant', serif;
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  word-spacing: 0.12em;
+  font-family: var(--heading);
+  font-size: 32px;
+  font-weight: 200;
+  letter-spacing: 0.22em;
+  word-spacing: 0.14em;
   text-transform: uppercase;
   color: #7A6A52;
   display: block;
   margin-bottom: 28px;
-  line-height: 1.05;
+  line-height: 1.15;
 }
 .prefooter__logo br { display: none; }
 @media (max-width: 768px) {

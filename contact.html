@@ -7,7 +7,7 @@
   <meta name="description" content="Lancez votre création personnalisée étape par étape, événement, quantité, date, couleurs et coordonnées. Réponse sous 48h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="wizard-page">
@@ -19,7 +19,6 @@
     <nav class="nav" aria-label="Navigation principale">
       <ul class="nav__list--left" role="list">
         <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
-        <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
         <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
       </ul>
       <a href="index.html" class="nav__logo" aria-label="Dragée Paris, Accueil">
@@ -39,7 +38,6 @@
   <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
     <li><a href="index.html"            class="nav__link">Accueil</a></li>
     <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
-    <li><a href="bougies.html"          class="nav__link">Bougies</a></li>
     <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
     <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
     <li><a href="contact.html"          class="nav__link nav__link--cta">Lancer ma création</a></li>
@@ -70,7 +68,7 @@
             <span class="wizard__step-label">Étape 01 / 06</span>
           </div>
           <h1 class="wizard__step-title">Racontez-nous<br>votre célébration</h1>
-          <p class="wizard__step-sub">Quel est le type de l'événement pour lequel vous souhaitez créer vos dragées ou bougies&nbsp;?</p>
+          <p class="wizard__step-sub">Quel est le type de l'événement pour lequel vous souhaitez créer vos dragées&nbsp;?</p>
 
           <div class="wizard__cards" role="group" aria-label="Type d'événement">
 
@@ -143,41 +141,51 @@
           </div>
         </div>
 
-        <!-- Étape 2 : Produit -->
+        <!-- Étape 2 : Finition -->
         <div class="wizard__panel" id="wizard-step-2">
           <div class="wizard__meta">
             <span class="wizard__step-label">Étape 02 / 06</span>
           </div>
-          <h2 class="wizard__step-title">Que souhaitez-vous<br>créer&nbsp;?</h2>
-          <p class="wizard__step-sub">Choisissez le type de création pour votre événement.</p>
-          <div class="wizard__cards" role="group" aria-label="Type de produit">
+          <h2 class="wizard__step-title">Quelle finition<br>vous inspire&nbsp;?</h2>
+          <p class="wizard__step-sub">Choisissez l'enrobage qui correspond à l'ambiance de votre événement.</p>
+          <div class="wizard__cards" role="group" aria-label="Finition des dragées">
             <label class="wizard__card">
-              <input type="radio" name="produit" value="Dragées">
+              <input type="radio" name="finition" value="Mate">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><ellipse cx="12" cy="12" rx="4" ry="2.5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
                 </div>
-                <span class="wizard__card-name">Dragées</span>
+                <span class="wizard__card-name">Mate</span>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
             </label>
             <label class="wizard__card">
-              <input type="radio" name="produit" value="Bougies">
+              <input type="radio" name="finition" value="Satinée">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-2 2.5-2 4.5s2 3.5 2 3.5 2-1.5 2-3.5-2-4.5-2-4.5z"/><rect x="9" y="10" width="6" height="11" rx="1"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 10 Q12 7 16 10"/></svg>
                 </div>
-                <span class="wizard__card-name">Bougies</span>
+                <span class="wizard__card-name">Satinée</span>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
             </label>
             <label class="wizard__card">
-              <input type="radio" name="produit" value="Les deux">
+              <input type="radio" name="finition" value="Nacrée">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9 Q12 6 15 9 Q18 12 15 15 Q12 18 9 15 Q6 12 9 9z"/></svg>
+                </div>
+                <span class="wizard__card-name">Nacrée</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+            <label class="wizard__card">
+              <input type="radio" name="finition" value="Métallique">
               <div class="wizard__card-inner">
                 <div class="wizard__card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <span class="wizard__card-name">Les deux</span>
+                <span class="wizard__card-name">Métallique</span>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
             </label>
@@ -200,7 +208,7 @@
                 <span class="wizard__qty-num">–50</span>
                 <div class="wizard__qty-info">
                   <span class="wizard__qty-label">Moins de 50</span>
-                  <span class="wizard__qty-sub">Pour petits comités ou bougies</span>
+                  <span class="wizard__qty-sub">Pour petits comités</span>
                 </div>
               </div>
               <span class="wizard__card-check" aria-hidden="true"></span>
@@ -478,7 +486,6 @@
         <span class="footer__col-title">Pages</span>
         <ul class="footer__nav-list">
           <li><a href="dragees.html">Dragées</a></li>
-          <li><a href="bougies.html">Bougies</a></li>
           <li><a href="personnalisation.html">Personnalisation</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="contact.html">Contact</a></li>
