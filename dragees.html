@@ -53,27 +53,24 @@
 
   <main id="main">
 
-    <div class="section-intro fade-in">
-      <h1 class="section-intro__title">Nos Dragées</h1>
-      <p class="section-intro__sub">Amandes de qualité supérieure, enrobées à la main dans notre atelier. Une dragée pour chaque occasion, chaque couleur, chaque envie.</p>
+    <div class="cedric-section-header fade-in">
+      <h1 class="cedric-section-header__title">Nos Collections</h1>
+      <a href="contact.html" class="cedric-section-header__link">Lancer ma création →</a>
     </div>
 
-    <!-- GALERIE FILTRÉE + ACCORDÉON -->
+    <!-- GALERIE FILTRÉE -->
     <section class="dragees-section" aria-label="Collection de dragées">
 
-      <div class="dragees-controls">
-        <button class="filter-toggle" id="dragees-filter-toggle" aria-expanded="false" aria-controls="dragees-filter-options">
-          <span class="filter-toggle__icon" aria-hidden="true">+</span>Filtre
-        </button>
-        <div class="filter-options" id="dragees-filter-options">
-          <div class="filter-options__inner" role="group" aria-label="Filtrer par occasion">
-            <button class="filter-btn active" data-filter="all">Toutes</button>
-            <button class="filter-btn" data-filter="mariage">Mariage</button>
-            <button class="filter-btn" data-filter="naissance">Naissance</button>
-            <button class="filter-btn" data-filter="reception">Réception</button>
-            <button class="filter-btn" data-filter="anniv">Anniversaire</button>
-          </div>
+      <div class="cedric-filter" role="navigation" aria-label="Filtrer les dragées">
+        <span class="cedric-filter__left">Dragées</span>
+        <div class="cedric-filter__tabs" id="dragees-filter-options" role="group" aria-label="Filtrer par occasion">
+          <button class="cedric-filter__tab filter-btn active" data-filter="all">Toutes</button>
+          <button class="cedric-filter__tab filter-btn" data-filter="mariage">Mariage</button>
+          <button class="cedric-filter__tab filter-btn" data-filter="naissance">Naissance</button>
+          <button class="cedric-filter__tab filter-btn" data-filter="reception">Réception</button>
+          <button class="cedric-filter__tab filter-btn" data-filter="anniv">Anniversaire</button>
         </div>
+        <button class="cedric-filter__right" id="dragees-filter-toggle" aria-expanded="false">Filtrer</button>
       </div>
 
       <div class="carousel-stage">

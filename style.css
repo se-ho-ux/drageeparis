@@ -3534,3 +3534,342 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .nav__logo-wordmark { font-size: 34px; }
   .page-intro__title  { font-size: 30px; }
 }
+
+
+/* ================================================
+   HERO CONTENT — eyebrow + grand titre (Image #5)
+================================================ */
+.hero__eyebrow {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  display: block;
+  margin-bottom: 18px;
+  animation: fadeUp 1.0s var(--ease) 0.3s both;
+}
+.hero__title-main {
+  font-family: var(--heading);
+  font-size: clamp(38px, 5.8vw, 88px);
+  font-weight: 200;
+  line-height: 1.0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--blanc);
+  max-width: 720px;
+  animation: fadeUp 1.1s var(--ease) 0.5s both;
+}
+@media (max-width: 768px) {
+  .hero__title-main { font-size: clamp(36px, 11vw, 56px); }
+}
+
+
+/* ================================================
+   CEDRIC-SPLIT — Image #1 (grande image gauche, texte droit)
+================================================ */
+.cedric-split {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  background: var(--paper);
+  min-height: 700px;
+}
+.cedric-split__visual {
+  overflow: hidden;
+}
+.cedric-split__visual img,
+.cedric-split__visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cedric-split__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 80px 72px 64px;
+}
+.cedric-split__title {
+  font-family: var(--heading);
+  font-size: clamp(26px, 3vw, 48px);
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.08;
+  margin-bottom: 36px;
+}
+.cedric-split__text {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-60);
+  max-width: 400px;
+}
+.cedric-split__text + .cedric-split__text { margin-top: 16px; }
+.cedric-split__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 44px;
+  font-family: var(--font);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  border-bottom: 1px solid var(--caramel);
+  padding-bottom: 4px;
+  transition: opacity 0.3s, gap 0.3s var(--ease-soft);
+  width: fit-content;
+}
+.cedric-split__cta:hover { opacity: 0.65; gap: 16px; }
+
+@media (max-width: 1024px) {
+  .cedric-split { grid-template-columns: 1fr; min-height: auto; }
+  .cedric-split__visual { height: 60vw; max-height: 520px; }
+  .cedric-split__body { padding: 52px 32px; }
+}
+@media (max-width: 768px) {
+  .cedric-split__body { padding: 44px 20px 52px; }
+  .cedric-split__text { max-width: 100%; }
+}
+
+
+/* ================================================
+   REASSURANCES — Image #2 (3 cols sous banner)
+================================================ */
+.reassurances {
+  background: var(--paper);
+  padding: 52px 52px;
+  border-top: 1px solid var(--ink-20);
+}
+.reassurances__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+.reassurance-item {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink-60);
+}
+.reassurance-item strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+@media (max-width: 768px) {
+  .reassurances { padding: 40px 20px; }
+  .reassurances__grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+
+/* ================================================
+   CEDRIC-FILTER — Image #3 (barre filtre horizontale slim)
+================================================ */
+.cedric-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  border-bottom: 1px solid var(--ink-20);
+  background: var(--paper);
+  min-height: 52px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.cedric-filter__left {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.cedric-filter__tabs {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.cedric-filter__tab {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  cursor: pointer;
+  padding: 18px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s var(--ease-soft), border-color 0.25s;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: var(--font);
+}
+.cedric-filter__tab:hover { color: var(--ink); }
+.cedric-filter__tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.cedric-filter__right {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  cursor: pointer;
+  background: none;
+  font-family: var(--font);
+  padding: 0;
+  transition: color 0.25s;
+  white-space: nowrap;
+}
+.cedric-filter__right:hover { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .cedric-filter { padding: 0 20px; }
+  .cedric-filter__left { display: none; }
+  .cedric-filter__tabs { gap: 20px; overflow-x: auto; scrollbar-width: none; }
+  .cedric-filter__tabs::-webkit-scrollbar { display: none; }
+  .cedric-filter__right { display: none; }
+}
+
+
+/* ================================================
+   CEDRIC-SECTION-HEADER — Image #4 (titre caramel + "TOUT VOIR")
+================================================ */
+.cedric-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 72px 52px 40px;
+  background: var(--paper);
+}
+.cedric-section-header__title {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3.8vw, 56px);
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--caramel);
+}
+.cedric-section-header__link {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  border-bottom: 1px solid var(--caramel);
+  padding-bottom: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.25s, gap 0.3s var(--ease-soft);
+  flex-shrink: 0;
+}
+.cedric-section-header__link:hover { opacity: 0.65; gap: 16px; }
+
+@media (max-width: 768px) {
+  .cedric-section-header { padding: 48px 20px 28px; }
+}
+
+
+/* ================================================
+   EDITORIAL-3COL — Image #6 (texte / image / texte)
+================================================ */
+.editorial-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 620px;
+  background: var(--paper);
+  padding: 80px 52px;
+  gap: 52px;
+  align-items: center;
+}
+.editorial-3col__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.editorial-3col__heading {
+  font-family: var(--heading);
+  font-size: clamp(18px, 2vw, 32px);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.1;
+}
+.editorial-3col__body {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-60);
+}
+.editorial-3col__visual {
+  overflow: hidden;
+  align-self: stretch;
+  min-height: 480px;
+}
+.editorial-3col__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .editorial-3col {
+    grid-template-columns: 1fr 1fr;
+    padding: 60px 32px;
+    gap: 36px;
+  }
+  .editorial-3col__text:last-child { grid-column: 1 / -1; }
+  .editorial-3col__visual { min-height: 360px; }
+}
+@media (max-width: 768px) {
+  .editorial-3col { grid-template-columns: 1fr; padding: 48px 20px; }
+  .editorial-3col__visual { min-height: 280px; grid-row: 1; }
+  .editorial-3col__text:last-child { grid-column: 1; }
+}
+
+
+/* ================================================
+   CEDRIC-COLLECTION — Image #7 (grand titre centré caramel)
+================================================ */
+.cedric-collection {
+  text-align: center;
+  padding: 80px 52px;
+  background: var(--paper);
+  border-top: 1px solid var(--ink-20);
+}
+.cedric-collection__title {
+  font-family: var(--heading);
+  font-size: clamp(36px, 5.2vw, 84px);
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.0;
+  margin-bottom: 24px;
+}
+.cedric-collection__sub {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink-60);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .cedric-collection { padding: 56px 20px; }
+  .cedric-collection__title { letter-spacing: 0.04em; }
+}
