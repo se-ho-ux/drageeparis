@@ -3545,7 +3545,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .cedric-cats__title {
   font-family: var(--heading);
-  font-size: clamp(38px, 5.2vw, 80px);
+  font-size: clamp(26px, 3.2vw, 50px);
   font-weight: 200;
   letter-spacing: 0.04em;
   text-transform: uppercase;
