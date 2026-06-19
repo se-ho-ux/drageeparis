@@ -96,11 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-    /* Activation des sous-menus au survol / clic */
+    /* Activation des sous-menus au clic uniquement */
     mainItems.forEach(item => {
-      const activate = () => activateSub(item.dataset.sub);
-      item.addEventListener('mouseenter', activate);
-      item.querySelector('.drawer__main-btn')?.addEventListener('click', activate);
+      item.querySelector('.drawer__main-btn')?.addEventListener('click', () => activateSub(item.dataset.sub));
     });
 
     /* Fermer quand on clique un lien */

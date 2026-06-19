@@ -440,26 +440,28 @@ body::before {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-family: var(--heading);
-  font-size: clamp(17px, 1.55vw, 22px);
+  font-family: var(--font);
+  font-style: normal;
+  font-size: 26px;
   font-weight: 400;
-  letter-spacing: 0.03em;
+  line-height: 36px;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--ink);
   background: none;
-  border: 1px solid transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
-  padding: 7px 12px;
+  padding: 4px 0;
   margin: 2px 0;
   text-align: left;
   text-decoration: none;
-  line-height: 1.2;
   white-space: nowrap;
   transition: border-color 0.18s var(--ease-soft), opacity 0.18s;
 }
 .drawer__main-btn:hover { opacity: 0.55; }
 .drawer__main-item.is-active .drawer__main-btn {
-  border-color: var(--ink);
+  border-bottom-color: var(--ink);
   opacity: 1;
 }
 
