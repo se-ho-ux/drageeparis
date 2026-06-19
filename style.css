@@ -4288,21 +4288,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 
 /* ================================================
-   HEADER — Navigation desktop (≥ 1024px)
+   HEADER — Navigation desktop (désactivée — burger seul)
 ================================================ */
 
 .header__desk-nav { display: none; }
-
-@media (min-width: 1024px) {
-  .header__menu-toggle { display: none; }
-  .header__logo { justify-self: start; text-align: left; }
-  .header__container { gap: 2.5rem; }
-  .header__desk-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 
 .header__desk-nav-list {
   display: flex;
