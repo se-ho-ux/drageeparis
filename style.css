@@ -1460,8 +1460,8 @@ body::before {
 .prefooter__logo {
   font-family: var(--heading);
   font-size: 32px;
-  font-weight: 200;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   word-spacing: 0.14em;
   text-transform: uppercase;
   color: #965F36;
@@ -3569,8 +3569,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-cats__title {
   font-family: var(--heading);
   font-size: clamp(26px, 3.2vw, 50px);
-  font-weight: 200;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   text-align: center;
@@ -3639,9 +3639,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .hero__title-main {
   font-family: var(--heading);
   font-size: clamp(34px, 4.8vw, 74px);
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.0;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--blanc);
   max-width: 720px;
@@ -3682,8 +3682,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-split__title {
   font-family: var(--heading);
   font-size: clamp(22px, 2.4vw, 38px);
-  font-weight: 200;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.08;
@@ -3844,8 +3844,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-section-header__title {
   font-family: var(--heading);
   font-size: clamp(28px, 3.8vw, 56px);
-  font-weight: 200;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
 }
@@ -3890,8 +3890,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .editorial-3col__heading {
   font-family: var(--heading);
   font-size: clamp(18px, 2vw, 32px);
-  font-weight: 200;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.1;
@@ -3942,8 +3942,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-collection__title {
   font-family: var(--heading);
   font-size: clamp(36px, 5.2vw, 84px);
-  font-weight: 200;
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.0;
@@ -3980,7 +3980,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(28px, 3.8vw, 52px);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.0;
@@ -4085,8 +4085,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .collection-header__title {
   font-family: var(--heading);
   font-size: clamp(2.4rem, 5vw, 5rem);
-  font-weight: 200;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1;
@@ -4124,8 +4124,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .product-section__title {
   font-family: var(--heading);
   font-size: clamp(1.6rem, 2.6vw, 2.8rem);
-  font-weight: 200;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
 }
@@ -4456,8 +4456,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .collection-grid .page-title {
   font-family: var(--heading);
   font-size: clamp(2rem, 4.5vw, 4.5rem);
-  font-weight: 200;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   margin-bottom: 20px;
@@ -4497,8 +4497,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .collection-card__title {
   font-family: var(--heading);
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-weight: 200;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   margin-bottom: 8px;
@@ -4534,8 +4534,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .divider-title {
   font-family: var(--heading);
   font-size: clamp(1.6rem, 3vw, 3rem);
-  font-weight: 200;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   margin-bottom: 14px;
