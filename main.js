@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mobile homepage : fond blanc uniquement après le hero
         const scrolledThreshold = (isHomePage && isMobile()) ? topZone : 40;
         header.classList.toggle('scrolled', y > scrolledThreshold);
-        const menuOpen = navPanel && navPanel.classList.contains('open');
+        const menuOpen = drawer && drawer.getAttribute('aria-hidden') === 'false';
         if (!menuOpen) {
           if (y <= topZone) {
             header.classList.remove('header--hidden');
@@ -51,39 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  /* ---- 2. Hamburger menu ---- */
-  const hamburger = document.getElementById('hamburger');
-  const navPanel  = document.getElementById('nav-panel');
-  const backdrop  = document.getElementById('nav-backdrop');
-  const closeBtn  = document.getElementById('nav-close');
-  if (hamburger && navPanel) {
-    const closeMenu = () => {
-      navPanel.classList.remove('open');
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      backdrop?.classList.remove('open');
-      closeBtn?.classList.remove('visible');
-      document.body.style.overflow = '';
-      header.classList.remove('header--hidden');
+  /* ---- 2. Drawer menu ---- */
+  const drawerToggle  = document.getElementById('drawer-toggle');
+  const drawer        = document.getElementById('drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerClose   = document.getElementById('drawer-close');
+
+  if (drawerToggle && drawer) {
+    const openDrawer = () => {
+      drawer.setAttribute('aria-hidden', 'false');
+      drawerToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     };
-    hamburger.addEventListener('click', () => {
-      const isOpen = navPanel.classList.toggle('open');
-      hamburger.classList.toggle('active', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      backdrop?.classList.toggle('open', isOpen);
-      closeBtn?.classList.toggle('visible', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    closeBtn?.addEventListener('click', closeMenu);
-    backdrop?.addEventListener('click', closeMenu);
-    navPanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const closeDrawer = () => {
+      drawer.setAttribute('aria-hidden', 'true');
+      drawerToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (header) header.classList.remove('header--hidden');
+    };
+    drawerToggle.addEventListener('click', openDrawer);
+    drawerClose?.addEventListener('click', closeDrawer);
+    drawerOverlay?.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('.drawer__nav a').forEach(a => a.addEventListener('click', closeDrawer));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
   }
 
-  /* ---- 3. Active nav link ---- */
+  /* ---- 3. Lien actif dans le drawer ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link').forEach(link => {
-    const href = link.getAttribute('href');
+  document.querySelectorAll('.drawer__nav a').forEach(link => {
+    const href = link.getAttribute('href')?.split('?')[0];
     if (href === page || (page === '' && href === 'index.html')) {
       link.classList.add('active');
     }

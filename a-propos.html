@@ -10,44 +10,42 @@
 <body>
 
   <a class="skip-link" href="#main">Aller au contenu principal</a>
-  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <header class="header header--inner" id="header">
-    <nav class="nav" aria-label="Navigation principale">
-      <ul class="nav__list--left" role="list">
-        <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
-        <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-      </ul>
-      <a href="index.html" class="nav__logo" aria-label="Dragée Paris, Accueil">
-        <span class="nav__logo-wordmark">Dragée <br>Paris</span>
-      </a>
-      <div class="nav__end">
-        <ul class="nav__list--right" role="list">
-          <li><a href="a-propos.html" class="nav__link active">À propos</a></li>
-          <li><a href="contact.html"  class="nav__link nav__link--cta">Lancer ma création</a></li>
-        </ul>
-        <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-panel">
-          <span></span><span></span>
-        </button>
+    <div class="header__container">
+      <button class="header__menu-toggle" id="drawer-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <a href="index.html" class="header__logo" aria-label="Dragée Paris, Accueil">Dragée Paris</a>
+      <div class="header__actions">
+        <a href="contact.html" class="header__cta">Lancer ma création</a>
       </div>
-    </nav>
+    </div>
   </header>
-  <ul class="nav__panel" id="nav-panel" role="list" aria-label="Navigation">
-    <li><a href="index.html"            class="nav__link">Accueil</a></li>
-    <li><a href="dragees.html"          class="nav__link">Dragées</a></li>
-    <li><a href="personnalisation.html" class="nav__link">Personnalisation</a></li>
-    <li><a href="a-propos.html"         class="nav__link">À propos</a></li>
-    <li><a href="contact.html"          class="nav__link nav__link--cta">Lancer ma création</a></li>
-  </ul>
-  <button class="nav__close" id="nav-close" aria-label="Fermer le menu">
-    <span>Fermer</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-      <line x1="18" y1="6" x2="6" y2="18"/>
-      <line x1="6" y1="6" x2="18" y2="18"/>
-    </svg>
-  </button>
+  <!-- Drawer navigation -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawer-overlay"></div>
+    <div class="drawer__content">
+      <button class="drawer__close" id="drawer-close" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        Fermer
+      </button>
+      <nav aria-label="Navigation principale">
+      <ul class="drawer__nav">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="dragees.html">Dragées</a></li>
+        <li><a href="personnalisation.html">Personnalisation</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      </nav>
+      <a href="contact.html" class="drawer__cta">Lancer ma création</a>
+    </div>
+  </div>
   <div class="header__safe-area" aria-hidden="true"></div>
-
   <main id="main">
 
     <div class="section-intro fade-in">
@@ -163,15 +161,6 @@
     <div class="footer__bottom">
       <p>© 2024 Dragée Paris · Artisan confiseur en Île-de-France · Tous droits réservés</p>
     </div>
-  </footer>
-
-  <a href="contact.html" class="mobile-cta" aria-label="Lancer ma création">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M11 2.5L13.5 5L5.5 13H3v-2.5L11 2.5Z"/>
-      <path d="M9.5 4L12 6.5"/>
-    </svg>
-    <span>Lancer ma création</span>
-  </a>
-  <script src="main.js"></script>
+  </footer>  <script src="main.js"></script>
 </body>
 </html>
