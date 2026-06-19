@@ -435,9 +435,10 @@ body::before {
   text-transform: uppercase;
   color: var(--ink);
   background: none;
-  border: 1px solid transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
-  padding: 10px 16px;
+  padding: 10px 0;
   margin: 3px 0;
   text-align: left;
   text-decoration: none;
@@ -446,7 +447,7 @@ body::before {
 }
 .drawer__main-btn:hover { opacity: 0.6; }
 .drawer__main-item.is-active .drawer__main-btn {
-  border-color: var(--ink);
+  border-bottom-color: var(--ink);
   opacity: 1;
 }
 
