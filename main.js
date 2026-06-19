@@ -90,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drawerToggle.addEventListener('click', openDrawer);
     drawerClose?.addEventListener('click', closeDrawer);
-    drawer.querySelector('.drawer__content')?.addEventListener('click', e => {
-      if (e.target === e.currentTarget) closeDrawer();
+    /* Clic sur la zone droite visible (hors panneau) ferme le menu */
+    drawer.addEventListener('click', e => {
+      if (!e.target.closest('.drawer__content')) closeDrawer();
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 

@@ -349,7 +349,7 @@ body::before {
    DRAWER (menu global)
 ============================================== */
 /* ================================================
-   DRAWER — Menu plein écran bicolonne (style Cédric)
+   DRAWER — Panneau latéral bicolonne (style Cédric)
 ================================================ */
 
 .drawer {
@@ -357,34 +357,46 @@ body::before {
   inset: 0;
   z-index: 100;
   pointer-events: none;
-  visibility: hidden;
 }
 .drawer[aria-hidden="false"] {
   pointer-events: auto;
-  visibility: visible;
 }
 
-.drawer__content {
+/* Overlay sombre sur la partie droite visible */
+.drawer::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: var(--paper);
-  display: flex;
+  background: rgba(52, 34, 26, 0.18);
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.32s var(--ease-soft), transform 0.32s var(--ease-soft);
+  transition: opacity 0.38s var(--ease-soft);
+}
+.drawer[aria-hidden="false"]::before { opacity: 1; }
+
+/* Panneau principal — glisse depuis la gauche */
+.drawer__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(860px, 62vw);
+  display: flex;
+  background: var(--paper);
+  transform: translateX(-100%);
+  transition: transform 0.38s var(--ease-soft);
 }
 .drawer[aria-hidden="false"] .drawer__content {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* ── Panneau gauche ─────────────────────────────── */
 
 .drawer__left {
-  width: clamp(300px, 48%, 580px);
+  width: clamp(260px, 27vw, 370px);
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  padding: 40px 52px 44px;
+  padding: 38px 44px 44px;
   overflow-y: auto;
 }
 
@@ -403,14 +415,14 @@ body::before {
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 52px;
+  margin-bottom: 48px;
   align-self: flex-start;
   transition: opacity 0.2s;
 }
 .drawer__close:hover { opacity: 0.5; }
 .drawer__close svg {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   stroke: currentColor;
   flex-shrink: 0;
 }
@@ -429,31 +441,30 @@ body::before {
   justify-content: space-between;
   width: 100%;
   font-family: var(--heading);
-  font-size: clamp(28px, 3.4vw, 50px);
+  font-size: clamp(22px, 2.6vw, 40px);
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--ink);
   background: none;
-  border: none;
-  border-bottom: 1px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
-  padding: 10px 0;
-  margin: 3px 0;
+  padding: 8px 14px;
+  margin: 2px 0;
   text-align: left;
   text-decoration: none;
-  line-height: 1.15;
+  line-height: 1.2;
   transition: border-color 0.18s var(--ease-soft), opacity 0.18s;
 }
-.drawer__main-btn:hover { opacity: 0.6; }
+.drawer__main-btn:hover { opacity: 0.55; }
 .drawer__main-item.is-active .drawer__main-btn {
-  border-bottom-color: var(--ink);
+  border-color: var(--ink);
   opacity: 1;
 }
 
 .drawer__main-chevron {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   stroke: currentColor;
   stroke-width: 1.2;
@@ -462,22 +473,22 @@ body::before {
 /* Liens secondaires en bas */
 .drawer__secondary {
   margin-top: auto;
-  padding-top: 32px;
+  padding-top: 28px;
   border-top: 1px solid var(--ink-20);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 .drawer__secondary a {
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 300;
   color: var(--ink);
   text-decoration: none;
-  transition: color 0.2s, padding-left 0.2s var(--ease-soft);
+  transition: color 0.2s;
   letter-spacing: 0.01em;
 }
-.drawer__secondary a:hover { color: var(--caramel); padding-left: 4px; }
+.drawer__secondary a:hover { color: var(--caramel); }
 
 /* ── Séparateur vertical caramel ─────────────────── */
 
@@ -492,7 +503,7 @@ body::before {
 
 .drawer__right {
   flex: 1;
-  padding: 130px 52px 44px;
+  padding: 120px 48px 44px;
   overflow-y: auto;
 }
 
@@ -506,39 +517,38 @@ body::before {
   display: flex;
   opacity: 0;
 }
-.drawer__sub.is-visible {
-  opacity: 1;
-}
+.drawer__sub.is-visible { opacity: 1; }
 
 .drawer__sub-link {
   font-family: var(--font);
-  font-size: clamp(15px, 1.4vw, 20px);
+  font-size: clamp(14px, 1.2vw, 18px);
   font-weight: 300;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
-  padding: 10px 0;
+  padding: 9px 0;
   transition: color 0.2s, padding-left 0.2s var(--ease-soft);
 }
-.drawer__sub-link:hover { color: var(--caramel); padding-left: 8px; }
-.drawer__sub-link--all {
-  font-weight: 400;
-  margin-bottom: 2px;
-}
+.drawer__sub-link:hover { color: var(--caramel); padding-left: 6px; }
+.drawer__sub-link--all { font-weight: 400; }
+
 .drawer__sub-sep {
   height: 1px;
   background: var(--ink-20);
-  margin: 10px 0 18px;
+  margin: 8px 0 16px;
   width: 100%;
 }
 
-/* ── Mobile ──────────────────────────────────────── */
+/* ── Mobile — plein écran empilé ─────────────────── */
 
 @media (max-width: 768px) {
-  .drawer__content { flex-direction: column; }
+  .drawer__content {
+    width: 100%;
+    flex-direction: column;
+  }
   .drawer__left {
     width: 100%;
-    padding: 28px 24px 24px;
+    padding: 28px 24px 20px;
     overflow-y: visible;
     flex-shrink: 0;
   }
@@ -550,11 +560,11 @@ body::before {
     border-top: 1px solid var(--ink-20);
     overflow-y: auto;
   }
-  .drawer__main-btn { font-size: clamp(22px, 6vw, 36px); padding: 8px 12px; }
-  .drawer__secondary { padding-top: 20px; margin-top: 16px; }
+  .drawer__main-btn { font-size: clamp(20px, 6vw, 32px); padding: 7px 10px; }
+  .drawer__secondary { padding-top: 20px; margin-top: 12px; }
 }
 @media (max-width: 480px) {
-  .drawer__left { padding: 24px 20px 20px; }
+  .drawer__left { padding: 24px 20px 16px; }
   .drawer__right { padding: 16px 20px 28px; }
 }
 
