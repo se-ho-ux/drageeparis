@@ -3663,6 +3663,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .cedric-split__visual {
   overflow: hidden;
+  padding: 48px 24px 48px 52px;
 }
 .cedric-split__visual img,
 .cedric-split__visual video {
@@ -3670,6 +3671,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 3px;
 }
 .cedric-split__body {
   display: flex;
@@ -3715,7 +3717,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 1024px) {
   .cedric-split { grid-template-columns: 1fr; min-height: auto; }
-  .cedric-split__visual { height: 55vw; max-height: 460px; }
+  .cedric-split__visual { height: 55vw; max-height: 400px; padding: 28px 20px; }
   .cedric-split__body { padding: 52px 32px; }
 }
 @media (max-width: 768px) {
