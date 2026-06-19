@@ -4285,3 +4285,317 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 @media (max-width: 480px) {
   .product-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ================================================
+   HEADER — Navigation desktop (≥ 1024px)
+================================================ */
+
+.header__desk-nav { display: none; }
+
+@media (min-width: 1024px) {
+  .header__menu-toggle { display: none; }
+  .header__logo { justify-self: start; text-align: left; }
+  .header__container { gap: 2.5rem; }
+  .header__desk-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.header__desk-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header__desk-nav-item { position: relative; }
+
+.header__desk-nav-link {
+  font-family: var(--font);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blanc);
+  transition: opacity 0.2s var(--ease-soft);
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+.header.scrolled .header__desk-nav-link,
+.header--inner .header__desk-nav-link { color: var(--ink); }
+.header__desk-nav-link:hover { opacity: 0.55; }
+
+/* Dropdown */
+.header__desk-nav-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -20px;
+  min-width: 240px;
+  background: rgba(243, 236, 230, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 10px 0;
+  box-shadow: 0 8px 32px rgba(82, 54, 42, 0.14);
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s var(--ease-soft),
+              transform 0.18s var(--ease-soft),
+              visibility 0.18s;
+  z-index: 50;
+}
+.header__desk-nav-item--has-sub:hover .header__desk-nav-dropdown,
+.header__desk-nav-item--has-sub:focus-within .header__desk-nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.header__desk-nav-dropdown li a {
+  display: block;
+  padding: 10px 22px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  transition: background-color 0.15s, padding-left 0.2s var(--ease-soft);
+  text-decoration: none;
+}
+.header__desk-nav-dropdown li a:hover {
+  background: rgba(82, 54, 42, 0.05);
+  padding-left: 30px;
+}
+
+
+/* ================================================
+   DRAWER — Navigation hiérarchique (mobile)
+================================================ */
+
+.drawer__nav { list-style: none; padding: 0; margin: 0; }
+.drawer__nav-item { border-bottom: 1px solid var(--ink-20); }
+.drawer__nav-item > a {
+  display: block;
+  padding: 16px 0;
+  font-family: var(--font);
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.drawer__nav-item > a.active,
+.drawer__nav-item > a:hover { color: var(--caramel); }
+
+.drawer__nav-group-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 16px 0;
+  transition: color 0.2s;
+}
+.drawer__nav-group-toggle:hover { color: var(--caramel); }
+
+.drawer__nav-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  transition: transform 0.3s var(--ease-soft);
+}
+.drawer__nav-group-toggle[aria-expanded="true"] .drawer__nav-arrow {
+  transform: rotate(180deg);
+}
+
+.drawer__nav-sub {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s var(--ease-soft);
+}
+.drawer__nav-sub[aria-hidden="false"] { max-height: 400px; }
+.drawer__nav-sub li a {
+  display: block;
+  padding: 10px 0 10px 20px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  color: var(--ink-60);
+  transition: color 0.2s, padding-left 0.2s var(--ease-soft);
+  text-decoration: none;
+}
+.drawer__nav-sub li a:hover,
+.drawer__nav-sub li a.active { color: var(--caramel); padding-left: 26px; }
+.drawer__nav-sub li:last-child a { padding-bottom: 16px; }
+
+
+/* ================================================
+   COLLECTION GRID — Pages principales boutique/atelier
+================================================ */
+
+.collection-grid {
+  padding: 140px 0 80px;
+  background: var(--paper);
+}
+.collection-grid .page-title {
+  font-family: var(--heading);
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  margin-bottom: 20px;
+}
+.collection-grid .page-description {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-60);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 56px;
+}
+.collection-grid__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.collection-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.collection-card__image { overflow: hidden; }
+.collection-card__image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s var(--ease), filter 0.7s var(--ease-soft);
+  filter: brightness(0.94) saturate(0.85);
+}
+.collection-card:hover .collection-card__image img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
+}
+.collection-card__body { padding: 22px 0 32px; }
+.collection-card__title {
+  font-family: var(--heading);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  margin-bottom: 8px;
+}
+.collection-card__description {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .collection-grid__list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .collection-grid__list { grid-template-columns: 1fr; gap: 28px; }
+  .collection-grid { padding: 110px 0 56px; }
+  .collection-grid .page-description { margin-bottom: 36px; }
+}
+
+
+/* ================================================
+   CATEGORY DIVIDER — Séparateur de sous-catégorie
+================================================ */
+
+.category-divider {
+  padding: 56px 0 48px;
+  background: var(--paper);
+  border-top: 1px solid var(--ink-20);
+  border-bottom: 1px solid var(--ink-20);
+  margin-top: 72px;
+}
+.divider-title {
+  font-family: var(--heading);
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  margin-bottom: 14px;
+}
+.divider-description {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-60);
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .category-divider { padding: 40px 0 36px; margin-top: 52px; }
+}
+
+
+/* ================================================
+   BREADCRUMB — Fil d'Ariane
+================================================ */
+
+.breadcrumb {
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink-20);
+}
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-family: var(--font);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 13px 52px;
+}
+.breadcrumb__item a {
+  color: var(--ink-60);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.breadcrumb__item a:hover { color: var(--caramel); }
+.breadcrumb__sep { color: var(--ink-20); }
+.breadcrumb__item--current { color: var(--ink); }
+
+@media (max-width: 768px) {
+  .breadcrumb__list { padding: 12px 20px; }
+}

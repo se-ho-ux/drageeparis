@@ -74,6 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerOverlay?.addEventListener('click', closeDrawer);
     drawer.querySelectorAll('.drawer__nav a').forEach(a => a.addEventListener('click', closeDrawer));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    /* Sous-menus hiérarchiques dans le drawer */
+    drawer.querySelectorAll('.drawer__nav-group-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        const sub = toggle.nextElementSibling;
+        /* Fermer les autres groupes */
+        drawer.querySelectorAll('.drawer__nav-group-toggle[aria-expanded="true"]').forEach(t => {
+          if (t === toggle) return;
+          t.setAttribute('aria-expanded', 'false');
+          const s = t.nextElementSibling;
+          if (s && s.classList.contains('drawer__nav-sub')) s.setAttribute('aria-hidden', 'true');
+        });
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        if (sub && sub.classList.contains('drawer__nav-sub')) {
+          sub.setAttribute('aria-hidden', String(expanded));
+        }
+      });
+    });
   }
 
   /* ---- 3. Lien actif dans le drawer ---- */
