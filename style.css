@@ -1768,8 +1768,8 @@ body::before {
 .fade-in {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 1s var(--ease-soft),
-              transform 1s var(--ease-soft);
+  transition: opacity 0.85s var(--ease-soft),
+              transform 0.85s var(--ease-soft);
 }
 .fade-in.visible {
   opacity: 1;
@@ -1779,6 +1779,15 @@ body::before {
 .fade-in--delay-2.visible { transition-delay: 0.2s; }
 .fade-in--delay-3.visible { transition-delay: 0.3s; }
 .fade-in--delay-4.visible { transition-delay: 0.4s; }
+/* Mobile : tout le contenu visible immédiatement, pas de trous visuels */
+@media (max-width: 768px) {
+  .fade-in,
+  .fade-in.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 
 
 /* ==============================================
@@ -1911,11 +1920,11 @@ body::before {
   line-height: 1.7;
 }
 @media (max-width: 768px) {
-  .section-intro { padding: 130px 20px 0; margin-bottom: 36px; }
+  .section-intro { padding: 96px 20px 0; margin-bottom: 28px; }
   .section-intro__sub { font-size: 12px; }
 }
 @media (max-width: 480px) {
-  .section-intro { padding: 120px 20px 0; margin-bottom: 24px; }
+  .section-intro { padding: 88px 20px 0; margin-bottom: 20px; }
 }
 
 /* ==============================================
@@ -1970,7 +1979,7 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  .page-intro { padding: 130px 20px 52px; }
+  .page-intro { padding: 96px 20px 40px; }
   .page-intro--split { grid-template-columns: 1fr; gap: 0; }
   .page-intro__visual { min-height: 60vw; }
   .page-intro__title { font-size: 40px; }
@@ -2993,7 +3002,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .page-intro__sub { font-size: 13px; line-height: 1.7; }
 }
 @media (max-width: 480px) {
-  .page-intro { padding: 120px 20px 40px; }
+  .page-intro { padding: 88px 20px 32px; }
   .page-intro__title { font-size: 36px; }
   .page-intro__visual img { min-height: 56vw; }
 }
@@ -4405,7 +4414,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .collection-header { padding: 120px 20px 48px; }
+  .collection-header { padding: 88px 20px 36px; }
   .product-section { padding: 48px 0 56px; }
   .product-section__header { margin-bottom: 32px; }
 }
@@ -4565,6 +4574,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 
 .collection-grid__list--2col { grid-template-columns: repeat(2, 1fr) !important; }
+@media (max-width: 640px) {
+  .collection-grid__list--2col { grid-template-columns: 1fr !important; }
+}
 
 @media (max-width: 900px) {
   .collection-grid__list { grid-template-columns: repeat(2, 1fr); }
@@ -4644,4 +4656,72 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 768px) {
   .breadcrumb__list { padding: 12px 20px; }
+}
+
+
+/* ================================================
+   MOBILE — Optimisations globales (≤ 768px)
+================================================ */
+
+@media (max-width: 768px) {
+
+  /* Touch targets : boutons produit ≥ 44px */
+  .product-card__actions .btn {
+    min-height: 44px;
+    padding: 10px 8px;
+    font-size: 9.5px;
+  }
+
+  /* Breadcrumb : ajuster le padding-top pour le header fixe */
+  .breadcrumb { padding-top: 68px; }
+
+  /* Collection grid : 1 colonne systématique sur mobile */
+  .collection-grid { padding: 88px 0 40px; }
+  .collection-grid .page-description { max-width: 100%; }
+
+  /* Drawer CTA et secondary : toujours visibles */
+  .drawer__cta { white-space: nowrap; font-size: 10px; }
+
+  /* Cedric-split : réduire l'espace entre image et texte */
+  .cedric-split__body { padding: 36px 20px 44px; }
+
+  /* Section-page : réduire le padding vertical */
+  .section-page { padding: 48px 20px; }
+
+  /* Footer : espacements réduits */
+  .footer__inner { padding: 48px 20px 32px; gap: 32px; }
+
+  /* Valeurs et grilles éditoriales : 1 colonne */
+  .values__grid { display: flex; flex-direction: column; gap: 24px; }
+
+  /* Catégorie-divider (atelier sub-pages) */
+  .category-divider { padding: 28px 20px 20px; }
+
+  /* Formulaire contact : bouton plein largeur */
+  .wizard__next { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 640px) {
+
+  /* Titres collection : adapter la taille au 390px */
+  .collection-grid .page-title {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    letter-spacing: 0.01em;
+  }
+  .collection-header__title {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    line-height: 1.15;
+  }
+
+  /* Products : 1 seule colonne sur petit mobile */
+  .product-grid { grid-template-columns: 1fr; }
+
+  /* Cards collection : image ratio adapté */
+  .collection-card__image img { aspect-ratio: 16 / 9; }
+
+  /* Incontournables section : produits alignés */
+  .col-item { width: 100%; }
+
+  /* Hero texte : taille réduite */
+  .hero__title { font-size: clamp(2.2rem, 10vw, 3.2rem); }
 }
