@@ -3657,9 +3657,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 ================================================ */
 .cedric-split {
   display: grid;
-  grid-template-columns: 50% 1fr;
+  grid-template-columns: 40% 1fr;
   background: var(--paper);
-  min-height: 580px;
+  min-height: 460px;
 }
 .cedric-split__visual {
   overflow: hidden;
