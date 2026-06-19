@@ -156,7 +156,10 @@ body {
   padding: 0;
   min-height: 100%;
   font-family: var(--font);
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
   background: var(--paper);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -4726,3 +4729,144 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   /* Hero texte : taille réduite */
   .hero__title { font-size: clamp(2.2rem, 10vw, 3.2rem); }
 }
+
+/* ================================================
+   CORPS DE TEXTE — Format global unifié
+   normal / 400 / rgb(82,54,42) / 14px / lh 20px
+================================================ */
+
+/* Paragraphes et textes courants */
+p,
+li,
+dd,
+figcaption {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Sections intro & descriptions */
+.section-intro__sub,
+.page-intro__sub,
+.page-description,
+.collection-header__desc,
+.collection-card__description,
+.collections__intro-sub {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Sections éditoriales */
+.cedric-split__text,
+.editorial-3col__body,
+.value-card p,
+.artisan__text,
+.about__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Produits & cartes */
+.product-card__weight,
+.badge,
+.product-section__desc,
+.category-divider__desc {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Footer */
+.footer__tagline,
+.footer__col p,
+.footer__col a,
+.footer__bottom {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* À propos — valeurs & localisation */
+.location-block__body,
+.location-box__sub,
+.location-box__value,
+.location-block__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* CTA sections & sous-titres */
+.cta-center__sub,
+.hero__sub,
+.section-cta__sub,
+.artisan__body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Personnalisation & étapes */
+.perso-step__text,
+.option-card__desc,
+.wizard__step-desc,
+.perso-desc {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* FAQ */
+.faq__answer p,
+.faq__answer {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Mentions légales & texte long */
+.mentions-content p,
+.mentions-content li,
+.legal-text p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+/* Drawer secondary */
+.drawer__secondary a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Sous-liens drawer droit */
+.drawer__sub-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
