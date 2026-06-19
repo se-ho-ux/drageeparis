@@ -112,7 +112,7 @@ input, textarea, select { font-family: inherit; }
   --sidebar-width:  28.625rem;
 
   /* === COMPOSANTS === */
-  --border-radius--button: 0px;
+  --border-radius--button: 40px;
   --border-radius--card:   0.8rem;
   --shadow-button:  0 2px 3px rgba(0, 0, 0, 0.2);
   --shadow-drawer:  0px 4px 20px rgba(82, 54, 42, 0.15);
@@ -491,6 +491,7 @@ body::before {
   background: var(--ink);
   padding: 13px 20px;
   margin-bottom: 20px;
+  border-radius: var(--border-radius--button);
   transition: background 0.22s var(--ease-soft);
 }
 .drawer__cta:hover { background: var(--caramel); }
