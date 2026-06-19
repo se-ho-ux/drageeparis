@@ -24,46 +24,55 @@
     </div>
   </header>
   <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__overlay" id="drawer-overlay"></div>
     <div class="drawer__content">
-      <button class="drawer__close" id="drawer-close" aria-label="Fermer le menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-        Fermer
-      </button>
-      <nav aria-label="Navigation principale">
-      <ul class="drawer__nav">
-        <li class="drawer__nav-item drawer__nav-item--group">
-          <button class="drawer__nav-group-toggle" aria-expanded="false">
-            La Boutique
-            <svg class="drawer__nav-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
-          </button>
-          <ul class="drawer__nav-sub" aria-hidden="true">
-            <li><a href="boutique.html">Voir tout</a></li>
-            <li><a href="boutique-avola.html">Amandes traditionnelles Avola</a></li>
-            <li><a href="boutique-chocolats.html">Amandes chocolats</a></li>
-            <li><a href="boutique-gourmandes.html">Amandes gourmandes</a></li>
-          </ul>
-        </li>
-        <li class="drawer__nav-item drawer__nav-item--group">
-          <button class="drawer__nav-group-toggle" aria-expanded="false">
-            L'Atelier
-            <svg class="drawer__nav-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
-          </button>
-          <ul class="drawer__nav-sub" aria-hidden="true">
-            <li><a href="atelier.html">Voir tout</a></li>
-            <li><a href="atelier-premiers-instants.html">Premiers Instants</a></li>
-            <li><a href="atelier-heritage.html">Héritage</a></li>
-            <li><a href="atelier-honneurs.html">Les honneurs</a></li>
-            <li><a href="atelier-millesimes.html">Les millésimes</a></li>
-          </ul>
-        </li>
-        <li class="drawer__nav-item"><a href="a-propos.html">À propos</a></li>
-        <li class="drawer__nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
-      </nav>
-      <a href="contact.html" class="drawer__cta">Lancer ma création</a>
+      <div class="drawer__left">
+        <button class="drawer__close" id="drawer-close">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          Fermer
+        </button>
+        <ul class="drawer__main-list">
+          <li class="drawer__main-item" data-sub="sub-boutique">
+            <button class="drawer__main-btn" type="button">
+              La Boutique
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </li>
+          <li class="drawer__main-item" data-sub="sub-atelier">
+            <button class="drawer__main-btn" type="button">
+              L'Atelier
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </li>
+          <li class="drawer__main-item">
+            <a href="a-propos.html" class="drawer__main-btn">À propos</a>
+          </li>
+          <li class="drawer__main-item">
+            <a href="contact.html" class="drawer__main-btn">Contact</a>
+          </li>
+        </ul>
+        <div class="drawer__secondary">
+          <a href="contact.html">Lancer ma création</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+      </div>
+      <div class="drawer__divider"></div>
+      <div class="drawer__right">
+        <div class="drawer__sub" id="sub-boutique" aria-hidden="true">
+          <a href="boutique.html" class="drawer__sub-link drawer__sub-link--all">Toutes les amandes</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="boutique-avola.html" class="drawer__sub-link">Amandes traditionnelles Avola</a>
+          <a href="boutique-chocolats.html" class="drawer__sub-link">Amandes chocolats</a>
+          <a href="boutique-gourmandes.html" class="drawer__sub-link">Amandes gourmandes</a>
+        </div>
+        <div class="drawer__sub" id="sub-atelier" aria-hidden="true">
+          <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
+          <a href="atelier-heritage.html" class="drawer__sub-link">Héritage</a>
+          <a href="atelier-honneurs.html" class="drawer__sub-link">Les honneurs</a>
+          <a href="atelier-millesimes.html" class="drawer__sub-link">Les millésimes</a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="header__safe-area" aria-hidden="true"></div>

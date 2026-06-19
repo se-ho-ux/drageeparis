@@ -51,53 +51,64 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  /* ---- 2. Drawer menu ---- */
-  const drawerToggle  = document.getElementById('drawer-toggle');
-  const drawer        = document.getElementById('drawer');
-  const drawerOverlay = document.getElementById('drawer-overlay');
-  const drawerClose   = document.getElementById('drawer-close');
+  /* ---- 2. Drawer menu plein écran bicolonne ---- */
+  const drawerToggle = document.getElementById('drawer-toggle');
+  const drawer       = document.getElementById('drawer');
+  const drawerClose  = document.getElementById('drawer-close');
 
   if (drawerToggle && drawer) {
+    const mainItems = Array.from(drawer.querySelectorAll('.drawer__main-item[data-sub]'));
+    const allSubs   = Array.from(drawer.querySelectorAll('.drawer__sub'));
+
+    const activateSub = (subId) => {
+      allSubs.forEach(sub => {
+        const visible = sub.id === subId;
+        sub.setAttribute('aria-hidden', String(!visible));
+        sub.classList.toggle('is-visible', false);
+        if (visible) requestAnimationFrame(() => sub.classList.add('is-visible'));
+      });
+      mainItems.forEach(item => {
+        item.classList.toggle('is-active', item.dataset.sub === subId);
+      });
+    };
+
     const openDrawer = () => {
       drawer.setAttribute('aria-hidden', 'false');
       drawerToggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      /* Auto-activer le premier sous-menu */
+      if (mainItems.length) activateSub(mainItems[0].dataset.sub);
     };
     const closeDrawer = () => {
       drawer.setAttribute('aria-hidden', 'true');
       drawerToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
+      mainItems.forEach(i => i.classList.remove('is-active'));
       if (header) header.classList.remove('header--hidden');
     };
+
     drawerToggle.addEventListener('click', openDrawer);
     drawerClose?.addEventListener('click', closeDrawer);
-    drawerOverlay?.addEventListener('click', closeDrawer);
-    drawer.querySelectorAll('.drawer__nav a').forEach(a => a.addEventListener('click', closeDrawer));
+    drawer.querySelector('.drawer__content')?.addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeDrawer();
+    });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-    /* Sous-menus hiérarchiques dans le drawer */
-    drawer.querySelectorAll('.drawer__nav-group-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        const sub = toggle.nextElementSibling;
-        /* Fermer les autres groupes */
-        drawer.querySelectorAll('.drawer__nav-group-toggle[aria-expanded="true"]').forEach(t => {
-          if (t === toggle) return;
-          t.setAttribute('aria-expanded', 'false');
-          const s = t.nextElementSibling;
-          if (s && s.classList.contains('drawer__nav-sub')) s.setAttribute('aria-hidden', 'true');
-        });
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        if (sub && sub.classList.contains('drawer__nav-sub')) {
-          sub.setAttribute('aria-hidden', String(expanded));
-        }
-      });
+    /* Activation des sous-menus au survol / clic */
+    mainItems.forEach(item => {
+      const activate = () => activateSub(item.dataset.sub);
+      item.addEventListener('mouseenter', activate);
+      item.querySelector('.drawer__main-btn')?.addEventListener('click', activate);
     });
+
+    /* Fermer quand on clique un lien */
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
   }
 
   /* ---- 3. Lien actif dans le drawer ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.drawer__nav a').forEach(link => {
+  document.querySelectorAll('.drawer__sub-link, .drawer__main-btn[href]').forEach(link => {
     const href = link.getAttribute('href')?.split('?')[0];
     if (href === page || (page === '' && href === 'index.html')) {
       link.classList.add('active');
