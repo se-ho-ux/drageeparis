@@ -4124,7 +4124,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(28px, 3.8vw, 52px);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.0;
@@ -4148,7 +4148,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-products__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 36px;
 }
 
 /* Carte produit individuelle */
