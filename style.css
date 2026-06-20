@@ -260,10 +260,10 @@ body::before {
 
 /* Logo */
 .header__logo {
-  font-family: var(--font-heading--family);
+  font-family: var(--heading);
   font-size: clamp(1.1rem, 2vw, 1.6rem);
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   word-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--blanc);
@@ -274,7 +274,7 @@ body::before {
 }
 .header.scrolled .header__logo,
 .header--inner .header__logo {
-  color: var(--color-heading);
+  color: var(--caramel);
 }
 
 /* Hamburger toggle */
