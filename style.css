@@ -531,7 +531,9 @@ body::before {
 
 .drawer__right {
   flex: 1;
-  padding: 120px 48px 44px;
+  /* padding-top calculé pour aligner le 1er sous-lien avec le 1er item parent :
+     38px (panel padding) + ~20px (bouton Fermer) + 48px (margin-bottom) + 4px (btn padding) */
+  padding: 110px 48px 44px;
   overflow-y: auto;
 }
 
@@ -549,12 +551,14 @@ body::before {
 
 .drawer__sub-link {
   font-family: var(--font);
-  font-size: clamp(14px, 1.2vw, 18px);
-  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
-  padding: 9px 0;
+  padding: 2px 0;
   transition: color 0.2s, padding-left 0.2s var(--ease-soft);
 }
 .drawer__sub-link:hover { color: var(--caramel); padding-left: 6px; }
@@ -4866,7 +4870,7 @@ figcaption {
 .drawer__sub-link {
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 30px;
 }
 
