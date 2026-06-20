@@ -4874,3 +4874,169 @@ figcaption {
   line-height: 30px;
 }
 
+/* ========== FICHE PRODUIT (PDP) ========== */
+.pdp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  min-height: calc(100vh - 80px);
+}
+.pdp__gallery {
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+.pdp__gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pdp__info {
+  padding: 80px 64px 80px 60px;
+  max-width: 560px;
+}
+.pdp__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.45;
+  margin-bottom: 48px;
+  transition: opacity 0.2s;
+}
+.pdp__back:hover { opacity: 1; }
+.pdp__title {
+  font-family: var(--heading);
+  font-size: clamp(22px, 2.6vw, 40px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.pdp__weight {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.45;
+  margin-bottom: 28px;
+}
+.pdp__tagline {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink);
+  margin-bottom: 32px;
+  max-width: 380px;
+}
+.pdp__price {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+.pdp__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: var(--border-radius--button);
+  margin-bottom: 56px;
+  transition: opacity 0.2s;
+}
+.pdp__cta:hover { opacity: 0.8; }
+
+/* Accordéons */
+.pdp__acc-item {
+  border-bottom: 1px solid var(--ink-20);
+}
+.pdp__acc-item:first-of-type {
+  border-top: 1px solid var(--ink-20);
+}
+.pdp__acc-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  width: 100%;
+}
+.pdp__acc-trigger::-webkit-details-marker { display: none; }
+.pdp__acc-trigger::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+details[open] > .pdp__acc-trigger::after { content: '−'; }
+.pdp__acc-body {
+  font-size: 13px;
+  line-height: 22px;
+  color: var(--ink);
+  padding: 0 0 24px;
+  max-width: 400px;
+}
+.pdp__acc-body p { margin-bottom: 10px; }
+.pdp__acc-body p:last-child { margin-bottom: 0; }
+.pdp__acc-body ul { padding-left: 16px; margin: 0; }
+.pdp__acc-body li { margin-bottom: 6px; }
+
+/* Section produits associés */
+.pdp-related {
+  padding: 80px 52px 88px;
+  border-top: 1px solid var(--ink-20);
+  background: var(--paper);
+}
+.pdp-related__title {
+  font-family: var(--heading);
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  text-align: center;
+  margin-bottom: 52px;
+}
+.pdp-related__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .pdp { grid-template-columns: 1fr; }
+  .pdp__gallery { position: relative; top: 0; height: 70vw; }
+  .pdp__info { padding: 52px 40px; max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .pdp__gallery { height: 100vw; }
+  .pdp__info { padding: 40px 20px; }
+  .pdp-related { padding: 56px 20px 64px; }
+  .pdp-related__grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
