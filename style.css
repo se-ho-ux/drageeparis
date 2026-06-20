@@ -521,7 +521,7 @@ body::before {
 /* ── Séparateur vertical caramel ─────────────────── */
 
 .drawer__divider {
-  width: 8px;
+  width: 16px;
   background: var(--caramel);
   flex-shrink: 0;
   align-self: stretch;
