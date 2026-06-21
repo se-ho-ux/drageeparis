@@ -4246,6 +4246,19 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   top: 68px;
 }
 
+/* Galerie plate (dragees.html, boutique sub-pages) */
+.product-gallery {
+  padding: 0;
+}
+
+/* Bougies gallery — sticky filter */
+.bougies-gallery .cedric-filter {
+  top: 68px;
+}
+@media (max-width: 900px) {
+  .bougies-gallery .cedric-filter { top: 56px; }
+}
+
 /* Sections produit par catégorie */
 .product-section {
   padding: 64px 0 72px;

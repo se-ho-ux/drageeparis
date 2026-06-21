@@ -290,53 +290,43 @@ document.addEventListener('DOMContentLoaded', () => {
     animateItems(visibleOnLoad);
   }
 
-  /* ---- 5. Dragées — carousel legacy (bougies.html) ---- */
-  makeDuoCarousel('dragees-track', 'dragees-filter-options', 'dragees-filter-toggle', 'dragees-prev', 'dragees-next', 'dragees-count');
+  /* ---- 5. Filtres galeries produits (dragees.html + bougies.html) ---- */
+  function initProductFilter(filterId, gridId) {
+    const filterEl = document.getElementById(filterId);
+    const grid     = document.getElementById(gridId);
+    if (!filterEl || !grid) return;
 
-  /* ---- 5b. Collection filter — scroll to section (dragees.html) ---- */
-  const collectionFilter = document.getElementById('collection-filter');
-  if (collectionFilter) {
-    const filterTabs = Array.from(collectionFilter.querySelectorAll('.cedric-filter__tab'));
-    const sectionIds = filterTabs.map(t => t.dataset.target);
-    const sections   = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    const tabs  = Array.from(filterEl.querySelectorAll('.cedric-filter__tab'));
+    const cards = Array.from(grid.querySelectorAll('[data-filter]'));
 
-    const getOffset = () => {
-      const hh = header ? header.offsetHeight : 68;
-      const fh = collectionFilter.offsetHeight;
-      return hh + fh + 8;
-    };
-
-    filterTabs.forEach(tab => {
+    tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const target = document.getElementById(tab.dataset.target);
-        if (!target) return;
-        const top = target.getBoundingClientRect().top + window.scrollY - getOffset();
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const f = tab.dataset.filter;
+        cards.forEach(card => {
+          const show = f === 'all' || card.dataset.filter === f;
+          card.style.display = show ? '' : 'none';
+        });
+        const urlFilter = tab.dataset.filter;
+        if (history.replaceState) {
+          const url = urlFilter === 'all'
+            ? window.location.pathname
+            : `${window.location.pathname}?filter=${urlFilter}`;
+          history.replaceState(null, '', url);
+        }
       });
     });
 
-    if ('IntersectionObserver' in window && sections.length) {
-      const updateActive = (id) => {
-        filterTabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
-      };
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) updateActive(entry.target.id);
-        });
-      }, { rootMargin: `-${(header ? header.offsetHeight : 68) + collectionFilter.offsetHeight}px 0px -55% 0px`, threshold: 0 });
-      sections.forEach(s => io.observe(s));
-    }
-
     const urlFilter = new URLSearchParams(window.location.search).get('filter');
     if (urlFilter) {
-      const map = { mariage: 'section-mariage', naissance: 'section-naissance', reception: 'section-reception', anniv: 'section-anniv' };
-      const matchTab = filterTabs.find(t => t.dataset.target === map[urlFilter]);
-      if (matchTab) setTimeout(() => matchTab.click(), 300);
+      const matchTab = tabs.find(t => t.dataset.filter === urlFilter);
+      if (matchTab) matchTab.click();
     }
   }
 
-  /* ---- 5b. Bougies ---- */
-  makeDuoCarousel('bougies-track', 'bougies-filter-options', 'bougies-filter-toggle', 'bougies-prev', 'bougies-next', 'bougies-count');
+  initProductFilter('collection-filter', 'dragees-grid');
+  initProductFilter('bougies-filter', 'bougies-grid');
 
   /* ---- 6. Form validation & submit ---- */
   const devisForm = document.getElementById('devis-form');
