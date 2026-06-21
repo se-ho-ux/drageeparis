@@ -434,7 +434,7 @@
               <span class="wizard__summary-val" id="sum-event">-</span>
             </div>
             <div class="wizard__summary-item">
-              <span class="wizard__summary-key">Produit</span>
+              <span class="wizard__summary-key">Finition</span>
               <span class="wizard__summary-val" id="sum-produit">-</span>
             </div>
             <div class="wizard__summary-item">
@@ -540,7 +540,7 @@
   (function() {
     var TOTAL = 6;
     var current = 1;
-    var data = { evenement: '', produit: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
+    var data = { evenement: '', finition: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -587,7 +587,7 @@
       r.addEventListener('change', function() {
         var name = r.getAttribute('name');
         if (name === 'evenement') data.evenement = r.value;
-        if (name === 'produit')   data.produit = r.value;
+        if (name === 'finition')  data.finition = r.value;
         if (name === 'quantite')  data.quantite = r.value;
         updateNextState();
       });
@@ -662,7 +662,7 @@
 
     function updateSummary() {
       document.getElementById('sum-event').textContent = data.evenement || '-';
-      document.getElementById('sum-produit').textContent = data.produit || '-';
+      document.getElementById('sum-produit').textContent = data.finition || '-';
       document.getElementById('sum-qty').textContent = data.quantite || '-';
       var d = data.date;
       if (d) {
@@ -692,7 +692,7 @@
 
     function validateStep(n) {
       if (n === 1) return !!document.querySelector('input[name="evenement"]:checked');
-      if (n === 2) return !!document.querySelector('input[name="produit"]:checked');
+      if (n === 2) return !!document.querySelector('input[name="finition"]:checked');
       if (n === 3) return !!document.querySelector('input[name="quantite"]:checked');
       if (n === 4) return true; // date optional
       if (n === 5) return true; // colors optional
