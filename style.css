@@ -4654,12 +4654,12 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   padding: 13px 52px;
 }
 .breadcrumb__item a {
-  color: var(--ink-60);
+  color: var(--ink);
   transition: color 0.2s;
   text-decoration: none;
 }
 .breadcrumb__item a:hover { color: var(--caramel); }
-.breadcrumb__sep { color: var(--ink-20); }
+.breadcrumb__sep { color: var(--ink-60); }
 .breadcrumb__item--current { color: var(--ink); }
 
 @media (max-width: 768px) {
