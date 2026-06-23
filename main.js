@@ -292,37 +292,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- 5. Filtres galeries produits (dragees.html + bougies.html) ---- */
   function initProductFilter(filterId, gridId) {
-    const filterEl = document.getElementById(filterId);
-    const grid     = document.getElementById(gridId);
+    const filterEl  = document.getElementById(filterId);
+    const grid      = document.getElementById(gridId);
     if (!filterEl || !grid) return;
 
-    const tabs  = Array.from(filterEl.querySelectorAll('.cedric-filter__tab'));
-    const cards = Array.from(grid.querySelectorAll('[data-filter]'));
+    const tabs      = Array.from(filterEl.querySelectorAll('.cedric-filter__tab'));
+    const cards     = Array.from(grid.querySelectorAll('[data-filter]'));
+    const countEl   = filterEl.querySelector('.cedric-filter__count');
+    const resetBtn  = filterEl.querySelector('[data-filter-reset]');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const f = tab.dataset.filter;
-        cards.forEach(card => {
-          const show = f === 'all' || card.dataset.filter === f;
-          card.style.display = show ? '' : 'none';
-        });
-        const urlFilter = tab.dataset.filter;
-        if (history.replaceState) {
-          const url = urlFilter === 'all'
-            ? window.location.pathname
-            : `${window.location.pathname}?filter=${urlFilter}`;
-          history.replaceState(null, '', url);
-        }
+    const applyFilter = (f) => {
+      tabs.forEach(t => t.classList.remove('active'));
+      const activeTab = tabs.find(t => t.dataset.filter === f) || tabs[0];
+      activeTab.classList.add('active');
+      cards.forEach(card => {
+        card.style.display = (f === 'all' || card.dataset.filter === f) ? '' : 'none';
       });
-    });
+      if (countEl) {
+        const visible = f === 'all' ? cards.length : cards.filter(c => c.dataset.filter === f).length;
+        countEl.textContent = `(${visible})`;
+      }
+      if (history.replaceState) {
+        const url = f === 'all' ? window.location.pathname : `${window.location.pathname}?filter=${f}`;
+        history.replaceState(null, '', url);
+      }
+    };
+
+    tabs.forEach(tab => tab.addEventListener('click', () => applyFilter(tab.dataset.filter)));
+
+    resetBtn?.addEventListener('click', () => applyFilter('all'));
 
     const urlFilter = new URLSearchParams(window.location.search).get('filter');
-    if (urlFilter) {
-      const matchTab = tabs.find(t => t.dataset.filter === urlFilter);
-      if (matchTab) matchTab.click();
-    }
+    applyFilter(urlFilter || 'all');
   }
 
   initProductFilter('collection-filter', 'dragees-grid');

@@ -4300,7 +4300,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* Grille produits responsive */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
 }
 
@@ -4421,10 +4421,35 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   border-color: var(--ink);
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  .product-grid { grid-template-columns: repeat(3, 1fr); }
+/* Non-sticky filter bar (boutique & atelier pages) */
+.cedric-filter--flat {
+  position: relative;
+  top: 0 !important;
 }
+.collection-page .cedric-filter--flat {
+  position: relative;
+  top: 0 !important;
+}
+
+/* Count + chevron inside filter left label */
+.cedric-filter__count {
+  color: var(--ink-60);
+}
+.cedric-filter__chevron {
+  width: 10px;
+  height: 7px;
+  margin-left: 5px;
+  vertical-align: middle;
+  color: var(--ink-60);
+}
+
+/* Underline on filter right button */
+.cedric-filter__right {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   .collection-page .cedric-filter { top: 56px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
