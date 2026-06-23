@@ -327,6 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initProductFilter('collection-filter', 'dragees-grid');
   initProductFilter('bougies-filter', 'bougies-grid');
+  initProductFilter('boutique-filter', 'boutique-grid');
+  initProductFilter('atelier-filter', 'atelier-grid');
 
   /* ---- 6. Form validation & submit ---- */
   const devisForm = document.getElementById('devis-form');

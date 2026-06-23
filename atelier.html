@@ -7,7 +7,7 @@
   <meta name="description" content="Collections thématiques de dragées artisanales : Premiers Instants, Héritage, Les honneurs, Les millésimes. Atelier en Île-de-France.">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="collection-page">
 
   <a class="skip-link" href="#main">Aller au contenu principal</a>
 
@@ -78,50 +78,628 @@
   <div class="header__safe-area" aria-hidden="true"></div>
 
   <main id="main">
-    <section class="collection-grid">
+    <section class="collection-header">
+      <h1 class="collection-header__title fade-in">Toutes les collections</h1>
+      <p class="collection-header__desc fade-in fade-in--delay-1">Des dragées pensées pour chaque moment de la vie : naissances, mariages, diplômes, anniversaires. Façonnées à la main dans notre atelier d'Île-de-France.</p>
+    </section>
+
+    <div class="cedric-filter" id="atelier-filter">
+      <span class="cedric-filter__left">Filtrer par</span>
+      <div class="cedric-filter__tabs">
+        <button class="cedric-filter__tab active" data-filter="all">Toutes</button>
+        <button class="cedric-filter__tab" data-filter="premiers-instants">Premiers Instants</button>
+        <button class="cedric-filter__tab" data-filter="heritage">Héritage</button>
+        <button class="cedric-filter__tab" data-filter="honneurs">Les honneurs</button>
+        <button class="cedric-filter__tab" data-filter="millesimes">Les millésimes</button>
+      </div>
+    </div>
+
+    <section class="product-section">
       <div class="container">
-        <h1 class="page-title fade-in">L'Atelier</h1>
-        <p class="page-description fade-in fade-in--delay-1">Des collections pensées pour célébrer les plus beaux moments de la vie. Chaque dragée raconte une histoire unique, façonnée avec soin dans notre atelier.</p>
-        <div class="collection-grid__list collection-grid__list--2col">
-          <a href="atelier-premiers-instants.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/naiss/image-d1.jpeg" alt="Collection Premiers Instants" loading="lazy" width="600" height="450">
+        <div class="product-grid" id="atelier-grid">
+
+          <!-- PREMIERS INSTANTS -->
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-16.jpeg" alt="Dragées Naissance Rose Pastel" loading="lazy" width="400" height="400">
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Premiers Instants</h2>
-              <p class="collection-card__description">Naissance · Baby Shower · Gender Reveal</p>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Naissance Rose Pastel</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 38 €</span>
+              </div>
             </div>
-          </a>
-          <a href="atelier-heritage.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/mariage/image18.jpeg" alt="Collection Héritage" loading="lazy" width="600" height="450">
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Héritage</h2>
-              <p class="collection-card__description">Mariage · Baptême · Communion</p>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d1.jpeg" alt="Dragées Naissance Blanc Doux" loading="lazy" width="400" height="400">
             </div>
-          </a>
-          <a href="atelier-honneurs.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/bapteme/image-d12.jpeg" alt="Collection Les honneurs" loading="lazy" width="600" height="450">
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Naissance Blanc Doux</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 38 €</span>
+              </div>
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Les honneurs</h2>
-              <p class="collection-card__description">Diplômes · Félicitations · Retraites</p>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
             </div>
-          </a>
-          <a href="atelier-millesimes.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/anniv/image-d6.jpeg" alt="Collection Les millésimes" loading="lazy" width="600" height="450">
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d7.jpeg" alt="Dragées Naissance Jaune Soleil" loading="lazy" width="400" height="400">
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Les millésimes</h2>
-              <p class="collection-card__description">Anniversaires · Anniversaires de mariage</p>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Naissance Jaune Soleil</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 40 €</span>
+              </div>
             </div>
-          </a>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d8.jpg" alt="Dragées Baby Shower Rose" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baby Shower Rose</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d9.jpg" alt="Dragées Baby Shower Bleu" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baby Shower Bleu</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d10.jpg" alt="Dragées Baby Shower Mauve" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baby Shower Mauve</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d11.jpeg" alt="Dragées Gender Reveal Rose" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Gender Reveal Rose</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d12.jpeg" alt="Dragées Gender Reveal Bleu" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Gender Reveal Bleu</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="premiers-instants">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d4.jpeg" alt="Dragées Gender Reveal Mixte" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Gender Reveal Mixte</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 46 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <!-- HÉRITAGE -->
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d2.jpeg" alt="Dragées Mariage Blanc Nacré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Mariage Blanc Nacré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 45 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d3.jpeg" alt="Dragées Mariage Doré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Mariage Doré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 48 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image17.jpeg" alt="Dragées Mariage Ivoire" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Mariage Ivoire</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 45 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image18.jpeg" alt="Dragées Mariage Chocolat Blanc" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Mariage Chocolat Blanc</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 52 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d11.jpeg" alt="Dragées Baptême Blanc" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baptême Blanc</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 40 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d12.jpeg" alt="Dragées Baptême Rose Poudré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baptême Rose Poudré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 40 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d13.jpeg" alt="Dragées Baptême Bleu Azur" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Baptême Bleu Azur</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 40 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image20.jpeg" alt="Dragées Communion Blanc Pur" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Communion Blanc Pur</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image21.jpeg" alt="Dragées Communion Ivoire Doré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Communion Ivoire Doré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="heritage">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image22.jpeg" alt="Dragées Communion Nacré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Communion Nacré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <!-- LES HONNEURS -->
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d4.jpeg" alt="Dragées Diplôme Or et Blanc" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Diplôme Or &amp; Blanc</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d5.jpeg" alt="Dragées Diplôme Marine et Argent" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Diplôme Marine &amp; Argent</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d6.jpeg" alt="Dragées Diplôme Rouge et Doré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Diplôme Rouge &amp; Doré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 46 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image14.jpeg" alt="Dragées Félicitations Multicolores" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Félicitations Multicolores</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image22.jpeg" alt="Dragées Félicitations Or Pailleté" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Félicitations Or Pailleté</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image332.jpeg" alt="Dragées Retraite Prestige" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Retraite Prestige</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 44 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="honneurs">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image65.jpeg" alt="Dragées Retraite Classique" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Retraite Classique</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <!-- LES MILLÉSIMES -->
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d4.jpeg" alt="Dragées Anniversaire Multicolores" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Anniversaire Multicolores</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 40 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d6.jpeg" alt="Dragées Anniversaire Festif" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Anniversaire Festif</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 42 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image14.jpeg" alt="Dragées Anniversaire Classique" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Anniversaire Classique</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 38 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image332.jpeg" alt="Dragées Anniversaire Prestige" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Anniversaire Prestige</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 46 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d2.jpeg" alt="Dragées Noces d'Argent" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Noces d'Argent</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 52 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d3.jpeg" alt="Dragées Noces d'Or" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Noces d'Or</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 55 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="millesimes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image65.jpeg" alt="Dragées Noces de Diamant" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Noces de Diamant</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 58 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
+
     <section class="cta-center" aria-label="Commande sur mesure">
       <div class="cta-center__body">
         <p class="collections__intro-title fade-in">Une commande sur mesure ?</p>

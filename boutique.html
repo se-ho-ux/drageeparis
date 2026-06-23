@@ -7,7 +7,7 @@
   <meta name="description" content="Découvrez nos amandes artisanales : Avola traditionnelles, chocolats et gourmandes. Fabriquées à la main en Île-de-France.">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="collection-page">
 
   <a class="skip-link" href="#main">Aller au contenu principal</a>
 
@@ -78,41 +78,191 @@
   <div class="header__safe-area" aria-hidden="true"></div>
 
   <main id="main">
-    <section class="collection-grid">
+    <section class="collection-header">
+      <h1 class="collection-header__title fade-in">Toutes les amandes</h1>
+      <p class="collection-header__desc fade-in fade-in--delay-1">Découvrez l'ensemble de nos amandes artisanales : Avola traditionnelles, chocolats et gourmandes. Fabriquées à la main dans notre atelier d'Île-de-France.</p>
+    </section>
+
+    <div class="cedric-filter" id="boutique-filter">
+      <span class="cedric-filter__left">Filtrer par</span>
+      <div class="cedric-filter__tabs">
+        <button class="cedric-filter__tab active" data-filter="all">Toutes</button>
+        <button class="cedric-filter__tab" data-filter="avola">Avola</button>
+        <button class="cedric-filter__tab" data-filter="chocolats">Chocolats</button>
+        <button class="cedric-filter__tab" data-filter="gourmandes">Gourmandes</button>
+      </div>
+    </div>
+
+    <section class="product-section">
       <div class="container">
-        <h1 class="page-title fade-in">La Boutique</h1>
-        <p class="page-description fade-in fade-in--delay-1">Découvrez nos amandes d'exception, sélectionnées avec soin et enrobées à la main dans notre atelier d'Île-de-France.</p>
-        <div class="collection-grid__list">
-          <a href="boutique-avola.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/mariage/image-d2.jpeg" alt="Amandes traditionnelles Avola" loading="lazy" width="600" height="450">
+        <div class="product-grid" id="boutique-grid">
+
+          <article class="product-card" data-filter="avola">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d2.jpeg" alt="Dragées Amande Avola Blanc" loading="lazy" width="400" height="400">
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Amandes traditionnelles Avola</h2>
-              <p class="collection-card__description">Récoltées en Sicile, douces et fondantes : la dragée dans sa plus pure expression.</p>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Avola Blanc</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 45 €</span>
+              </div>
             </div>
-          </a>
-          <a href="boutique-chocolats.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/anniv/image-d4.jpeg" alt="Amandes chocolats" loading="lazy" width="600" height="450">
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Amandes chocolats</h2>
-              <p class="collection-card__description">Enrobées d'un chocolat de couverture soyeux, pour un plaisir intense et raffiné.</p>
+          </article>
+
+          <article class="product-card" data-filter="avola">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image17.jpeg" alt="Dragées Amande Avola Ivoire" loading="lazy" width="400" height="400">
             </div>
-          </a>
-          <a href="boutique-gourmandes.html" class="collection-card">
-            <div class="collection-card__image">
-              <img src="./images/naiss/image-16.jpeg" alt="Amandes gourmandes" loading="lazy" width="600" height="450">
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Avola Ivoire</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 45 €</span>
+              </div>
             </div>
-            <div class="collection-card__body">
-              <h2 class="collection-card__title">Amandes gourmandes</h2>
-              <p class="collection-card__description">Caramel salé, pralinée, pistache : des saveurs audacieuses pour épater vos invités.</p>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
             </div>
-          </a>
+          </article>
+
+          <article class="product-card" data-filter="avola">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image-d3.jpeg" alt="Dragées Amande Avola Doré" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Avola Doré</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 48 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="chocolats">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d4.jpeg" alt="Dragées Amande Chocolat Noir" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Chocolat Noir</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 52 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="chocolats">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/anniv/image-d6.jpeg" alt="Dragées Amande Chocolat au Lait" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Chocolat au Lait</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 50 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="chocolats">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/mariage/image20.jpeg" alt="Dragées Amande Chocolat Blanc" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Chocolat Blanc</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 52 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="gourmandes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-16.jpeg" alt="Dragées Amande Caramel Salé" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Caramel Salé</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 55 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="gourmandes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/naiss/image-d1.jpeg" alt="Dragées Amande Pralinée" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Pralinée</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 55 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
+          <article class="product-card" data-filter="gourmandes">
+            <div class="product-card__media">
+              <span class="badge badge--in-stock">En stock</span>
+              <img src="./images/bapteme/image-d11.jpeg" alt="Dragées Amande Pistache" loading="lazy" width="400" height="400">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Dragées Amande Pistache</h3>
+              <div class="product-card__meta">
+                <span class="product-card__weight">500 g</span>
+                <span class="product-card__price">À partir de 58 €</span>
+              </div>
+            </div>
+            <div class="product-card__actions">
+              <a href="contact.html" class="btn btn--secondary">À domicile</a>
+              <a href="contact.html" class="btn btn--primary">Click &amp; Collect</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
+
     <section class="cta-center" aria-label="Commande sur mesure">
       <div class="cta-center__body">
         <p class="collections__intro-title fade-in">Une commande sur mesure ?</p>
