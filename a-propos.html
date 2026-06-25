@@ -34,10 +34,16 @@
         </button>
         <ul class="drawer__main-list">
           <li class="drawer__main-item" data-sub="sub-boutique">
-            <a href="boutique.html" class="drawer__main-btn">La Boutique</a>
+            <button class="drawer__main-btn" type="button">
+              La Boutique
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
           </li>
           <li class="drawer__main-item" data-sub="sub-atelier">
-            <a href="atelier.html" class="drawer__main-btn">L'Atelier</a>
+            <button class="drawer__main-btn" type="button">
+              L'Atelier
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
           </li>
           <li class="drawer__main-item">
             <a href="a-propos.html" class="drawer__main-btn">À propos</a>
@@ -51,6 +57,23 @@
           <a href="mentions-legales.html">Mentions légales</a>
         </div>
       </div>
+      <div class="drawer__divider"></div>
+      <div class="drawer__right">
+        <div class="drawer__sub" id="sub-boutique" aria-hidden="true">
+          <a href="boutique.html" class="drawer__sub-link drawer__sub-link--all">Toutes les amandes</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="boutique-avola.html" class="drawer__sub-link">Amandes traditionnelles Avola</a>
+          <a href="boutique-chocolats.html" class="drawer__sub-link">Amandes chocolats</a>
+          <a href="boutique-gourmandes.html" class="drawer__sub-link">Amandes gourmandes</a>
+        </div>
+        <div class="drawer__sub" id="sub-atelier" aria-hidden="true">
+          <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
+          <a href="atelier-heritage.html" class="drawer__sub-link">Héritage</a>
+          <a href="atelier-honneurs.html" class="drawer__sub-link">Les honneurs</a>
+          <a href="atelier-millesimes.html" class="drawer__sub-link">Les millésimes</a>
+        </div>
       </div>
     </div>
   </div>

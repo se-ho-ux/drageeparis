@@ -383,7 +383,7 @@ body::before {
   top: 0;
   left: 0;
   bottom: 0;
-  width: min(400px, 82vw);
+  width: min(760px, 56vw);
   display: flex;
   background: var(--paper);
   transform: translateX(-100%);

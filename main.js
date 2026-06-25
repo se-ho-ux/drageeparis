@@ -57,6 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerClose  = document.getElementById('drawer-close');
 
   if (drawerToggle && drawer) {
+    const mainItems = Array.from(drawer.querySelectorAll('.drawer__main-item[data-sub]'));
+    const allSubs   = Array.from(drawer.querySelectorAll('.drawer__sub'));
+
+    const activateSub = (subId) => {
+      allSubs.forEach(sub => {
+        const visible = sub.id === subId;
+        sub.setAttribute('aria-hidden', String(!visible));
+        sub.classList.toggle('is-visible', false);
+        if (visible) requestAnimationFrame(() => sub.classList.add('is-visible'));
+      });
+      mainItems.forEach(item => {
+        item.classList.toggle('is-active', item.dataset.sub === subId);
+      });
+    };
+
     const openDrawer = () => {
       drawer.setAttribute('aria-hidden', 'false');
       drawerToggle.setAttribute('aria-expanded', 'true');
@@ -66,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.setAttribute('aria-hidden', 'true');
       drawerToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
+      mainItems.forEach(i => i.classList.remove('is-active'));
       if (header) header.classList.remove('header--hidden');
     };
 
@@ -75,17 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!e.target.closest('.drawer__content')) closeDrawer();
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+    mainItems.forEach(item => {
+      item.querySelector('.drawer__main-btn')?.addEventListener('click', () => activateSub(item.dataset.sub));
+    });
     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
   }
 
   /* ---- 3. Lien actif dans le drawer ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  const mainItems = drawer ? Array.from(drawer.querySelectorAll('.drawer__main-item')) : [];
-  if (page.startsWith('boutique') || page.startsWith('produit')) {
-    mainItems.find(li => li.dataset.sub === 'sub-boutique')?.querySelector('.drawer__main-btn')?.classList.add('active');
-  } else if (page.startsWith('atelier')) {
-    mainItems.find(li => li.dataset.sub === 'sub-atelier')?.querySelector('.drawer__main-btn')?.classList.add('active');
-  }
 
   /* ---- 4. Intersection Observer — fade-in ---- */
   const fadeEls = document.querySelectorAll('.fade-in');
