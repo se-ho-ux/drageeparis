@@ -3981,7 +3981,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 @media (max-width: 900px) {
   .cedric-filter { padding: 0 20px; }
   .cedric-filter__left { display: none; }
-  .cedric-filter__tabs { gap: 20px; overflow-x: auto; scrollbar-width: none; }
+  .cedric-filter__tabs { gap: 20px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
   .cedric-filter__tabs::-webkit-scrollbar { display: none; }
   .cedric-filter__right { display: none; }
 }
