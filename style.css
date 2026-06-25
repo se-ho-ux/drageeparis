@@ -463,6 +463,7 @@ body::before {
   transition: opacity 0.18s;
 }
 .drawer__main-btn:hover { opacity: 0.55; }
+.drawer__main-btn.active { text-decoration: underline; text-underline-offset: 4px; }
 .drawer__main-item.is-active .drawer__main-btn {
   text-decoration: underline;
   text-decoration-color: var(--ink);

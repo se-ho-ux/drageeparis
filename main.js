@@ -107,12 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- 3. Lien actif dans le drawer ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.drawer__sub-link, .drawer__main-btn[href]').forEach(link => {
-    const href = link.getAttribute('href')?.split('?')[0];
-    if (href === page || (page === '' && href === 'index.html')) {
-      link.classList.add('active');
-    }
-  });
+  const mainItems = drawer ? Array.from(drawer.querySelectorAll('.drawer__main-item')) : [];
+  if (page.startsWith('boutique') || page.startsWith('produit')) {
+    mainItems.find(li => li.dataset.sub === 'sub-boutique')?.querySelector('.drawer__main-btn')?.classList.add('active');
+  } else if (page.startsWith('atelier')) {
+    mainItems.find(li => li.dataset.sub === 'sub-atelier')?.querySelector('.drawer__main-btn')?.classList.add('active');
+  } else {
+    drawer?.querySelectorAll('.drawer__main-btn[href]').forEach(link => {
+      if (link.getAttribute('href')?.split('?')[0] === page) link.classList.add('active');
+    });
+  }
 
   /* ---- 4. Intersection Observer — fade-in ---- */
   const fadeEls = document.querySelectorAll('.fade-in');
