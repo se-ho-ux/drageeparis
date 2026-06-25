@@ -3776,10 +3776,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 ================================================ */
 .hero__eyebrow {
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 300;
+  font-size: 11px;
   line-height: 20px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgb(243, 236, 230);
   display: block;
