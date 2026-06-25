@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.setAttribute('aria-hidden', 'false');
       drawerToggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      /* Auto-activer le premier sous-menu */
-      if (mainItems.length) activateSub(mainItems[0].dataset.sub);
     };
     const closeDrawer = () => {
       drawer.setAttribute('aria-hidden', 'true');
