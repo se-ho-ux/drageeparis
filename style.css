@@ -3921,7 +3921,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink);
   white-space: nowrap;
@@ -3936,7 +3936,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-60);
   cursor: pointer;
@@ -3959,7 +3959,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-60);
   cursor: pointer;
@@ -4451,11 +4451,11 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 /* Compense le header fixe quand le filtre est en tête de page */
 .main--filter-first {
-  padding-top: 80px;
+  padding-top: 100px;
 }
 @media (max-width: 900px) {
   .main--filter-first {
-    padding-top: 60px;
+    padding-top: 72px;
   }
 }
 
