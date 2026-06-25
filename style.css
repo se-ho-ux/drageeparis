@@ -4449,6 +4449,15 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   position: relative;
   top: 0 !important;
 }
+/* Compense le header fixe quand le filtre est en tête de page */
+.main--filter-first {
+  padding-top: 80px;
+}
+@media (max-width: 900px) {
+  .main--filter-first {
+    padding-top: 60px;
+  }
+}
 
 /* Count + chevron inside filter left label */
 .cedric-filter__count {
