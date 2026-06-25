@@ -293,8 +293,8 @@ body::before {
 }
 .header__menu-toggle .hamburger-line {
   display: block;
-  width: 22px;
-  height: 1px;
+  width: 26px;
+  height: 0.8px;
   background: var(--blanc);
   transition: transform 0.4s var(--ease-out-cubic),
               opacity 0.3s,
@@ -642,10 +642,10 @@ body::before {
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(17, 13, 8, 0.38) 0%,
-    rgba(17, 13, 8, 0.18) 30%,
-    rgba(17, 13, 8, 0.28) 60%,
-    rgba(17, 13, 8, 0.72) 100%
+    rgba(17, 13, 8, 0.50) 0%,
+    rgba(17, 13, 8, 0.30) 30%,
+    rgba(17, 13, 8, 0.42) 60%,
+    rgba(17, 13, 8, 0.82) 100%
   );
 }
 
@@ -2276,8 +2276,11 @@ body::before {
 }
 .filter-btn {
   font-family: var(--font);
+  font-style: normal;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
   letter-spacing: 0;
   color: rgba(44, 44, 44, 0.38);
   background: none;
@@ -3927,8 +3930,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   list-style: none;
 }
 .cedric-filter__tab {
-  font-size: 9.5px;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-60);
@@ -4399,28 +4404,36 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 .product-card__actions {
   display: flex;
-  gap: 8px;
-  padding: 14px 16px 18px;
+  gap: 12px;
+  padding: 10px 16px 16px;
+  justify-content: flex-start;
 }
 .product-card__actions .btn {
-  flex: 1;
-  font-size: 9.5px;
-  letter-spacing: 0.12em;
-  padding: 10px 8px;
-  text-align: center;
-  justify-content: center;
-  min-width: 0;
-  border-radius: 20px;
+  flex: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  padding: 0;
+  text-align: left;
+  justify-content: flex-start;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: rgb(150, 95, 54);
+  text-decoration: none;
 }
 .product-card__actions .btn--outline {
   background: transparent;
-  color: var(--ink);
-  border: 1px solid rgba(43, 42, 40, 0.28);
+  color: rgb(150, 95, 54);
+  border: none;
 }
 .product-card__actions .btn--outline:hover {
-  background: var(--ink);
-  color: var(--blanc);
-  border-color: var(--ink);
+  background: transparent;
+  color: rgb(150, 95, 54);
+  border: none;
+  opacity: 0.7;
 }
 
 /* Non-sticky filter bar (boutique & atelier pages) */
