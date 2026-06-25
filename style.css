@@ -2276,8 +2276,11 @@ body::before {
 }
 .filter-btn {
   font-family: var(--font);
+  font-style: normal;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
   letter-spacing: 0;
   color: rgba(44, 44, 44, 0.38);
   background: none;
@@ -3927,8 +3930,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   list-style: none;
 }
 .cedric-filter__tab {
-  font-size: 9.5px;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-60);
@@ -4439,6 +4444,14 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .collection-page .cedric-filter--flat {
   position: relative;
   top: 0 !important;
+}
+.collection-page main > .cedric-filter--flat:first-child {
+  margin-top: 68px;
+}
+@media (max-width: 900px) {
+  .collection-page main > .cedric-filter--flat:first-child {
+    margin-top: 56px;
+  }
 }
 
 /* Count + chevron inside filter left label */
