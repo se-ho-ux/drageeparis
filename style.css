@@ -3791,7 +3791,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-weight: 400;
   font-size: clamp(24px, 3.2vw, 44px);
   line-height: 1.08;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: rgb(243, 236, 230);
   max-width: 780px;
