@@ -112,10 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mainItems.find(li => li.dataset.sub === 'sub-boutique')?.querySelector('.drawer__main-btn')?.classList.add('active');
   } else if (page.startsWith('atelier')) {
     mainItems.find(li => li.dataset.sub === 'sub-atelier')?.querySelector('.drawer__main-btn')?.classList.add('active');
-  } else {
-    drawer?.querySelectorAll('.drawer__main-btn[href]').forEach(link => {
-      if (link.getAttribute('href')?.split('?')[0] === page) link.classList.add('active');
-    });
   }
 
   /* ---- 4. Intersection Observer — fade-in ---- */
