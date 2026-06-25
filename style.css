@@ -3911,14 +3911,16 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   padding: 0 52px;
   border-bottom: 1px solid var(--ink-20);
   background: var(--paper);
-  min-height: 52px;
+  min-height: 60px;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 .cedric-filter__left {
-  font-size: 9.5px;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink);
@@ -3953,8 +3955,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   border-bottom-color: var(--ink);
 }
 .cedric-filter__right {
-  font-size: 9.5px;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-60);
