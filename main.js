@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.setAttribute('aria-hidden', 'false');
       drawerToggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      /* Auto-activer le premier sous-menu */
+      if (mainItems.length) activateSub(mainItems[0].dataset.sub);
     };
     const closeDrawer = () => {
       drawer.setAttribute('aria-hidden', 'true');
@@ -88,18 +90,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drawerToggle.addEventListener('click', openDrawer);
     drawerClose?.addEventListener('click', closeDrawer);
+    /* Clic sur la zone droite visible (hors panneau) ferme le menu */
     drawer.addEventListener('click', e => {
       if (!e.target.closest('.drawer__content')) closeDrawer();
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    /* Activation des sous-menus au clic uniquement */
     mainItems.forEach(item => {
       item.querySelector('.drawer__main-btn')?.addEventListener('click', () => activateSub(item.dataset.sub));
     });
+
+    /* Fermer quand on clique un lien */
     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
   }
 
   /* ---- 3. Lien actif dans le drawer ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
+  const mainItems = drawer ? Array.from(drawer.querySelectorAll('.drawer__main-item')) : [];
+  if (page.startsWith('boutique') || page.startsWith('produit')) {
+    mainItems.find(li => li.dataset.sub === 'sub-boutique')?.querySelector('.drawer__main-btn')?.classList.add('active');
+  } else if (page.startsWith('atelier')) {
+    mainItems.find(li => li.dataset.sub === 'sub-atelier')?.querySelector('.drawer__main-btn')?.classList.add('active');
+  }
 
   /* ---- 4. Intersection Observer — fade-in ---- */
   const fadeEls = document.querySelectorAll('.fade-in');
