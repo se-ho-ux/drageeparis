@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mainItems.forEach(item => {
         item.classList.toggle('is-active', item.dataset.sub === subId);
       });
+      drawer.classList.add('sub-open');
     };
 
     const openDrawer = () => {
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
       allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
       mainItems.forEach(i => i.classList.remove('is-active'));
+      drawer.classList.remove('sub-open');
       if (header) header.classList.remove('header--hidden');
     };
 

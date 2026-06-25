@@ -519,21 +519,25 @@ body::before {
 /* ── Séparateur vertical caramel ─────────────────── */
 
 .drawer__divider {
+  display: none;
   width: 16px;
   background: var(--caramel);
   flex-shrink: 0;
   align-self: stretch;
 }
+.drawer.sub-open .drawer__divider { display: block; }
 
 /* ── Panneau droit : sous-menus ──────────────────── */
 
 .drawer__right {
+  display: none;
   flex: 1;
   /* padding-top calculé pour aligner le 1er sous-lien avec le 1er item parent :
      38px (panel padding) + ~20px (bouton Fermer) + 48px (margin-bottom) + 4px (btn padding) */
   padding: 110px 48px 44px;
   overflow-y: auto;
 }
+.drawer.sub-open .drawer__right { display: block; }
 
 .drawer__sub {
   display: none;
