@@ -396,15 +396,36 @@ body::before {
   width: min(760px, 56vw);
 }
 
+/* ── Animations d'entrée du menu ─────────────────── */
+@keyframes drawer-item-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.drawer[aria-hidden="false"] .drawer__main-item {
+  animation: drawer-item-in 0.28s var(--ease-soft) both;
+}
+.drawer[aria-hidden="false"] .drawer__main-item:nth-child(1) { animation-delay: 0.10s; }
+.drawer[aria-hidden="false"] .drawer__main-item:nth-child(2) { animation-delay: 0.16s; }
+.drawer[aria-hidden="false"] .drawer__main-item:nth-child(3) { animation-delay: 0.22s; }
+.drawer[aria-hidden="false"] .drawer__main-item:nth-child(4) { animation-delay: 0.28s; }
+
+.drawer__sub.is-visible .drawer__sub-link {
+  animation: drawer-item-in 0.24s var(--ease-soft) 0.06s both;
+}
+
 /* ── Panneau gauche ─────────────────────────────── */
 
 .drawer__left {
-  width: clamp(260px, 27vw, 370px);
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   padding: 38px 44px 44px;
   overflow-y: auto;
+}
+.drawer.sub-open .drawer__left {
+  flex: none;
+  width: clamp(260px, 27vw, 370px);
 }
 
 /* Bouton fermer */
@@ -463,9 +484,9 @@ body::before {
   text-align: left;
   text-decoration: none;
   white-space: nowrap;
-  transition: opacity 0.18s;
+  transition: color 0.22s var(--ease-soft), opacity 0.18s;
 }
-.drawer__main-btn:hover { opacity: 0.55; }
+.drawer__main-btn:hover { color: var(--caramel); }
 .drawer__main-btn.active { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .drawer__main-item.is-active .drawer__main-btn {
   opacity: 1;
@@ -478,7 +499,9 @@ body::before {
   margin-left: 10px;
   stroke: currentColor;
   stroke-width: 1.4;
+  transition: transform 0.22s var(--ease-soft);
 }
+.drawer__main-btn:hover .drawer__main-chevron { transform: translateX(4px); }
 
 /* CTA "Lancer ma création" */
 .drawer__cta {
@@ -1778,18 +1801,18 @@ body::before {
 ============================================== */
 .fade-in {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s var(--ease-soft),
-              transform 0.85s var(--ease-soft);
+  transform: translateY(18px);
+  transition: opacity 0.65s var(--ease-soft),
+              transform 0.65s var(--ease-soft);
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.fade-in--delay-1.visible { transition-delay: 0.1s; }
-.fade-in--delay-2.visible { transition-delay: 0.2s; }
-.fade-in--delay-3.visible { transition-delay: 0.3s; }
-.fade-in--delay-4.visible { transition-delay: 0.4s; }
+.fade-in--delay-1.visible { transition-delay: 0.12s; }
+.fade-in--delay-2.visible { transition-delay: 0.24s; }
+.fade-in--delay-3.visible { transition-delay: 0.36s; }
+.fade-in--delay-4.visible { transition-delay: 0.48s; }
 /* Mobile : tout le contenu visible immédiatement, pas de trous visuels */
 @media (max-width: 768px) {
   .fade-in,
@@ -4345,6 +4368,12 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .product-card:hover .product-card__media img {
   transform: scale(1.04);
   filter: brightness(1.02) saturate(1);
+}
+.product-card {
+  transition: box-shadow 0.4s var(--ease-soft);
+}
+.product-card:hover {
+  box-shadow: 0 8px 28px rgba(52, 34, 26, 0.09);
 }
 
 /* Badges */
