@@ -599,7 +599,8 @@ body::before {
 /* ── Mobile — plein écran empilé ─────────────────── */
 
 @media (max-width: 768px) {
-  .drawer__content {
+  .drawer__content,
+  .drawer.sub-open .drawer__content {
     width: 100%;
     flex-direction: column;
     overflow-y: auto;
