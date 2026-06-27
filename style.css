@@ -4310,6 +4310,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   padding: 64px 0 72px;
   border-bottom: 1px solid var(--ink-20);
 }
+.main--filter-first > .product-section { padding-top: 28px; }
+.collection-header + .product-section { padding-top: 28px; }
 .product-section:last-of-type {
   border-bottom: none;
 }
