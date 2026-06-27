@@ -490,6 +490,9 @@ body::before {
 .drawer__main-btn.active { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .drawer__main-item.is-active .drawer__main-btn {
   opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .drawer__main-chevron {

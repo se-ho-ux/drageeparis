@@ -57,8 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerClose  = document.getElementById('drawer-close');
 
   if (drawerToggle && drawer) {
-    const mainItems = Array.from(drawer.querySelectorAll('.drawer__main-item[data-sub]'));
-    const allSubs   = Array.from(drawer.querySelectorAll('.drawer__sub'));
+    const mainItems     = Array.from(drawer.querySelectorAll('.drawer__main-item[data-sub]'));
+    const allDrawerItems = Array.from(drawer.querySelectorAll('.drawer__main-item'));
+    const allSubs       = Array.from(drawer.querySelectorAll('.drawer__sub'));
 
     const activateSub = (subId) => {
       allSubs.forEach(sub => {
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sub.classList.toggle('is-visible', false);
         if (visible) requestAnimationFrame(() => sub.classList.add('is-visible'));
       });
-      mainItems.forEach(item => {
+      allDrawerItems.forEach(item => {
         item.classList.toggle('is-active', item.dataset.sub === subId);
       });
       drawer.classList.add('sub-open');
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawerToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
       allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
-      mainItems.forEach(i => i.classList.remove('is-active'));
+      allDrawerItems.forEach(i => i.classList.remove('is-active'));
       drawer.classList.remove('sub-open');
       if (header) header.classList.remove('header--hidden');
     };
@@ -99,6 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Activation des sous-menus au clic uniquement */
     mainItems.forEach(item => {
       item.querySelector('.drawer__main-btn')?.addEventListener('click', () => activateSub(item.dataset.sub));
+    });
+
+    /* Soulignement pour À propos et Contact (pas de sous-menu) */
+    allDrawerItems.filter(i => !i.dataset.sub).forEach(item => {
+      item.querySelector('.drawer__main-btn')?.addEventListener('click', () => {
+        allDrawerItems.forEach(i => i.classList.remove('is-active'));
+        item.classList.add('is-active');
+        drawer.classList.remove('sub-open');
+      });
     });
 
     /* Fermer quand on clique un lien */
