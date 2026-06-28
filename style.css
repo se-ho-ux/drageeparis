@@ -1242,17 +1242,62 @@ body::before {
   .garanties__grid--4 .garantie-item:nth-child(1),
   .garanties__grid--4 .garantie-item:nth-child(2) { border-bottom: 1px solid var(--ink-20); padding-bottom: 40px; margin-bottom: 8px; }
 }
+/* Dots : cachés par défaut, affichés uniquement sur mobile */
+.garanties__dots { display: none; }
+
 @media (max-width: 768px) {
-  .garanties { padding: 56px 24px; }
-  .garanties__grid { grid-template-columns: 1fr; }
-  .garanties__grid--4 { grid-template-columns: 1fr; max-width: 100%; }
-  .garantie-item { padding: 32px 20px; }
-  .garantie-item:not(:last-child)::after { display: none; }
-  .garantie-item:not(:last-child) { border-bottom: 1px solid var(--ink-20); }
+  /* Carrousel garanties */
+  .garanties { padding: 40px 0 24px; }
+  .garanties__label { padding: 0 24px; margin-bottom: 28px; }
+  .garanties__grid--4 {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 0;
+  }
+  .garanties__grid--4::-webkit-scrollbar { display: none; }
+  .garanties__grid--4 .garantie-item {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 16px 40px 28px;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
   .garanties__grid--4 .garantie-item:nth-child(1),
-  .garanties__grid--4 .garantie-item:nth-child(2) { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-  /* Retirer le séparateur entre "Livraison soignée" et "Un après, toujours" sur mobile */
-  .garanties__grid--4 .garantie-item:nth-child(3) { border-bottom: none; }
+  .garanties__grid--4 .garantie-item:nth-child(2),
+  .garanties__grid--4 .garantie-item:nth-child(3) { border-bottom: none; padding-bottom: 28px; margin-bottom: 0; }
+  .garantie-item:not(:last-child)::after { display: none; }
+  .garantie-item:not(:last-child) { border-bottom: none; }
+
+  /* Puces */
+  .garanties__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-bottom: 4px;
+  }
+  .garanties__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink-20);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    touch-action: manipulation;
+  }
+  .garanties__dot.is-active {
+    background: var(--caramel);
+    transform: scale(1.3);
+  }
+
+  /* Masquer les reassurances sur mobile */
+  .reassurances { display: none; }
 }
 
 
@@ -3155,7 +3200,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 
 @media (max-width: 480px) {
-  .garanties { padding: 48px 20px; }
   .garantie-item__icon { width: 34px; height: 34px; margin-bottom: 16px; }
   .garantie-item__title { font-size: 14px; }
   .garantie-item__desc { font-size: 12px; }

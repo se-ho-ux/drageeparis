@@ -505,7 +505,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rgpd-decline').addEventListener('click', () => dismiss('declined'));
   })();
 
-  /* ---- 13. Bascule grille / liste (boutique & atelier, mobile) ---- */
+  /* ---- 13. Carrousel garanties (mobile, page d'accueil) ---- */
+  (function() {
+    var grid = document.querySelector('.garanties__grid--4');
+    var dots = document.querySelectorAll('.garanties__dot');
+    if (!grid || !dots.length) return;
+
+    var syncDots = function() {
+      var idx = Math.round(grid.scrollLeft / grid.offsetWidth);
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === idx); });
+    };
+
+    grid.addEventListener('scroll', syncDots, { passive: true });
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        grid.scrollTo({ left: i * grid.offsetWidth, behavior: 'smooth' });
+      });
+    });
+  })();
+
+  /* ---- 14. Bascule grille / liste (boutique & atelier, mobile) ---- */
   (function() {
     var btnGrid = document.getElementById('view-grid');
     var btnList = document.getElementById('view-list');
