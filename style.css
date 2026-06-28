@@ -4535,9 +4535,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--ink-60);
+  color: rgb(150, 95, 54);
   background: transparent;
-  border: 1px solid var(--ink-20);
+  border: 1px solid rgb(150, 95, 54);
   border-radius: 5px;
   padding: 4px 12px;
   text-decoration: none;
@@ -4546,13 +4546,13 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__actions .btn--outline {
   background: transparent;
-  color: var(--ink-60);
-  border: 1px solid var(--ink-20);
+  color: rgb(150, 95, 54);
+  border: 1px solid rgb(150, 95, 54);
 }
 .product-card__actions .btn--outline:hover {
-  border-color: var(--ink-40, rgba(44,44,44,0.4));
-  color: var(--ink);
   background: transparent;
+  color: rgb(120, 75, 40);
+  border-color: rgb(120, 75, 40);
   opacity: 1;
 }
 
