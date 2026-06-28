@@ -6,6 +6,28 @@
   <title>Dragée Paris · Dragées Artisanales Personnalisables en Île-de-France</title>
   <meta name="description" content="Créations artisanales de dragées personnalisables pour mariages, naissances et réceptions. Sur mesure, fabriquées à la main en Île-de-France.">
   <link rel="stylesheet" href="style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dragée Paris">
+  <meta property="og:title" content="Dragée Paris · Dragées Artisanales Personnalisables en Île-de-France">
+  <meta property="og:description" content="Créations artisanales de dragées personnalisables pour mariages, naissances et réceptions. Sur mesure, fabriquées à la main en Île-de-France.">
+  <meta property="og:url" content="https://se-ho-ux.github.io/drageeparis/index.html">
+  <meta property="og:image:width" content="1659">
+  <meta property="og:image:height" content="948">
+  <meta property="og:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dragée Paris · Dragées Artisanales Personnalisables en Île-de-France">
+  <meta name="twitter:description" content="Créations artisanales de dragées personnalisables pour mariages, naissances et réceptions. Sur mesure, fabriquées à la main en Île-de-France.">
+  <meta name="twitter:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png">
+  <link rel="canonical" href="https://se-ho-ux.github.io/drageeparis/index.html">
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/drageeparis/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/drageeparis/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/drageeparis/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/drageeparis/apple-touch-icon.png">
+  <link rel="manifest" href="/drageeparis/manifest.json">
+  <meta name="theme-color" content="#965F36">
 </head>
 <body>
 
@@ -82,7 +104,10 @@
 
     <section class="hero" aria-label="Bannière principale">
       <div class="hero__bg">
-        <img src="./images/v_def/home-page-hero.png" alt="Dragées artisanales Dragée Paris" fetchpriority="high" decoding="async">
+        <picture>
+          <source type="image/webp" srcset="./images/v_def/home-page-hero-800w.webp 800w, ./images/v_def/home-page-hero-1200w.webp 1200w, ./images/v_def/home-page-hero.webp 1659w" sizes="100vw">
+          <img src="./images/v_def/home-page-hero.png" alt="Dragées artisanales Dragée Paris" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
@@ -124,7 +149,10 @@
       <div class="cedric-products__grid">
         <a href="produit-avola-blanc.html" class="prod-card">
           <div class="prod-card__image">
-            <img src="./images/v_def/amande_chocolat b.png" alt="Dragées Avola enrobage ivoire" loading="lazy">
+            <picture>
+          <source type="image/webp" srcset="./images/v_def/amande_chocolat b.webp">
+          <img src="./images/v_def/amande_chocolat b.png" alt="Dragées Avola enrobage ivoire" loading="lazy">
+        </picture>
           </div>
           <div class="prod-card__info">
             <div class="prod-card__row">
@@ -136,7 +164,10 @@
         </a>
         <a href="produit-amande-chocolat.html" class="prod-card">
           <div class="prod-card__image">
-            <img src="./images/v_def/amande_choc.png" alt="Dragées amande chocolat au lait" loading="lazy">
+            <picture>
+          <source type="image/webp" srcset="./images/v_def/amande_choc.webp">
+          <img src="./images/v_def/amande_choc.png" alt="Dragées amande chocolat au lait" loading="lazy">
+        </picture>
           </div>
           <div class="prod-card__info">
             <div class="prod-card__row">
@@ -148,7 +179,10 @@
         </a>
         <a href="produit-pastel.html" class="prod-card">
           <div class="prod-card__image">
-            <img src="./images/v_def/pastel-amande.png" alt="Dragées pastel naissance baptême" loading="lazy">
+            <picture>
+          <source type="image/webp" srcset="./images/v_def/pastel-amande.webp">
+          <img src="./images/v_def/pastel-amande.png" alt="Dragées pastel naissance baptême" loading="lazy">
+        </picture>
           </div>
           <div class="prod-card__info">
             <div class="prod-card__row">
@@ -229,7 +263,10 @@
     </section>
 
     <div class="illustration-banner fade-in" role="img" aria-label="Dragées artisanales Dragée Paris">
-      <img src="./images/illustration_1.jpg" alt="Dragées artisanales et emballages élégants, Dragée Paris" loading="lazy">
+      <picture>
+          <source type="image/webp" srcset="./images/illustration_1-800w.webp 800w, ./images/illustration_1.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw">
+          <img src="./images/illustration_1.jpg" alt="Dragées artisanales et emballages élégants, Dragée Paris" loading="lazy">
+        </picture>
     </div>
 
     <section class="reassurances" aria-label="Nos engagements">
@@ -322,6 +359,44 @@
     <div class="footer__bottom">
       <p>© 2024 Dragée Paris · Artisan confiseur en Île-de-France · Tous droits réservés</p>
     </div>
-  </footer>  <script src="main.js"></script>
+  </footer>
+  <script src="main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dragée Paris",
+    "description": "Artisan confiseur en Île-de-France, spécialisé dans les dragées personnalisables pour mariages, naissances et réceptions. Créations faites à la main.",
+    "url": "https://se-ho-ux.github.io/drageeparis/",
+    "telephone": "+33608671443",
+    "email": "drageeparis@gmail.com",
+    "image": "https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "145 Ter, Av. Jacques Chirac",
+      "addressLocality": "Athis-Mons",
+      "postalCode": "91200",
+      "addressRegion": "Île-de-France",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://se-ho-ux.github.io/drageeparis/"
+    ]
+  }
+  </script>
 </body>
 </html>

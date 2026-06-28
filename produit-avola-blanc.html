@@ -6,6 +6,26 @@
   <title>Dragées Avola · Enrobage Ivoire · Dragée Paris</title>
   <meta name="description" content="Amandes Avola de Sicile enrobées à la main dans notre atelier, finition ivoire nacrée. Un classique intemporel de la dragée française.">
   <link rel="stylesheet" href="style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Dragée Paris">
+  <meta property="og:title" content="Amandes Avola Blanc Ivoire · Dragée Paris">
+  <meta property="og:description" content="Amandes Avola de Sicile enrobées à la main, finition ivoire nacrée. Un classique intemporel de la dragée française.">
+  <meta property="og:url" content="https://se-ho-ux.github.io/drageeparis/produit-avola-blanc.html">
+  <meta property="og:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/amande_chocolat b.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amandes Avola Blanc Ivoire · Dragée Paris">
+  <meta name="twitter:description" content="Amandes Avola de Sicile enrobées à la main, finition ivoire nacrée. Un classique intemporel de la dragée française.">
+  <meta name="twitter:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/amande_chocolat b.png">
+  <link rel="canonical" href="https://se-ho-ux.github.io/drageeparis/produit-avola-blanc.html">
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/drageeparis/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/drageeparis/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/drageeparis/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/drageeparis/apple-touch-icon.png">
+  <link rel="manifest" href="/drageeparis/manifest.json">
+  <meta name="theme-color" content="#965F36">
 </head>
 <body>
 
@@ -82,7 +102,10 @@
   <main id="main">
     <section class="pdp">
       <div class="pdp__gallery">
-        <img src="./images/v_def/amande_chocolat b.png" alt="Dragées Avola enrobage ivoire, amandes enrobées à la main">
+        <picture>
+          <source type="image/webp" srcset="./images/v_def/amande_chocolat b.webp">
+          <img src="./images/v_def/amande_chocolat b.png" alt="Dragées Avola enrobage ivoire, amandes enrobées à la main">
+        </picture>
       </div>
       <div class="pdp__info">
         <a href="boutique.html" class="pdp__back">← La Boutique</a>
@@ -127,7 +150,10 @@
       <div class="pdp-related__grid">
         <a href="produit-amande-chocolat.html" class="prod-card">
           <div class="prod-card__image">
-            <img src="./images/v_def/amande_choc.png" alt="Dragées amande chocolat au lait" loading="lazy">
+            <picture>
+          <source type="image/webp" srcset="./images/v_def/amande_choc.webp">
+          <img src="./images/v_def/amande_choc.png" alt="Dragées amande chocolat au lait" loading="lazy">
+        </picture>
           </div>
           <div class="prod-card__info">
             <div class="prod-card__row">
@@ -139,7 +165,10 @@
         </a>
         <a href="produit-pastel.html" class="prod-card">
           <div class="prod-card__image">
-            <img src="./images/v_def/pastel-amande.png" alt="Dragées pastel naissance baptême" loading="lazy">
+            <picture>
+          <source type="image/webp" srcset="./images/v_def/pastel-amande.webp">
+          <img src="./images/v_def/pastel-amande.png" alt="Dragées pastel naissance baptême" loading="lazy">
+        </picture>
           </div>
           <div class="prod-card__info">
             <div class="prod-card__row">
@@ -182,5 +211,22 @@
     </div>
   </footer>
   <script src="main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Amandes Avola Blanc Ivoire",
+    "description": "Amandes Avola de Sicile enrobées à la main dans notre atelier, finition ivoire nacrée. Un classique intemporel de la dragée française.",
+    "image": "https://se-ho-ux.github.io/drageeparis/images/v_def/amande_chocolat b.png",
+    "brand": { "@type": "Brand", "name": "Dragée Paris" },
+    "category": "Dragées artisanales",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Organization", "name": "Dragée Paris" }
+    }
+  }
+  </script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Pages de redirection — pas de valeur d'indexation
+Disallow: /boutique-avola.html
+Disallow: /boutique-chocolats.html
+Disallow: /boutique-gourmandes.html
+Disallow: /atelier-premiers-instants.html
+Disallow: /atelier-heritage.html
+Disallow: /atelier-honneurs.html
+Disallow: /atelier-millesimes.html
+
+Sitemap: https://se-ho-ux.github.io/drageeparis/sitemap.xml
