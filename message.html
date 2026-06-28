@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Dragée Paris</title>
+  <meta name="description" content="Une question, une idée, un projet ? Contactez Dragée Paris par message et recevez une réponse dans les 48 heures.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="header header--inner" id="header">
+    <div class="header__container">
+      <button class="header__menu-toggle" id="drawer-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <a href="index.html" class="header__logo" aria-label="Dragée Paris, Accueil">Dragée Paris</a>
+      <div class="header__actions">
+        <a href="contact.html" class="header__cta">Lancer ma création</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__content">
+      <div class="drawer__left">
+        <button class="drawer__close" id="drawer-close">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          Fermer
+        </button>
+        <ul class="drawer__main-list">
+          <li class="drawer__main-item" data-sub="sub-boutique">
+            <button class="drawer__main-btn" type="button">
+              La Boutique
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </li>
+          <li class="drawer__main-item" data-sub="sub-atelier">
+            <button class="drawer__main-btn" type="button">
+              L'Atelier
+              <svg class="drawer__main-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </li>
+          <li class="drawer__main-item">
+            <a href="a-propos.html" class="drawer__main-btn">À propos</a>
+          </li>
+          <li class="drawer__main-item">
+            <a href="message.html" class="drawer__main-btn">Contact</a>
+          </li>
+        </ul>
+        <a href="contact.html" class="drawer__cta">Lancer ma création</a>
+        <div class="drawer__secondary">
+          <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+      </div>
+      <div class="drawer__divider"></div>
+      <div class="drawer__right">
+        <div class="drawer__sub" id="sub-boutique" aria-hidden="true">
+          <a href="boutique.html" class="drawer__sub-link drawer__sub-link--all">Toutes les amandes</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="boutique-avola.html" class="drawer__sub-link">Amandes traditionnelles Avola</a>
+          <a href="boutique-chocolats.html" class="drawer__sub-link">Amandes chocolats</a>
+          <a href="boutique-gourmandes.html" class="drawer__sub-link">Amandes gourmandes</a>
+        </div>
+        <div class="drawer__sub" id="sub-atelier" aria-hidden="true">
+          <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
+          <div class="drawer__sub-sep"></div>
+          <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
+          <a href="atelier-heritage.html" class="drawer__sub-link">Héritage</a>
+          <a href="atelier-honneurs.html" class="drawer__sub-link">Les honneurs</a>
+          <a href="atelier-millesimes.html" class="drawer__sub-link">Les millésimes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__safe-area" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <div class="section-intro fade-in">
+      <h1 class="section-intro__title">Contact</h1>
+      <p class="section-intro__sub">Une question, une idée, un projet à partager ? Nous lisons chaque message avec attention et vous répondons sous 48 heures.</p>
+    </div>
+
+    <section class="form-section fade-in">
+      <div class="contact__layout">
+
+        <aside class="contact__sidebar">
+          <div class="contact__sidebar-item">
+            <span class="contact__sidebar-label">E-mail</span>
+            <a href="mailto:drageeparis@gmail.com" class="contact__sidebar-value">drageeparis@gmail.com</a>
+          </div>
+          <div class="contact__sidebar-item">
+            <span class="contact__sidebar-label">Téléphone</span>
+            <a href="tel:+33608671443" class="contact__sidebar-value">06 08 67 14 43</a>
+            <p class="contact__sidebar-note">Du lundi au vendredi, de 9h à 18h</p>
+          </div>
+          <div class="contact__sidebar-item">
+            <span class="contact__sidebar-label">Atelier</span>
+            <span class="contact__sidebar-value">145 Ter, Av. Jacques Chirac</span>
+            <p class="contact__sidebar-note">91200 Athis-Mons, Île-de-France</p>
+          </div>
+          <div class="contact__sidebar-box">
+            <p>Pour un projet personnalisé, utilisez le formulaire <strong>Lancer ma création</strong> : il nous permet de préparer votre devis avec précision.</p>
+            <a href="contact.html" class="contact__sidebar-link">Lancer ma création →</a>
+          </div>
+        </aside>
+
+        <div>
+          <form class="form" id="msg-form" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="msg-nom">Nom <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="text" id="msg-nom" name="nom" autocomplete="name" placeholder="Votre nom" required>
+                <span class="form__error" id="err-nom">Ce champ est obligatoire.</span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="msg-email">E-mail <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="email" id="msg-email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
+                <span class="form__error" id="err-email">Adresse e-mail invalide.</span>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="msg-message">Message <span class="required" aria-hidden="true">*</span></label>
+              <textarea class="form__textarea msg-textarea" id="msg-message" name="message" placeholder="Votre message..." required></textarea>
+              <span class="form__error" id="err-message">Veuillez saisir votre message.</span>
+            </div>
+            <div class="msg-form__footer">
+              <p class="msg-form__note">Les champs marqués <span aria-hidden="true">*</span> sont obligatoires. En cliquant sur Envoyer, votre messagerie s'ouvrira avec le message prêt à envoyer.</p>
+              <button type="submit" class="msg-form__submit">Envoyer le message</button>
+            </div>
+          </form>
+
+          <div class="msg-confirmation" id="msg-confirmation" hidden>
+            <div class="msg-confirmation__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h2 class="msg-confirmation__title">Votre messagerie s'est ouverte</h2>
+            <p class="msg-confirmation__text">Le message est prêt dans votre client mail. Il ne vous reste qu'à cliquer sur Envoyer. Nous vous répondrons sous 48 heures.</p>
+            <button class="msg-confirmation__back" id="msg-back">Envoyer un autre message</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <nav aria-label="Footer navigation pages">
+        <span class="footer__col-title">Pages</span>
+        <ul class="footer__nav-list">
+          <li><a href="boutique.html">La Boutique</a></li>
+          <li><a href="atelier.html">L'Atelier</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="message.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div>
+        <span class="footer__col-title">Nous contacter</span>
+        <ul class="footer__contact-list">
+          <li><a href="tel:+33608671443">06 08 67 14 43</a></li>
+          <li><a href="mailto:drageeparis@gmail.com">drageeparis@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer__col-title">Notre atelier</span>
+        <address class="footer__address">145 Ter, Av. Jacques Chirac<br>91200 Athis-Mons</address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 Dragée Paris · Artisan confiseur en Île-de-France · Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('msg-form');
+      var confirmation = document.getElementById('msg-confirmation');
+      var backBtn = document.getElementById('msg-back');
+
+      function setError(inputId, errorId, show) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        var group = input.closest('.form__group');
+        if (show) {
+          group.classList.add('has-error');
+          error.style.display = 'block';
+        } else {
+          group.classList.remove('has-error');
+          error.style.display = 'none';
+        }
+        return !show;
+      }
+
+      function validate() {
+        var nom = document.getElementById('msg-nom').value.trim();
+        var email = document.getElementById('msg-email').value.trim();
+        var message = document.getElementById('msg-message').value.trim();
+        var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        var ok = true;
+        ok = setError('msg-nom', 'err-nom', nom.length === 0) && ok;
+        ok = setError('msg-email', 'err-email', !emailOk) && ok;
+        ok = setError('msg-message', 'err-message', message.length === 0) && ok;
+        return ok;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        var nom = document.getElementById('msg-nom').value.trim();
+        var email = document.getElementById('msg-email').value.trim();
+        var message = document.getElementById('msg-message').value.trim();
+
+        var subject = 'Message de ' + nom + ' via Dragée Paris';
+        var body = 'Nom : ' + nom + '\nEmail : ' + email + '\n\nMessage :\n' + message;
+
+        window.location.href = 'mailto:drageeparis@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+
+        form.hidden = true;
+        confirmation.hidden = false;
+      });
+
+      backBtn.addEventListener('click', function () {
+        confirmation.hidden = true;
+        form.hidden = false;
+        form.reset();
+        document.querySelectorAll('.form__group.has-error').forEach(function (g) {
+          g.classList.remove('has-error');
+        });
+        document.getElementById('msg-nom').focus();
+      });
+    })();
+  </script>
+</body>
+</html>

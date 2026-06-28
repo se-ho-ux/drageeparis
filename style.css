@@ -5196,3 +5196,104 @@ details[open] > .pdp__acc-trigger::after { content: '−'; }
     animation: none !important;
   }
 }
+
+/* ==============================================
+   PAGE MESSAGE — formulaire de contact simple
+============================================== */
+.msg-textarea { min-height: 160px; resize: vertical; }
+
+.msg-form__footer {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.msg-form__note {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.7;
+  min-width: 200px;
+}
+.msg-form__submit {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blanc);
+  background: #965F36;
+  border: 1px solid #965F36;
+  padding: 14px 36px;
+  cursor: pointer;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: background 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .msg-form__submit:hover {
+    background: #7A4D27;
+    border-color: #7A4D27;
+    box-shadow: 0 4px 18px rgba(150, 95, 54, 0.35);
+  }
+}
+.msg-form__submit:active { transform: scale(0.97); }
+
+.contact__sidebar-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  text-decoration: none;
+  margin-top: 14px;
+  transition: opacity 0.25s;
+}
+.contact__sidebar-link:hover { opacity: 0.65; }
+
+.msg-confirmation {
+  padding: 48px 0;
+}
+.msg-confirmation__icon {
+  width: 44px;
+  height: 44px;
+  color: #965F36;
+  margin-bottom: 24px;
+}
+.msg-confirmation__icon svg { width: 100%; height: 100%; }
+.msg-confirmation__title {
+  font-family: var(--font);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 300;
+  color: var(--ink);
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+.msg-confirmation__text {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.75;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+.msg-confirmation__back {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--ink-20);
+  padding: 12px 28px;
+  cursor: pointer;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: border-color 0.25s, color 0.25s;
+}
+.msg-confirmation__back:hover { border-color: var(--ink); }
