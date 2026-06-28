@@ -113,15 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Fermer quand on clique un lien */
     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+    /* Bouton Retour (mobile) — revient au panneau principal sans fermer */
+    const drawerBack = document.getElementById('drawer-back');
+    const closeSub = () => {
+      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
+      drawer.classList.remove('sub-open');
+    };
+    drawerBack?.addEventListener('click', closeSub);
   }
 
-  /* ---- 3. Lien actif dans le drawer ---- */
+  /* ---- 3. Lien actif dans le drawer au chargement ---- */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  const mainItems = drawer ? Array.from(drawer.querySelectorAll('.drawer__main-item')) : [];
+  const navItems = drawer ? Array.from(drawer.querySelectorAll('.drawer__main-item')) : [];
   if (page.startsWith('boutique') || page.startsWith('produit')) {
-    mainItems.find(li => li.dataset.sub === 'sub-boutique')?.querySelector('.drawer__main-btn')?.classList.add('active');
+    navItems.find(li => li.dataset.sub === 'sub-boutique')?.classList.add('is-active');
   } else if (page.startsWith('atelier')) {
-    mainItems.find(li => li.dataset.sub === 'sub-atelier')?.querySelector('.drawer__main-btn')?.classList.add('active');
+    navItems.find(li => li.dataset.sub === 'sub-atelier')?.classList.add('is-active');
+  } else if (page === 'a-propos.html') {
+    navItems.find(li => li.querySelector('a[href="a-propos.html"]'))?.classList.add('is-active');
+  } else if (page === 'message.html' || page === 'contact.html') {
+    navItems.find(li => li.querySelector('a[href="message.html"]'))?.classList.add('is-active');
   }
 
   /* ---- 4. Intersection Observer — fade-in ---- */

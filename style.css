@@ -562,12 +562,34 @@ body::before {
 .drawer__right {
   display: none;
   flex: 1;
-  /* padding-top calculé pour aligner le 1er sous-lien avec le 1er item parent :
-     38px (panel padding) + ~20px (bouton Fermer) + 48px (margin-bottom) + 4px (btn padding) */
   padding: 110px 48px 44px;
   overflow-y: auto;
 }
 .drawer.sub-open .drawer__right { display: block; }
+
+/* ── Bouton Retour (mobile uniquement) ──────────── */
+.drawer__back {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 28px;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: color 0.2s;
+}
+.drawer__back svg { width: 14px; height: 14px; flex-shrink: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .drawer__back:hover { color: var(--ink); }
+}
 
 .drawer__sub {
   display: none;
@@ -613,36 +635,50 @@ body::before {
 /* ── Mobile — plein écran empilé ─────────────────── */
 
 @media (max-width: 768px) {
+  /* Contenu en colonne, overflow masqué = zone de slide */
   .drawer__content,
   .drawer.sub-open .drawer__content {
     width: 100%;
     flex-direction: column;
-    overflow-y: auto;
+    overflow: hidden;
   }
+  /* Panneau principal — pleine largeur avec slide-out */
   .drawer__left,
   .drawer.sub-open .drawer__left {
     flex: none;
     width: 100%;
     padding: 28px 24px 20px;
-    flex-shrink: 0;
-    max-height: 60vh;
     overflow-y: auto;
+    transition: transform 0.3s var(--ease);
+  }
+  .drawer.sub-open .drawer__left {
+    transform: translateX(-100%);
   }
   .drawer__close { margin-bottom: 24px; }
   .drawer__divider { display: none; }
+  /* Panneau sous-menu — superposé en absolu, arrive depuis la droite */
   .drawer__right {
-    flex: 1;
-    min-height: 160px;
-    padding: 20px 24px 32px;
-    border-top: 1px solid var(--ink-20);
+    display: block;
+    position: absolute;
+    inset: 0;
+    padding: 28px 24px 32px;
     overflow-y: auto;
+    background: var(--paper);
+    transform: translateX(100%);
+    transition: transform 0.3s var(--ease);
   }
+  .drawer.sub-open .drawer__right {
+    transform: translateX(0);
+  }
+  /* Bouton Retour visible sur mobile */
+  .drawer__back { display: flex; }
   .drawer__main-btn { font-size: clamp(20px, 6vw, 32px); padding: 7px 10px; }
   .drawer__secondary { padding-top: 20px; margin-top: 12px; }
 }
 @media (max-width: 480px) {
-  .drawer__left { padding: 24px 20px 16px; }
-  .drawer__right { padding: 16px 20px 28px; }
+  .drawer__left,
+  .drawer.sub-open .drawer__left { padding: 24px 20px 16px; }
+  .drawer__right { padding: 24px 20px 28px; }
 }
 
 
