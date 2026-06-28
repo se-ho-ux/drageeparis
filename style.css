@@ -4533,7 +4533,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--font);
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--ink-60);
   background: transparent;
   border: 1px solid var(--ink-20);
