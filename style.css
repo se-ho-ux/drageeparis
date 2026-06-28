@@ -4067,6 +4067,41 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .cedric-filter__tabs::-webkit-scrollbar { display: none; }
   .cedric-filter__right { display: none; }
 }
+@media (max-width: 768px) {
+  .cedric-filter {
+    padding: 0;
+    gap: 0;
+  }
+  .cedric-filter__right {
+    display: flex;
+    align-items: center;
+    order: -1;
+    flex-shrink: 0;
+    padding: 0 14px 0 20px;
+    min-height: 44px;
+    border-right: 1px solid rgba(44, 44, 44, 0.12);
+  }
+  .cedric-filter__tabs {
+    gap: 0;
+    padding: 0 16px;
+  }
+  .cedric-filter__tab {
+    padding: 14px 14px;
+    white-space: nowrap;
+    position: relative;
+  }
+  .cedric-filter__tab:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 11px;
+    width: 1px;
+    background: var(--ink);
+    opacity: 0.15;
+  }
+}
 
 
 /* ================================================
