@@ -4531,7 +4531,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .product-card__actions .btn {
   flex: none;
   font-family: var(--font);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -4542,7 +4542,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   padding: 4px 12px;
   text-decoration: none;
   line-height: 1.5;
-  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+  pointer-events: none;
+  transition: none;
 }
 .product-card__actions .btn--outline {
   background: transparent;
@@ -4551,8 +4553,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__actions .btn--outline:hover {
   background: transparent;
-  color: rgb(120, 75, 40);
-  border-color: rgb(120, 75, 40);
+  color: rgb(150, 95, 54);
+  border-color: rgb(150, 95, 54);
   opacity: 1;
 }
 
