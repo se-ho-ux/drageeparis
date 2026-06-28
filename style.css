@@ -5007,7 +5007,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .breadcrumb {
   background: var(--paper);
   border-bottom: 1px solid var(--ink-20);
-  padding-top: 68px;
+  padding-top: 96px;
 }
 .breadcrumb__list {
   display: flex;
@@ -5248,12 +5248,12 @@ figcaption {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 96px);
 }
 .pdp__gallery {
   position: sticky;
-  top: 80px;
-  height: calc(100vh - 80px);
+  top: 96px;
+  height: calc(100vh - 96px);
   overflow: hidden;
 }
 .pdp__gallery img {
@@ -5263,7 +5263,7 @@ figcaption {
   display: block;
 }
 .pdp__info {
-  padding: 80px 64px 80px 60px;
+  padding: 96px 64px 80px 60px;
   max-width: 560px;
 }
 .pdp__back {
