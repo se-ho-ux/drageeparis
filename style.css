@@ -345,8 +345,41 @@ body::before {
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.7);
 }
-@media (max-width: 30em) {
+@media (max-width: 48em) {
   .header__cta { display: none; }
+}
+
+/* Icône CTA dans le header — mobile uniquement */
+.header__cta-icon {
+  display: none;
+}
+@media (max-width: 48em) {
+  .header__cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--ink);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: color 0.2s var(--ease-soft), background 0.2s var(--ease-soft);
+  }
+  .header__cta-icon:hover,
+  .header__cta-icon:active {
+    color: var(--caramel);
+  }
+  /* Ghost sur le hero transparent */
+  .header:not(.header--inner):not(.scrolled) .header__cta-icon {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .header:not(.header--inner):not(.scrolled) .header__cta-icon:hover {
+    color: var(--blanc);
+  }
+  /* Scrollé sur homepage : couleur ink */
+  .header.scrolled .header__cta-icon {
+    color: var(--ink);
+  }
 }
 
 
@@ -512,22 +545,38 @@ body::before {
 
 /* CTA "Lancer ma création" */
 .drawer__cta {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-family: var(--font);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
   color: var(--paper);
-  background: var(--ink);
-  padding: 13px 20px;
-  margin-bottom: 20px;
+  background: var(--caramel);
+  padding: 16px 24px;
+  margin-bottom: 24px;
   border-radius: var(--border-radius--button);
-  transition: background 0.22s var(--ease-soft);
+  transition: background 0.22s var(--ease-soft), transform 0.18s var(--ease-soft);
 }
-.drawer__cta:hover { background: var(--caramel); }
+.drawer__cta::after {
+  content: '→';
+  font-size: 14px;
+  letter-spacing: 0;
+  opacity: 0.75;
+  transition: transform 0.2s var(--ease-soft), opacity 0.2s;
+}
+.drawer__cta:hover {
+  background: var(--ink);
+}
+.drawer__cta:hover::after {
+  transform: translateX(4px);
+  opacity: 1;
+}
 
 /* Liens secondaires en bas */
 .drawer__secondary {
@@ -4212,10 +4261,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .product-grid--list {
     grid-template-columns: 1fr !important;
   }
-  /* Grille : images carrées pour un rendu plus compact à 2 colonnes */
-  .product-grid:not(.product-grid--list) .product-card__media img {
-    aspect-ratio: 1 / 1;
-  }
 }
 
 /* ================================================
@@ -4584,7 +4629,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__media img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   transition: transform 0.9s var(--ease), filter 0.7s var(--ease-soft);
@@ -5013,8 +5058,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .collection-grid { padding: 88px 0 40px; }
   .collection-grid .page-description { max-width: 100%; }
 
-  /* Drawer CTA et secondary : toujours visibles */
-  .drawer__cta { white-space: nowrap; font-size: 10px; }
+  /* Drawer secondary : toujours visible */
 
   /* Cedric-split : réduire l'espace entre image et texte */
   .cedric-split__body { padding: 36px 20px 44px; }
