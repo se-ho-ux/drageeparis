@@ -3962,7 +3962,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-filter__left:hover { color: var(--ink-60); }
 .cedric-filter__tabs {
   display: flex;
-  gap: 40px;
+  gap: 24px;
   list-style: none;
 }
 .cedric-filter__tab {
@@ -3974,7 +3974,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   text-transform: uppercase;
   color: var(--ink);
   cursor: pointer;
-  padding: 16px 0;
+  padding: 16px 0 4px;
   border-bottom: 1px solid transparent;
   transition: color 0.2s var(--ease-soft), border-color 0.2s;
   background: none;
