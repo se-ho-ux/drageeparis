@@ -4212,26 +4212,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .product-grid--list {
     grid-template-columns: 1fr !important;
   }
-  .product-grid--list .product-card {
-    flex-direction: row;
-    align-items: stretch;
-  }
-  .product-grid--list .product-card__media {
-    flex: 0 0 88px;
-    width: 88px;
-  }
-  .product-grid--list .product-card__media img {
-    width: 88px;
-    height: 88px;
+  /* Grille : images carrées pour un rendu plus compact à 2 colonnes */
+  .product-grid:not(.product-grid--list) .product-card__media img {
     aspect-ratio: 1 / 1;
-    object-fit: cover;
-  }
-  .product-grid--list .product-card__body {
-    padding: 12px 12px 6px;
-  }
-  .product-grid--list .product-card__actions {
-    padding: 0 12px 12px;
-    gap: 5px;
   }
 }
 
