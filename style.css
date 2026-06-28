@@ -4086,9 +4086,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
     padding: 0 16px;
   }
   .cedric-filter__tab {
-    padding: 14px 14px;
+    padding: 14px 12px;
     white-space: nowrap;
     position: relative;
+    font-size: 11px;
   }
   .cedric-filter__tab:not(:first-child)::before {
     content: '';
@@ -4103,6 +4104,48 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   }
 }
 
+
+/* ================================================
+   VIEW TOGGLE — Grille / Liste (mobile only)
+================================================ */
+.view-toggle-bar { display: none; }
+
+@media (max-width: 768px) {
+  .view-toggle-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    padding: 6px 16px;
+    background: var(--paper);
+    border-bottom: 1px solid rgba(44,44,44,0.07);
+  }
+  .view-toggle__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    color: rgba(44,44,44,0.35);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: color 0.15s, background 0.15s;
+    padding: 0;
+    touch-action: manipulation;
+  }
+  .view-toggle__btn.is-active {
+    color: var(--caramel);
+    background: rgba(150,95,54,0.08);
+  }
+  .view-toggle__btn:hover:not(.is-active) {
+    color: rgba(44,44,44,0.65);
+  }
+  .product-grid--list {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* ================================================
    CEDRIC-SECTION-HEADER — Image #4 (titre caramel + "TOUT VOIR")
@@ -4636,9 +4679,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .collection-header { padding: 88px 20px 36px; }
-  .product-section { padding: 48px 0 56px; }
-  .product-section__header { margin-bottom: 32px; }
+  .collection-header { padding: 32px 20px 20px; }
+  .product-section { padding: 16px 0 40px; }
+  .product-section__header { margin-bottom: 20px; }
 }
 @media (max-width: 480px) {
   .product-grid { grid-template-columns: 1fr; }
@@ -4887,11 +4930,11 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 768px) {
 
-  /* Touch targets : boutons produit ≥ 44px */
+  /* Badges : hauteur naturelle, pas de min-height imposé */
   .product-card__actions .btn {
-    min-height: 44px;
-    padding: 10px 8px;
-    font-size: 9.5px;
+    min-height: auto;
+    padding: 3px 8px;
+    font-size: 12px;
   }
 
   /* Breadcrumb : ajuster le padding-top pour le header fixe */

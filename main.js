@@ -505,4 +505,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rgpd-decline').addEventListener('click', () => dismiss('declined'));
   })();
 
+  /* ---- 13. Bascule grille / liste (boutique & atelier, mobile) ---- */
+  (function() {
+    var btnGrid = document.getElementById('view-grid');
+    var btnList = document.getElementById('view-list');
+    var grids = document.querySelectorAll('.product-grid');
+    if (!btnGrid || !btnList || !grids.length) return;
+
+    function setGrid() {
+      grids.forEach(function(g) { g.classList.remove('product-grid--list'); });
+      btnGrid.classList.add('is-active'); btnGrid.setAttribute('aria-pressed', 'true');
+      btnList.classList.remove('is-active'); btnList.setAttribute('aria-pressed', 'false');
+    }
+    function setList() {
+      grids.forEach(function(g) { g.classList.add('product-grid--list'); });
+      btnList.classList.add('is-active'); btnList.setAttribute('aria-pressed', 'true');
+      btnGrid.classList.remove('is-active'); btnGrid.setAttribute('aria-pressed', 'false');
+    }
+    btnGrid.addEventListener('click', setGrid);
+    btnList.addEventListener('click', setList);
+  })();
+
 });
