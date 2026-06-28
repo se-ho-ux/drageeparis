@@ -4532,12 +4532,12 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   flex: none;
   font-family: var(--font);
   font-size: 10px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--ink-60);
   background: transparent;
   border: 1px solid var(--ink-20);
-  border-radius: 100px;
+  border-radius: 5px;
   padding: 4px 12px;
   text-decoration: none;
   line-height: 1.5;
