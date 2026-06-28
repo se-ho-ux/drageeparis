@@ -516,6 +516,11 @@
         </button>
       </div>
 
+      <!-- Message d'erreur envoi -->
+      <p id="wizard-send-error" hidden style="font-size:13px;color:#c0392b;text-align:center;margin-top:8px;font-family:var(--font);font-weight:300;">
+        Une erreur est survenue. Réessayez ou contactez-nous à <a href="mailto:drageeparis@gmail.com" style="color:inherit">drageeparis@gmail.com</a>.
+      </p>
+
       <!-- Écran de succès -->
       <div class="wizard__success" id="wizard-success" aria-live="polite">
         <div class="wizard__success-icon">
@@ -746,10 +751,53 @@
     nextBtn.addEventListener('click', function() {
       if (current === TOTAL) {
         if (!validateContact()) return;
-        body.style.display = 'none';
-        nav.style.display = 'none';
-        success.classList.add('visible');
-        setProgress(TOTAL);
+
+        var prenom = document.getElementById('w-prenom').value.trim();
+        var email  = document.getElementById('w-email').value.trim();
+        var tel    = document.getElementById('w-tel').value.trim();
+
+        /* TODO: Remplacez XXXXXXXXX par votre identifiant Formspree (formspree.io) */
+        var FORMSPREE_ID = 'XXXXXXXXX';
+
+        nextBtn.disabled = true;
+        nextBtn.textContent = 'Envoi en cours…';
+
+        fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            'Prénom': prenom,
+            'Email': email,
+            'Téléphone': tel || 'Non renseigné',
+            'Événement': data.evenement,
+            'Finition': data.finition,
+            'Quantité': data.quantite,
+            'Date': data.date || 'Non précisée',
+            'Couleurs': data.couleurs.length ? data.couleurs.join(', ') : 'À préciser',
+            'Message': data.message || '',
+            'Visuel': data.visuel || ''
+          })
+        })
+        .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
+        .then(function(res) {
+          if (res.ok) {
+            body.style.display = 'none';
+            nav.style.display = 'none';
+            success.classList.add('visible');
+            setProgress(TOTAL);
+          } else {
+            nextBtn.disabled = false;
+            nextBtn.textContent = 'Envoyer ma création →';
+            var errEl = document.getElementById('wizard-send-error');
+            if (errEl) errEl.hidden = false;
+          }
+        })
+        .catch(function() {
+          nextBtn.disabled = false;
+          nextBtn.textContent = 'Envoyer ma création →';
+          var errEl = document.getElementById('wizard-send-error');
+          if (errEl) errEl.hidden = false;
+        });
         return;
       }
       if (!validateStep(current)) {

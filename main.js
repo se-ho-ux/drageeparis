@@ -435,4 +435,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---- 11. Lightbox (pages produit) ---- */
+  (function() {
+    const gallery = document.querySelector('.pdp__gallery');
+    if (!gallery) return;
+    const img = gallery.querySelector('img');
+    if (!img) return;
+
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Vue agrandie');
+    lb.innerHTML =
+      '<button class="lightbox__close" aria-label="Fermer">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '</button>' +
+      '<img class="lightbox__img" alt="">';
+    document.body.appendChild(lb);
+
+    const lbImg    = lb.querySelector('.lightbox__img');
+    const closeBtn = lb.querySelector('.lightbox__close');
+
+    const open = () => {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    };
+    const close = () => {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+
+    img.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+    });
+  })();
+
+  /* ---- 12. Bannière RGPD ---- */
+  (function() {
+    if (localStorage.getItem('dp-consent')) return;
+    const banner = document.createElement('div');
+    banner.className = 'rgpd-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Confidentialité');
+    banner.innerHTML =
+      '<p class="rgpd-banner__text">' +
+        'Ce site utilise vos données uniquement pour traiter vos demandes — aucun cookie publicitaire. ' +
+        '<a href="mentions-legales.html#rgpd">En savoir plus</a>' +
+      '</p>' +
+      '<div class="rgpd-banner__actions">' +
+        '<button class="rgpd-banner__btn rgpd-banner__btn--accept" id="rgpd-accept">Accepter</button>' +
+        '<button class="rgpd-banner__btn" id="rgpd-decline">Fermer</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+    setTimeout(() => banner.classList.add('is-visible'), 900);
+
+    const dismiss = (val) => {
+      localStorage.setItem('dp-consent', val);
+      banner.classList.remove('is-visible');
+      setTimeout(() => banner.remove(), 450);
+    };
+    document.getElementById('rgpd-accept').addEventListener('click', () => dismiss('accepted'));
+    document.getElementById('rgpd-decline').addEventListener('click', () => dismiss('declined'));
+  })();
+
 });

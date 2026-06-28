@@ -156,9 +156,12 @@
               <span class="form__error" id="err-message">Veuillez saisir votre message.</span>
             </div>
             <div class="msg-form__footer">
-              <p class="msg-form__note">Les champs marqués <span aria-hidden="true">*</span> sont obligatoires. En cliquant sur Envoyer, votre messagerie s'ouvrira avec le message prêt à envoyer.</p>
+              <p class="msg-form__note">Les champs marqués <span aria-hidden="true">*</span> sont obligatoires. Réponse garantie sous 48 heures.</p>
               <button type="submit" class="msg-form__submit">Envoyer le message</button>
             </div>
+            <p id="msg-send-error" hidden style="font-size:13px;color:#c0392b;margin-top:12px;font-family:var(--font);font-weight:300;">
+              Une erreur est survenue. Réessayez ou contactez-nous directement à <a href="mailto:drageeparis@gmail.com" style="color:inherit">drageeparis@gmail.com</a>.
+            </p>
           </form>
 
           <div class="msg-confirmation" id="msg-confirmation" hidden>
@@ -168,8 +171,8 @@
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
             </div>
-            <h2 class="msg-confirmation__title">Votre messagerie s'est ouverte</h2>
-            <p class="msg-confirmation__text">Le message est prêt dans votre client mail. Il ne vous reste qu'à cliquer sur Envoyer. Nous vous répondrons sous 48 heures.</p>
+            <h2 class="msg-confirmation__title">Message bien envoyé !</h2>
+            <p class="msg-confirmation__text">Merci pour votre message. Nous vous répondrons dans les 48 heures ouvrées.</p>
             <button class="msg-confirmation__back" id="msg-back">Envoyer un autre message</button>
           </div>
         </div>
@@ -246,19 +249,40 @@
         e.preventDefault();
         if (!validate()) return;
 
-        var nom = document.getElementById('msg-nom').value.trim();
-        var email = document.getElementById('msg-email').value.trim();
+        var nom     = document.getElementById('msg-nom').value.trim();
+        var email   = document.getElementById('msg-email').value.trim();
         var message = document.getElementById('msg-message').value.trim();
 
-        var subject = 'Message de ' + nom + ' via Dragée Paris';
-        var body = 'Nom : ' + nom + '\nEmail : ' + email + '\n\nMessage :\n' + message;
+        var submitBtn = form.querySelector('.msg-form__submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours…';
 
-        window.location.href = 'mailto:drageeparis@gmail.com'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body=' + encodeURIComponent(body);
-
-        form.hidden = true;
-        confirmation.hidden = false;
+        /* TODO: Remplacez XXXXXXXXX par votre identifiant Formspree (formspree.io) */
+        fetch('https://formspree.io/f/XXXXXXXXX', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ 'Nom': nom, 'Email': email, 'Message': message })
+        })
+        .then(function(r) { return r.json().then(function(d) { return { ok: r.ok }; }); })
+        .then(function(res) {
+          if (res.ok) {
+            form.hidden = true;
+            confirmation.hidden = false;
+            var errEl = document.getElementById('msg-send-error');
+            if (errEl) errEl.hidden = true;
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Envoyer le message';
+            var errEl = document.getElementById('msg-send-error');
+            if (errEl) errEl.hidden = false;
+          }
+        })
+        .catch(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer le message';
+          var errEl = document.getElementById('msg-send-error');
+          if (errEl) errEl.hidden = false;
+        });
       });
 
       backBtn.addEventListener('click', function () {
