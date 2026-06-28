@@ -3029,8 +3029,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .header--inner { background: rgba(243,236,230,0.98); }
 }
 @media (max-width: 768px) {
-  /* Header toujours opaque + absorption safe area (Dynamic Island) */
-  .header {
+  /* Header opaque sur pages internes et après scroll — transparent sur le hero d'accueil */
+  .header--inner,
+  .header.scrolled {
     background: var(--paper) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -4210,6 +4211,27 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   }
   .product-grid--list {
     grid-template-columns: 1fr !important;
+  }
+  .product-grid--list .product-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .product-grid--list .product-card__media {
+    flex: 0 0 88px;
+    width: 88px;
+  }
+  .product-grid--list .product-card__media img {
+    width: 88px;
+    height: 88px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .product-grid--list .product-card__body {
+    padding: 12px 12px 6px;
+  }
+  .product-grid--list .product-card__actions {
+    padding: 0 12px 12px;
+    gap: 5px;
   }
 }
 
