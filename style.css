@@ -4292,8 +4292,25 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .prod-card__price {
   font-size: 12.5px;
   font-weight: 400;
-  color: var(--ink);
+  color: var(--caramel);
   margin-top: 5px;
+}
+.prod-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+.prod-card__badge {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--ink-60);
+  border: 1px solid var(--ink-20);
+  border-radius: 100px;
+  padding: 4px 12px;
+  white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
