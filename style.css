@@ -4496,7 +4496,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .product-card__title {
   font-size: 12.5px;
   font-weight: 300;
-  color: var(--ink);
+  color: #52362A;
   letter-spacing: 0.01em;
   line-height: 1.45;
 }
@@ -4535,9 +4535,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
-  color: rgb(150, 95, 54);
+  color: #52362A;
   background: transparent;
-  border: 1px solid rgb(150, 95, 54);
+  border: 1px solid #52362A;
   border-radius: 5px;
   padding: 4px 12px;
   text-decoration: none;
@@ -4548,13 +4548,13 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__actions .btn--outline {
   background: transparent;
-  color: rgb(150, 95, 54);
-  border: 1px solid rgb(150, 95, 54);
+  color: #52362A;
+  border: 1px solid #52362A;
 }
 .product-card__actions .btn--outline:hover {
   background: transparent;
-  color: rgb(150, 95, 54);
-  border-color: rgb(150, 95, 54);
+  color: #52362A;
+  border-color: #52362A;
   opacity: 1;
 }
 
