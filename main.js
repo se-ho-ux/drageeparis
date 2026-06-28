@@ -15,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const isHomePage = !header.classList.contains('header--inner');
     const isMobile   = () => window.innerWidth <= 1100;
     // Sur mobile homepage, TOP_ZONE = fin du hero (100vh)
-    const TOP_ZONE   = () => (isHomePage && isMobile()) ? window.innerHeight : 80;
+    const TOP_ZONE   = () => {
+      if (isHomePage && isMobile()) {
+        const hero = document.querySelector('.hero');
+        return hero ? hero.offsetHeight : window.innerHeight * 0.6;
+      }
+      return 80;
+    };
 
     const onScroll = () => {
       if (ticking) return;

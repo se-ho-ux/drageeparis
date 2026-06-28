@@ -5039,8 +5039,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
     line-height: 1.15;
   }
 
-  /* Products : 1 seule colonne sur petit mobile */
-  .product-grid { grid-template-columns: 1fr; }
+  /* product-grid: colonnes gérées par le toggle (.product-grid--list) */
 
   /* Cards collection : image ratio adapté */
   .collection-card__image img { aspect-ratio: 16 / 9; }
