@@ -326,6 +326,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = f === 'all' ? window.location.pathname : `${window.location.pathname}?filter=${f}`;
         history.replaceState(null, '', url);
       }
+      const main = filterEl.closest('main');
+      const headerTitle = main?.querySelector('.collection-header__title');
+      const headerDesc  = main?.querySelector('.collection-header__desc');
+      if (headerTitle && activeTab.dataset.title) headerTitle.textContent = activeTab.dataset.title;
+      if (headerDesc  && activeTab.dataset.desc)  headerDesc.textContent  = activeTab.dataset.desc;
     };
 
     tabs.forEach(tab => tab.addEventListener('click', () => applyFilter(tab.dataset.filter)));
