@@ -924,17 +924,18 @@ body::before {
 
 /* Badges de livraison : À domicile / Click & Collect */
 span.btn--outline {
-  border-radius: 8px;
-  background-color: #846d63;
-  color: #FFFFFF;
-  border-color: #846d63;
-  letter-spacing: 0.06em;
+  border-radius: 100px;
+  background-color: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+  letter-spacing: 0.03em;
   font-weight: 400;
 }
 span.btn--outline:hover {
-  background-color: #6e5a52;
-  border-color: #6e5a52;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+  opacity: 0.65;
 }
 
 .btn--caramel {
@@ -4757,18 +4758,18 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   transition: none;
 }
 .product-card__actions .btn--outline {
-  background-color: #846d63;
-  color: #FFFFFF;
-  border: 1px solid #846d63;
-  border-radius: 8px;
-  letter-spacing: 0.06em;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 100px;
+  letter-spacing: 0.03em;
   font-weight: 400;
 }
 .product-card__actions .btn--outline:hover {
-  background-color: #6e5a52;
-  color: #FFFFFF;
-  border-color: #6e5a52;
-  opacity: 1;
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+  opacity: 0.65;
 }
 
 /* Non-sticky filter bar (boutique & atelier pages) */
