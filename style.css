@@ -4570,7 +4570,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* Filtre sticky sous le header (pages collection) */
 .collection-page .cedric-filter {
   top: 68px;
-  padding: 0;
 }
 
 /* Galerie plate (dragees.html, boutique sub-pages) */
@@ -4581,7 +4580,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* Bougies gallery — sticky filter */
 .bougies-gallery .cedric-filter {
   top: 68px;
-  padding: 0;
 }
 @media (max-width: 900px) {
   .bougies-gallery .cedric-filter { top: 56px; }
