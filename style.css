@@ -924,17 +924,17 @@ body::before {
 
 /* Badges de livraison : À domicile / Click & Collect */
 span.btn--outline {
-  border-radius: 100px;
+  border-radius: 20px;
   background-color: transparent;
-  color: var(--ink);
-  border-color: var(--ink);
+  color: #836d63;
+  border-color: #836d63;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
 span.btn--outline:hover {
   background-color: transparent;
-  border-color: var(--ink);
-  color: var(--ink);
+  border-color: #836d63;
+  color: #836d63;
   opacity: 0.65;
 }
 
@@ -4759,16 +4759,16 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__actions .btn--outline {
   background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  border-radius: 100px;
+  color: #836d63;
+  border: 1px solid #836d63;
+  border-radius: 20px;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
 .product-card__actions .btn--outline:hover {
   background: transparent;
-  color: var(--ink);
-  border-color: var(--ink);
+  color: #836d63;
+  border-color: #836d63;
   opacity: 0.65;
 }
 
