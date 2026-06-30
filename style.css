@@ -926,7 +926,7 @@ body::before {
 span.btn--outline {
   border-radius: 6px;
   background-color: transparent;
-  color: #836d63;
+  color: rgb(82, 54, 42);
   border-color: #836d63;
   font-family: 'Akkurat', sans-serif;
   font-style: normal;
@@ -4765,7 +4765,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__actions .btn--outline {
   background: transparent;
-  color: #836d63;
+  color: rgb(82, 54, 42);
   border: 1px solid #836d63;
   border-radius: 6px;
   font-family: 'Akkurat', sans-serif;
