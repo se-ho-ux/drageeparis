@@ -924,7 +924,7 @@ body::before {
 
 /* Badges de livraison : À domicile / Click & Collect */
 span.btn--outline {
-  border-radius: 20px;
+  border-radius: 6px;
   background-color: transparent;
   color: #836d63;
   border-color: #836d63;
@@ -4761,7 +4761,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   background: transparent;
   color: #836d63;
   border: 1px solid #836d63;
-  border-radius: 20px;
+  border-radius: 6px;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
