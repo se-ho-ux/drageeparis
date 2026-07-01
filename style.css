@@ -4774,6 +4774,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 .product-card__actions .btn--outline:hover {
   background: transparent;

@@ -111,17 +111,50 @@
     <div class="wizard-wrap">
 
       <!-- Barre de progression -->
-      <div class="wizard__bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" id="wizard-bar" aria-label="Progression">
-        <div class="wizard__bar-fill" id="wizard-bar-fill" style="width:17%"></div>
+      <div class="wizard__bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="14" id="wizard-bar" aria-label="Progression">
+        <div class="wizard__bar-fill" id="wizard-bar-fill" style="width:14%"></div>
       </div>
 
       <!-- Contenu du wizard -->
       <div id="wizard-body">
 
-        <!-- Étape 1 : Type d'événement -->
+        <!-- Étape 1 : Division Boutique / Atelier -->
         <div class="wizard__panel active" id="wizard-step-1">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 01 / 06</span>
+            <span class="wizard__step-label">Étape 01 / 07</span>
+          </div>
+          <h1 class="wizard__step-title">Votre projet<br>nous intéresse</h1>
+          <p class="wizard__step-sub">Souhaitez-vous une création issue de notre boutique ou de notre atelier&nbsp;?</p>
+          <div class="wizard__cards" role="group" aria-label="Division">
+            <label class="wizard__card">
+              <input type="radio" name="division" value="La Boutique">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                </div>
+                <span class="wizard__card-name">La Boutique</span>
+                <span class="wizard__card-sub" style="font-size:11px;opacity:.6;margin-top:4px;display:block;">Amandes Avola, chocolats, gourmandes</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+            <label class="wizard__card">
+              <input type="radio" name="division" value="L'Atelier">
+              <div class="wizard__card-inner">
+                <div class="wizard__card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <span class="wizard__card-name">L'Atelier</span>
+                <span class="wizard__card-sub" style="font-size:11px;opacity:.6;margin-top:4px;display:block;">Collections thématiques sur mesure</span>
+              </div>
+              <span class="wizard__card-check" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2 : Type d'événement -->
+        <div class="wizard__panel" id="wizard-step-2">
+          <div class="wizard__meta">
+            <span class="wizard__step-label">Étape 02 / 07</span>
           </div>
           <h1 class="wizard__step-title">Racontez-nous<br>votre célébration</h1>
           <p class="wizard__step-sub">Quel est le type de l'événement pour lequel vous souhaitez créer vos dragées&nbsp;?</p>
@@ -197,10 +230,10 @@
           </div>
         </div>
 
-        <!-- Étape 2 : Finition -->
-        <div class="wizard__panel" id="wizard-step-2">
+        <!-- Étape 3 : Finition -->
+        <div class="wizard__panel" id="wizard-step-3">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 02 / 06</span>
+            <span class="wizard__step-label">Étape 03 / 07</span>
           </div>
           <h2 class="wizard__step-title">Quelle finition<br>vous inspire&nbsp;?</h2>
           <p class="wizard__step-sub">Choisissez l'enrobage qui correspond à l'ambiance de votre événement.</p>
@@ -248,10 +281,10 @@
           </div>
         </div>
 
-        <!-- Étape 3 : Quantité -->
-        <div class="wizard__panel" id="wizard-step-3">
+        <!-- Étape 4 : Quantité -->
+        <div class="wizard__panel" id="wizard-step-4">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 03 / 06</span>
+            <span class="wizard__step-label">Étape 04 / 07</span>
           </div>
           <h2 class="wizard__step-title">L'importance<br>des chiffres</h2>
           <p class="wizard__step-sub">Combien de pièces estimez-vous avoir besoin&nbsp;? Un ordre de grandeur suffit, nous affinerons ensemble.</p>
@@ -309,10 +342,10 @@
           </div>
         </div>
 
-        <!-- Étape 4 : Date -->
-        <div class="wizard__panel" id="wizard-step-4">
+        <!-- Étape 5 : Date -->
+        <div class="wizard__panel" id="wizard-step-5">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 04 / 06</span>
+            <span class="wizard__step-label">Étape 05 / 07</span>
           </div>
           <h2 class="wizard__step-title">Le jour J</h2>
           <p class="wizard__step-sub">Quelle est la date de votre événement&nbsp;? Cela nous permet d'anticiper les délais de fabrication (2 à 3 semaines).</p>
@@ -327,10 +360,10 @@
           <span class="wizard__skip-link" id="wizard-skip-date" tabindex="0" role="button" aria-label="Passer la date">Date non définie, passer cette étape →</span>
         </div>
 
-        <!-- Étape 5 : Couleurs -->
-        <div class="wizard__panel" id="wizard-step-5">
+        <!-- Étape 6 : Couleurs -->
+        <div class="wizard__panel" id="wizard-step-6">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 05 / 06</span>
+            <span class="wizard__step-label">Étape 06 / 07</span>
           </div>
           <h2 class="wizard__step-title">L'émotion<br>en couleurs</h2>
           <p class="wizard__step-sub">Quelles teintes vous inspirent&nbsp;? Vous pouvez en choisir plusieurs, nous vous proposerons une palette harmonieuse.</p>
@@ -449,16 +482,20 @@
           <span class="wizard__skip-link" id="wizard-skip-colors" tabindex="0" role="button" aria-label="Passer les couleurs">Je préciserai les couleurs plus tard →</span>
         </div>
 
-        <!-- Étape 6 : Coordonnées -->
-        <div class="wizard__panel" id="wizard-step-6">
+        <!-- Étape 7 : Coordonnées -->
+        <div class="wizard__panel" id="wizard-step-7">
           <div class="wizard__meta">
-            <span class="wizard__step-label">Étape 06 / 06</span>
+            <span class="wizard__step-label">Étape 07 / 07</span>
           </div>
           <h2 class="wizard__step-title">Vos coordonnées</h2>
           <p class="wizard__step-sub">Plus qu'une étape, renseignez vos informations pour que nous puissions vous recontacter sous 48 h avec une proposition sur mesure.</p>
 
           <!-- Récapitulatif -->
           <div class="wizard__summary" id="wizard-summary" aria-label="Récapitulatif de votre projet">
+            <div class="wizard__summary-item">
+              <span class="wizard__summary-key">Division</span>
+              <span class="wizard__summary-val" id="sum-division">-</span>
+            </div>
             <div class="wizard__summary-item">
               <span class="wizard__summary-key">Événement</span>
               <span class="wizard__summary-val" id="sum-event">-</span>
@@ -573,9 +610,9 @@
   <script src="main.js"></script>
   <script>
   (function() {
-    var TOTAL = 6;
+    var TOTAL = 7;
     var current = 1;
-    var data = { evenement: '', finition: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
+    var data = { division: '', evenement: '', finition: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -594,7 +631,7 @@
     function getPanel(n) { return document.getElementById('wizard-step-' + n); }
 
     function updateNextState() {
-      var needsSelection = (current === 1 || current === 2 || current === 3);
+      var needsSelection = (current === 1 || current === 2 || current === 3 || current === 4);
       nextBtn.disabled = needsSelection && !validateStep(current);
     }
 
@@ -621,6 +658,7 @@
     document.querySelectorAll('.wizard__card input[type="radio"]').forEach(function(r) {
       r.addEventListener('change', function() {
         var name = r.getAttribute('name');
+        if (name === 'division')  data.division = r.value;
         if (name === 'evenement') data.evenement = r.value;
         if (name === 'finition')  data.finition = r.value;
         if (name === 'quantite')  data.quantite = r.value;
@@ -686,16 +724,17 @@
     // Skip buttons
     var skipDate = document.getElementById('wizard-skip-date');
     if (skipDate) {
-      skipDate.addEventListener('click', function() { data.date = ''; showStep(5, 'next'); updateSummary(); });
+      skipDate.addEventListener('click', function() { data.date = ''; showStep(6, 'next'); updateSummary(); });
       skipDate.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipDate.click(); });
     }
     var skipColors = document.getElementById('wizard-skip-colors');
     if (skipColors) {
-      skipColors.addEventListener('click', function() { data.couleurs = []; showStep(6, 'next'); updateSummary(); });
+      skipColors.addEventListener('click', function() { data.couleurs = []; showStep(7, 'next'); updateSummary(); });
       skipColors.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') skipColors.click(); });
     }
 
     function updateSummary() {
+      document.getElementById('sum-division').textContent = data.division || '-';
       document.getElementById('sum-event').textContent = data.evenement || '-';
       document.getElementById('sum-produit').textContent = data.finition || '-';
       document.getElementById('sum-qty').textContent = data.quantite || '-';
@@ -726,12 +765,13 @@
     }
 
     function validateStep(n) {
-      if (n === 1) return !!document.querySelector('input[name="evenement"]:checked');
-      if (n === 2) return !!document.querySelector('input[name="finition"]:checked');
-      if (n === 3) return !!document.querySelector('input[name="quantite"]:checked');
-      if (n === 4) return true; // date optional
-      if (n === 5) return true; // colors optional
-      if (n === 6) return validateContact();
+      if (n === 1) return !!document.querySelector('input[name="division"]:checked');
+      if (n === 2) return !!document.querySelector('input[name="evenement"]:checked');
+      if (n === 3) return !!document.querySelector('input[name="finition"]:checked');
+      if (n === 4) return !!document.querySelector('input[name="quantite"]:checked');
+      if (n === 5) return true; // date optional
+      if (n === 6) return true; // colors optional
+      if (n === 7) return validateContact();
       return true;
     }
 
@@ -772,6 +812,7 @@
             'Prénom': prenom,
             'Email': email,
             'Téléphone': tel || 'Non renseigné',
+            'Division': data.division || 'Non précisée',
             'Événement': data.evenement,
             'Finition': data.finition,
             'Quantité': data.quantite,
@@ -812,7 +853,7 @@
         }
         return;
       }
-      if (current === 4) { data.date = document.getElementById('wizard-date').value; }
+      if (current === 5) { data.date = document.getElementById('wizard-date').value; }
       showStep(current + 1, 'next');
       if (current === TOTAL) updateSummary();
     });
@@ -823,6 +864,21 @@
         if (e.key === 'Enter') { r.checked = true; r.dispatchEvent(new Event('change')); }
       });
     });
+
+    // Pré-sélectionner la division si ?div= dans l'URL
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var div = params.get('div');
+      if (!div) return;
+      var val = div === 'boutique' ? 'La Boutique' : div === 'atelier' ? "L'Atelier" : null;
+      if (!val) return;
+      var radio = document.querySelector('input[name="division"][value="' + val + '"]');
+      if (radio) {
+        radio.checked = true;
+        data.division = val;
+        updateNextState();
+      }
+    })();
 
     setProgress(1);
   })();
