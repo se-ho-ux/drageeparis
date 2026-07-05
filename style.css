@@ -294,7 +294,7 @@ body::before {
 }
 .header__menu-toggle .hamburger-line {
   display: block;
-  width: 28px;
+  width: 32px;
   height: 1px;
   background: var(--blanc);
   transition: transform 0.4s var(--ease-out-cubic),
