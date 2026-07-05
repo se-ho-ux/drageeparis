@@ -3485,10 +3485,13 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .wizard__qty-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   gap: 10px;
   margin-bottom: 40px;
 }
+.wizard__qty-card { height: 100%; }
 .wizard__qty-card .wizard__card-inner {
+  height: 100%;
   padding: 28px 24px;
   flex-direction: row;
   align-items: center;
