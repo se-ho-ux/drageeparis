@@ -5312,6 +5312,21 @@ figcaption {
   object-fit: cover;
   display: block;
 }
+.pdp__gallery--duo {
+  height: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pdp__gallery--duo picture {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.pdp__gallery--duo img {
+  height: 100%;
+}
 .pdp__info {
   padding: 96px 64px 80px 60px;
   max-width: 560px;
