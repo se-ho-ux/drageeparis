@@ -552,4 +552,21 @@ document.addEventListener('DOMContentLoaded', () => {
     btnList.addEventListener('click', setList);
   })();
 
+  /* ---- 15. Fiche produit : dropdown quantité -> prix ---- */
+  (function() {
+    document.querySelectorAll('[data-price-select]').forEach(function(select) {
+      var block = select.closest('[data-qty-block]');
+      if (!block) return;
+      var priceEl = block.querySelector('[data-price-display]');
+      var unitEl = block.querySelector('[data-unit-display]');
+      function update() {
+        var opt = select.options[select.selectedIndex];
+        if (priceEl) priceEl.textContent = opt.value;
+        if (unitEl) unitEl.textContent = opt.dataset.unit || '';
+      }
+      select.addEventListener('change', update);
+      update();
+    });
+  })();
+
 });

@@ -5355,13 +5355,48 @@ figcaption {
   margin-bottom: 32px;
   max-width: 380px;
 }
+.pdp__qty-block {
+  margin-bottom: 32px;
+}
+.pdp__qty-select {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-20);
+  padding: 10px 24px 12px 0;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink);
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232C2C2C' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  transition: border-color 0.3s;
+  margin-bottom: 16px;
+}
+.pdp__qty-select:focus { border-bottom-color: var(--ink); }
 .pdp__price {
   font-family: var(--heading);
   font-size: 22px;
   font-weight: 400;
   color: var(--ink);
   letter-spacing: -0.01em;
-  margin-bottom: 32px;
+  margin-bottom: 0;
+}
+.pdp__price-unit {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-60);
+  letter-spacing: 0.02em;
+  margin-left: 6px;
 }
 .pdp__cta {
   display: inline-flex;
