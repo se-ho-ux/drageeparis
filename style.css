@@ -4054,6 +4054,9 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   line-height: 1.08;
   margin-bottom: 36px;
 }
+.cedric-split--savoir-faire .cedric-split__title {
+  letter-spacing: -0.025em;
+}
 .cedric-split__text {
   font-size: 13px;
   font-weight: 300;
