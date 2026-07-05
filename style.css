@@ -4041,14 +4041,14 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 .cedric-split__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px 64px 60px 52px;
+  justify-content: flex-start;
+  padding: 48px 64px 60px 52px;
 }
 .cedric-split__title {
   font-family: var(--heading);
   font-size: clamp(25px, 2.8vw, 44px);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.08;
