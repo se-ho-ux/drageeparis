@@ -1319,6 +1319,7 @@ span.btn--outline:hover {
   /* Carrousel garanties */
   .garanties { padding: 40px 0 24px; }
   .garanties__label { padding: 0 24px; margin-bottom: 28px; }
+  .garanties__grid,
   .garanties__grid--4 {
     display: flex;
     max-width: 100%;
@@ -1327,7 +1328,9 @@ span.btn--outline:hover {
     scrollbar-width: none;
     gap: 0;
   }
+  .garanties__grid::-webkit-scrollbar,
   .garanties__grid--4::-webkit-scrollbar { display: none; }
+  .garanties__grid .garantie-item,
   .garanties__grid--4 .garantie-item {
     scroll-snap-align: start;
     flex: 0 0 100%;
@@ -2778,6 +2781,7 @@ span.btn--outline:hover {
   .trust-strip { grid-template-columns: repeat(2, 1fr); }
   .trust-item { padding: 20px 20px; }
 }
+@media (max-width: 480px) { .trust-strip { grid-template-columns: 1fr; } }
 
 
 /* ==============================================
@@ -4380,7 +4384,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .editorial-3col__visual { min-height: 360px; }
 }
 @media (max-width: 768px) {
-  .editorial-3col { grid-template-columns: 1fr; padding: 48px 20px; }
+  .editorial-3col { grid-template-columns: 1fr; padding: 48px 20px; min-height: auto; }
   .editorial-3col__visual { min-height: 280px; grid-row: 1; }
   .editorial-3col__text:last-child { grid-column: 1; }
 }
