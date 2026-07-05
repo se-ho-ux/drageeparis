@@ -3489,9 +3489,10 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   gap: 10px;
   margin-bottom: 40px;
 }
-.wizard__qty-card { height: 100%; }
+.wizard__qty-card { height: 100%; min-width: 0; }
 .wizard__qty-card .wizard__card-inner {
   height: 100%;
+  min-width: 0;
   padding: 28px 24px;
   flex-direction: row;
   align-items: center;
@@ -3505,7 +3506,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   color: var(--ink);
   flex-shrink: 0;
 }
-.wizard__qty-info { display: flex; flex-direction: column; gap: 2px; }
+.wizard__qty-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .wizard__qty-label { font-size: 12px; font-weight: 400; color: var(--ink); }
 .wizard__qty-sub { font-size: 11px; font-weight: 300; color: var(--ink-60); line-height: 1.5; }
 
