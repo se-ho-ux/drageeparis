@@ -3120,9 +3120,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 
 @media (max-width: 768px) {
-  .band { padding: 12px 0; }
-  .band__item { font-size: 9px; gap: 16px; padding: 0 16px; letter-spacing: 0.14em; }
-  .band__track { animation-duration: 20s; }
+  .band { display: none; }
 }
 
 @media (max-width: 768px) {
