@@ -295,7 +295,8 @@ body::before {
 .header__menu-toggle .hamburger-line {
   display: block;
   width: 32px;
-  height: 0.75px;
+  height: 1px;
+  transform: scaleY(0.75);
   background: var(--blanc);
   transition: transform 0.4s var(--ease-out-cubic),
               opacity 0.3s,
