@@ -4048,7 +4048,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(25px, 2.8vw, 44px);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.08;
@@ -4344,7 +4344,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(18px, 2vw, 32px);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.1;
@@ -4396,7 +4396,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(36px, 5.2vw, 84px);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.0;
@@ -5015,7 +5015,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(1.6rem, 3vw, 3rem);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--caramel);
   margin-bottom: 14px;
