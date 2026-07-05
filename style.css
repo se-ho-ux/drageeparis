@@ -4440,7 +4440,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   font-family: var(--heading);
   font-size: clamp(32px, 5.2vw, 70px);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--caramel);
   line-height: 1.0;
