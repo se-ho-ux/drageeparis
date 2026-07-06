@@ -5328,7 +5328,7 @@ figcaption {
   height: 100%;
 }
 .pdp__info {
-  padding: 96px 64px 80px 60px;
+  padding: 140px 64px 80px 60px;
   max-width: 560px;
 }
 .pdp__back {
@@ -5403,7 +5403,7 @@ figcaption {
   font-weight: 400;
   color: var(--ink);
   letter-spacing: -0.01em;
-  margin-bottom: 0;
+  margin-bottom: 32px;
 }
 .pdp__price-unit {
   font-family: var(--font);
