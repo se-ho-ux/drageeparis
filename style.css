@@ -5302,6 +5302,7 @@ figcaption {
 .pdp__gallery {
   position: sticky;
   top: 96px;
+  margin-top: 96px;
   height: calc(100vh - 96px);
   overflow: hidden;
 }
@@ -5499,10 +5500,12 @@ details[open] > .pdp__acc-trigger::after { content: '−'; }
 @media (max-width: 1024px) {
   .pdp { grid-template-columns: 1fr; }
   .pdp__gallery { position: relative; top: 0; height: 70vw; }
+  .pdp__gallery--duo { height: auto; }
   .pdp__info { padding: 52px 40px; max-width: 100%; }
 }
 @media (max-width: 640px) {
-  .pdp__gallery { height: 100vw; }
+  .pdp__gallery { height: 100vw; margin-top: calc(80px + env(safe-area-inset-top, 0px)); }
+  .pdp__gallery--duo { height: auto; }
   .pdp__info { padding: 40px 20px; }
   .pdp-related { padding: 56px 20px 64px; }
   .pdp-related__grid { grid-template-columns: 1fr; gap: 32px; }
