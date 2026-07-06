@@ -4665,6 +4665,7 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .product-card__media img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
