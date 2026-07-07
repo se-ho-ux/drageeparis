@@ -50,7 +50,7 @@
     </div>
   </header>
   <!-- Drawer navigation -->
-  <div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer" id="drawer" aria-hidden="true" inert>
     <div class="drawer__content">
       <div class="drawer__left">
         <button class="drawer__close" id="drawer-close">
@@ -88,7 +88,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
           Retour
         </button>
-        <div class="drawer__sub" id="sub-boutique" aria-hidden="true">
+        <div class="drawer__sub" id="sub-boutique" aria-hidden="true" inert>
           <a href="boutique.html" class="drawer__sub-link drawer__sub-link--all">Toutes les dragées</a>
           <div class="drawer__sub-sep"></div>
           <a href="boutique-avola.html" class="drawer__sub-link">Amandes Avola</a>
@@ -96,7 +96,7 @@
           <a href="boutique-chocolats.html" class="drawer__sub-link">Chocolats</a>
           <a href="boutique-gourmandes.html" class="drawer__sub-link">Chocolats amandes</a>
         </div>
-        <div class="drawer__sub" id="sub-atelier" aria-hidden="true">
+        <div class="drawer__sub" id="sub-atelier" aria-hidden="true" inert>
           <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
           <div class="drawer__sub-sep"></div>
           <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
@@ -337,7 +337,7 @@
         </picture>
     </div>
 
-    <section class="reassurances" aria-label="Nos engagements">
+    <section class="reassurances" aria-label="Nos engagements en bref">
       <div class="reassurances__grid">
         <div class="reassurance-item"><strong>Fabrication artisanale</strong> à la main, dans notre atelier en Île-de-France</div>
         <div class="reassurance-item"><strong>Sur mesure</strong>, chaque création est conçue uniquement pour vous</div>
@@ -352,38 +352,38 @@
       </div>
       <div class="faq__list fade-in fade-in--delay-1">
           <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
+            <button class="faq__question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
               <span>Quel est le délai de fabrication ?</span>
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
-            <div class="faq__answer" role="region">
+            <div class="faq__answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
               <div class="faq__answer-inner">Pour les dragées, comptez 2 à 3 semaines entre la confirmation de votre commande et la livraison. Nous vous recommandons de nous contacter au moins 4 semaines avant votre événement pour les grandes quantités.</div>
             </div>
           </div>
           <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
+            <button class="faq__question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
               <span>Quelle quantité minimum peut-on commander ?</span>
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
-            <div class="faq__answer" role="region">
+            <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
               <div class="faq__answer-inner">Nous acceptons les commandes à partir de 50 dragées pour les particuliers. Pour les mariages et événements professionnels, nous recommandons un minimum de 100 pièces afin de profiter pleinement de la personnalisation.</div>
             </div>
           </div>
           <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
+            <button class="faq__question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
               <span>Comment se déroule la personnalisation ?</span>
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
-            <div class="faq__answer" role="region">
+            <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
               <div class="faq__answer-inner">Après réception de votre demande de devis, nous organisons un échange pour affiner vos choix : couleurs, finitions (mates, satinées, nacrées), type d'emballage et inscription. Un échantillon de couleur ou une maquette d'emballage vous sera soumis avant lancement de la fabrication.</div>
             </div>
           </div>
           <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
+            <button class="faq__question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
               <span>Livrez-vous en dehors de l'Île-de-France ?</span>
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
-            <div class="faq__answer" role="region">
+            <div class="faq__answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
               <div class="faq__answer-inner">Oui, nous livrons dans toute la France métropolitaine via transporteur soigné, avec emballage de protection renforcé. Les frais de port sont calculés selon le poids et la destination. La remise en main propre est possible pour les clients en Île-de-France.</div>
             </div>
           </div>
@@ -392,15 +392,15 @@
 
   </main>
 
-  <div class="prefooter">
-    <span class="prefooter__logo">Dragée <br>Paris</span>
-    <div class="prefooter__social">
-      <a href="https://www.instagram.com/drageeparis/?hl=fr" rel="noopener noreferrer" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/drageeparis" rel="noopener noreferrer" target="_blank">Facebook</a>
-    </div>
-  </div>
-
   <footer class="footer">
+    <div class="prefooter">
+      <span class="prefooter__logo">Dragée <br>Paris</span>
+      <div class="prefooter__social">
+        <a href="https://www.instagram.com/drageeparis/?hl=fr" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/drageeparis" rel="noopener noreferrer" target="_blank">Facebook</a>
+      </div>
+    </div>
+
     <div class="footer__inner">
       <nav aria-label="Footer navigation pages">
         <span class="footer__col-title">Pages</span>

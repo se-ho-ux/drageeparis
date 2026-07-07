@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       allSubs.forEach(sub => {
         const visible = sub.id === subId;
         sub.setAttribute('aria-hidden', String(!visible));
+        sub.inert = !visible;
         sub.classList.toggle('is-visible', false);
         if (visible) requestAnimationFrame(() => sub.classList.add('is-visible'));
       });
@@ -82,14 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openDrawer = () => {
       drawer.setAttribute('aria-hidden', 'false');
+      drawer.inert = false;
       drawerToggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     };
     const closeDrawer = () => {
       drawer.setAttribute('aria-hidden', 'true');
+      drawer.inert = true;
       drawerToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
+      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.inert = true; s.classList.remove('is-visible'); });
       allDrawerItems.forEach(i => i.classList.remove('is-active'));
       drawer.classList.remove('sub-open');
       if (header) header.classList.remove('header--hidden');
@@ -123,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Bouton Retour (mobile) — revient au panneau principal sans fermer */
     const drawerBack = document.getElementById('drawer-back');
     const closeSub = () => {
-      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.classList.remove('is-visible'); });
+      allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.inert = true; s.classList.remove('is-visible'); });
       drawer.classList.remove('sub-open');
     };
     drawerBack?.addEventListener('click', closeSub);

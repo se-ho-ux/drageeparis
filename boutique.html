@@ -49,7 +49,7 @@
       </div>
     </div>
   </header>
-  <div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer" id="drawer" aria-hidden="true" inert>
     <div class="drawer__content">
       <div class="drawer__left">
         <button class="drawer__close" id="drawer-close">
@@ -87,7 +87,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
           Retour
         </button>
-        <div class="drawer__sub" id="sub-boutique" aria-hidden="true">
+        <div class="drawer__sub" id="sub-boutique" aria-hidden="true" inert>
           <a href="boutique.html" class="drawer__sub-link drawer__sub-link--all">Toutes les dragées</a>
           <div class="drawer__sub-sep"></div>
           <a href="boutique-avola.html" class="drawer__sub-link">Amandes Avola</a>
@@ -95,7 +95,7 @@
           <a href="boutique-chocolats.html" class="drawer__sub-link">Chocolats</a>
           <a href="boutique-gourmandes.html" class="drawer__sub-link">Chocolats amandes</a>
         </div>
-        <div class="drawer__sub" id="sub-atelier" aria-hidden="true">
+        <div class="drawer__sub" id="sub-atelier" aria-hidden="true" inert>
           <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
           <div class="drawer__sub-sep"></div>
           <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
@@ -109,6 +109,7 @@
   <div class="header__safe-area" aria-hidden="true"></div>
 
   <main id="main" class="main--filter-first">
+    <h1 class="sr-only">La Boutique — Toutes les dragées</h1>
     <div class="view-toggle-bar" aria-label="Mode d'affichage">
       <button class="view-toggle__btn is-active" id="view-grid" aria-label="Affichage grille" aria-pressed="true">
         <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="1" y="1" width="6.5" height="6.5" rx="1"/><rect x="10.5" y="1" width="6.5" height="6.5" rx="1"/><rect x="1" y="10.5" width="6.5" height="6.5" rx="1"/><rect x="10.5" y="10.5" width="6.5" height="6.5" rx="1"/></svg>
@@ -155,7 +156,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Avola Blanc</h3>
+                <h2 class="product-card__title">Dragées Amande Avola Blanc</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 45 €</span>
@@ -175,7 +176,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Avola Ivoire</h3>
+                <h2 class="product-card__title">Dragées Amande Avola Ivoire</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 45 €</span>
@@ -195,7 +196,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Avola Doré</h3>
+                <h2 class="product-card__title">Dragées Amande Avola Doré</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 48 €</span>
@@ -215,7 +216,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Caramel Salé</h3>
+                <h2 class="product-card__title">Dragées Amande Caramel Salé</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 55 €</span>
@@ -235,7 +236,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Pralinée</h3>
+                <h2 class="product-card__title">Dragées Amande Pralinée</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 55 €</span>
@@ -255,7 +256,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title">Dragées Amande Pistache</h3>
+                <h2 class="product-card__title">Dragées Amande Pistache</h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 58 €</span>
@@ -277,7 +278,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-orange.html">Dragées Chocolat Orange</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-orange.html">Dragées Chocolat Orange</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -298,7 +299,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-vert-sapin.html">Dragées Chocolat Vert Sapin</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-vert-sapin.html">Dragées Chocolat Vert Sapin</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -319,7 +320,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-vert-anis.html">Dragées Chocolat Vert Anis</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-vert-anis.html">Dragées Chocolat Vert Anis</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -340,7 +341,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-vert-pomme.html">Dragées Chocolat Vert Pomme</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-vert-pomme.html">Dragées Chocolat Vert Pomme</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -361,7 +362,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-bleu-poudre.html">Dragées Chocolat Bleu Poudré</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-bleu-poudre.html">Dragées Chocolat Bleu Poudré</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -382,7 +383,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-turquoise.html">Dragées Chocolat Turquoise</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-turquoise.html">Dragées Chocolat Turquoise</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -403,7 +404,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-bleu-roi.html">Dragées Chocolat Bleu Roi</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-bleu-roi.html">Dragées Chocolat Bleu Roi</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -424,7 +425,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-bleu-marine.html">Dragées Chocolat Bleu Marine</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-bleu-marine.html">Dragées Chocolat Bleu Marine</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -445,7 +446,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-jaune-soleil.html">Dragées Chocolat Jaune Soleil</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-jaune-soleil.html">Dragées Chocolat Jaune Soleil</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -466,7 +467,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-jaune-moutarde.html">Dragées Chocolat Jaune Moutarde</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-jaune-moutarde.html">Dragées Chocolat Jaune Moutarde</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -487,7 +488,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-brique.html">Dragées Chocolat Brique</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-brique.html">Dragées Chocolat Brique</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -508,7 +509,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-bordeaux.html">Dragées Chocolat Bordeaux</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-bordeaux.html">Dragées Chocolat Bordeaux</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -529,7 +530,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-rouge.html">Dragées Chocolat Rouge</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-rouge.html">Dragées Chocolat Rouge</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -550,7 +551,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-chocolat-nature.html">Dragées Chocolat Nature</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-chocolat-nature.html">Dragées Chocolat Nature</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -571,7 +572,7 @@
             </div>
             <div class="product-card__body">
               <div class="product-card__header">
-                <h3 class="product-card__title"><a href="produit-chocolat-blanc-nacre.html">Dragées Chocolat Blanc Nacré</a></h3>
+                <h2 class="product-card__title"><a href="produit-chocolat-blanc-nacre.html">Dragées Chocolat Blanc Nacré</a></h2>
                 <span class="product-card__weight">500 g</span>
               </div>
               <span class="product-card__price">À partir de 15 €</span>
@@ -586,7 +587,7 @@
     </section>
 
     <section class="collection-header" style="padding-top:80px;">
-      <h1 class="collection-header__title fade-in">Toutes les dragées</h1>
+      <h2 class="collection-header__title fade-in">Toutes les dragées</h2>
       <p class="collection-header__desc fade-in fade-in--delay-1">Trois familles d'amandes, une seule obsession : la qualité. L'Avola de Sicile pour la tradition, le grand chocolat de couverture pour le plaisir, les saveurs d'exception pour l'audace. Chaque dragée façonnée à la main dans notre atelier d'Île-de-France.</p>
     </section>
 
