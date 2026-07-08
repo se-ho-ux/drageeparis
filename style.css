@@ -2911,6 +2911,51 @@ span.btn--outline:hover {
   .value-card { padding: 36px 24px; }
 }
 
+/* ---- Grille "Ce qui nous guide" — texte/image en damier (a-propos.html) ---- */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+}
+.guide-cell--text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 40px;
+}
+.guide-cell__title {
+  font-family: var(--heading);
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.guide-cell__text {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.82;
+  color: var(--ink-60);
+  max-width: 320px;
+}
+.guide-cell--image { overflow: hidden; }
+.guide-cell--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .guide-grid { grid-template-columns: 1fr; }
+  .guide-cell--text { padding: 40px 24px; }
+  .guide-cell--image { aspect-ratio: 4 / 3; }
+}
+
 
 /* ==============================================
    LOCATION (à propos)
