@@ -60,6 +60,16 @@ input, textarea, select { font-family: inherit; }
   border: 0;
 }
 
+/* ---- Anti-spam : champ piège invisible et ignoré des lecteurs d'écran ---- */
+.form__honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ---- Variables — Système Cédric ---- */
 :root {
   /* === COULEURS CÉDRIC ET LA CHOCOLATERIE === */
@@ -4603,6 +4613,58 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* Filtre sticky sous le header (pages collection) */
 .collection-page .cedric-filter {
   top: 68px;
+}
+
+/* ---- Page légale (mentions-legales.html) ---- */
+.legal-content {
+  max-width: 760px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.legal-content h1 {
+  font-family: var(--heading);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  line-height: 1.15;
+  margin-bottom: 40px;
+}
+.legal-content h2 {
+  font-family: var(--heading);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 44px;
+  margin-bottom: 14px;
+}
+.legal-content h2:first-of-type { margin-top: 0; }
+.legal-content p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-60);
+  margin-bottom: 14px;
+}
+.legal-content ul {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  list-style: disc;
+}
+.legal-content li {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-60);
+  margin-bottom: 6px;
+}
+.legal-content strong { font-weight: 500; color: var(--ink); }
+.legal-content a { color: var(--caramel); text-decoration: underline; }
+@media (max-width: 768px) {
+  .legal-content { padding-top: calc(68px + env(safe-area-inset-top, 0px)); padding-bottom: 64px; }
 }
 
 /* Galerie plate (dragees.html, boutique sub-pages) */

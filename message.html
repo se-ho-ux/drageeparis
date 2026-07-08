@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Contact · Dragée Paris</title>
   <meta name="description" content="Une question, une idée, un projet ? Contactez Dragée Paris par message et recevez une réponse dans les 48 heures.">
@@ -159,6 +160,10 @@
               <textarea class="form__textarea msg-textarea" id="msg-message" name="message" placeholder="Votre message..." required></textarea>
               <span class="form__error" id="err-message">Veuillez saisir votre message.</span>
             </div>
+            <div class="form__honeypot" aria-hidden="true">
+              <label for="msg-company">Ne pas remplir ce champ</label>
+              <input type="text" id="msg-company" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
             <div class="msg-form__footer">
               <p class="msg-form__note">Les champs marqués <span aria-hidden="true">*</span> sont obligatoires. Réponse garantie sous 48 heures.</p>
               <button type="submit" class="msg-form__submit">Envoyer le message</button>
@@ -256,6 +261,14 @@
         var nom     = document.getElementById('msg-nom').value.trim();
         var email   = document.getElementById('msg-email').value.trim();
         var message = document.getElementById('msg-message').value.trim();
+        var gotcha  = document.getElementById('msg-company').value;
+
+        if (gotcha) {
+          /* Champ piège rempli : soumission robot, on affiche un faux succès sans rien envoyer */
+          form.hidden = true;
+          confirmation.hidden = false;
+          return;
+        }
 
         var submitBtn = form.querySelector('.msg-form__submit');
         submitBtn.disabled = true;
@@ -265,7 +278,7 @@
         fetch('https://formspree.io/f/XXXXXXXXX', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ 'Nom': nom, 'Email': email, 'Message': message })
+          body: JSON.stringify({ 'Nom': nom, 'Email': email, 'Message': message, '_gotcha': gotcha })
         })
         .then(function(r) { return r.json().then(function(d) { return { ok: r.ok }; }); })
         .then(function(res) {

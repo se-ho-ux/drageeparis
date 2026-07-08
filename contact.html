@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Lancer ma création · Dragée Paris</title>
   <meta name="description" content="Lancez votre création personnalisée étape par étape, événement, quantité, date, couleurs et coordonnées. Réponse sous 48h.">
@@ -542,6 +543,10 @@
               <label class="wizard__label" for="w-tel">Téléphone <span style="font-size:9px;opacity:.55">(optionnel)</span></label>
               <input class="wizard__input" type="tel" id="w-tel" name="telephone" autocomplete="tel" placeholder="06 00 00 00 00">
             </div>
+            <div class="form__honeypot" aria-hidden="true">
+              <label for="w-company">Ne pas remplir ce champ</label>
+              <input type="text" id="w-company" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
           </form>
         </div>
 
@@ -799,6 +804,16 @@
         var prenom = document.getElementById('w-prenom').value.trim();
         var email  = document.getElementById('w-email').value.trim();
         var tel    = document.getElementById('w-tel').value.trim();
+        var gotcha = document.getElementById('w-company').value;
+
+        if (gotcha) {
+          /* Champ piège rempli : soumission robot, on affiche un faux succès sans rien envoyer */
+          body.style.display = 'none';
+          nav.style.display = 'none';
+          success.classList.add('visible');
+          setProgress(TOTAL);
+          return;
+        }
 
         /* TODO: Remplacez XXXXXXXXX par votre identifiant Formspree (formspree.io) */
         var FORMSPREE_ID = 'XXXXXXXXX';
@@ -820,7 +835,8 @@
             'Date': data.date || 'Non précisée',
             'Couleurs': data.couleurs.length ? data.couleurs.join(', ') : 'À préciser',
             'Message': data.message || '',
-            'Visuel': data.visuel || ''
+            'Visuel': data.visuel || '',
+            '_gotcha': gotcha
           })
         })
         .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
