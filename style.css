@@ -4850,8 +4850,11 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   transform: scale(1.04);
   filter: brightness(1.02) saturate(1);
 }
-/* Atelier : format vertical, comme les Incontournables de la homepage */
-#atelier-grid .product-card__media img { aspect-ratio: 3 / 4; }
+/* Boutique & Atelier (desktop) : format vertical, comme les Incontournables de la homepage */
+@media (min-width: 769px) {
+  #atelier-grid .product-card__media img,
+  #boutique-grid .product-card__media img { aspect-ratio: 3 / 4; }
+}
 .product-card {
   transition: box-shadow 0.4s var(--ease-soft);
 }
