@@ -4333,12 +4333,47 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 }
 .cedric-filter__right:hover { color: var(--ink-60); }
 
+/* Sous-filtres (ex. Premiers instants > Naissance / Gender reveal / Baby shower) */
+.cedric-filter__subtabs {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 52px;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--ink-20);
+}
+.cedric-filter__subtabs.is-visible { display: flex; }
+.cedric-filter__subtab {
+  font-family: var(--font);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  background: var(--paper);
+  border: 1px solid var(--ink-20);
+  border-radius: 100px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.cedric-filter__subtab:hover { color: var(--ink); border-color: var(--ink-60); }
+.cedric-filter__subtab.active {
+  background: var(--ink);
+  color: var(--blanc);
+  border-color: var(--ink);
+}
+
 @media (max-width: 900px) {
   .cedric-filter { padding: 0 20px; }
   .cedric-filter__left { display: none; }
   .cedric-filter__tabs { gap: 20px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
   .cedric-filter__tabs::-webkit-scrollbar { display: none; }
   .cedric-filter__right { display: none; }
+  .cedric-filter__subtabs { padding: 12px 20px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .cedric-filter__subtabs::-webkit-scrollbar { display: none; }
+  .cedric-filter__subtab { white-space: nowrap; flex-shrink: 0; }
 }
 @media (max-width: 768px) {
   .cedric-filter {

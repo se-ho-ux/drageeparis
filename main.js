@@ -340,11 +340,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards     = Array.from(grid.querySelectorAll('[data-filter]'));
     const countEl   = filterEl.querySelector('.cedric-filter__count');
     const resetBtn  = filterEl.querySelector('[data-filter-reset]');
+    const subGroups = Array.from(document.querySelectorAll(`.cedric-filter__subtabs[data-filter-for="${filterId}"]`));
 
     const applyFilter = (f, sub) => {
       tabs.forEach(t => t.classList.remove('active'));
       const activeTab = tabs.find(t => t.dataset.filter === f) || tabs[0];
       activeTab.classList.add('active');
+      f = activeTab.dataset.filter;
+
       const matches = card => {
         if (f !== 'all' && card.dataset.filter !== f) return false;
         if (sub && card.dataset.occasion !== sub) return false;
@@ -355,8 +358,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const visible = cards.filter(matches).length;
         countEl.textContent = `(${visible})`;
       }
+
+      /* Sous-filtres : n'afficher que le groupe rattaché à la catégorie active */
+      subGroups.forEach(group => {
+        const isMatch = group.dataset.parent === f;
+        group.classList.toggle('is-visible', isMatch);
+        if (isMatch) {
+          group.querySelectorAll('.cedric-filter__subtab').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.sub === (sub || 'all'));
+          });
+        }
+      });
+
       if (history.replaceState) {
-        const url = f === 'all' ? window.location.pathname : `${window.location.pathname}?filter=${f}`;
+        const qp = [];
+        if (f !== 'all') qp.push(`filter=${f}`);
+        if (sub) qp.push(`sub=${sub}`);
+        const url = window.location.pathname + (qp.length ? `?${qp.join('&')}` : '');
         history.replaceState(null, '', url);
       }
       const main = filterEl.closest('main');
@@ -368,10 +386,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tabs.forEach(tab => tab.addEventListener('click', () => applyFilter(tab.dataset.filter)));
 
+    subGroups.forEach(group => {
+      group.querySelectorAll('.cedric-filter__subtab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyFilter(group.dataset.parent, btn.dataset.sub === 'all' ? undefined : btn.dataset.sub);
+        });
+      });
+    });
+
     resetBtn?.addEventListener('click', () => applyFilter('all'));
 
     const urlParams = new URLSearchParams(window.location.search);
-    applyFilter(urlParams.get('filter') || 'all', urlParams.get('sub'));
+    applyFilter(urlParams.get('filter') || 'all', urlParams.get('sub') || undefined);
   }
 
   initProductFilter('collection-filter', 'dragees-grid');
