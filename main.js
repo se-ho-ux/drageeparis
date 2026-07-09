@@ -130,6 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.classList.remove('sub-open');
     };
     drawerBack?.addEventListener('click', closeSub);
+
+    /* Sous-catégories dépliables (ex. Premiers instants > Naissance / Gender reveal / Baby shower) */
+    drawer.querySelectorAll('.drawer__sub-group-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const group = trigger.closest('.drawer__sub-group');
+        const isOpen = group.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
   }
 
   /* ---- 3. Lien actif dans le drawer au chargement ---- */
@@ -332,15 +341,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const countEl   = filterEl.querySelector('.cedric-filter__count');
     const resetBtn  = filterEl.querySelector('[data-filter-reset]');
 
-    const applyFilter = (f) => {
+    const applyFilter = (f, sub) => {
       tabs.forEach(t => t.classList.remove('active'));
       const activeTab = tabs.find(t => t.dataset.filter === f) || tabs[0];
       activeTab.classList.add('active');
-      cards.forEach(card => {
-        card.style.display = (f === 'all' || card.dataset.filter === f) ? '' : 'none';
-      });
+      const matches = card => {
+        if (f !== 'all' && card.dataset.filter !== f) return false;
+        if (sub && card.dataset.occasion !== sub) return false;
+        return true;
+      };
+      cards.forEach(card => { card.style.display = matches(card) ? '' : 'none'; });
       if (countEl) {
-        const visible = f === 'all' ? cards.length : cards.filter(c => c.dataset.filter === f).length;
+        const visible = cards.filter(matches).length;
         countEl.textContent = `(${visible})`;
       }
       if (history.replaceState) {
@@ -358,8 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resetBtn?.addEventListener('click', () => applyFilter('all'));
 
-    const urlFilter = new URLSearchParams(window.location.search).get('filter');
-    applyFilter(urlFilter || 'all');
+    const urlParams = new URLSearchParams(window.location.search);
+    applyFilter(urlParams.get('filter') || 'all', urlParams.get('sub'));
   }
 
   initProductFilter('collection-filter', 'dragees-grid');

@@ -100,10 +100,44 @@
         <div class="drawer__sub" id="sub-atelier" aria-hidden="true" inert>
           <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
           <div class="drawer__sub-sep"></div>
-          <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
-          <a href="atelier-heritage.html" class="drawer__sub-link">Héritage</a>
-          <a href="atelier-honneurs.html" class="drawer__sub-link">Les honneurs</a>
-          <a href="atelier-millesimes.html" class="drawer__sub-link">Les millésimes</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Premiers instants
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=premiers-instants&sub=naissance" class="drawer__sub-link">Naissance</a>
+              <a href="atelier.html?filter=premiers-instants&sub=gender-reveal" class="drawer__sub-link">Gender reveal</a>
+              <a href="atelier.html?filter=premiers-instants&sub=baby-shower" class="drawer__sub-link">Baby shower</a>
+            </div>
+          </div>
+
+          <a href="atelier.html?filter=mariage" class="drawer__sub-link">Mariage</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Fêtes religieuses
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=fetes-religieuses&sub=bapteme" class="drawer__sub-link">Baptême</a>
+              <a href="atelier.html?filter=fetes-religieuses&sub=communion" class="drawer__sub-link">Communion</a>
+            </div>
+          </div>
+
+          <a href="atelier.html?filter=anniversaires" class="drawer__sub-link">Anniversaires</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Moments précieux
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=moments-precieux&sub=diplome" class="drawer__sub-link">Diplôme</a>
+              <a href="atelier.html?filter=moments-precieux&sub=retraite" class="drawer__sub-link">Retraite</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -206,8 +240,8 @@
 
     <section class="cedric-products fade-in" aria-label="Nos coffrets les plus demandés">
       <div class="cedric-products__header">
-        <h2 class="cedric-products__title">Les plus offerts</h2>
-        <a href="boutique.html" class="cedric-products__link">Voir tous les coffrets →</a>
+        <h2 class="cedric-products__title">Nos dragées</h2>
+        <a href="boutique.html" class="cedric-products__link">Voir toutes les dragées →</a>
       </div>
       <div class="cedric-products__grid">
         <a href="boutique.html" class="prod-card">
@@ -310,6 +344,11 @@
           </div>
           <h3 class="garantie-item__title">Livraison soignée</h3>
           <p class="garantie-item__desc">Expédition protégée dans toute la France. Remise en main propre possible en Île-de-France pour un dernier contrôle ensemble.</p>
+          <ul class="garantie-item__list">
+            <li>Livraison en France et en Europe</li>
+            <li>Livraison via Mondial Relay</li>
+            <li>Livraison via Chronopost</li>
+          </ul>
         </div>
 
         <div class="garantie-item fade-in fade-in--delay-3">
@@ -358,7 +397,7 @@
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
             <div class="faq__answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
-              <div class="faq__answer-inner">Pour les dragées, comptez 2 à 3 semaines entre la confirmation de votre commande et la livraison. Nous vous recommandons de nous contacter au moins 4 semaines avant votre événement pour les grandes quantités.</div>
+              <div class="faq__answer-inner">2 à 6 semaines.</div>
             </div>
           </div>
           <div class="faq__item">
@@ -367,7 +406,7 @@
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
             <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
-              <div class="faq__answer-inner">Nous acceptons les commandes à partir de 50 dragées pour les particuliers. Pour les mariages et événements professionnels, nous recommandons un minimum de 100 pièces afin de profiter pleinement de la personnalisation.</div>
+              <div class="faq__answer-inner">Chaque boîte est confectionnée sur mesure, sans quantité minimale. Que vous souhaitiez une création unique ou plusieurs centaines de boîtes pour un mariage, un baptême ou un événement professionnel, nous vous accompagnons dans chaque projet.</div>
             </div>
           </div>
           <div class="faq__item">
@@ -376,7 +415,7 @@
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
             <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
-              <div class="faq__answer-inner">Après réception de votre demande de devis, nous organisons un échange pour affiner vos choix : couleurs, finitions (mates, satinées, nacrées), type d'emballage et inscription. Un échantillon de couleur ou une maquette d'emballage vous sera soumis avant lancement de la fabrication.</div>
+              <div class="faq__answer-inner">À la suite de votre demande de devis, nous vous accompagnons dans le choix des couleurs, des finitions, des accessoires et de la personnalisation. Avant toute fabrication, nous réalisons un visuel de votre création, soumis à votre validation, afin de vous permettre d'approuver chaque détail en toute sérénité.</div>
             </div>
           </div>
           <div class="faq__item">
@@ -385,7 +424,7 @@
               <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </button>
             <div class="faq__answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
-              <div class="faq__answer-inner">Oui, nous livrons dans toute la France métropolitaine via transporteur soigné, avec emballage de protection renforcé. Les frais de port sont calculés selon le poids et la destination. La remise en main propre est possible pour les clients en Île-de-France.</div>
+              <div class="faq__answer-inner">Nous livrons vos créations en France et en Europe, avec un emballage soigné et renforcé. Les frais de livraison sont calculés selon la destination et le volume de la commande. Une remise en main propre est possible en Île-de-France, sur rendez-vous.</div>
             </div>
           </div>
       </div>

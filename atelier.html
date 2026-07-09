@@ -5,13 +5,13 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>L'Atelier · Dragée Paris</title>
-  <meta name="description" content="Collections thématiques de dragées artisanales : Premiers Instants, Héritage, Les honneurs, Les millésimes. Atelier en Île-de-France.">
+  <meta name="description" content="Collections thématiques de dragées artisanales : Premiers instants, Mariage, Fêtes religieuses, Anniversaires, Moments précieux. Atelier en Île-de-France.">
   <link rel="stylesheet" href="style.css">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dragée Paris">
   <meta property="og:title" content="L'Atelier · Collections thématiques · Dragée Paris">
-  <meta property="og:description" content="Collections thématiques de dragées artisanales : Premiers Instants, Héritage, Les honneurs, Les millésimes. Atelier en Île-de-France.">
+  <meta property="og:description" content="Collections thématiques de dragées artisanales : Premiers instants, Mariage, Fêtes religieuses, Anniversaires, Moments précieux. Atelier en Île-de-France.">
   <meta property="og:url" content="https://se-ho-ux.github.io/drageeparis/atelier.html">
   <meta property="og:image:width" content="1659">
   <meta property="og:image:height" content="948">
@@ -19,7 +19,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="L'Atelier · Collections thématiques · Dragée Paris">
-  <meta name="twitter:description" content="Collections thématiques de dragées artisanales : Premiers Instants, Héritage, Les honneurs, Les millésimes. Atelier en Île-de-France.">
+  <meta name="twitter:description" content="Collections thématiques de dragées artisanales : Premiers instants, Mariage, Fêtes religieuses, Anniversaires, Moments précieux. Atelier en Île-de-France.">
   <meta name="twitter:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png">
   <link rel="canonical" href="https://se-ho-ux.github.io/drageeparis/atelier.html">
   <!-- Favicons -->
@@ -99,10 +99,44 @@
         <div class="drawer__sub" id="sub-atelier" aria-hidden="true" inert>
           <a href="atelier.html" class="drawer__sub-link drawer__sub-link--all">Toutes les collections</a>
           <div class="drawer__sub-sep"></div>
-          <a href="atelier-premiers-instants.html" class="drawer__sub-link">Premiers Instants</a>
-          <a href="atelier-heritage.html" class="drawer__sub-link">Héritage</a>
-          <a href="atelier-honneurs.html" class="drawer__sub-link">Les honneurs</a>
-          <a href="atelier-millesimes.html" class="drawer__sub-link">Les millésimes</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Premiers instants
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=premiers-instants&sub=naissance" class="drawer__sub-link">Naissance</a>
+              <a href="atelier.html?filter=premiers-instants&sub=gender-reveal" class="drawer__sub-link">Gender reveal</a>
+              <a href="atelier.html?filter=premiers-instants&sub=baby-shower" class="drawer__sub-link">Baby shower</a>
+            </div>
+          </div>
+
+          <a href="atelier.html?filter=mariage" class="drawer__sub-link">Mariage</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Fêtes religieuses
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=fetes-religieuses&sub=bapteme" class="drawer__sub-link">Baptême</a>
+              <a href="atelier.html?filter=fetes-religieuses&sub=communion" class="drawer__sub-link">Communion</a>
+            </div>
+          </div>
+
+          <a href="atelier.html?filter=anniversaires" class="drawer__sub-link">Anniversaires</a>
+
+          <div class="drawer__sub-group">
+            <button class="drawer__sub-group-trigger" type="button" aria-expanded="false">
+              Moments précieux
+              <svg class="drawer__sub-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="drawer__sub-group-panel">
+              <a href="atelier.html?filter=moments-precieux&sub=diplome" class="drawer__sub-link">Diplôme</a>
+              <a href="atelier.html?filter=moments-precieux&sub=retraite" class="drawer__sub-link">Retraite</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -126,19 +160,22 @@
       <div class="cedric-filter__tabs">
         <button class="cedric-filter__tab active" data-filter="all"
           data-title="Toutes les collections"
-          data-desc="Qu'il s'agisse d'accueillir un enfant, de sceller une union ou de saluer un mérite, nos collections accompagnent avec grâce les instants qui forgent les mémoires. Des dragées façonnées à la main, pour les jours dont on veut se souvenir.">Toutes les collections</button>
+          data-desc="Qu'il s'agisse d'accueillir un enfant, de sceller une union ou de célébrer un moment précieux, nos collections accompagnent avec grâce les instants qui forgent les mémoires. Des dragées façonnées à la main, pour les jours dont on veut se souvenir.">Toutes les collections</button>
         <button class="cedric-filter__tab" data-filter="premiers-instants"
           data-title="Collection Premiers Instants"
-          data-desc="Les premiers instants de la vie sont fragiles et précieux. Nos dragées sont conçues à leur image : teintes pastel, sucre nacré, douceur maîtrisée, pour accueillir ce qui commence avec toute la délicatesse que cela mérite.">Premiers Instants</button>
-        <button class="cedric-filter__tab" data-filter="heritage"
-          data-title="Collection Héritage"
-          data-desc="Mariage, baptême, communion : des cérémonies qui traversent le temps et nous relient à ce qui dure. La collection Héritage leur est fidèle, des dragées façonnées dans la tradition française pour les jours où l'on s'inscrit dans quelque chose de plus grand que soi.">Héritage</button>
-        <button class="cedric-filter__tab" data-filter="honneurs"
-          data-title="Collection Les honneurs"
-          data-desc="Un effort reconnu, une carrière honorée, un titre enfin obtenu. Les grandes réussites méritent d'être célébrées avec soin et noblesse : des dragées sobres et élégantes, façonnées à la main pour saluer ceux qui ont accompli quelque chose de leur vie.">Les honneurs</button>
-        <button class="cedric-filter__tab" data-filter="millesimes"
-          data-title="Collection Les millésimes"
-          data-desc="Chaque année qui passe est un millésime à part entière. Des dragées festives et raffinées pour marquer le temps avec la même joie que les grands crus, qu'on célèbre un premier anniversaire ou des décennies d'amour partagé.">Les millésimes</button>
+          data-desc="Naissance, gender reveal, baby shower : les premiers instants de la vie sont fragiles et précieux. Nos dragées sont conçues à leur image, teintes pastel et douceur maîtrisée, pour accueillir ce qui commence avec toute la délicatesse que cela mérite.">Premiers Instants</button>
+        <button class="cedric-filter__tab" data-filter="mariage"
+          data-title="Collection Mariage"
+          data-desc="Le jour d'une union mérite une élégance intemporelle. Des dragées façonnées dans la tradition française, pour sceller un mariage avec raffinement et sublimer chaque table de réception.">Mariage</button>
+        <button class="cedric-filter__tab" data-filter="fetes-religieuses"
+          data-title="Collection Fêtes religieuses"
+          data-desc="Baptême, communion : des cérémonies qui traversent le temps et nous relient à ce qui dure. Une collection fidèle à ces jours où l'on s'inscrit dans quelque chose de plus grand que soi.">Fêtes religieuses</button>
+        <button class="cedric-filter__tab" data-filter="anniversaires"
+          data-title="Collection Anniversaires"
+          data-desc="Chaque année qui passe mérite d'être célébrée. Des dragées festives et raffinées pour marquer le temps, qu'on fête un premier anniversaire ou des décennies d'amour partagé.">Anniversaires</button>
+        <button class="cedric-filter__tab" data-filter="moments-precieux"
+          data-title="Collection Moments précieux"
+          data-desc="Un diplôme décroché, une retraite bien méritée, une réussite à saluer. Les grandes étapes méritent d'être célébrées avec soin et noblesse, des dragées sobres et élégantes façonnées à la main.">Moments précieux</button>
       </div>
       <button class="cedric-filter__right" data-filter-reset="atelier-filter">Filtrer</button>
     </div>
@@ -148,7 +185,7 @@
         <div class="product-grid" id="atelier-grid">
 
           <!-- PREMIERS INSTANTS -->
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="naissance">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-16-800w.webp 800w, ./images/naiss/image-16.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -168,7 +205,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="naissance">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-d1-800w.webp 800w, ./images/naiss/image-d1.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -188,7 +225,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="naissance">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-d7-800w.webp 800w, ./images/naiss/image-d7.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -208,7 +245,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="baby-shower">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-d8-800w.webp 800w, ./images/naiss/image-d8.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -228,7 +265,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="baby-shower">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-d9-800w.webp 800w, ./images/naiss/image-d9.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -248,7 +285,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="baby-shower">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/naiss/image-d10-800w.webp 800w, ./images/naiss/image-d10.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -268,7 +305,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="gender-reveal">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/bapteme/image-d11-800w.webp 800w, ./images/bapteme/image-d11.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -288,7 +325,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="gender-reveal">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/bapteme/image-d12-800w.webp 800w, ./images/bapteme/image-d12.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -308,7 +345,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="premiers-instants">
+          <article class="product-card" data-filter="premiers-instants" data-occasion="gender-reveal">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d4-800w.webp 800w, ./images/anniv/image-d4.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -329,7 +366,7 @@
           </article>
 
           <!-- HÉRITAGE -->
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="mariage">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image-d2-800w.webp 800w, ./images/mariage/image-d2.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -349,7 +386,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="mariage">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image-d3-800w.webp 800w, ./images/mariage/image-d3.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -369,7 +406,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="mariage">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image17-800w.webp 800w, ./images/mariage/image17.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -389,7 +426,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="mariage">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image18-800w.webp 800w, ./images/mariage/image18.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -409,7 +446,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="bapteme">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/bapteme/image-d11-800w.webp 800w, ./images/bapteme/image-d11.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -429,7 +466,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="bapteme">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/bapteme/image-d12-800w.webp 800w, ./images/bapteme/image-d12.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -449,7 +486,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="bapteme">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/bapteme/image-d13-800w.webp 800w, ./images/bapteme/image-d13.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -469,7 +506,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="communion">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image20-800w.webp 800w, ./images/mariage/image20.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -489,7 +526,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="communion">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image21-800w.webp 800w, ./images/mariage/image21.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -509,7 +546,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="heritage">
+          <article class="product-card" data-filter="fetes-religieuses" data-occasion="communion">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image22-800w.webp 800w, ./images/mariage/image22.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -530,7 +567,7 @@
           </article>
 
           <!-- LES HONNEURS -->
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux" data-occasion="diplome">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d4-800w.webp 800w, ./images/anniv/image-d4.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -550,7 +587,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux" data-occasion="diplome">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d5-800w.webp 800w, ./images/anniv/image-d5.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -570,7 +607,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux" data-occasion="diplome">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d6-800w.webp 800w, ./images/anniv/image-d6.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -590,7 +627,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image14-800w.webp 800w, ./images/anniv/image14.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -610,7 +647,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image22-800w.webp 800w, ./images/anniv/image22.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -630,7 +667,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux" data-occasion="retraite">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image332-800w.webp 800w, ./images/anniv/image332.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -650,7 +687,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="honneurs">
+          <article class="product-card" data-filter="moments-precieux" data-occasion="retraite">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image65-800w.webp 800w, ./images/mariage/image65.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -671,7 +708,7 @@
           </article>
 
           <!-- LES MILLÉSIMES -->
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d4-800w.webp 800w, ./images/anniv/image-d4.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -691,7 +728,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image-d6-800w.webp 800w, ./images/anniv/image-d6.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -711,7 +748,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image14-800w.webp 800w, ./images/anniv/image14.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -731,7 +768,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/anniv/image332-800w.webp 800w, ./images/anniv/image332.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -751,7 +788,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image-d2-800w.webp 800w, ./images/mariage/image-d2.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -771,7 +808,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image-d3-800w.webp 800w, ./images/mariage/image-d3.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
@@ -791,7 +828,7 @@
             </div>
           </article>
 
-          <article class="product-card" data-filter="millesimes">
+          <article class="product-card" data-filter="anniversaires">
             <div class="product-card__media">
               <picture>
           <source type="image/webp" srcset="./images/mariage/image65-800w.webp 800w, ./images/mariage/image65.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">

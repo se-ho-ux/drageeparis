@@ -9,5 +9,9 @@ Disallow: /atelier-premiers-instants.html
 Disallow: /atelier-heritage.html
 Disallow: /atelier-honneurs.html
 Disallow: /atelier-millesimes.html
+Disallow: /atelier-mariage.html
+Disallow: /atelier-fetes-religieuses.html
+Disallow: /atelier-anniversaires.html
+Disallow: /atelier-moments-precieux.html
 
 Sitemap: https://se-ho-ux.github.io/drageeparis/sitemap.xml

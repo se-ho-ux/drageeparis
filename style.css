@@ -705,6 +705,49 @@ body::before {
   width: 100%;
 }
 
+/* Sous-catégories dépliables dans le drawer (ex. Premiers instants > Naissance…) */
+.drawer__sub-group { display: flex; flex-direction: column; }
+.drawer__sub-group-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  padding: 10px 0;
+  transition: color 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .drawer__sub-group-trigger:hover { color: var(--caramel); }
+}
+.drawer__sub-group-chevron {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  transition: transform 0.35s var(--ease);
+  color: var(--ink-60);
+}
+.drawer__sub-group.open .drawer__sub-group-chevron { transform: rotate(180deg); }
+.drawer__sub-group-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s var(--ease-soft);
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+}
+.drawer__sub-group.open .drawer__sub-group-panel { max-height: 220px; }
+.drawer__sub-group-panel .drawer__sub-link {
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--ink-60);
+}
+
 /* ── Mobile — plein écran empilé ─────────────────── */
 
 @media (max-width: 768px) {
@@ -1326,6 +1369,16 @@ span.btn--outline:hover {
   line-height: 1.6;
   color: var(--ink-60);
   max-width: 220px;
+}
+.garantie-item__list {
+  margin-top: 10px;
+  max-width: 220px;
+}
+.garantie-item__list li {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ink-60);
 }
 
 /* Séparateur entre "Livraison soignée" et "Un après, toujours" conservé sur desktop */
@@ -4797,6 +4850,8 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   transform: scale(1.04);
   filter: brightness(1.02) saturate(1);
 }
+/* Atelier : format vertical, comme les Incontournables de la homepage */
+#atelier-grid .product-card__media img { aspect-ratio: 3 / 4; }
 .product-card {
   transition: box-shadow 0.4s var(--ease-soft);
 }

@@ -4,24 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contact · Dragée Paris</title>
-  <meta name="description" content="Une question, une idée, un projet ? Contactez Dragée Paris par message et recevez une réponse dans les 48 heures.">
+  <title>Commander mes dragées · Dragée Paris</title>
+  <meta name="description" content="Vous savez déjà ce que vous voulez ? Commandez vos dragées Avola, traditionnelles ou chocolat en quelques secondes, sans passer par le configurateur complet.">
   <link rel="stylesheet" href="style.css">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dragée Paris">
-  <meta property="og:title" content="Contact · Dragée Paris">
-  <meta property="og:description" content="Une question, une idée, un projet ? Contactez Dragée Paris par message et recevez une réponse dans les 48 heures.">
-  <meta property="og:url" content="https://se-ho-ux.github.io/drageeparis/message.html">
+  <meta property="og:title" content="Commander mes dragées · Dragée Paris">
+  <meta property="og:description" content="Vous savez déjà ce que vous voulez ? Commandez vos dragées Avola, traditionnelles ou chocolat en quelques secondes, sans passer par le configurateur complet.">
+  <meta property="og:url" content="https://se-ho-ux.github.io/drageeparis/commande-boutique.html">
   <meta property="og:image:width" content="1659">
   <meta property="og:image:height" content="948">
   <meta property="og:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact · Dragée Paris">
-  <meta name="twitter:description" content="Une question, une idée, un projet ? Contactez Dragée Paris par message et recevez une réponse dans les 48 heures.">
+  <meta name="twitter:title" content="Commander mes dragées · Dragée Paris">
+  <meta name="twitter:description" content="Vous savez déjà ce que vous voulez ? Commandez vos dragées Avola, traditionnelles ou chocolat en quelques secondes, sans passer par le configurateur complet.">
   <meta name="twitter:image" content="https://se-ho-ux.github.io/drageeparis/images/v_def/home-page-hero.png">
-  <link rel="canonical" href="https://se-ho-ux.github.io/drageeparis/message.html">
+  <link rel="canonical" href="https://se-ho-ux.github.io/drageeparis/commande-boutique.html">
+  <meta name="robots" content="noindex, follow">
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/drageeparis/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/drageeparis/favicon-32x32.png">
@@ -147,8 +148,8 @@
   <main id="main">
 
     <div class="section-intro fade-in">
-      <h1 class="section-intro__title">Contact</h1>
-      <p class="section-intro__sub">Une question, une idée, un projet à partager ? Nous lisons chaque message avec attention et vous répondons sous 48 heures.</p>
+      <h1 class="section-intro__title">Commander mes dragées</h1>
+      <p class="section-intro__sub">Vous savez déjà ce que vous voulez ? Dites-nous en quelques champs la catégorie, le produit, la quantité et la date souhaitée : nous revenons vers vous avec un devis sous 48 heures.</p>
     </div>
 
     <section class="form-section fade-in">
@@ -164,59 +165,77 @@
             <a href="tel:+33608671443" class="contact__sidebar-value">06 08 67 14 43</a>
             <p class="contact__sidebar-note">Du lundi au vendredi, de 9h à 18h</p>
           </div>
-          <div class="contact__sidebar-item">
-            <span class="contact__sidebar-label">Atelier</span>
-            <span class="contact__sidebar-value">145 Ter, Av. Jacques Chirac</span>
-            <p class="contact__sidebar-note">91200 Athis-Mons, Île-de-France</p>
-          </div>
           <div class="contact__sidebar-box">
-            <p>Pour un projet personnalisé, utilisez le formulaire <strong>Lancer ma création</strong> : il nous permet de préparer votre devis avec précision.</p>
+            <p>Un projet plus personnalisé (couleurs, coffrets, événement) ? Utilisez notre configurateur <strong>Lancer ma création</strong>.</p>
             <a href="contact.html" class="contact__sidebar-link">Lancer ma création →</a>
           </div>
         </aside>
 
         <div>
-          <form class="form" id="msg-form" novalidate>
+          <form class="form" id="boutique-order-form" novalidate>
             <div class="form__row">
               <div class="form__group">
-                <label class="form__label" for="msg-nom">Nom <span class="required" aria-hidden="true">*</span></label>
-                <input class="form__input" type="text" id="msg-nom" name="nom" autocomplete="name" placeholder="Votre nom" required>
-                <span class="form__error" id="err-nom">Ce champ est obligatoire.</span>
+                <label class="form__label" for="bo-nom">Nom <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="text" id="bo-nom" name="nom" autocomplete="name" placeholder="Votre nom" required>
+                <span class="form__error" id="err-bo-nom">Ce champ est obligatoire.</span>
               </div>
               <div class="form__group">
-                <label class="form__label" for="msg-email">E-mail <span class="required" aria-hidden="true">*</span></label>
-                <input class="form__input" type="email" id="msg-email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
-                <span class="form__error" id="err-email">Adresse e-mail invalide.</span>
+                <label class="form__label" for="bo-email">E-mail <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="email" id="bo-email" name="email" autocomplete="email" placeholder="votre@email.fr" required>
+                <span class="form__error" id="err-bo-email">Adresse e-mail invalide.</span>
               </div>
             </div>
             <div class="form__group">
-              <label class="form__label" for="msg-message">Message <span class="required" aria-hidden="true">*</span></label>
-              <textarea class="form__textarea msg-textarea" id="msg-message" name="message" placeholder="Votre message..." required></textarea>
-              <span class="form__error" id="err-message">Veuillez saisir votre message.</span>
+              <label class="form__label" for="bo-categorie">Catégorie de dragées souhaitée <span class="required" aria-hidden="true">*</span></label>
+              <select class="form__select" id="bo-categorie" name="categorie" required>
+                <option value="" disabled selected>Choisissez une catégorie</option>
+                <option value="Avola">Avola</option>
+                <option value="Traditionnelles">Traditionnelles</option>
+                <option value="Chocolat">Chocolat</option>
+                <option value="Autres">Autres</option>
+              </select>
+              <span class="form__error" id="err-bo-categorie">Veuillez choisir une catégorie.</span>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="bo-produit">Nom du produit souhaité <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="text" id="bo-produit" name="produit" placeholder="Exemple : Dragée chocolat jaune" required>
+                <span class="form__error" id="err-bo-produit">Ce champ est obligatoire.</span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="bo-quantite">Quantité souhaitée (en grammes) <span class="required" aria-hidden="true">*</span></label>
+                <input class="form__input" type="number" id="bo-quantite" name="quantite" min="1" step="1" placeholder="500" required>
+                <span class="form__error" id="err-bo-quantite">Veuillez indiquer une quantité.</span>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="bo-date">Date souhaitée de réception <span class="required" aria-hidden="true">*</span></label>
+              <input class="form__input" type="date" id="bo-date" name="date" required>
+              <span class="form__error" id="err-bo-date">Veuillez indiquer une date.</span>
             </div>
             <div class="form__honeypot" aria-hidden="true">
-              <label for="msg-company">Ne pas remplir ce champ</label>
-              <input type="text" id="msg-company" name="_gotcha" tabindex="-1" autocomplete="off">
+              <label for="bo-company">Ne pas remplir ce champ</label>
+              <input type="text" id="bo-company" name="_gotcha" tabindex="-1" autocomplete="off">
             </div>
             <div class="msg-form__footer">
               <p class="msg-form__note">Les champs marqués <span aria-hidden="true">*</span> sont obligatoires. Réponse garantie sous 48 heures.</p>
-              <button type="submit" class="msg-form__submit">Envoyer le message</button>
+              <button type="submit" class="msg-form__submit">Envoyer ma demande</button>
             </div>
-            <p id="msg-send-error" hidden style="font-size:13px;color:#c0392b;margin-top:12px;font-family:var(--font);font-weight:300;">
+            <p id="bo-send-error" hidden style="font-size:13px;color:#c0392b;margin-top:12px;font-family:var(--font);font-weight:300;">
               Une erreur est survenue. Réessayez ou contactez-nous directement à <a href="mailto:drageeparis@gmail.com" style="color:inherit">drageeparis@gmail.com</a>.
             </p>
           </form>
 
-          <div class="msg-confirmation" id="msg-confirmation" hidden>
+          <div class="msg-confirmation" id="bo-confirmation" hidden>
             <div class="msg-confirmation__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
             </div>
-            <h2 class="msg-confirmation__title">Message bien envoyé !</h2>
-            <p class="msg-confirmation__text">Merci pour votre message. Nous vous répondrons dans les 48 heures ouvrées.</p>
-            <button class="msg-confirmation__back" id="msg-back">Envoyer un autre message</button>
+            <h2 class="msg-confirmation__title">Demande bien envoyée !</h2>
+            <p class="msg-confirmation__text">Merci pour votre commande. Nous revenons vers vous dans les 48 heures ouvrées avec un devis.</p>
+            <button class="msg-confirmation__back" id="bo-back">Envoyer une autre demande</button>
           </div>
         </div>
 
@@ -257,9 +276,16 @@
   <script src="main.js"></script>
   <script>
     (function () {
-      var form = document.getElementById('msg-form');
-      var confirmation = document.getElementById('msg-confirmation');
-      var backBtn = document.getElementById('msg-back');
+      var form = document.getElementById('boutique-order-form');
+      var confirmation = document.getElementById('bo-confirmation');
+      var backBtn = document.getElementById('bo-back');
+
+      /* Pré-remplit le produit si on arrive depuis une fiche produit (?produit=...) */
+      var params = new URLSearchParams(window.location.search);
+      var produitParam = params.get('produit');
+      if (produitParam) {
+        document.getElementById('bo-produit').value = produitParam;
+      }
 
       function setError(inputId, errorId, show) {
         var input = document.getElementById(inputId);
@@ -276,15 +302,21 @@
       }
 
       function validate() {
-        var nom = document.getElementById('msg-nom').value.trim();
-        var email = document.getElementById('msg-email').value.trim();
-        var message = document.getElementById('msg-message').value.trim();
-        var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        var nom       = document.getElementById('bo-nom').value.trim();
+        var email     = document.getElementById('bo-email').value.trim();
+        var categorie = document.getElementById('bo-categorie').value;
+        var produit   = document.getElementById('bo-produit').value.trim();
+        var quantite  = document.getElementById('bo-quantite').value;
+        var date      = document.getElementById('bo-date').value;
+        var emailOk   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
         var ok = true;
-        ok = setError('msg-nom', 'err-nom', nom.length === 0) && ok;
-        ok = setError('msg-email', 'err-email', !emailOk) && ok;
-        ok = setError('msg-message', 'err-message', message.length === 0) && ok;
+        ok = setError('bo-nom', 'err-bo-nom', nom.length === 0) && ok;
+        ok = setError('bo-email', 'err-bo-email', !emailOk) && ok;
+        ok = setError('bo-categorie', 'err-bo-categorie', !categorie) && ok;
+        ok = setError('bo-produit', 'err-bo-produit', produit.length === 0) && ok;
+        ok = setError('bo-quantite', 'err-bo-quantite', !quantite || Number(quantite) <= 0) && ok;
+        ok = setError('bo-date', 'err-bo-date', !date) && ok;
         return ok;
       }
 
@@ -292,10 +324,13 @@
         e.preventDefault();
         if (!validate()) return;
 
-        var nom     = document.getElementById('msg-nom').value.trim();
-        var email   = document.getElementById('msg-email').value.trim();
-        var message = document.getElementById('msg-message').value.trim();
-        var gotcha  = document.getElementById('msg-company').value;
+        var nom       = document.getElementById('bo-nom').value.trim();
+        var email     = document.getElementById('bo-email').value.trim();
+        var categorie = document.getElementById('bo-categorie').value;
+        var produit   = document.getElementById('bo-produit').value.trim();
+        var quantite  = document.getElementById('bo-quantite').value.trim();
+        var date      = document.getElementById('bo-date').value;
+        var gotcha    = document.getElementById('bo-company').value;
 
         if (gotcha) {
           /* Champ piège rempli : soumission robot, on affiche un faux succès sans rien envoyer */
@@ -312,26 +347,34 @@
         fetch('https://formspree.io/f/XXXXXXXXX', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ 'Nom': nom, 'Email': email, 'Message': message, '_gotcha': gotcha })
+          body: JSON.stringify({
+            'Nom': nom,
+            'Email': email,
+            'Catégorie': categorie,
+            'Produit': produit,
+            'Quantité (g)': quantite,
+            'Date souhaitée': date,
+            '_gotcha': gotcha
+          })
         })
         .then(function(r) { return r.json().then(function(d) { return { ok: r.ok }; }); })
         .then(function(res) {
           if (res.ok) {
             form.hidden = true;
             confirmation.hidden = false;
-            var errEl = document.getElementById('msg-send-error');
+            var errEl = document.getElementById('bo-send-error');
             if (errEl) errEl.hidden = true;
           } else {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Envoyer le message';
-            var errEl = document.getElementById('msg-send-error');
+            submitBtn.textContent = 'Envoyer ma demande';
+            var errEl = document.getElementById('bo-send-error');
             if (errEl) errEl.hidden = false;
           }
         })
         .catch(function() {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Envoyer le message';
-          var errEl = document.getElementById('msg-send-error');
+          submitBtn.textContent = 'Envoyer ma demande';
+          var errEl = document.getElementById('bo-send-error');
           if (errEl) errEl.hidden = false;
         });
       });
@@ -343,7 +386,7 @@
         document.querySelectorAll('.form__group.has-error').forEach(function (g) {
           g.classList.remove('has-error');
         });
-        document.getElementById('msg-nom').focus();
+        document.getElementById('bo-nom').focus();
       });
     })();
   </script>
