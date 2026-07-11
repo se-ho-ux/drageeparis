@@ -2199,12 +2199,15 @@ span.btn--outline:hover {
   margin: 0 auto;
   line-height: 1.7;
 }
+.order-page .section-intro { padding-top: 110px; margin-bottom: 32px; }
 @media (max-width: 768px) {
   .section-intro { padding: 96px 20px 0; margin-bottom: 28px; }
   .section-intro__sub { font-size: 12px; }
+  .order-page .section-intro { margin-bottom: 16px; }
 }
 @media (max-width: 480px) {
   .section-intro { padding: 88px 20px 0; margin-bottom: 20px; }
+  .order-page .section-intro { margin-bottom: 12px; }
 }
 
 /* ==============================================
@@ -3085,6 +3088,7 @@ span.btn--outline:hover {
   padding: 88px 52px;
   background: var(--paper);
 }
+.order-page .form-section { padding-top: 40px; }
 .contact__layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -3096,7 +3100,6 @@ span.btn--outline:hover {
   position: sticky;
   top: 96px;
   aspect-ratio: 3 / 4;
-  border-radius: var(--border-radius--card);
   overflow: hidden;
 }
 .contact__sidebar--photo img {
