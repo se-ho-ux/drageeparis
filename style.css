@@ -1182,7 +1182,7 @@ span.btn--outline:hover {
 }
 
 /* ==============================================
-   DUO CAROUSEL (dragées & bougies pages)
+   DUO CAROUSEL (dragées)
 ============================================== */
 .duo-carousel-wrap {
   overflow: hidden;
@@ -1233,39 +1233,6 @@ span.btn--outline:hover {
 .col-item:hover .col-item__duo-frame img {
   filter: brightness(1.04) saturate(1.05);
 }
-.col-item__bougie-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 28px 12px 14px;
-  background: linear-gradient(to top, rgba(17, 13, 8, 0.72), transparent);
-  opacity: 0;
-  transition: opacity 0.45s var(--ease-soft);
-  pointer-events: none;
-}
-.col-item__duo-frame:hover .col-item__bougie-label {
-  opacity: 1;
-}
-.col-item__bougie-num {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  font-family: var(--font);
-}
-.col-item__bougie-name {
-  display: block;
-  font-family: var(--serif);
-  font-size: 13px;
-  color: var(--blanc);
-  font-weight: 400;
-}
-
 @media (max-width: 1024px) {
   .duo-carousel-wrap { padding: 48px 24px 64px; }
   .duo-carousel__track { gap: 28px; }
@@ -2175,7 +2142,7 @@ span.btn--outline:hover {
 
 
 /* ==============================================
-   SECTION INTRO — version centrée (dragées, bougies)
+   SECTION INTRO — version centrée (dragées)
 ============================================== */
 .section-intro {
   padding: 152px 52px 0;
@@ -2435,7 +2402,7 @@ span.btn--outline:hover {
 
 
 /* ==============================================
-   ACCORDION GALLERY (dragées & bougies)
+   ACCORDION GALLERY (dragées)
 ============================================== */
 .accord-gallery {
   display: flex;
@@ -2606,57 +2573,6 @@ span.btn--outline:hover {
   .gallery-filters { padding: 32px 20px 24px; }
 }
 @media (max-width: 480px)  { .gallery__grid { grid-template-columns: 1fr; } }
-
-
-/* ==============================================
-   BOUGIES GRID
-============================================== */
-.bougies__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--ink-20);
-  border-left: 1px solid var(--ink-20);
-}
-.bougie-card {
-  border-right: 1px solid var(--ink-20);
-  border-bottom: 1px solid var(--ink-20);
-  overflow: hidden;
-}
-.bougie-card__image { overflow: hidden; }
-.bougie-card__image img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.9s var(--ease);
-}
-.bougie-card:hover .bougie-card__image img { transform: scale(1.04); }
-.bougie-card__info { padding: 18px 20px 24px; }
-.bougie-card__fragrance {
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-60);
-  display: block;
-  margin-bottom: 6px;
-}
-.bougie-card__name {
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
-  color: var(--ink);
-}
-.bougie-card__desc {
-  font-size: 12.5px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--ink-60);
-}
-@media (max-width: 1024px) { .bougies__grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px)  { .bougies__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px)  { .bougies__grid { grid-template-columns: 1fr; } }
 
 
 /* ==============================================
@@ -3358,11 +3274,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 48px; }
 }
 
-@media (max-width: 480px) {
-  .bougies__grid { grid-template-columns: 1fr; }
-  .bougie-card__info { padding: 16px; }
-}
-
 @media (max-width: 768px) {
   .page-intro__visual img { min-height: 52vw; }
   .page-intro__sub { font-size: 13px; line-height: 1.7; }
@@ -3433,10 +3344,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 
 @media (max-width: 768px) {
   .carousel-arrow { width: 32px; height: 32px; }
-}
-
-@media (max-width: 768px) {
-  .col-item__bougie-label { opacity: 1; }
 }
 
 @media (max-width: 480px) {
@@ -4820,14 +4727,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 /* Galerie plate (dragees.html, boutique sub-pages) */
 .product-gallery {
   padding: 0;
-}
-
-/* Bougies gallery — sticky filter */
-.bougies-gallery .cedric-filter {
-  top: 68px;
-}
-@media (max-width: 900px) {
-  .bougies-gallery .cedric-filter { top: 56px; }
 }
 
 /* Sections produit par catégorie */

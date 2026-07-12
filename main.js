@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateItems(visibleOnLoad);
   }
 
-  /* ---- 5. Filtres galeries produits (dragees.html + bougies.html) ---- */
+  /* ---- 5. Filtres galeries produits (dragees.html) ---- */
   function initProductFilter(filterId, gridId) {
     const filterEl  = document.getElementById(filterId);
     const grid      = document.getElementById(gridId);
@@ -401,7 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initProductFilter('collection-filter', 'dragees-grid');
-  initProductFilter('bougies-filter', 'bougies-grid');
   initProductFilter('boutique-filter', 'boutique-grid');
   initProductFilter('atelier-filter', 'atelier-grid');
 
