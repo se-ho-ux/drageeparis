@@ -308,8 +308,7 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Envoi en cours…';
 
-        /* TODO: Remplacez XXXXXXXXX par votre identifiant Formspree (formspree.io) */
-        fetch('https://formspree.io/f/XXXXXXXXX', {
+        fetch('https://formspree.io/f/xzdnpoez', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ 'Nom': nom, 'Email': email, 'Message': message, '_gotcha': gotcha })
