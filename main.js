@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateItems(visibleOnLoad);
   }
 
-  /* ---- 5. Filtres galeries produits (dragees.html) ---- */
+  /* ---- 5. Filtres galeries produits (boutique.html / atelier.html) ---- */
   function initProductFilter(filterId, gridId) {
     const filterEl  = document.getElementById(filterId);
     const grid      = document.getElementById(gridId);
@@ -400,7 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilter(urlParams.get('filter') || 'all', urlParams.get('sub') || undefined);
   }
 
-  initProductFilter('collection-filter', 'dragees-grid');
   initProductFilter('boutique-filter', 'boutique-grid');
   initProductFilter('atelier-filter', 'atelier-grid');
 
@@ -465,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---- 10. Newsletter forms ---- */
+  /* ---- 9. Newsletter forms ---- */
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -481,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---- 11. Lightbox (pages produit) ---- */
+  /* ---- 10. Lightbox (pages produit) ---- */
   (function() {
     const gallery = document.querySelector('.pdp__gallery');
     if (!gallery) return;
@@ -523,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ---- 12. Bannière RGPD ---- */
+  /* ---- 11. Bannière RGPD ---- */
   (function() {
     if (localStorage.getItem('dp-consent')) return;
     const banner = document.createElement('div');
@@ -551,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rgpd-decline').addEventListener('click', () => dismiss('declined'));
   })();
 
-  /* ---- 13. Carrousel garanties (mobile, page d'accueil) ---- */
+  /* ---- 12. Carrousel garanties (mobile, page d'accueil) ---- */
   (function() {
     var grid = document.querySelector('.garanties__grid--4');
     var dots = document.querySelectorAll('.garanties__dot');
@@ -571,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ---- 14. Bascule grille / liste (boutique & atelier, mobile) ---- */
+  /* ---- 13. Bascule grille / liste (boutique & atelier, mobile) ---- */
   (function() {
     var btnGrid = document.getElementById('view-grid');
     var btnList = document.getElementById('view-list');
@@ -592,7 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnList.addEventListener('click', setList);
   })();
 
-  /* ---- 15. Fiche produit : dropdown quantité -> prix ---- */
+  /* ---- 14. Fiche produit : dropdown quantité -> prix ---- */
   (function() {
     document.querySelectorAll('[data-price-select]').forEach(function(select) {
       var block = select.closest('[data-qty-block]');
@@ -609,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  /* ---- 16. Transmet le produit + sa photo aux formulaires (commande-boutique / contact) ---- */
+  /* ---- 15. Transmet le produit + sa photo aux formulaires (commande-boutique / contact) ---- */
   (function() {
     function textWithSpaces(el) {
       var text = '';

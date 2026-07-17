@@ -27,11 +27,12 @@ drageeparis/
 ├── main.js                       # JavaScript (nav, animations, filtres, formulaires) — sections numérotées en commentaires
 ├── robots.txt / sitemap.xml      # À régénérer si des pages sont ajoutées/retirées (voir SEO)
 ├── manifest.json                 # PWA minimal (icônes, theme-color)
+├── logos-svg/                     # Exports de marque (hors usage site, voir plus bas)
 └── images/
-    ├── mariage/, premiers-instants/, fetes-religieuses/, anniv/, naiss/, bapteme/   # Photos Atelier par occasion
-    ├── chocolat-amande/, amandes-avola/, amandes-traditionnelles/, dragee_chocolat/ # Photos Boutique par famille
-    ├── incontournables/, images-librairy/, illustration-habillage/, v_def/         # Visuels homepage / pages institutionnelles
-    └── artisanat_1.png, illustration3.png                                          # Photos atelier / à propos
+    ├── mariage/, premiers-instants/, fetes-religieuses/, anniversaire/, naissance/, bapteme/  # Photos Atelier par occasion
+    ├── chocolat-amande/, amandes-avola/, amandes-traditionnelles/, dragee-chocolat/           # Photos Boutique par famille
+    ├── images-library/, illustration-habillage/, hero/                                        # Visuels homepage / pages institutionnelles
+    └── artisanat_1.png, illustration3.png                                                     # Photos atelier / à propos
 ```
 
 **Chaque fiche produit est indépendante** (pas de templating serveur) : modifier le header, le footer ou la structure d'une page implique de répercuter le changement sur les fichiers concernés à la main. Header et footer sont volontairement tenus identiques sur presque toutes les pages — vérifier qu'un changement ne casse pas cette cohérence avant de commiter.
@@ -83,6 +84,10 @@ Pour régénérer un endpoint (compte Formspree, formulaire expiré, etc.), remp
 ## Déploiement sur GitHub Pages
 
 Le site est déployé automatiquement (Actions `pages-build-deployment`) à chaque push sur `main`, à l'URL `https://se-ho-ux.github.io/drageeparis/`. Pas de domaine personnalisé configuré (pas de `CNAME`) au moment de la rédaction.
+
+## Dossier `logos-svg/`
+
+Exports de la marque (symbole seul + lockup horizontal, en noir/blanc, avec/sans fond) destinés aux usages hors site — impression, réseaux sociaux, partenaires. Ce dossier n'est référencé par aucune page : le favicon et les icônes utilisés par le site (`favicon.svg`, `apple-touch-icon.png`…) sont des fichiers séparés à la racine.
 
 ## Fonctionnalités
 

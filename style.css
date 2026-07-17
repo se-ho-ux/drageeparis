@@ -1,17 +1,8 @@
 /* ================================================
    DRAGÉE PARIS — Direction Artistique Premium
-   Typographie : Post Grotesk (Light / Book / Medium)
-   Palette : Crème & Encre
+   Typographie : Akkurat (Light / Regular / Bold)
+   Palette : voir "Système Cédric" ci-dessous
 ================================================ */
-
-/* ---- Wayfinder CF Bold (logo nav) ---- */
-@font-face {
-  font-family: 'Wayfinder';
-  src: url('./fonts/Fontspring-DEMO-wayfindercf-bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* ---- Akkurat ---- */
 @font-face {
