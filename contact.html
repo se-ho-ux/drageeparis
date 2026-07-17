@@ -597,7 +597,7 @@
   (function() {
     var TOTAL = 6;
     var current = 1;
-    var data = { division: '', evenement: '', quantite: '', date: '', couleurs: [], message: '', visuel: '' };
+    var data = { division: '', evenement: '', quantite: '', date: '', couleurs: [], message: '', visuel: '', produit: '', image: '' };
 
     var bar     = document.getElementById('wizard-bar-fill');
     var barEl   = document.getElementById('wizard-bar');
@@ -804,6 +804,8 @@
             'Email': email,
             'Téléphone': tel || 'Non renseigné',
             'Division': data.division || 'Non précisée',
+            'Produit consulté': data.produit || 'Non précisé',
+            'Photo du produit': data.image || 'Non précisée',
             'Événement': data.evenement,
             'Quantité': data.quantite,
             'Date': data.date || 'Non précisée',
@@ -856,9 +858,12 @@
       });
     });
 
-    // Pré-sélectionner la division si ?div= dans l'URL
+    // Pré-sélectionner la division si ?div= dans l'URL, et mémoriser le produit d'origine (?produit=&image=)
     (function() {
       var params = new URLSearchParams(window.location.search);
+      data.produit = params.get('produit') || '';
+      data.image = params.get('image') || '';
+
       var div = params.get('div');
       if (!div) return;
       var val = div === 'boutique' ? 'La Boutique' : div === 'atelier' ? "L'Atelier" : null;

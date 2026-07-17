@@ -609,4 +609,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  /* ---- 16. Transmet le produit + sa photo aux formulaires (commande-boutique / contact) ---- */
+  (function() {
+    function textWithSpaces(el) {
+      var text = '';
+      el.childNodes.forEach(function(node) {
+        text += node.nodeType === 1 && node.tagName === 'BR' ? ' ' : node.textContent;
+      });
+      return text.replace(/\s+/g, ' ').trim();
+    }
+
+    function addProductParams(link, produit, imageSrc) {
+      if (!link || !produit || !imageSrc) return;
+      var href = link.getAttribute('href');
+      if (!href || (href.indexOf('contact.html') === -1 && href.indexOf('commande-boutique.html') === -1)) return;
+      var parts = href.split('?');
+      var params = new URLSearchParams(parts[1] || '');
+      params.set('produit', produit);
+      params.set('image', new URL(imageSrc, window.location.href).href);
+      link.setAttribute('href', parts[0] + '?' + params.toString());
+    }
+
+    /* Fiche produit (boutique + atelier) */
+    var pdpCta = document.querySelector('.pdp__cta');
+    var pdpImg = document.querySelector('.pdp__gallery img');
+    var pdpTitle = document.querySelector('.pdp__title');
+    if (pdpCta && pdpImg && pdpTitle) {
+      addProductParams(pdpCta, textWithSpaces(pdpTitle), pdpImg.getAttribute('src'));
+    }
+
+    /* Cartes produit (boutique.html, atelier.html) */
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      var img = card.querySelector('.product-card__media img');
+      var titleEl = card.querySelector('.product-card__title');
+      if (!img || !titleEl) return;
+      var produit = textWithSpaces(titleEl);
+      var imageSrc = img.getAttribute('src');
+      card.querySelectorAll('.product-card__actions a').forEach(function(link) {
+        addProductParams(link, produit, imageSrc);
+      });
+    });
+  })();
+
 });

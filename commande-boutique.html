@@ -268,9 +268,10 @@
       var confirmation = document.getElementById('bo-confirmation');
       var backBtn = document.getElementById('bo-back');
 
-      /* Pré-remplit le produit si on arrive depuis une fiche produit (?produit=...) */
+      /* Pré-remplit le produit si on arrive depuis une fiche produit (?produit=...&image=...) */
       var params = new URLSearchParams(window.location.search);
       var produitParam = params.get('produit');
+      var imageParam = params.get('image') || '';
       if (produitParam) {
         document.getElementById('bo-produit').value = produitParam;
       }
@@ -339,6 +340,7 @@
             'Email': email,
             'Catégorie': categorie,
             'Produit': produit,
+            'Photo du produit': imageParam || 'Non précisée',
             'Quantité (g)': quantite,
             'Date souhaitée': date,
             '_gotcha': gotcha
