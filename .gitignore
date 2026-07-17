@@ -31,3 +31,8 @@ node_modules/
 # Builds
 dist/
 build/
+
+# Outillage assistant IA (config locale, hors dépôt du site)
+.agents/
+emilkowalski/
+skills-lock.json

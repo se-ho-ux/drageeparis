@@ -70,7 +70,11 @@ input, textarea, select { font-family: inherit; }
   overflow: hidden;
 }
 
-/* ---- Variables — Système Cédric ---- */
+/* ---- Variables — Système Cédric ----
+   "Cédric" est le nom de code interne de la direction artistique de ce site
+   (repris dans les classes .cedric-* et les commentaires de section ci-dessous).
+   Ce n'est pas une référence externe à retrouver — à réutiliser tel quel pour
+   toute nouvelle section qui suit la même direction artistique. ---- */
 :root {
   /* === COULEURS CÉDRIC ET LA CHOCOLATERIE === */
   --color-background:  #F3ECE6;

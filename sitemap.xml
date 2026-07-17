@@ -76,11 +76,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://se-ho-ux.github.io/drageeparis/produit-amande-chocolat.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://se-ho-ux.github.io/drageeparis/produit-anniversaire-classique.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -442,11 +437,6 @@
   </url>
   <url>
     <loc>https://se-ho-ux.github.io/drageeparis/produit-naissance-univers-marin.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://se-ho-ux.github.io/drageeparis/produit-pastel.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
