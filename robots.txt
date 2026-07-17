@@ -5,13 +5,6 @@ Allow: /
 Disallow: /boutique-avola.html
 Disallow: /boutique-chocolats.html
 Disallow: /boutique-gourmandes.html
-Disallow: /atelier-premiers-instants.html
-Disallow: /atelier-heritage.html
-Disallow: /atelier-honneurs.html
-Disallow: /atelier-millesimes.html
-Disallow: /atelier-mariage.html
-Disallow: /atelier-fetes-religieuses.html
-Disallow: /atelier-anniversaires.html
-Disallow: /atelier-moments-precieux.html
+Disallow: /boutique-traditionnelles.html
 
 Sitemap: https://se-ho-ux.github.io/drageeparis/sitemap.xml
