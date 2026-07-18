@@ -24,7 +24,10 @@ drageeparis/
 ├── mentions-legales.html         # Mentions légales & CGV
 ├── 404.html
 ├── style.css                     # Feuille de style unique (~5 900 lignes, sections commentées en majuscules)
-├── main.js                       # JavaScript (nav, animations, filtres, formulaires) — sections numérotées en commentaires
+├── main.js                       # JavaScript commun (nav, animations, filtres) — sections numérotées en commentaires
+├── contact-wizard.js             # Logique du formulaire contact.html (script externe, imposé par la CSP)
+├── commande-boutique-form.js     # Logique du formulaire commande-boutique.html (idem)
+├── message-form.js               # Logique du formulaire message.html (idem)
 ├── robots.txt / sitemap.xml      # À régénérer si des pages sont ajoutées/retirées (voir SEO)
 ├── manifest.json                 # PWA minimal (icônes, theme-color)
 ├── logos-svg/                     # Exports de marque (hors usage site, voir plus bas)
@@ -68,11 +71,18 @@ Le site utilise 3 formulaires Formspree indépendants, chacun avec son propre en
 
 | Page | Usage | Endpoint |
 |---|---|---|
-| `contact.html` | Wizard "Lancer ma création" (Atelier) | `formspree.io/f/mlgqrzed` (via `var FORMSPREE_ID` dans le `<script>` de la page) |
-| `commande-boutique.html` | Commande Boutique | `formspree.io/f/xeeyjnae` (codé en dur dans le `fetch()`) |
-| `message.html` | Contact simple | `formspree.io/f/xzdnpoez` (codé en dur dans le `fetch()`) |
+| `contact.html` | Wizard "Lancer ma création" (Atelier) | `formspree.io/f/mlgqrzed` (via `var FORMSPREE_ID` dans `contact-wizard.js`) |
+| `commande-boutique.html` | Commande Boutique | `formspree.io/f/xeeyjnae` (codé en dur dans `commande-boutique-form.js`) |
+| `message.html` | Contact simple | `formspree.io/f/xzdnpoez` (codé en dur dans `message-form.js`) |
 
-Pour régénérer un endpoint (compte Formspree, formulaire expiré, etc.), remplacer l'ID à l'emplacement correspondant ci-dessus — il n'y a pas de configuration centralisée. Chaque formulaire transmet aussi l'image du produit cliqué par le prospect (paramètres d'URL `produit`/`image`, voir `main.js` section 16) pour que le mail reçu par Dragée Paris inclue la photo de référence.
+Pour régénérer un endpoint (compte Formspree, formulaire expiré, etc.), remplacer l'ID à l'emplacement correspondant ci-dessus — il n'y a pas de configuration centralisée. Chaque formulaire transmet aussi l'image du produit cliqué par le prospect (paramètres d'URL `produit`/`image`, voir `main.js` section 15) pour que le mail reçu par Dragée Paris inclue la photo de référence.
+
+## Sécurité
+
+- **CSP stricte** : `script-src 'self'` (sans `'unsafe-inline'`) sur les 97 pages. C'est pourquoi la logique des 3 formulaires vit dans des fichiers externes (`contact-wizard.js`, `commande-boutique-form.js`, `message-form.js`) plutôt que dans des `<script>` inline — **toute nouvelle logique JS sur une page doit suivre le même principe** (fichier externe, jamais de `<script>` inline avec du code), sous peine d'être bloquée par la CSP. `style-src` conserve `'unsafe-inline'` (usage massif de `style=""` dans les 97 pages, retirer ce point demanderait une refonte hors de proportion).
+- **`frame-ancestors`** (anti-clickjacking) ne peut pas être fixé : cette directive CSP est ignorée par les navigateurs quand elle est livrée via balise `<meta>` (elle exige un en-tête HTTP), et GitHub Pages ne permet pas de configurer d'en-têtes personnalisés. Limitation de l'hébergeur, pas un oubli — à garder en tête si le site migre un jour vers un hébergeur qui autorise les en-têtes custom (Netlify, Cloudflare Pages…).
+- Les paramètres d'URL `produit`/`image` transmis aux formulaires sont revalidés côté formulaire (`isSafeImageUrl()` dans `contact-wizard.js` / `commande-boutique-form.js`) : seule une image same-origin sous `/images/` est acceptée avant d'être incluse dans l'e-mail envoyé au propriétaire — évite qu'un lien forgé n'insère une URL arbitraire dans sa boîte mail.
+- Les 3 formulaires ont un champ piège anti-spam (`_gotcha`, invisible et ignoré des lecteurs d'écran) : si rempli, la soumission est abandonnée côté client sans requête réseau.
 
 ## SEO
 
