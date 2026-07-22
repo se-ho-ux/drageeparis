@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const SHOW_AFTER = 8;
     const isHomePage = !header.classList.contains('header--inner');
     const isMobile   = () => window.innerWidth <= 1100;
-    // Sur mobile homepage, TOP_ZONE = fin du hero (100vh)
     const TOP_ZONE   = () => {
       if (isHomePage && isMobile()) {
         const hero = document.querySelector('.hero');
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(() => {
         const y = window.scrollY;
         const topZone = TOP_ZONE();
-        // Mobile homepage : fond blanc uniquement après le hero
         const scrolledThreshold = (isHomePage && isMobile()) ? topZone : 40;
         header.classList.toggle('scrolled', y > scrolledThreshold);
         const menuOpen = drawer && drawer.getAttribute('aria-hidden') === 'false';
@@ -100,18 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drawerToggle.addEventListener('click', openDrawer);
     drawerClose?.addEventListener('click', closeDrawer);
-    /* Clic sur la zone droite visible (hors panneau) ferme le menu */
     drawer.addEventListener('click', e => {
       if (!e.target.closest('.drawer__content')) closeDrawer();
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-    /* Activation des sous-menus au clic uniquement */
     mainItems.forEach(item => {
       item.querySelector('.drawer__main-btn')?.addEventListener('click', () => activateSub(item.dataset.sub));
     });
 
-    /* Soulignement pour À propos et Contact (pas de sous-menu) */
     allDrawerItems.filter(i => !i.dataset.sub).forEach(item => {
       item.querySelector('.drawer__main-btn')?.addEventListener('click', () => {
         allDrawerItems.forEach(i => i.classList.remove('is-active'));
@@ -120,10 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    /* Fermer quand on clique un lien */
     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-    /* Bouton Retour (mobile) — revient au panneau principal sans fermer */
     const drawerBack = document.getElementById('drawer-back');
     const closeSub = () => {
       allSubs.forEach(s => { s.setAttribute('aria-hidden', 'true'); s.inert = true; s.classList.remove('is-visible'); });
@@ -131,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     drawerBack?.addEventListener('click', closeSub);
 
-    /* Sous-catégories dépliables (ex. Premiers instants > Naissance / Gender reveal / Baby shower) */
     drawer.querySelectorAll('.drawer__sub-group-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
         const group = trigger.closest('.drawer__sub-group');
@@ -190,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeFilter = 'all';
     let page = 0;
 
-    /* -- filter toggle -- */
     if (toggleBtn && filterOpts) {
       toggleBtn.addEventListener('click', () => {
         const isOpen = filterOpts.classList.toggle('open');
@@ -208,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.remove('col-item--entering');
         item.style.animationDelay = '';
       });
-      track.offsetHeight; // force reflow
+      track.offsetHeight;
       items.forEach((item, idx) => {
         item.style.animationDelay = `${idx * 0.07}s`;
         item.classList.add('col-item--entering');
@@ -275,12 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => { page = 0; render(false); }, { passive: true });
 
-    // Suivi des puces au scroll horizontal (mobile)
     if (wrapEl) {
       wrapEl.addEventListener('scroll', () => {
         if (window.innerWidth > 640) return;
-        const firstItem = track.querySelector('.col-item[style*="display: none"]') ||
-                          track.querySelector('.col-item:not([style*="display: none"])');
         const items = Array.from(track.querySelectorAll('.col-item')).filter(i => i.style.display !== 'none');
         if (!items.length) return;
         const itemWidth = items[0].offsetWidth;
@@ -297,18 +285,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, { passive: true });
 
-      // Scroll horizontal trackpad sur desktop
-      // – scroll vertical laissé au navigateur (navigation de page)
-      // – scroll horizontal capturé avec accumulation delta pour plus de douceur
       let wheelCooldown = false;
       let wheelAccum = 0;
       wrapEl.addEventListener('wheel', (e) => {
         if (window.innerWidth <= 640) return;
         const absX = Math.abs(e.deltaX);
         const absY = Math.abs(e.deltaY);
-        // Scroll principalement vertical → laisser la page défiler normalement
         if (absY > absX * 1.5) return;
-        // Scroll horizontal → capturer pour le carrousel
         e.preventDefault();
         if (wheelCooldown) return;
         wheelAccum += e.deltaX;
@@ -324,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     render(false);
 
-    // Stagger animation on initial load for first visible items
     const perPageInit = duoPerPage();
     const visibleOnLoad = allItems.filter(i => i.style.display !== 'none').slice(0, perPageInit);
     animateItems(visibleOnLoad);
@@ -359,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
         countEl.textContent = `(${visible})`;
       }
 
-      /* Sous-filtres : n'afficher que le groupe rattaché à la catégorie active */
       subGroups.forEach(group => {
         const isMatch = group.dataset.parent === f;
         group.classList.toggle('is-visible', isMatch);
@@ -444,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileLabel = document.getElementById('file-label-text');
   if (fileInput && fileLabel) {
     fileInput.addEventListener('change', () => {
-      fileLabel.textContent = fileInput.files[0]?.name ?? 'Cliquez pour ajouter une image d\'inspiration';
+      fileLabel.textContent = fileInput.files[0]?.name ?? "Cliquez pour ajouter une image d'inspiration";
     });
   }
 
@@ -531,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     banner.setAttribute('aria-label', 'Confidentialité');
     banner.innerHTML =
       '<p class="rgpd-banner__text">' +
-        'Ce site utilise vos données uniquement pour traiter vos demandes — aucun cookie publicitaire. ' +
+        'Ce site utilise vos données uniquement pour traiter vos demandes — aucun cookie publicitaire. ' +
         '<a href="mentions-legales.html#rgpd">En savoir plus</a>' +
       '</p>' +
       '<div class="rgpd-banner__actions">' +
@@ -629,7 +610,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link.setAttribute('href', parts[0] + '?' + params.toString());
     }
 
-    /* Fiche produit (boutique + atelier) */
     var pdpCta = document.querySelector('.pdp__cta');
     var pdpImg = document.querySelector('.pdp__gallery img');
     var pdpTitle = document.querySelector('.pdp__title');
@@ -637,7 +617,6 @@ document.addEventListener('DOMContentLoaded', () => {
       addProductParams(pdpCta, textWithSpaces(pdpTitle), pdpImg.getAttribute('src'));
     }
 
-    /* Cartes produit (boutique.html, atelier.html) */
     document.querySelectorAll('.product-card').forEach(function(card) {
       var img = card.querySelector('.product-card__media img');
       var titleEl = card.querySelector('.product-card__title');
@@ -648,6 +627,17 @@ document.addEventListener('DOMContentLoaded', () => {
         addProductParams(link, produit, imageSrc);
       });
     });
+  })();
+
+  /* ---- 16. FAB — bouton flottant mobile (bas-droite) ---- */
+  (function() {
+    if (window.innerWidth > 768) return;
+    var fab = document.createElement('a');
+    fab.href = 'contact.html';
+    fab.className = 'fab';
+    fab.setAttribute('aria-label', 'Lancer ma création');
+    fab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+    document.body.appendChild(fab);
   })();
 
 });
