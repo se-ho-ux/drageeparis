@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SHOW_AFTER = 8;
     const isHomePage = !header.classList.contains('header--inner');
     const isMobile   = () => window.innerWidth <= 1100;
+    const isPhone    = () => window.innerWidth <= 768;
     const TOP_ZONE   = () => {
       if (isHomePage && isMobile()) {
         const hero = document.querySelector('.hero');
@@ -29,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const y = window.scrollY;
         const topZone = TOP_ZONE();
         const scrolledThreshold = (isHomePage && isMobile()) ? topZone : 40;
-        header.classList.toggle('scrolled', y > scrolledThreshold);
+        const forceSolid = isHomePage && isPhone();
+        header.classList.toggle('scrolled', forceSolid || y > scrolledThreshold);
         const menuOpen = drawer && drawer.getAttribute('aria-hidden') === 'false';
         if (!menuOpen) {
           if (y <= topZone) {
