@@ -1,4 +1,3 @@
-/* ================================================
    DRAGÉE PARIS — Direction Artistique Premium
    Typographie : Akkurat (Light / Regular / Bold)
    Palette : voir "Système Cédric" ci-dessous
@@ -3167,31 +3166,6 @@ a.contact__sidebar-value:hover { opacity: 0.6; }
 @media (max-width: 480px) {
 }
 
-/* FAB — bouton flottant mobile "Lancer ma création" */
-.fab {
-  position: fixed;
-  right: 20px;
-  bottom: max(20px, env(safe-area-inset-bottom, 0px));
-  z-index: 90;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--caramel);
-  color: var(--blanc);
-  box-shadow: 0 8px 24px rgba(150, 95, 54, 0.4);
-  transition: background 0.25s var(--ease-soft), transform 0.25s var(--ease-soft), box-shadow 0.25s var(--ease-soft);
-}
-.fab svg { width: 24px; height: 24px; }
-.fab:hover,
-.fab:active {
-  background: #a07a5a;
-  transform: scale(1.06);
-  box-shadow: 0 10px 28px rgba(150, 95, 54, 0.48);
-}
-
 
 @media (max-width: 768px) {
   .band { display: none; }
@@ -5951,3 +5925,59 @@ details[open] > .pdp__acc-trigger::after { content: '−'; }
   .rgpd-banner__btn { flex: 1; text-align: center; }
 }
 .msg-confirmation__back:hover { border-color: var(--ink); }
+
+/* ================================================
+
+/* ================================================
+   FAB — Floating Action Button (mobile, bas-droite)
+================================================ */
+.fab { display: none; }
+
+@media (max-width: 48em) {
+  .fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 50%;
+    z-index: 250;
+    box-shadow: 0 4px 20px rgba(26,24,22,0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+  .fab:hover,
+  .fab:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(26,24,22,0.36);
+    outline: none;
+  }
+  .fab svg { width: 22px; height: 22px; }
+}
+
+/* ================================================
+   MOBILE HEADER — fond solide sur toutes les pages
+   (y compris hero transparent d'accueil)
+================================================ */
+@media (max-width: 48em) {
+  .header {
+    background: var(--paper) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Couleurs des éléments header sur fond clair */
+  .header:not(.header--inner):not(.scrolled) .header__menu-toggle .hamburger-line {
+    background: var(--ink) !important;
+  }
+  .header:not(.header--inner):not(.scrolled) .header__logo {
+    color: var(--ink) !important;
+  }
+  .header:not(.header--inner):not(.scrolled) .header__cta-icon {
+    color: var(--ink) !important;
+  }
+}
