@@ -2,24 +2,24 @@
   "name": "Dragée Paris",
   "short_name": "Dragée Paris",
   "description": "Créations artisanales de dragées personnalisables en Île-de-France",
-  "start_url": "/drageeparis/",
+  "start_url": "/",
   "display": "browser",
   "background_color": "#FDF8F3",
   "theme_color": "#965F36",
   "lang": "fr",
   "icons": [
     {
-      "src": "/drageeparis/favicon-32x32.png",
+      "src": "/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/drageeparis/apple-touch-icon.png",
+      "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/drageeparis/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

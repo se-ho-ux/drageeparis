@@ -7,4 +7,4 @@ Disallow: /boutique-chocolats.html
 Disallow: /boutique-gourmandes.html
 Disallow: /boutique-traditionnelles.html
 
-Sitemap: https://se-ho-ux.github.io/drageeparis/sitemap.xml
+Sitemap: https://drageeparis.fr/sitemap.xml

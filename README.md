@@ -93,7 +93,7 @@ Pour régénérer un endpoint (compte Formspree, formulaire expiré, etc.), remp
 
 ## Déploiement sur GitHub Pages
 
-Le site est déployé automatiquement (Actions `pages-build-deployment`) à chaque push sur `main`, à l'URL `https://se-ho-ux.github.io/drageeparis/`. Pas de domaine personnalisé configuré (pas de `CNAME`) au moment de la rédaction.
+Le site est déployé automatiquement (Actions `pages-build-deployment`) à chaque push sur `main`, à l'URL `https://drageeparis.fr/` (domaine personnalisé configuré via `CNAME`, DNS chez OVH). L'ancienne URL `https://se-ho-ux.github.io/drageeparis/` reste fonctionnelle en parallèle.
 
 ## Dossier `logos-svg/`
 
